@@ -1,4 +1,4 @@
-@import url("css/switzer.css");
+@import url("/src/css/switzer.css");
 :root {
   /* Brand / Green */
   --color-green-50: #eaf7f1;
@@ -24,17 +24,17 @@
   --color-purple-800: #32009e;
   --color-purple-900: #27007a;
 
-  /* Coral */
-  --color-coral-50: #fff1ed;
-  --color-coral-100: #ffe3db;
-  --color-coral-200: #ffc7b8;
-  --color-coral-300: #ffab94;
-  --color-coral-400: #ff946f;
-  --color-coral-500: #ff734d;
-  --color-coral-600: #e06644;
-  --color-coral-700: #c2573b;
-  --color-coral-800: #9e472f;
-  --color-coral-900: #7a3725;
+  /* pink */
+  --color-pink-50: #ffedf3;
+  --color-pink-100: #ffdbe7;
+  --color-pink-200: #ffb8cf;
+  --color-pink-300: #ff94b6;
+  --color-pink-400: #ff6f9e;
+  --color-pink-500: #ff4d82;
+  --color-pink-600: #e04473;
+  --color-pink-700: #c23b64;
+  --color-pink-800: #9e2f51;
+  --color-pink-900: #7a253f;
 
   /* Ice / Neutral */
   --color-ice-50: #fefeff;
@@ -70,17 +70,17 @@
   --color-secondary-active: var(--color-purple-700);
   --color-secondary-soft: var(--color-purple-50);
 
-  --color-accent: var(--color-coral-500);
-  --color-accent-hover: var(--color-coral-600);
-  --color-accent-active: var(--color-coral-700);
-  --color-accent-soft: var(--color-coral-50);
+  --color-accent: var(--color-pink-500);
+  --color-accent-hover: var(--color-pink-600);
+  --color-accent-active: var(--color-pink-700);
+  --color-accent-soft: var(--color-pink-50);
 
   --color-success: var(--color-green-500);
   --color-success-bg: var(--color-green-50);
   --color-info: var(--color-purple-500);
   --color-info-bg: var(--color-purple-50);
-  --color-warning: var(--color-coral-500);
-  --color-warning-bg: var(--color-coral-50);
+  --color-warning: var(--color-pink-500);
+  --color-warning-bg: var(--color-pink-50);
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(20, 32, 51, 0.08);
@@ -124,20 +124,7 @@ h2 strong {
   font-weight: 500;
   color: var(--color-primary);
 }
-.card {
-  background: radial-gradient(white, var(--color-ice-300));
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 0.4rem;
-  box-shadow: var(--shadow-sm);
-}
-.card-img-top {
-  border-radius: var(--radius-sm);
-}
-.card-body {
-  padding: 0.3rem;
-  margin-top: 0.3rem;
-}
+
 .page-wrap {
   max-width: 1100px;
   margin: 0 auto;
@@ -285,13 +272,13 @@ h2 strong {
 }
 
 .btn-soft-accent {
-  background: var(--color-coral-50);
-  color: var(--color-coral-800);
+  background: var(--color-pink-50);
+  color: var(--color-pink-800);
 }
 
 .btn-soft-accent:hover {
-  background: var(--color-coral-100);
-  color: var(--color-coral-800);
+  background: var(--color-pink-100);
+  color: var(--color-pink-800);
 }
 
 /* Outline */
@@ -319,13 +306,13 @@ h2 strong {
 
 .btn-outline-accent {
   background: transparent;
-  color: var(--color-coral-700);
-  border: 1.5px solid var(--color-coral-500);
+  color: var(--color-pink-700);
+  border: 1.5px solid var(--color-pink-500);
 }
 
 .btn-outline-accent:hover {
-  background: var(--color-coral-50);
-  color: var(--color-coral-700);
+  background: var(--color-pink-50);
+  color: var(--color-pink-700);
 }
 
 /* Ghost */
@@ -379,8 +366,8 @@ h2 strong {
 }
 
 .badge-accent {
-  background: var(--color-coral-50);
-  color: var(--color-coral-800);
+  background: var(--color-pink-50);
+  color: var(--color-pink-800);
 }
 
 .badge-founder {
@@ -409,7 +396,96 @@ h2 strong {
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
 }
+.p-seeks {
+  color: var(--color-accent);
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-variant: all-small-caps;
+}
+.p-offers {
+  color: var(--color-primary);
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-variant: all-small-caps;
+}
+.tag-seeks {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  background: var(--color-ice-300);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-accent);
+}
+.tag-offers {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  background: var(--color-ice-300);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-primary);
+}
+/* ============================================================
+   CARDS-MEMBERS
+   ============================================================ */
+.card {
+  background: radial-gradient(white, var(--color-ice-300));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.4rem;
+  box-shadow: var(--shadow-sm);
+}
+.card-img-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card-enlaces {
+  display: flex;
+  gap: 0.2rem;
+  bottom: 8px;
+  left: 8px;
+  position: absolute;
+  z-index: 2;
+}
 
+.card-img-top {
+  border-radius: var(--radius-sm);
+}
+.card-body {
+  padding: 0.3rem;
+  margin-top: 0.3rem;
+}
+.card-blur-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(5px);
+
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0) 40%
+  );
+
+  mask-image: linear-gradient(0deg, black 0%, black 10%, transparent 60%);
+
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    black 0%,
+    black 10%,
+    transparent 60%
+  );
+
+  pointer-events: none;
+}
 /* ============================================================
    CARDS
    ============================================================ */
@@ -498,10 +574,10 @@ h2 strong {
 .member-need {
   font-size: 11px;
   padding: 8px 10px;
-  border-left: 3px solid var(--color-coral-500);
+  border-left: 3px solid var(--color-pink-500);
   border-radius: 0;
-  background: var(--color-coral-50);
-  color: var(--color-coral-800);
+  background: var(--color-pink-50);
+  color: var(--color-pink-800);
   line-height: 1.4;
 }
 
@@ -552,7 +628,7 @@ h2 strong {
 }
 
 .form-control-vx.error {
-  border-color: var(--color-coral-500);
+  border-color: var(--color-pink-500);
 }
 
 .form-control-vx.error:focus {
@@ -561,7 +637,7 @@ h2 strong {
 
 .form-error-msg {
   font-size: 11px;
-  color: var(--color-coral-600);
+  color: var(--color-pink-600);
   margin-top: 4px;
 }
 
@@ -648,9 +724,9 @@ select.form-control-vx {
 }
 
 .alert-warning {
-  background: var(--color-coral-50);
-  color: var(--color-coral-800);
-  border: 1px solid var(--color-coral-200);
+  background: var(--color-pink-50);
+  color: var(--color-pink-800);
+  border: 1px solid var(--color-pink-200);
 }
 
 .alert-neutral {
@@ -886,11 +962,11 @@ select.form-control-vx {
 }
 
 .dropdown-vx-item.danger {
-  color: var(--color-coral-600);
+  color: var(--color-pink-600);
 }
 
 .dropdown-vx-item.danger i {
-  color: var(--color-coral-500);
+  color: var(--color-pink-500);
 }
 
 .dropdown-vx-divider {
@@ -1030,29 +1106,4 @@ select.form-control-vx {
 
 .toggle-vx input:checked + .slider::before {
   transform: translateX(18px);
-}
-.card-blur-gradient {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(5px);
-
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(255, 255, 255, 0) 40%
-  );
-
-  mask-image: linear-gradient(0deg, black 0%, black 10%, transparent 60%);
-
-  -webkit-mask-image: linear-gradient(
-    0deg,
-    black 0%,
-    black 10%,
-    transparent 60%
-  );
-
-  pointer-events: none;
 }

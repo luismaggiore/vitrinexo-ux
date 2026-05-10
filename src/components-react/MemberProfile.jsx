@@ -1,23 +1,23 @@
-export default function MemberCard({
+export default function MemberProfile({
   name,
   company,
   location,
   image,
+  bio,
+  title,
+  about,
+  idealClient,
   tags = [],
   seekTags = [],
   offerTags = [],
+  contact = {},
 }) {
-  const randomSeekTags = [...seekTags]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 2);
-  const randomOfferTags = [...offerTags]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 2);
+  console.log(name);
   return (
-    <div className="col">
+    <div className="container py-5">
       <div className="card">
         <div className="card-img-container">
-          <div className="card-enlaces">
+          <div className="card-enla   ces">
             <button
               className="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
               aria-label={`Ver perfil de ${name}`}
@@ -62,12 +62,12 @@ export default function MemberCard({
           </div>
 
           <div className="d-flex flex-wrap gap-1">
-            {randomOfferTags.map((tag, index) => (
+            {offerTags.map((tag, index) => (
               <span className="tag-vx tag-offers" key={`${tag}-${index}`}>
                 {tag}
               </span>
             ))}
-            {randomSeekTags.map((tag, index) => (
+            {seekTags.map((tag, index) => (
               <span className="tag-vx tag-seeks" key={`${tag}-${index}`}>
                 {tag}
               </span>
