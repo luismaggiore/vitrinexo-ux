@@ -1,6 +1,7 @@
 export default function MemberProfile({
   name,
   company,
+  companySite = "#",
   location,
   image,
   bio,
@@ -12,8 +13,8 @@ export default function MemberProfile({
   seekTags = [],
   offerTags = [],
   contact = {},
-  isFounder = false,
-  isVerified = true,
+  isFounder = true,
+  bannerImage = "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
 }) {
   const countrySiglas = country ? country.slice(0, 3).toUpperCase() : "";
 
@@ -35,7 +36,7 @@ export default function MemberProfile({
             </button>
           </div>
 
-          <div className="banner-profile"></div>
+          <div className="banner-profile" style={{ backgroundImage: `url(${bannerImage})` }}></div>
 
           <div className="profile-row">
             <div className="img-profile">
@@ -46,21 +47,23 @@ export default function MemberProfile({
             </div>
 
             <div className="profile-info">
-              <div className="profile-badges">
-                {isVerified && (
-                  <span className="badge-vx badge-verified">
-                    <i className="ti ti-rosette-discount-check"></i> Verificado
-                  </span>
-                )}
+           
+              <h1 className="profile-name">{name} 
                 {isFounder && (
-                  <span className="badge-vx badge-founder">
-                    <i className="ti ti-star"></i> Socio Fundador
+                  <span
+                    className="founder-tooltip mx-2"
+                    data-tooltip="Miembro fundador"
+                    aria-label="Miembro fundador"
+                    tabIndex={0}
+                  >
+                    <i className="founder-tag ti ti-star" aria-hidden="true"></i>
                   </span>
-                )}
-              </div>
-              <h1 className="profile-name">{name}</h1>
+                )}              </h1>
+              <a href={companySite} className="profile-company" target="_blank" rel="noopener noreferrer">
+                {company}
+              </a>
               <p className="profile-title">{title}</p>
-              <p className="profile-company">{company}</p>
+        
               <p className="profile-location">
                 <i className="ti ti-map-pin"></i> {location}
                 {country && <span className="profile-country-chip">{countrySiglas}</span>}

@@ -29,6 +29,7 @@ export const members = [
       linkedin: "linkedin.com/in/li-dev",
       preferredContact: "email",
     },
+    isFounder: true,
   },
   {
     // PERSONA
@@ -68,6 +69,7 @@ export const members = [
       linkedin: "linkedin.com/in/fulanito-de-tal",
       preferredContact: "linkedin",
     },
+    isFounder: false,
   },
   {
     // PERSONA
@@ -121,6 +123,7 @@ export const members = [
       linkedin: "linkedin.com/in/mariaguadalupe-estevez",
       preferredContact: "email",
     },
+    isFounder: false,
   },
   {
     // PERSONA
@@ -160,6 +163,7 @@ export const members = [
       linkedin: "linkedin.com/in/sofia-restrepo-arte",
       preferredContact: "email",
     },
+    isFounder: true,
   },
   {
     // PERSONA
@@ -201,6 +205,7 @@ export const members = [
       linkedin: "linkedin.com/in/roberto-fuentes-carreño",
       preferredContact: "phone",
     },
+    isFounder: false,
   },
   {
     // PERSONA
@@ -243,6 +248,7 @@ export const members = [
       linkedin: "linkedin.com/in/valentina-koczorowski",
       preferredContact: "linkedin",
     },
+    isFounder: true,
   },
   {
     // PERSONA
@@ -293,6 +299,7 @@ export const members = [
       linkedin: "linkedin.com/in/ignacio-bertolotti",
       preferredContact: "email",
     },
+    isFounder: false,
   },
   {
     // PERSONA
@@ -330,6 +337,7 @@ export const members = [
       linkedin: "linkedin.com/in/felipemuñoz-crm",
       preferredContact: "phone",
     },
+    isFounder: true,
   },
   {
     // PERSONA
@@ -369,6 +377,7 @@ export const members = [
       linkedin: "linkedin.com/in/ana-fernandez-brandlab",
       preferredContact: "linkedin",
     },
+    isFounder: false,
   },
   {
     // PERSONA
@@ -408,5 +417,6 @@ export const members = [
       linkedin: "linkedin.com/in/camila-torres-flowops",
       preferredContact: "email",
     },
+    isFounder: true,
   },
 ];

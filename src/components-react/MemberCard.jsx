@@ -7,6 +7,7 @@ export default function MemberCard({
   tags = [],
   seekTags = [],
   offerTags = [],
+  isFounder = true,
 }) {
   const randomSeekTags = [...seekTags]
     .sort(() => Math.random() - 0.5)
@@ -55,7 +56,16 @@ export default function MemberCard({
 
         <div className="card-body">
           <div className="info mb-2">
-            <h5 className="h6 py-0 my-0">{name}</h5>
+            <h5 className="h6 py-0 my-0">{name}   {isFounder && (
+              <span
+                className="founder-tooltip "
+                data-tooltip="Miembro fundador"
+                aria-label="Miembro fundador"
+                tabIndex={0}
+              >
+                <i className="founder-tag ti ti-star" aria-hidden="true"></i>
+              </span>
+            )}   </h5>
             <p className="member-company">{company}</p>
             <p className="member-company">
               {location} ({countrySiglas})
