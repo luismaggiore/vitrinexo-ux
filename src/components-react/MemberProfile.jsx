@@ -10,6 +10,8 @@ export default function MemberProfile({
   about,
   idealClient,
   tags = [],
+  seekText,
+  offerText,
   seekTags = [],
   offerTags = [],
   contact = {},
@@ -115,6 +117,7 @@ export default function MemberProfile({
                 <h3 className="profile-pill-title">
                   <i className="ti ti-circle-check"></i> Qué ofrezco
                 </h3>
+                <p>{offerText}</p>
                 <div className="profile-pill-tags">
                   {offerTags.map((tag, i) => (
                     <span key={i} className="tag-vx tag-offers">
@@ -130,6 +133,7 @@ export default function MemberProfile({
                 <h3 className="profile-pill-title">
                   <i className="ti ti-search"></i> Qué busco
                 </h3>
+                <p>{seekText}</p>
                 <div className="profile-pill-tags">
                   {seekTags.map((tag, i) => (
                     <span key={i} className="tag-vx tag-seeks">
