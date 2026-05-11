@@ -433,42 +433,274 @@ h2 strong {
 /* ============================================================
    PROFILE-MEMBERS
    ============================================================ */
+
 .profile {
-  background: radial-gradient(white, var(--color-ice-300));
+  background: radial-gradient(ellipse at top left, #fff 30%, var(--color-ice-300));
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 0.4rem;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/* Founder highlight */
+.profile.profile-founder {
+  border-top: 3px solid var(--color-green-500);
+}
+
+/* ── Top: banner + avatar ── */
 .profile-top {
   position: relative;
-  width: 100%;
-  min-height: 300px;
 }
+
 .banner-profile {
-  height: 200px;
-  border-radius: var(--radius-sm);
-  background-color: gray;
+  height: 160px;
+  background: linear-gradient(
+    135deg,
+    var(--color-green-600) 0%,
+    var(--color-green-400) 60%,
+    var(--color-ice-400) 100%
+  );
 }
+
+.profile-actions {
+  display: flex;
+  gap: 0.4rem;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+}
+
 .profile-row {
   display: flex;
+  align-items: flex-end;
   gap: 1rem;
+  padding: 0 1.5rem 1rem;
   position: relative;
 }
-.profile-info p {
-  margin: 0;
-}
+
+/* ── Avatar ── */
 .img-profile {
-  margin-top: -60px;
-  margin-left: 1rem;
+  margin-top: -56px;
+  flex-shrink: 0;
   z-index: 2;
 }
-.img-profile img{
-  width: 160px;
-  height: 160px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-surface);
 
+.img-profile img {
+  width: 112px;
+  height: 112px;
+  border-radius: var(--radius-md);
+  border: 3px solid var(--color-surface);
+  object-fit: cover;
+  display: block;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Info alongside avatar ── */
+.profile-info {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.5rem;
+}
+
+.profile-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin: 0 0 2px;
+}
+
+.profile-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-green-700);
+  margin: 0 0 2px;
+}
+
+.profile-company {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0 0 4px;
+}
+
+.profile-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.profile-location i {
+  font-size: 13px;
+  color: var(--color-green-500);
+}
+
+.profile-country-chip {
+  background: var(--color-ice-300);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 1px 7px;
+  color: var(--color-text-secondary);
+  margin-left: 4px;
+}
+
+/* ── Tags row (especialidades) ── */
+.profile-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.75rem 1.5rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Body: secciones de texto ── */
+.profile-content {
+  padding: 1.25rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-section {
+  /* no extra wrapper needed; gap on parent handles spacing */
+}
+
+.profile-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-secondary);
+  margin: 0 0 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.profile-section-title::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-green-400);
+  border-radius: 99px;
+  margin-left: 4px;
+}
+
+.profile-section p {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Offer / Seek pills ── */
+.profile-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.profile-pill {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.profile-pill-offer {
+  background: var(--color-green-50);
+  border-left: 3px solid var(--color-green-500);
+}
+
+.profile-pill-seek {
+  background: var(--color-pink-50);
+  border-left: 3px solid var(--color-pink-500);
+}
+
+.profile-pill-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.6rem;
+}
+
+.profile-pill-offer .profile-pill-title {
+  color: var(--color-green-700);
+}
+
+.profile-pill-seek .profile-pill-title {
+  color: var(--color-pink-700);
+}
+
+.profile-pill-title i {
+  font-size: 13px;
+}
+
+.profile-pill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .profile-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem 1rem;
+  }
+
+  .img-profile {
+    margin-top: -44px;
+  }
+
+  .img-profile img {
+    width: 88px;
+    height: 88px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  .profile-tags-row,
+  .profile-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .profile-duo {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .profile-actions {
+    top: 8px;
+    right: 8px;
+  }
 }
 /* ============================================================
    CARDS-MEMBERS
