@@ -30,6 +30,8 @@ export const members = [
       preferredContact: "email",
     },
     isFounder: true,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+
   },
   {
     // PERSONA
@@ -70,6 +72,7 @@ export const members = [
       preferredContact: "linkedin",
     },
     isFounder: false,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw" 
   },
   {
     // PERSONA
@@ -124,6 +127,8 @@ export const members = [
       preferredContact: "email",
     },
     isFounder: false,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+
   },
   {
     // PERSONA
@@ -164,6 +169,7 @@ export const members = [
       preferredContact: "email",
     },
     isFounder: true,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"   
   },
   {
     // PERSONA
@@ -206,6 +212,8 @@ export const members = [
       preferredContact: "phone",
     },
     isFounder: false,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+
   },
   {
     // PERSONA
@@ -249,6 +257,8 @@ export const members = [
       preferredContact: "linkedin",
     },
     isFounder: true,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+
   },
   {
     // PERSONA
@@ -300,6 +310,7 @@ export const members = [
       preferredContact: "email",
     },
     isFounder: false,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw" 
   },
   {
     // PERSONA
@@ -338,6 +349,7 @@ export const members = [
       preferredContact: "phone",
     },
     isFounder: true,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
   },
   {
     // PERSONA
@@ -378,6 +390,8 @@ export const members = [
       preferredContact: "linkedin",
     },
     isFounder: false,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+
   },
   {
     // PERSONA
@@ -418,5 +432,6 @@ export const members = [
       preferredContact: "email",
     },
     isFounder: true,
+    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
   },
 ];
