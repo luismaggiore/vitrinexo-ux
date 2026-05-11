@@ -430,6 +430,25 @@ h2 strong {
   color: var(--color-text-secondary);
   border: 1px solid var(--color-primary);
 }
+
+.profile {
+  background: radial-gradient(white, var(--color-ice-300));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.4rem;
+  box-shadow: var(--shadow-sm);
+}
+.profile-top {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+.banner-profile {
+  height: 200px;
+  border-radius: var(--radius-sm);
+  background-color: gray;
+}
+
 /* ============================================================
    CARDS-MEMBERS
    ============================================================ */
@@ -453,7 +472,12 @@ h2 strong {
   position: absolute;
   z-index: 2;
 }
-
+.profile .card-enlaces {
+  top: 8px;
+  right: 8px;
+  bottom: unset;
+  left: unset;
+}
 .card-img-top {
   border-radius: var(--radius-sm);
 }

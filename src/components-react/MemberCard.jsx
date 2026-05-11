@@ -2,6 +2,7 @@ export default function MemberCard({
   name,
   company,
   location,
+  country,
   image,
   tags = [],
   seekTags = [],
@@ -13,6 +14,8 @@ export default function MemberCard({
   const randomOfferTags = [...offerTags]
     .sort(() => Math.random() - 0.5)
     .slice(0, 2);
+
+  const countrySiglas = country.slice(0, 3).toUpperCase();
   return (
     <div className="col">
       <div className="card">
@@ -54,7 +57,9 @@ export default function MemberCard({
           <div className="info mb-2">
             <h5 className="h6 py-0 my-0">{name}</h5>
             <p className="member-company">{company}</p>
-            <p className="member-company">{location}</p>
+            <p className="member-company">
+              {location} ({countrySiglas})
+            </p>
           </div>
           <div className="d-flex flex-wrap gap-1 mb-0 p-0">
             <p className="p-offers">Ofrece</p>
