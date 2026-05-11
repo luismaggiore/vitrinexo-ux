@@ -16,6 +16,6 @@ if (membersRoot) {
 
 if (memberProfileDiv) {
   createRoot(memberProfileDiv).render(
-    <MemberProfile key={members[1].name} {...members[1]} />,
+    <MemberProfile key={members[2].name} {...members[2]} />,
   );
 }
