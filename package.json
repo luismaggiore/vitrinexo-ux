@@ -1,0 +1,27 @@
+{
+  "name": "vitrinexo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "posthtml": "posthtml dist/index.html -o dist/index.html"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vituum/vite-plugin-posthtml": "^1.1.0",
+    "posthtml": "^0.16.7",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-include": "^2.0.1",
+    "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  }
+}
