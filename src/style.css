@@ -445,20 +445,16 @@ h2 strong {
   margin-right: auto;
 }
 
-/* Founder highlight */
-.profile.profile-founder {
-  border-top: 3px solid var(--color-green-500);
-}
-
 /* ── Top: banner + avatar ── */
 .profile-top {
   position: relative;
 }
 
 .banner-profile {
-  margin:8px;
+  margin: 8px;
   border-radius: var(--radius-md);
-  height: 190px;
+  aspect-ratio: 16 / 5;
+  width: calc(100% - 16px);
   background: linear-gradient(
     135deg,
     var(--color-green-600) 0%,
@@ -466,6 +462,8 @@ h2 strong {
     var(--color-ice-400) 100%
   );
   background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 .profile-actions {
