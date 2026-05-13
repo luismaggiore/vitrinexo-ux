@@ -1,24 +1,18 @@
 export const members = [
   {
     // PERSONA
+    id: "user_001",
     name: "Li",
-    title: "Dev",
     bio: "Dev web.",
     image: "/src/assets/placeholder.webp",
     tags: ["Tech"],
-
-    // EMPRESA
-    company: "OK",
+    isFounder: true,
     location: "Lima",
     country: "Perú",
-    about: "Dev.",
-    idealClient: "Cualquiera.",
 
-    // OFFERS
+    // TRANSACCIONAL
     offerTags: ["desarrollo web"],
     offerText: "Hago webs.",
-
-    // SEEKS
     seekTags: ["clientes"],
     seekText: "Busco clientes.",
 
@@ -29,40 +23,39 @@ export const members = [
       linkedin: "linkedin.com/in/li-dev",
       preferredContact: "email",
     },
-    isFounder: true,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
 
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_001",
+        name: "OK",
+        title: "Dev",
+        about: "Dev.",
+        idealClient: "Cualquiera.",
+        rubroTags: ["Tecnología"],
+        website: "",
+        linkedin: "",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
     // PERSONA
+    id: "user_002",
     name: "Roberto Abarca",
-    title: "Director de Marketing y Estrategia Comercial",
     bio: "Especialista en marketing y construcción de marca con más de 10 años en el mercado regional.",
     image: "/src/assets/placeholder2.webp",
     tags: ["Marketing", "Estrategia", "B2B", "Liderazgo"],
-
-    // EMPRESA
-    company: "Minotauro Marketing",
+    isFounder: false,
     location: "Buenos Aires",
     country: "Argentina",
-    about: "Agencia de marketing digital con foco en marcas en crecimiento.",
-    idealClient:
-      "Empresas medianas B2B que quieran mejorar su posicionamiento digital.",
 
-    // OFFERS
-    offerTags: [
-      "marketing digital",
-      "branding",
-      "estrategia comercial",
-      "campañas",
-      "posicionamiento",
-    ],
+    // TRANSACCIONAL
+    offerTags: ["marketing digital", "branding", "estrategia comercial", "campañas", "posicionamiento"],
     offerText: "Diseñamos y ejecutamos estrategias de marketing integral.",
-
-    // SEEKS
     seekTags: ["diseño web", "automatización", "alianzas comerciales"],
-    seekText:
-      "Buscamos un socio de diseño web que pueda integrarse a proyectos de forma recurrente.",
+    seekText: "Buscamos un socio de diseño web que pueda integrarse a proyectos de forma recurrente.",
 
     // CONTACTO
     contact: {
@@ -71,53 +64,39 @@ export const members = [
       linkedin: "linkedin.com/in/fulanito-de-tal",
       preferredContact: "linkedin",
     },
-    isFounder: false,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw" 
+
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_002",
+        name: "Minotauro Marketing",
+        title: "Director de Marketing y Estrategia Comercial",
+        about: "Agencia de marketing digital con foco en marcas en crecimiento.",
+        idealClient: "Empresas medianas B2B que quieran mejorar su posicionamiento digital.",
+        rubroTags: ["Marketing", "Publicidad", "Estrategia"],
+        website: "minotauro.com.ar",
+        linkedin: "linkedin.com/company/minotauro",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
-    // PERSONA
+    // PERSONA — caso estrés: dos empresas
+    id: "user_003",
     name: "María Guadalupe Estévez-Montoya de la Vega",
-    title:
-      "Socia Directora & Consultora Senior de Transformación Organizacional",
     bio: "Con más de 18 años acompañando a corporaciones multinacionales en procesos de transformación cultural y digital.",
     image: "/src/assets/placeholder3.webp",
-    tags: [
-      "Consultoría",
-      "Liderazgo",
-      "Innovación",
-      "Change Management",
-      "Docencia",
-    ],
-
-    // EMPRESA
-    company:
-      "Consultoría Estratégica Iberoamericana de Transformación Digital y Negocios S.A.",
+    tags: ["Consultoría", "Liderazgo", "Innovación", "Change Management", "Docencia"],
+    isFounder: false,
     location: "Ciudad de México",
     country: "México",
-    about:
-      "Firma especializada en transformación digital y estrategia corporativa.",
-    idealClient:
-      "Corporaciones con más de 500 empleados atravesando procesos de digitalización.",
 
-    // OFFERS
-    offerTags: [
-      "transformación digital",
-      "change management",
-      "estrategia corporativa",
-      "metodologías ágiles",
-    ],
-    offerText:
-      "Acompañamos a la alta dirección en procesos de cambio profundo.",
-
-    // SEEKS
-    seekTags: [
-      "socios tecnológicos LATAM",
-      "desarrollo IA",
-      "legal fintech",
-      "inversión ángel",
-    ],
-    seekText:
-      "Estamos desarrollando un spin-off de tecnología para automatizar diagnósticos organizacionales.",
+    // TRANSACCIONAL
+    offerTags: ["transformación digital", "change management", "estrategia corporativa", "metodologías ágiles"],
+    offerText: "Acompañamos a la alta dirección en procesos de cambio profundo.",
+    seekTags: ["socios tecnológicos LATAM", "desarrollo IA", "legal fintech", "inversión ángel"],
+    seekText: "Estamos desarrollando un spin-off de tecnología para automatizar diagnósticos organizacionales.",
 
     // CONTACTO
     contact: {
@@ -126,40 +105,51 @@ export const members = [
       linkedin: "linkedin.com/in/mariaguadalupe-estevez",
       preferredContact: "email",
     },
-    isFounder: false,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
 
+    // EMPRESAS — dos para estresar
+    companies: [
+      {
+        id: "company_003",
+        name: "Consultoría Estratégica Iberoamericana de Transformación Digital y Negocios S.A.",
+        title: "Socia Directora & Consultora Senior de Transformación Organizacional",
+        about: "Firma especializada en transformación digital y estrategia corporativa.",
+        idealClient: "Corporaciones con más de 500 empleados atravesando procesos de digitalización.",
+        rubroTags: ["Consultoría", "Transformación Digital", "Estrategia Corporativa"],
+        website: "consultoria-iberica.mx",
+        linkedin: "linkedin.com/company/consultoria-iberica",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+      {
+        id: "company_004",
+        name: "OKR Lab",
+        title: "Socia",
+        about: "Boutique especializada en implementación de OKRs y cultura de alto rendimiento.",
+        idealClient: "Startups y scale-ups que quieran instalar una cultura de objetivos clara.",
+        rubroTags: ["Consultoría", "Cultura Organizacional", "Agile"],
+        website: "okrlab.mx",
+        linkedin: "linkedin.com/company/okrlab",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
     // PERSONA
+    id: "user_004",
     name: "Sofía",
-    title: "Diseñadora & Directora de Arte",
     bio: "Diseñadora gráfica independiente con amor por las marcas con personalidad.",
     image: "/src/assets/placeholder4.webp",
     tags: ["Diseño", "Arte", "Creatividad"],
-
-    // EMPRESA
-    company: "Sofía Restrepo Studio",
+    isFounder: true,
     location: "Medellín",
     country: "Colombia",
-    about: "Estudio unipersonal de diseño gráfico y dirección de arte.",
-    idealClient:
-      "Startups y marcas jóvenes que quieran construir una identidad visual desde cero.",
 
-    // OFFERS
-    offerTags: [
-      "identidad visual",
-      "ilustración",
-      "motion graphics",
-      "dirección de arte",
-    ],
-    offerText:
-      "Diseño identidades visuales completas: logo, paleta, tipografía, sistema de aplicaciones.",
-
-    // SEEKS
+    // TRANSACCIONAL
+    offerTags: ["identidad visual", "ilustración", "motion graphics", "dirección de arte"],
+    offerText: "Diseño identidades visuales completas: logo, paleta, tipografía, sistema de aplicaciones.",
     seekTags: ["agencias creativas", "startups tech"],
-    seekText:
-      "Me interesa colaborar con agencias que necesiten capacidad creativa adicional.",
+    seekText: "Me interesa colaborar con agencias que necesiten capacidad creativa adicional.",
 
     // CONTACTO
     contact: {
@@ -168,40 +158,38 @@ export const members = [
       linkedin: "linkedin.com/in/sofia-restrepo-arte",
       preferredContact: "email",
     },
-    isFounder: true,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"   
+
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_005",
+        name: "Sofía Restrepo Studio",
+        title: "Diseñadora & Directora de Arte",
+        about: "Estudio unipersonal de diseño gráfico y dirección de arte.",
+        idealClient: "Startups y marcas jóvenes que quieran construir una identidad visual desde cero.",
+        rubroTags: ["Diseño", "Branding", "Ilustración"],
+        website: "sofiarestrepo.co",
+        linkedin: "",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
     // PERSONA
+    id: "user_005",
     name: "Roberto Anselmo Fuentes-Carreño",
-    title: "Socio Fundador — Derecho Comercial Internacional",
     bio: "Abogado con 20 años de experiencia en derecho comercial transfronterizo.",
     image: "/src/assets/placeholder5.webp",
     tags: ["Legal", "M&A", "Arbitraje", "Compliance", "Regulatorio"],
-
-    // EMPRESA
-    company: "Lex Patagonia Abogados",
+    isFounder: false,
     location: "Puerto Montt",
     country: "Chile",
-    about: "Estudio jurídico especializado en derecho comercial internacional.",
-    idealClient:
-      "Empresas extranjeras que quieran establecerse legalmente en Chile.",
 
-    // OFFERS
-    offerTags: [
-      "contratos B2B internacionales",
-      "due diligence M&A",
-      "compliance Chile-UE",
-    ],
-    offerText:
-      "Redactamos y revisamos contratos internacionales y acompañamos procesos de M&A.",
-
-    // SEEKS
-    seekTags: [
-      "estudios jurídicos Argentina",
-      "estudios jurídicos España",
-      "firma electrónica",
-    ],
+    // TRANSACCIONAL
+    offerTags: ["contratos B2B internacionales", "due diligence M&A", "compliance Chile-UE"],
+    offerText: "Redactamos y revisamos contratos internacionales y acompañamos procesos de M&A.",
+    seekTags: ["estudios jurídicos Argentina", "estudios jurídicos España", "firma electrónica"],
     seekText: "Buscamos estudios jurídicos aliados en Buenos Aires y Madrid.",
 
     // CONTACTO
@@ -211,43 +199,39 @@ export const members = [
       linkedin: "linkedin.com/in/roberto-fuentes-carreño",
       preferredContact: "phone",
     },
-    isFounder: false,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
 
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_006",
+        name: "Lex Patagonia Abogados",
+        title: "Socio Fundador — Derecho Comercial Internacional",
+        about: "Estudio jurídico especializado en derecho comercial internacional.",
+        idealClient: "Empresas extranjeras que quieran establecerse legalmente en Chile.",
+        rubroTags: ["Legal", "Compliance", "M&A"],
+        website: "lexpatagonia.cl",
+        linkedin: "linkedin.com/company/lex-patagonia",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
     // PERSONA
+    id: "user_006",
     name: "Valentina Koczorowski Brzezińska",
-    title: "Fundadora & Head of Analytics",
     bio: "Estadística de formación, economista comportamental de vocación.",
     image: "/src/assets/placeholder.webp",
     tags: ["Data", "Estadística", "Economía Comportamental", "Finanzas"],
-
-    // EMPRESA
-    company: "DataSur Analytics",
+    isFounder: true,
     location: "Bogotá",
     country: "Colombia",
-    about:
-      "Firma de analítica de datos fundada en Bogotá con operaciones en Chile y Perú.",
-    idealClient:
-      "Empresas medianas con grandes volúmenes de datos sin procesar.",
 
-    // OFFERS
-    offerTags: [
-      "business intelligence",
-      "modelos predictivos",
-      "ingeniería de datos",
-    ],
+    // TRANSACCIONAL
+    offerTags: ["business intelligence", "modelos predictivos", "ingeniería de datos"],
     offerText: "Construimos dashboards desde cero o mejoramos los existentes.",
-
-    // SEEKS
-    seekTags: [
-      "retail analytics",
-      "consultoras de estrategia",
-      "alianzas LATAM",
-    ],
-    seekText:
-      "Buscamos socios que trabajen con retailers o empresas de consumo masivo.",
+    seekTags: ["retail analytics", "consultoras de estrategia", "alianzas LATAM"],
+    seekText: "Buscamos socios que trabajen con retailers o empresas de consumo masivo.",
 
     // CONTACTO
     contact: {
@@ -256,51 +240,39 @@ export const members = [
       linkedin: "linkedin.com/in/valentina-koczorowski",
       preferredContact: "linkedin",
     },
-    isFounder: true,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
 
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_007",
+        name: "DataSur Analytics",
+        title: "Fundadora & Head of Analytics",
+        about: "Firma de analítica de datos fundada en Bogotá con operaciones en Chile y Perú.",
+        idealClient: "Empresas medianas con grandes volúmenes de datos sin procesar.",
+        rubroTags: ["Data", "Analytics", "Business Intelligence"],
+        website: "datasur.co",
+        linkedin: "linkedin.com/company/datasur",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
-    // PERSONA
+    // PERSONA — caso estrés: dos empresas en países distintos
+    id: "user_007",
     name: "Ignacio Maximiliano Bertolotti Sáenz de Ugarte",
-    title:
-      "CEO & Estructurador de Fondos de Inversión Inmobiliaria con Tecnología Aplicada",
     bio: "Más de una década estructurando fondos de inversión inmobiliaria en Uruguay, Argentina y Colombia.",
     image: "/src/assets/placeholder2.webp",
-    tags: [
-      "Real Estate",
-      "Finanzas",
-      "Blockchain",
-      "Inversiones",
-      "Emprendimiento",
-    ],
-
-    // EMPRESA
-    company: "PropTech Ventures Latinoamérica",
+    tags: ["Real Estate", "Finanzas", "Blockchain", "Inversiones", "Emprendimiento"],
+    isFounder: false,
     location: "Montevideo",
     country: "Uruguay",
-    about:
-      "Plataforma que conecta inversión tradicional con tecnología aplicada al real estate.",
-    idealClient:
-      "Desarrolladoras inmobiliarias medianas que quieran atraer capital digital.",
 
-    // OFFERS
-    offerTags: [
-      "estructuración de fondos inmobiliarios",
-      "tokenización de activos",
-      "due diligence",
-    ],
-    offerText:
-      "Estructuramos vehículos de inversión inmobiliaria con o sin tokenización.",
-
-    // SEEKS
-    seekTags: [
-      "desarrolladoras inmobiliarias Chile",
-      "desarrolladoras inmobiliarias Colombia",
-      "fondos alternativos",
-    ],
-    seekText:
-      "Buscamos desarrolladoras inmobiliarias medianas en Chile y Colombia.",
+    // TRANSACCIONAL
+    offerTags: ["estructuración de fondos inmobiliarios", "tokenización de activos", "due diligence"],
+    offerText: "Estructuramos vehículos de inversión inmobiliaria con o sin tokenización.",
+    seekTags: ["desarrolladoras inmobiliarias Chile", "desarrolladoras inmobiliarias Colombia", "fondos alternativos"],
+    seekText: "Buscamos desarrolladoras inmobiliarias medianas en Chile y Colombia.",
 
     // CONTACTO
     contact: {
@@ -309,37 +281,51 @@ export const members = [
       linkedin: "linkedin.com/in/ignacio-bertolotti",
       preferredContact: "email",
     },
-    isFounder: false,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw" 
+
+    // EMPRESAS — dos para estresar
+    companies: [
+      {
+        id: "company_008",
+        name: "PropTech Ventures Latinoamérica",
+        title: "CEO & Estructurador de Fondos de Inversión Inmobiliaria con Tecnología Aplicada",
+        about: "Plataforma que conecta inversión tradicional con tecnología aplicada al real estate.",
+        idealClient: "Desarrolladoras inmobiliarias medianas que quieran atraer capital digital.",
+        rubroTags: ["Real Estate", "PropTech", "Inversiones", "Finanzas"],
+        website: "proptech-ventures.uy",
+        linkedin: "linkedin.com/company/proptech-ventures",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+      {
+        id: "company_009",
+        name: "Tokenland",
+        title: "Socio Fundador",
+        about: "Plataforma de tokenización de activos inmobiliarios para inversores retail en Argentina.",
+        idealClient: "Inversores individuales que quieran acceder al mercado inmobiliario desde tickets bajos.",
+        rubroTags: ["Blockchain", "Fintech", "Real Estate"],
+        website: "tokenland.ar",
+        linkedin: "linkedin.com/company/tokenland",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
     // PERSONA
+    id: "user_008",
     name: "Felipe Muñoz",
-    title: "Consultor Comercial B2B",
     bio: "Especialista en ventas y procesos comerciales para equipos B2B en crecimiento.",
     image: "/src/assets/placeholder3.webp",
     tags: ["Ventas", "CRM", "Procesos"],
-
-    // EMPRESA
-    company: "Growth Partners",
+    isFounder: true,
     location: "Santiago",
     country: "Chile",
-    about: "Consultora de procesos comerciales para equipos de ventas B2B.",
-    idealClient: "Empresas B2B con equipos de ventas de 3 a 20 personas.",
 
-    // OFFERS
+    // TRANSACCIONAL
     offerTags: ["ventas B2B", "implementación CRM", "automatización comercial"],
-    offerText:
-      "Implementamos CRMs y diseñamos los flujos comerciales alrededor.",
-
-    // SEEKS
-    seekTags: [
-      "agencias de marketing",
-      "partners tecnológicos",
-      "herramientas no-code",
-    ],
-    seekText:
-      "Buscamos agencias de marketing con las que podamos colaborar en proyectos de clientes.",
+    offerText: "Implementamos CRMs y diseñamos los flujos comerciales alrededor.",
+    seekTags: ["agencias de marketing", "partners tecnológicos", "herramientas no-code"],
+    seekText: "Buscamos agencias de marketing con las que podamos colaborar en proyectos de clientes.",
 
     // CONTACTO
     contact: {
@@ -348,39 +334,39 @@ export const members = [
       linkedin: "linkedin.com/in/felipemuñoz-crm",
       preferredContact: "phone",
     },
-    isFounder: true,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_010",
+        name: "Growth Partners",
+        title: "Consultor Comercial B2B",
+        about: "Consultora de procesos comerciales para equipos de ventas B2B.",
+        idealClient: "Empresas B2B con equipos de ventas de 3 a 20 personas.",
+        rubroTags: ["Ventas", "Consultoría", "CRM"],
+        website: "growthpartners.cl",
+        linkedin: "linkedin.com/company/growth-partners-cl",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
     // PERSONA
+    id: "user_009",
     name: "Ana Fernández del Valle Gutiérrez-Morales",
-    title: "Estratega de Marca, Contenido y Expansión Internacional",
     bio: "15 años desarrollando estrategias de marca y contenido para empresas que quieren crecer.",
     image: "/src/assets/placeholder4.webp",
     tags: ["Estrategia", "Marca", "Contenido", "Internacionalización"],
-
-    // EMPRESA
-    company: "BrandLab Internacional",
+    isFounder: false,
     location: "Madrid",
     country: "España",
-    about:
-      "Consultora de marca y contenido especializada en expansión continental.",
-    idealClient:
-      "Empresas de servicios B2B que quieran expandirse a nuevos países.",
 
-    // OFFERS
+    // TRANSACCIONAL
     offerTags: ["branding internacional", "estrategia SEO", "contenido B2B"],
-    offerText:
-      "Ayudamos a empresas a adaptar su propuesta de valor para nuevos mercados.",
-
-    // SEEKS
-    seekTags: [
-      "copywriters LATAM",
-      "diseñadores visuales",
-      "alianzas agencias LATAM",
-    ],
-    seekText:
-      "Buscamos copywriters con experiencia en mercados latinoamericanos específicos.",
+    offerText: "Ayudamos a empresas a adaptar su propuesta de valor para nuevos mercados.",
+    seekTags: ["copywriters LATAM", "diseñadores visuales", "alianzas agencias LATAM"],
+    seekText: "Buscamos copywriters con experiencia en mercados latinoamericanos específicos.",
 
     // CONTACTO
     contact: {
@@ -389,40 +375,39 @@ export const members = [
       linkedin: "linkedin.com/in/ana-fernandez-brandlab",
       preferredContact: "linkedin",
     },
-    isFounder: false,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
 
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_011",
+        name: "BrandLab Internacional",
+        title: "Estratega de Marca, Contenido y Expansión Internacional",
+        about: "Consultora de marca y contenido especializada en expansión continental.",
+        idealClient: "Empresas de servicios B2B que quieran expandirse a nuevos países.",
+        rubroTags: ["Branding", "Marketing", "Internacionalización"],
+        website: "brandlab-internacional.com",
+        linkedin: "linkedin.com/company/brandlab-internacional",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
   {
     // PERSONA
+    id: "user_010",
     name: "Camila Torres",
-    title: "Especialista en Automatización No-Code",
     bio: "Ayudo a empresas pequeñas y medianas a ahorrar tiempo automatizando procesos repetitivos.",
     image: "/src/assets/placeholder5.webp",
     tags: ["Automatización", "No-Code", "Operaciones", "Productividad"],
-
-    // EMPRESA
-    company: "FlowOps Studio",
+    isFounder: true,
     location: "Lima",
     country: "Perú",
-    about:
-      "Estudio de automatización operativa para equipos comerciales y administrativos.",
-    idealClient:
-      "Empresas de servicios con procesos manuales que quieran ordenar su operación.",
 
-    // OFFERS
+    // TRANSACCIONAL
     offerTags: ["automatización no-code", "Zapier", "Make", "Airtable"],
-    offerText:
-      "Mapeamos procesos y construimos automatizaciones con herramientas no-code.",
-
-    // SEEKS
-    seekTags: [
-      "agencias de marketing",
-      "consultores CRM",
-      "partners tecnológicos",
-    ],
-    seekText:
-      "Buscamos colaborar con agencias y consultores que detecten problemas operativos.",
+    offerText: "Mapeamos procesos y construimos automatizaciones con herramientas no-code.",
+    seekTags: ["agencias de marketing", "consultores CRM", "partners tecnológicos"],
+    seekText: "Buscamos colaborar con agencias y consultores que detecten problemas operativos.",
 
     // CONTACTO
     contact: {
@@ -431,7 +416,21 @@ export const members = [
       linkedin: "linkedin.com/in/camila-torres-flowops",
       preferredContact: "email",
     },
-    isFounder: true,
-    bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+
+    // EMPRESAS
+    companies: [
+      {
+        id: "company_012",
+        name: "FlowOps Studio",
+        title: "Especialista en Automatización No-Code",
+        about: "Estudio de automatización operativa para equipos comerciales y administrativos.",
+        idealClient: "Empresas de servicios con procesos manuales que quieran ordenar su operación.",
+        rubroTags: ["Automatización", "No-Code", "Operaciones"],
+        website: "flowops.studio",
+        linkedin: "linkedin.com/company/flowops-studio",
+        bannerImage: "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw",
+        status: "verificada",
+      },
+    ],
   },
 ];

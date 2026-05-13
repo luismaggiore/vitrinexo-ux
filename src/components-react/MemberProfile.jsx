@@ -1,30 +1,29 @@
+import { useState } from "react";
+
 export default function MemberProfile({
   name,
-  company,
-  companySite = "#",
   location,
   image,
   bio,
-  title,
   country,
-  about,
-  idealClient,
   tags = [],
   seekText,
   offerText,
   seekTags = [],
   offerTags = [],
   contact = {},
-  isFounder = true,
-  bannerImage = "https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw"
+  isFounder = false,
+  companies = [],
 }) {
+  const [activeTab, setActiveTab] = useState(0);
+  const activeCompany = companies[activeTab] ?? {};
   const countrySiglas = country ? country.slice(0, 3).toUpperCase() : "";
 
   return (
     <div className="container">
       <div className={`profile my-5${isFounder ? " profile-founder" : ""}`}>
 
-        {/* ── HEADER: banner + avatar + acciones ── */}
+        {/* ── HEADER ── */}
         <div className="profile-top">
           <div className="profile-actions">
             <button
@@ -38,19 +37,23 @@ export default function MemberProfile({
             </button>
           </div>
 
-          <div className="banner-profile" style={{ backgroundImage: `url(${bannerImage})` }}></div>
+          <div
+            className="banner-profile"
+            style={{
+              backgroundImage: activeCompany.bannerImage
+                ? `url(${activeCompany.bannerImage})`
+                : "none",
+            }}
+          />
 
           <div className="profile-row">
             <div className="img-profile">
-              <img
-                src={image}
-                alt={`Foto de ${name}`}
-              />
+              <img src={image} alt={`Foto de ${name}`} />
             </div>
 
             <div className="profile-info">
-           
-              <h1 className="profile-name">{name} 
+              <h1 className="profile-name">
+                {name}
                 {isFounder && (
                   <span
                     className="founder-tooltip mx-2"
@@ -58,95 +61,119 @@ export default function MemberProfile({
                     aria-label="Miembro fundador"
                     tabIndex={0}
                   >
-                    <i className="founder-tag ti ti-star" aria-hidden="true"></i>
+                    <i className="founder-tag ti ti-star" aria-hidden="true" />
                   </span>
-                )}              </h1>
-              <a href={companySite} className="profile-company" target="_blank" rel="noopener noreferrer">
-                {company}
-              </a>
-              <p className="profile-title">{title}</p>
-        
-              <p className="profile-location">
-                <i className="ti ti-map-pin"></i> {location}
-                {country && <span className="profile-country-chip">{countrySiglas}</span>}
-              </p>
-            </div>
+                )}
+              </h1>
+
+              {activeCompany.website ? (<a
+
+                href = {`https://${activeCompany.website}`}
+              className="profile-company"
+              target="_blank"
+              rel="noopener noreferrer"
+                >
+              {activeCompany.name}
+            </a>
+            ) : (
+            <span className="profile-company">{activeCompany.name}</span>
+              )}
+
+            <p className="profile-title">{activeCompany.title}</p>
+
+            <p className="profile-location">
+              <i className="ti ti-map-pin" /> {location}
+              {country && (
+                <span className="profile-country-chip">{countrySiglas}</span>
+              )}
+            </p>
           </div>
         </div>
+      </div>
 
-        {/* ── TAGS de especialidad ── */}
-        {tags.length > 0 && (
-          <div className="profile-tags-row">
-            {tags.map((tag, i) => (
-              <span key={i} className="tag-vx">
-                {tag}
-              </span>
+      {/* ── TAGS — de la persona, fijos ── */}
+      {tags.length > 0 && (
+        <div className="profile-tags-row">
+          {tags.map((tag, i) => (
+            <span key={i} className="tag-vx">{tag}</span>
+          ))}
+        </div>
+      )}
+
+      {/* ── CUERPO ── */}
+      <div className="profile-content">
+
+        {bio && (
+          <div className="profile-section">
+            <h2 className="profile-section-title">Sobre mí</h2>
+            <p>{bio}</p>
+          </div>
+        )}
+
+        {/* tabs solo si hay más de una empresa */}
+        {companies.length > 1 && (
+          <div className="profile-tabs">
+            {companies.map((c, i) => (
+              <button
+                key={c.id}
+                className={`profile-tab${activeTab === i ? " profile-tab-active" : ""}`}
+                onClick={() => setActiveTab(i)}
+              >
+                {c.name}
+              </button>
             ))}
           </div>
         )}
 
-        {/* ── CUERPO: secciones textuales ── */}
-        <div className="profile-content">
-          {bio && (
-            <div className="profile-section">
-              <h2 className="profile-section-title">Sobre mí</h2>
-              <p>{bio}</p>
-            </div>
-          )}
-
-          {about && (
-            <div className="profile-section">
-              <h2 className="profile-section-title">Sobre {company}</h2>
-              <p>{about}</p>
-            </div>
-          )}
-
-          {idealClient && (
-            <div className="profile-section">
-              <h2 className="profile-section-title">Cliente ideal</h2>
-              <p>{idealClient}</p>
-            </div>
-          )}
-        </div>
-
-        {/* ── OFFER / SEEK pills ── */}
-        {(offerTags.length > 0 || seekTags.length > 0) && (
-          <div className="profile-duo">
-            {offerTags.length > 0 && (
-              <div className="profile-pill profile-pill-offer">
-                <h3 className="profile-pill-title">
-                  <i className="ti ti-circle-check"></i> Qué ofrezco
-                </h3>
-                <p>{offerText}</p>
-                <div className="profile-pill-tags">
-                  {offerTags.map((tag, i) => (
-                    <span key={i} className="tag-vx tag-offers">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {seekTags.length > 0 && (
-              <div className="profile-pill profile-pill-seek">
-                <h3 className="profile-pill-title">
-                  <i className="ti ti-search"></i> Qué busco
-                </h3>
-                <p>{seekText}</p>
-                <div className="profile-pill-tags">
-                  {seekTags.map((tag, i) => (
-                    <span key={i} className="tag-vx tag-seeks">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
+        {activeCompany.about && (
+          <div className="profile-section">
+            <h2 className="profile-section-title">Sobre {activeCompany.name}</h2>
+            <p>{activeCompany.about}</p>
           </div>
         )}
 
+        {activeCompany.idealClient && (
+          <div className="profile-section">
+            <h2 className="profile-section-title">Cliente ideal</h2>
+            <p>{activeCompany.idealClient}</p>
+          </div>
+        )}
       </div>
+
+      {/* ── OFFER / SEEK — de la persona, fijos ── */}
+      {(offerTags.length > 0 || seekTags.length > 0) && (
+        <div className="profile-duo">
+          {offerTags.length > 0 && (
+            <div className="profile-pill profile-pill-offer">
+              <h3 className="profile-pill-title">
+                <i className="ti ti-circle-check" /> Qué ofrezco
+              </h3>
+              <p>{offerText}</p>
+              <div className="profile-pill-tags">
+                {offerTags.map((tag, i) => (
+                  <span key={i} className="tag-vx tag-offers">{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {seekTags.length > 0 && (
+            <div className="profile-pill profile-pill-seek">
+              <h3 className="profile-pill-title">
+                <i className="ti ti-search" /> Qué busco
+              </h3>
+              <p>{seekText}</p>
+              <div className="profile-pill-tags">
+                {seekTags.map((tag, i) => (
+                  <span key={i} className="tag-vx tag-seeks">{tag}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
     </div>
+    </div >
   );
 }

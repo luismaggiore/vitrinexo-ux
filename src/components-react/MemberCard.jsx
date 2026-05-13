@@ -1,13 +1,13 @@
 export default function MemberCard({
   name,
-  company,
+  companies = [],
   location,
   country,
   image,
   tags = [],
   seekTags = [],
   offerTags = [],
-  isFounder = true,
+  isFounder = false,
 }) {
   const randomSeekTags = [...seekTags]
     .sort(() => Math.random() - 0.5)
@@ -17,6 +17,7 @@ export default function MemberCard({
     .slice(0, 2);
 
   const countrySiglas = country.slice(0, 3).toUpperCase();
+
   return (
     <div className="col">
       <div className="card">
@@ -47,30 +48,39 @@ export default function MemberCard({
             src={image}
             className="card-img-top"
             alt={`Foto de ${name}`}
-            style={{
-              position: "relative",
-              zIndex: 0,
-            }}
+            style={{ position: "relative", zIndex: 0 }}
           />
         </div>
 
         <div className="card-body">
           <div className="info mb-2">
-            <h5 className="h6 py-0 my-0">{name}   {isFounder && (
-              <span
-                className="founder-tooltip "
-                data-tooltip="Miembro fundador"
-                aria-label="Miembro fundador"
-                tabIndex={0}
-              >
-                <i className="founder-tag ti ti-star" aria-hidden="true"></i>
-              </span>
-            )}   </h5>
-            <p className="member-company">{company}</p>
+            <h5 className="h6 py-0 my-0">
+              {name}
+              {isFounder && (
+                <span
+                  className="founder-tooltip"
+                  data-tooltip="Miembro fundador"
+                  aria-label="Miembro fundador"
+                  tabIndex={0}
+                >
+                  <i className="founder-tag ti ti-star" aria-hidden="true"></i>
+                </span>
+              )}
+            </h5>
+
+            {/* empresas — una o varias */}
+            {companies.map((c) => (
+              <p className="member-company" key={c.id}>
+    
+                {c.name} <br />
+              </p>
+            ))}
+
             <p className="member-company">
               {location} ({countrySiglas})
             </p>
           </div>
+
           <div className="d-flex flex-wrap gap-1 mb-0 p-0">
             <p className="p-offers">Ofrece</p>
             <p className="p-seeks">Busca</p>
