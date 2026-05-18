@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4Dinner — Vitrinexo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
+  <link href="/src/style.css" rel="stylesheet" />
+</head>
+<body style="background:var(--color-ice-500)">
+
+<!-- NAVBAR AUTENTICADO -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container-fluid px-4">
+    <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
+      <svg width="90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.1 89.72" style="flex-shrink:0">
+        <defs><style>.vx-cls{fill:#2ead6e;}</style></defs>
+        <g>
+          <polygon class="vx-cls" points="47.69 21 47.69 13.87 94.67 6.91 94.67 21 100.63 21 100.63 0 41.73 8.72 41.73 21 47.69 21"/>
+          <path class="vx-cls" d="M94.67,38.29v37.56l-46.98,6.96v-44.52c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98v51.43s58.9-8.72,58.9-8.72v-42.7c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98Z"/>
+        </g>
+        <g>
+          <path class="vx-cls" d="M6.67,26.99l10.92,28.62,1.3,4.41h-.34l1.3-4.41,10.92-28.62h6.28l-14.82,38.46h-7.35L0,26.99h6.67Z"/>
+          <path class="vx-cls" d="M41.68,28.55v-.79c0-1.67,1.35-3.03,3.03-3.03h0c1.67,0,3.03,1.35,3.03,3.03v.79c0,1.67-1.35,3.03-3.03,3.03h0c-1.67,0-3.03-1.35-3.03-3.03Z"/>
+          <path class="vx-cls" d="M51.75,40v-4.69h16.63v4.69h-16.63ZM55.82,56.46v-28.11h6.05v27.77c0,1.73.35,3.02,1.05,3.85.7.83,2.08,1.24,4.16,1.24h1.19v4.41c-.3.19-.8.33-1.5.42-.7.09-1.46.14-2.29.14-2.9,0-5.07-.81-6.5-2.43-1.43-1.62-2.15-4.05-2.15-7.3Z"/>
+          <path class="vx-cls" d="M72.9,65.45v-30.15h6.05v30.15h-6.05ZM78.95,48.99h-2.26c.15-3.39.74-6.16,1.78-8.29,1.04-2.13,2.34-3.69,3.9-4.69,1.56-1,3.29-1.5,5.18-1.5.6,0,1.17.07,1.7.2.53.13.92.33,1.19.59v5.32c-.45-.15-.94-.25-1.47-.31-.53-.06-1.11-.08-1.75-.08-1.43,0-2.67.21-3.7.62-1.04.42-1.89,1.01-2.57,1.78-.68.77-1.18,1.7-1.5,2.77-.32,1.07-.48,2.27-.48,3.59Z"/>
+          <path class="vx-cls" d="M94.56,28.55v-.79c0-1.67,1.35-3.03,3.03-3.03h0c1.67,0,3.03,1.35,3.03,3.03v.79c0,1.67-1.35,3.03-3.03,3.03h0c-1.67,0-3.03-1.35-3.03-3.03Z"/>
+          <path class="vx-cls" d="M107.91,65.45v-30.15h6.05v30.15h-6.05ZM113.96,47.75h-2.37c.19-2.94.78-5.39,1.78-7.35,1-1.96,2.33-3.43,3.99-4.41,1.66-.98,3.56-1.47,5.71-1.47s3.92.41,5.43,1.22c1.51.81,2.68,2.02,3.51,3.62.83,1.6,1.24,3.59,1.24,5.97v20.13h-5.99v-18.89c0-1.47-.23-2.72-.68-3.76-.45-1.04-1.11-1.84-1.98-2.4s-2-.85-3.39-.85c-1.13,0-2.15.24-3.05.71-.91.47-1.67,1.08-2.29,1.84-.62.75-1.09,1.62-1.41,2.6-.32.98-.48,2-.48,3.05Z"/>
+          <path class="vx-cls" d="M164.47,47.41l-3.45,2.83c0-3.43-.68-6.07-2.04-7.92-1.36-1.85-3.3-2.77-5.83-2.77s-4.52.93-5.85,2.8c-1.34,1.87-2.01,4.55-2.01,8.06s.71,6.08,2.12,7.95c1.41,1.87,3.42,2.8,6.02,2.8,1.92,0,3.53-.45,4.84-1.36,1.3-.91,2.21-2.3,2.74-4.19h6.33c-.83,3.51-2.48,6.15-4.95,7.92-2.47,1.77-5.46,2.66-8.96,2.66-2.94,0-5.49-.63-7.64-1.89-2.15-1.26-3.8-3.08-4.95-5.46-1.15-2.38-1.73-5.18-1.73-8.43,0-3.43.57-6.33,1.73-8.68,1.15-2.36,2.78-4.15,4.89-5.37,2.11-1.22,4.58-1.84,7.41-1.84s5.39.63,7.47,1.89c2.07,1.26,3.68,3.05,4.81,5.34,1.13,2.3,1.7,5.07,1.7,8.31v1.47h-25.51v-4.13h22.85Z"/>
+          <path class="vx-cls" d="M191.11,65.45l-6.45-9.28-2.04-3.56h1.19l-2.09,3.56-6.28,9.28h-6.67l11.14-15.67-10.29-14.48h7.3l5.6,8.14,2.04,3.62h-1.19l2.09-3.62,5.49-8.14h6.62l-10.29,14.48,11.14,15.67h-7.3Z"/>
+          <path class="vx-cls" d="M214.02,66.19c-2.9,0-5.41-.63-7.52-1.89-2.11-1.26-3.73-3.08-4.86-5.46s-1.7-5.18-1.7-8.43c0-3.43.57-6.33,1.73-8.68,1.15-2.36,2.79-4.15,4.92-5.37,2.13-1.22,4.61-1.84,7.44-1.84s5.47.64,7.58,1.92c2.11,1.28,3.72,3.1,4.84,5.46,1.11,2.36,1.67,5.19,1.67,8.51s-.57,6.21-1.7,8.57c-1.13,2.36-2.75,4.15-4.86,5.37-2.11,1.22-4.62,1.84-7.52,1.84ZM214.02,61.1c2.56,0,4.52-.92,5.88-2.77,1.36-1.85,2.04-4.49,2.04-7.92s-.68-6.14-2.04-8c-1.36-1.87-3.32-2.8-5.88-2.8s-4.53.92-5.88,2.77c-1.36,1.85-2.04,4.52-2.04,8.03s.69,6.07,2.06,7.92c1.38,1.85,3.33,2.77,5.85,2.77Z"/>
+        </g>
+      </svg>
+      <span style="font-size:11px;color:var(--color-text-secondary);font-weight:400">by Maggiore</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4 gap-1">
+        <li class="nav-item"><a class="nav-link" href="directorio.html">Directorio</a></li>
+        <li class="nav-item"><a class="nav-link" href="mis-favoritos.html">Mis favoritos</a></li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Comunidades</a>
+            <ul class="dropdown-menu border-0 shadow-sm">
+              <li><a class="dropdown-item" href="comunidad-out2b.html"><i class="ti ti-rainbow me-2" style="color:#a855f7"></i>OUT2B</a></li>
+              <li><a class="dropdown-item" href="comunidad-woman.html"><i class="ti ti-gender-female me-2" style="color:#ec4899"></i>Woman</a></li>
+              <li><a class="dropdown-item" href="comunidad-senior.html"><i class="ti ti-award me-2" style="color:#2ead6e"></i>Senior</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link active fw-semibold" href="4dinner.html" style="color:var(--color-green-600)">4Dinner</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" style="position:relative">
+          <i class="ti ti-bell"></i>
+          <span style="position:absolute;top:4px;right:4px;width:7px;height:7px;background:var(--color-pink-500);border-radius:50%;border:1.5px solid #fff"></span>
+        </button>
+        <div class="dropdown">
+          <button class="btn-vx btn-ghost-vx btn-vx-sm d-flex align-items-center gap-2" data-bs-toggle="dropdown">
+            <img src="/src/assets/placeholder3.webp" style="width:26px;height:26px;border-radius:50%;object-fit:cover" alt="Tu avatar">
+            <span style="font-size:13px;font-weight:500">Felipe M.</span>
+            <i class="ti ti-chevron-down" style="font-size:12px"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm p-1" style="min-width:200px">
+            <li><a class="dropdown-item rounded-2 d-flex align-items-center gap-2 py-2" href="perfil.html"><i class="ti ti-user" style="color:var(--color-text-secondary)"></i> Mi perfil</a></li>
+            <li><a class="dropdown-item rounded-2 d-flex align-items-center gap-2 py-2" href="editor-perfil.html"><i class="ti ti-edit" style="color:var(--color-text-secondary)"></i> Editar perfil</a></li>
+            <li><hr class="dropdown-divider my-1"></li>
+            <li><a class="dropdown-item rounded-2 d-flex align-items-center gap-2 py-2 text-danger" href="login.html"><i class="ti ti-logout"></i> Cerrar sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO 4DINNER -->
+<section style="background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:56px 0 48px">
+  <div class="container" style="max-width:860px">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="badge-vx badge-primary mb-3" style="display:inline-flex;align-items:center;gap:6px">
+          <i class="ti ti-tools-kitchen-2"></i> Eventos presenciales
+        </span>
+        <h1 style="font-family:var(--font-display);font-size:2.4rem;font-weight:400;line-height:1.2;color:var(--color-text-primary);margin-bottom:1rem">
+          4 personas.<br><strong style="color:var(--color-green-500);font-weight:500">1 mesa.</strong><br>Una conversación que importa.
+        </h1>
+        <p style="font-size:1rem;color:var(--color-text-secondary);line-height:1.7;max-width:480px;margin-bottom:1.5rem">
+          4Dinner es el formato de networking presencial de Vitrinexo. Cada miércoles a las 8pm, 4 miembros de la red se sientan a cenar en una ciudad distinta. Sin agenda, sin pitches formales. Solo conversación real entre personas que ya se conocen por sus fichas.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary)">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-green-50);display:flex;align-items:center;justify-content:center">
+              <i class="ti ti-users" style="color:var(--color-green-600);font-size:15px"></i>
+            </div>
+            4 personas por mesa
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary)">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-purple-50);display:flex;align-items:center;justify-content:center">
+              <i class="ti ti-calendar" style="color:var(--color-purple-600);font-size:15px"></i>
+            </div>
+            Todos los miércoles
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary)">
+            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-pink-50);display:flex;align-items:center;justify-content:center">
+              <i class="ti ti-clock" style="color:var(--color-pink-600);font-size:15px"></i>
+            </div>
+            8:00 pm hora local
+          </div>
+        </div>
+        <a href="#proximos" class="btn-vx btn-primary-vx btn-vx-md me-2">
+          <i class="ti ti-calendar-event"></i> Ver próximos eventos
+        </a>
+        <a href="#form-interes" class="btn-vx btn-ghost-vx btn-vx-md">
+          Quiero participar <i class="ti ti-arrow-down ms-1"></i>
+        </a>
+      </div>
+      <div class="col-lg-5">
+        <!-- Ilustración del formato -->
+        <div style="background:linear-gradient(135deg,var(--color-green-50) 0%,var(--color-ice-400) 100%);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--color-border)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+            <!-- Mesa ilustrada con avatares -->
+            <div style="background:#fff;border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--color-border);box-shadow:var(--shadow-sm)">
+              <img src="/src/assets/placeholder2.webp" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--color-green-200);margin-bottom:6px" alt="">
+              <div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Roberto A.</div>
+              <div style="font-size:10px;color:var(--color-text-secondary)">Marketing · ARG</div>
+            </div>
+            <div style="background:#fff;border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--color-border);box-shadow:var(--shadow-sm)">
+              <img src="/src/assets/placeholder4.webp" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--color-purple-200);margin-bottom:6px" alt="">
+              <div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Sofía R.</div>
+              <div style="font-size:10px;color:var(--color-text-secondary)">Diseño · COL</div>
+            </div>
+            <div style="background:#fff;border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--color-border);box-shadow:var(--shadow-sm)">
+              <img src="/src/assets/placeholder3.webp" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--color-pink-200);margin-bottom:6px" alt="">
+              <div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Felipe M.</div>
+              <div style="font-size:10px;color:var(--color-text-secondary)">Ventas · CHI</div>
+            </div>
+            <div style="background:#fff;border-radius:var(--radius-md);padding:14px;text-align:center;border:1px solid var(--color-border);box-shadow:var(--shadow-sm)">
+              <img src="/src/assets/placeholder.webp" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--color-ice-600);margin-bottom:6px" alt="">
+              <div style="font-size:11px;font-weight:600;color:var(--color-text-primary)">Valentina K.</div>
+              <div style="font-size:10px;color:var(--color-text-secondary)">Data · COL</div>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;justify-content:center;gap:6px">
+            <i class="ti ti-tools-kitchen-2" style="color:var(--color-green-500)"></i>
+            Bogotá · Miércoles 4 junio · 8pm
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS EVENTOS -->
+<section id="proximos" style="padding:56px 0">
+  <div class="container" style="max-width:860px">
+
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div>
+        <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-text-secondary);font-weight:600;display:block;margin-bottom:4px">Agenda</span>
+        <h2 style="font-size:1.5rem;font-weight:400;color:var(--color-text-primary);margin:0">Próximos eventos</h2>
+      </div>
+      <span class="badge-vx badge-primary">3 ciudades en junio</span>
+    </div>
+
+    <div class="d-flex flex-column gap-3">
+
+      <!-- Evento 1: Bogotá -->
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1.5rem;box-shadow:var(--shadow-sm);display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex-shrink:0;width:64px;text-align:center">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-secondary)">JUN</div>
+          <div style="font-size:2rem;font-weight:700;color:var(--color-green-500);line-height:1">4</div>
+          <div style="font-size:11px;color:var(--color-text-secondary)">MIÉ</div>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+            <h3 style="font-size:1rem;font-weight:600;color:var(--color-text-primary);margin:0">4Dinner Bogotá</h3>
+            <span class="badge-vx badge-primary">Cupos disponibles</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mb-3" style="font-size:13px;color:var(--color-text-secondary)">
+            <span><i class="ti ti-map-pin me-1" style="color:var(--color-green-500)"></i>Bogotá, Colombia</span>
+            <span><i class="ti ti-clock me-1" style="color:var(--color-green-500)"></i>8:00 pm</span>
+            <span><i class="ti ti-users me-1" style="color:var(--color-green-500)"></i>4 personas · 1 cupo libre</span>
+          </div>
+          <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem;line-height:1.6">
+            Cena en La Masa, Chapinero. Tres miembros ya confirmados del sector data, marketing y automatización. Un cupo disponible para quien opere en Bogotá o viaje esa semana.
+          </p>
+          <!-- Avatares de confirmados -->
+          <div class="d-flex align-items-center gap-2">
+            <div class="avatar-group">
+              <div class="av" style="background:var(--color-green-100)">
+                <img src="/src/assets/placeholder.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt="">
+              </div>
+              <div class="av" style="background:var(--color-purple-100)">
+                <img src="/src/assets/placeholder4.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt="">
+              </div>
+              <div class="av" style="background:var(--color-pink-100)">
+                <img src="/src/assets/placeholder3.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt="">
+              </div>
+            </div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">3 confirmados · 1 cupo libre</span>
+          </div>
+        </div>
+        <div style="flex-shrink:0;align-self:center">
+          <a href="#form-interes" class="btn-vx btn-primary-vx btn-vx-sm">
+            <i class="ti ti-send"></i> Quiero ir
+          </a>
+        </div>
+      </div>
+
+      <!-- Evento 2: Santiago -->
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1.5rem;box-shadow:var(--shadow-sm);display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex-shrink:0;width:64px;text-align:center">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-secondary)">JUN</div>
+          <div style="font-size:2rem;font-weight:700;color:var(--color-green-500);line-height:1">11</div>
+          <div style="font-size:11px;color:var(--color-text-secondary)">MIÉ</div>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+            <h3 style="font-size:1rem;font-weight:600;color:var(--color-text-primary);margin:0">4Dinner Santiago</h3>
+            <span class="badge-vx badge-primary">Cupos disponibles</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mb-3" style="font-size:13px;color:var(--color-text-secondary)">
+            <span><i class="ti ti-map-pin me-1" style="color:var(--color-green-500)"></i>Santiago, Chile</span>
+            <span><i class="ti ti-clock me-1" style="color:var(--color-green-500)"></i>8:00 pm</span>
+            <span><i class="ti ti-users me-1" style="color:var(--color-green-500)"></i>4 personas · 2 cupos libres</span>
+          </div>
+          <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem;line-height:1.6">
+            Cena en Barrio Italia. Dos miembros confirmados: Felipe Muñoz (Growth Partners) y Roberto Fuentes-Carreño (Lex Patagonia). Se buscan 2 perfiles del sector tech o finanzas.
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <div class="avatar-group">
+              <div class="av" style="background:var(--color-green-100)">
+                <img src="/src/assets/placeholder3.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt="">
+              </div>
+              <div class="av" style="background:var(--color-ice-400)">
+                <img src="/src/assets/placeholder5.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt="">
+              </div>
+            </div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">2 confirmados · 2 cupos libres</span>
+          </div>
+        </div>
+        <div style="flex-shrink:0;align-self:center">
+          <a href="#form-interes" class="btn-vx btn-primary-vx btn-vx-sm">
+            <i class="ti ti-send"></i> Quiero ir
+          </a>
+        </div>
+      </div>
+
+      <!-- Evento 3: Madrid -->
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1.5rem;box-shadow:var(--shadow-sm);display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex-shrink:0;width:64px;text-align:center">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-secondary)">JUN</div>
+          <div style="font-size:2rem;font-weight:700;color:var(--color-green-500);line-height:1">18</div>
+          <div style="font-size:11px;color:var(--color-text-secondary)">MIÉ</div>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+            <h3 style="font-size:1rem;font-weight:600;color:var(--color-text-primary);margin:0">4Dinner Madrid</h3>
+            <span class="badge-vx badge-neutral">Completo</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mb-3" style="font-size:13px;color:var(--color-text-secondary)">
+            <span><i class="ti ti-map-pin me-1" style="color:var(--color-green-500)"></i>Madrid, España</span>
+            <span><i class="ti ti-clock me-1" style="color:var(--color-green-500)"></i>8:00 pm</span>
+            <span><i class="ti ti-users me-1" style="color:var(--color-green-500)"></i>4 personas · Completo</span>
+          </div>
+          <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem;line-height:1.6">
+            Restaurante en Malasaña. Mesa completa con Ana Fernández del Valle (BrandLab) e Ignacio Bertolotti (PropTech Ventures) entre los confirmados. Lista de espera abierta.
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <div class="avatar-group">
+              <div class="av"><img src="/src/assets/placeholder4.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+              <div class="av"><img src="/src/assets/placeholder2.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+              <div class="av"><img src="/src/assets/placeholder5.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+              <div class="av"><img src="/src/assets/placeholder.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+            </div>
+            <span style="font-size:12px;color:var(--color-text-secondary)">4/4 confirmados</span>
+          </div>
+        </div>
+        <div style="flex-shrink:0;align-self:center">
+          <button class="btn-vx btn-ghost-vx btn-vx-sm" disabled>
+            <i class="ti ti-list"></i> Lista de espera
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO DE INTERÉS -->
+<section id="form-interes" style="padding:0 0 56px">
+  <div class="container" style="max-width:600px">
+    <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:2rem;box-shadow:var(--shadow-md)">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:var(--color-green-50);display:flex;align-items:center;justify-content:center">
+          <i class="ti ti-tools-kitchen-2" style="font-size:22px;color:var(--color-green-600)"></i>
+        </div>
+        <div>
+          <h2 style="font-size:1.2rem;font-weight:600;color:var(--color-text-primary);margin:0">Quiero participar en un 4Dinner</h2>
+          <p style="font-size:13px;color:var(--color-text-secondary);margin:0">Te avisamos cuando haya un evento cerca tuyo</p>
+        </div>
+      </div>
+      <div class="alert-vx alert-info mb-4">
+        <i class="ti ti-info-circle"></i>
+        <span>Este formulario va directo al equipo de Vitrinexo. No es Google Form — te asignamos a la próxima mesa disponible en tu ciudad.</span>
+      </div>
+      <div class="row g-3">
+        <div class="col-12">
+          <label class="form-label-vx">Tu nombre</label>
+          <div class="input-group-vx">
+            <span class="input-icon"><i class="ti ti-user"></i></span>
+            <input type="text" placeholder="Felipe Muñoz" value="Felipe Muñoz">
+          </div>
+        </div>
+        <div class="col-12">
+          <label class="form-label-vx">Ciudad donde te gustaría cenar</label>
+          <select class="form-control-vx">
+            <option value="">Selecciona una ciudad...</option>
+            <option>Bogotá, Colombia</option>
+            <option>Santiago, Chile</option>
+            <option>Ciudad de México, México</option>
+            <option>Buenos Aires, Argentina</option>
+            <option>Lima, Perú</option>
+            <option>Montevideo, Uruguay</option>
+            <option>Madrid, España</option>
+            <option>Otra (escribir abajo)</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label class="form-label-vx">¿Hay alguna fecha que prefieras o debas evitar?</label>
+          <textarea class="form-control-vx" rows="2" placeholder="Ej: Prefiero junio, evito la última semana del mes..."></textarea>
+        </div>
+        <div class="col-12">
+          <label class="form-label-vx">¿Hay algún rubro o tipo de persona con quien te interese especialmente cenar?</label>
+          <textarea class="form-control-vx" rows="2" placeholder="Ej: Me interesa conocer gente del sector legal o fintech..."></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn-vx btn-primary-vx btn-vx-md w-100">
+            <i class="ti ti-send"></i> Enviar mi interés
+          </button>
+          <p style="font-size:11px;color:var(--color-text-secondary);text-align:center;margin-top:8px">
+            El equipo te confirma por email en 24–48 horas hábiles con la asignación de mesa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS PASADOS -->
+<section style="padding:0 0 64px">
+  <div class="container" style="max-width:860px">
+
+    <div class="mb-4">
+      <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-text-secondary);font-weight:600;display:block;margin-bottom:4px">Historia</span>
+      <h2 style="font-size:1.5rem;font-weight:400;color:var(--color-text-primary);margin:0">Eventos pasados</h2>
+    </div>
+
+    <div class="row g-3">
+
+      <!-- Pasado 1: Lima -->
+      <div class="col-md-6">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)">
+          <div style="height:140px;background:linear-gradient(135deg,var(--color-green-600),var(--color-green-400));position:relative;display:flex;align-items:flex-end;padding:1rem">
+            <div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.8);font-weight:600;text-transform:uppercase;letter-spacing:0.1em">Mayo 2025</div>
+              <div style="font-size:1.2rem;font-weight:600;color:#fff">4Dinner Lima</div>
+            </div>
+            <span style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill)">Realizado</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="avatar-group">
+                <div class="av"><img src="/src/assets/placeholder.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder5.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder2.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder3.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:0.75rem">
+              La primera cena de Vitrinexo en Lima reunió a 4 fundadores del ecosistema peruano: tecnología, automatización y legal. La conversación duró más de 3 horas.
+            </p>
+            <div style="font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:5px">
+              <i class="ti ti-map-pin" style="color:var(--color-green-500)"></i> Miraflores, Lima
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasado 2: Buenos Aires -->
+      <div class="col-md-6">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)">
+          <div style="height:140px;background:linear-gradient(135deg,var(--color-purple-600),var(--color-purple-400));position:relative;display:flex;align-items:flex-end;padding:1rem">
+            <div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.8);font-weight:600;text-transform:uppercase;letter-spacing:0.1em">Abril 2025</div>
+              <div style="font-size:1.2rem;font-weight:600;color:#fff">4Dinner Buenos Aires</div>
+            </div>
+            <span style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill)">Realizado</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="avatar-group">
+                <div class="av"><img src="/src/assets/placeholder2.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder4.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder5.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:0.75rem">
+              Cena en Palermo con Roberto Abarca (Minotauro) como anfitrión. Los 4 asistentes salieron con al menos 2 conexiones de valor. Se formó una alianza concreta entre marketing y diseño.
+            </p>
+            <div style="font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:5px">
+              <i class="ti ti-map-pin" style="color:var(--color-green-500)"></i> Palermo, Buenos Aires
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasado 3: Ciudad de México -->
+      <div class="col-md-6">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)">
+          <div style="height:140px;background:linear-gradient(135deg,#f59e0b,#f97316);position:relative;display:flex;align-items:flex-end;padding:1rem">
+            <div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.8);font-weight:600;text-transform:uppercase;letter-spacing:0.1em">Marzo 2025</div>
+              <div style="font-size:1.2rem;font-weight:600;color:#fff">4Dinner Ciudad de México</div>
+            </div>
+            <span style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill)">Realizado</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="avatar-group">
+                <div class="av"><img src="/src/assets/placeholder3.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder2.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder4.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:0.75rem">
+              María Guadalupe Estévez-Montoya convocó la primera mesa en CDMX. Foco en consultoría y transformación digital. Una de las asistentes cerró un proyecto post-cena.
+            </p>
+            <div style="font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:5px">
+              <i class="ti ti-map-pin" style="color:var(--color-green-500)"></i> Polanco, Ciudad de México
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasado 4: Montevideo -->
+      <div class="col-md-6">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)">
+          <div style="height:140px;background:linear-gradient(135deg,#0ea5e9,#6366f1);position:relative;display:flex;align-items:flex-end;padding:1rem">
+            <div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.8);font-weight:600;text-transform:uppercase;letter-spacing:0.1em">Febrero 2025</div>
+              <div style="font-size:1.2rem;font-weight:600;color:#fff">4Dinner Montevideo</div>
+            </div>
+            <span style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill)">Realizado</span>
+          </div>
+          <div style="padding:1.25rem">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="avatar-group">
+                <div class="av"><img src="/src/assets/placeholder2.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder5.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder3.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+                <div class="av"><img src="/src/assets/placeholder.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%" alt=""></div>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:0.75rem">
+              La primera cena en Uruguay con Ignacio Bertolotti como anfitrión. Foco en real estate, fintech y blockchain. Se generó un proyecto piloto de tokenización entre dos de los asistentes.
+            </p>
+            <div style="font-size:12px;color:var(--color-text-secondary);display:flex;align-items:center;gap:5px">
+              <i class="ti ti-map-pin" style="color:var(--color-green-500)"></i> Ciudad Vieja, Montevideo
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#fff;border-top:1px solid var(--color-border);padding:40px 0">
+  <div class="container">
+    <div class="row align-items-center g-3">
+      <div class="col-md-4">
+        <svg width="80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.1 89.72">
+          <defs><style>.vx-cls3{fill:#2ead6e;}</style></defs>
+          <g><polygon class="vx-cls3" points="47.69 21 47.69 13.87 94.67 6.91 94.67 21 100.63 21 100.63 0 41.73 8.72 41.73 21 47.69 21"/><path class="vx-cls3" d="M94.67,38.29v37.56l-46.98,6.96v-44.52c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98v51.43s58.9-8.72,58.9-8.72v-42.7c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98Z"/></g>
+        </svg>
+        <p style="font-size:12px;color:var(--color-text-secondary);margin-top:8px">© 2025 Vitrinexo by Maggiore</p>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex flex-wrap gap-3">
+          <a href="directorio.html" style="color:var(--color-text-secondary);text-decoration:none;font-size:14px">Directorio</a>
+          <a href="comunidad-out2b.html" style="color:var(--color-text-secondary);text-decoration:none;font-size:14px">Comunidades</a>
+          <a href="4dinner.html" style="color:var(--color-green-600);text-decoration:none;font-size:14px;font-weight:500">4Dinner</a>
+        </div>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <a href="mailto:hola@vitrinexo.com" style="color:var(--color-text-secondary);text-decoration:none;font-size:14px"><i class="ti ti-mail me-1"></i>hola@vitrinexo.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

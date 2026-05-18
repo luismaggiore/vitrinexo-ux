@@ -1,6 +1,5 @@
 export const members = [
   {
-    // PERSONA
     id: "user_001",
     name: "Li",
     bio: "Dev web.",
@@ -9,29 +8,27 @@ export const members = [
     isFounder: true,
     location: "Lima",
     country: "Perú",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "man",
+    isSenior: false,
     offerTags: ["desarrollo web"],
     offerText: "Hago webs.",
     seekTags: ["clientes"],
     seekText: "Busco clientes.",
-
-    // CONTACTO
     contact: {
       phone: "+51 9 1234 5678",
       email: "li@ok.pe",
       linkedin: "linkedin.com/in/li-dev",
       preferredContact: "email",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_001",
-        name: "OK",
-        title: "Dev",
-        about: "Dev.",
-        idealClient: "Cualquiera.",
+        name: "OK Studio",
+        title: "Dev & Fundador",
+        about: "Estudio de desarrollo web.",
+        idealClient: "Startups y pymes que quieran presencia digital.",
         rubroTags: ["Tecnología"],
         website: "",
         linkedin: "",
@@ -41,7 +38,6 @@ export const members = [
     ],
   },
   {
-    // PERSONA
     id: "user_002",
     name: "Roberto Abarca",
     bio: "Especialista en marketing y construcción de marca con más de 10 años en el mercado regional.",
@@ -50,22 +46,20 @@ export const members = [
     isFounder: false,
     location: "Buenos Aires",
     country: "Argentina",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "man",
+    isSenior: false,
     offerTags: ["marketing digital", "branding", "estrategia comercial", "campañas", "posicionamiento"],
     offerText: "Diseñamos y ejecutamos estrategias de marketing integral.",
     seekTags: ["diseño web", "automatización", "alianzas comerciales"],
     seekText: "Buscamos un socio de diseño web que pueda integrarse a proyectos de forma recurrente.",
-
-    // CONTACTO
     contact: {
       phone: "+54 11 5678 9012",
       email: "fulanito@maggiore.com.ar",
       linkedin: "linkedin.com/in/fulanito-de-tal",
       preferredContact: "linkedin",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_002",
@@ -82,35 +76,32 @@ export const members = [
     ],
   },
   {
-    // PERSONA — caso estrés: dos empresas
     id: "user_003",
-    name: "María Guadalupe Estévez-Montoya de la Vega",
+    name: "María Guadalupe Estévez-Montoya",
     bio: "Con más de 18 años acompañando a corporaciones multinacionales en procesos de transformación cultural y digital.",
     image: "/src/assets/placeholder3.webp",
     tags: ["Consultoría", "Liderazgo", "Innovación", "Change Management", "Docencia"],
     isFounder: false,
     location: "Ciudad de México",
     country: "México",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "woman",
+    isSenior: true,
     offerTags: ["transformación digital", "change management", "estrategia corporativa", "metodologías ágiles"],
     offerText: "Acompañamos a la alta dirección en procesos de cambio profundo.",
     seekTags: ["socios tecnológicos LATAM", "desarrollo IA", "legal fintech", "inversión ángel"],
     seekText: "Estamos desarrollando un spin-off de tecnología para automatizar diagnósticos organizacionales.",
-
-    // CONTACTO
     contact: {
       phone: "+52 55 9876 5432",
       email: "mgutierrez@consultoria-iberica.mx",
       linkedin: "linkedin.com/in/mariaguadalupe-estevez",
       preferredContact: "email",
     },
-
-    // EMPRESAS — dos para estresar
+    favorites: [],
     companies: [
       {
         id: "company_003",
-        name: "Consultoría Estratégica Iberoamericana de Transformación Digital y Negocios S.A.",
+        name: "Consultoría Estratégica Iberoamericana",
         title: "Socia Directora & Consultora Senior de Transformación Organizacional",
         about: "Firma especializada en transformación digital y estrategia corporativa.",
         idealClient: "Corporaciones con más de 500 empleados atravesando procesos de digitalización.",
@@ -135,31 +126,28 @@ export const members = [
     ],
   },
   {
-    // PERSONA
     id: "user_004",
-    name: "Sofía",
+    name: "Sofía Restrepo",
     bio: "Diseñadora gráfica independiente con amor por las marcas con personalidad.",
     image: "/src/assets/placeholder4.webp",
     tags: ["Diseño", "Arte", "Creatividad"],
     isFounder: true,
     location: "Medellín",
     country: "Colombia",
-
-    // TRANSACCIONAL
+    isLGBT: true,
+    gender: "woman",
+    isSenior: false,
     offerTags: ["identidad visual", "ilustración", "motion graphics", "dirección de arte"],
     offerText: "Diseño identidades visuales completas: logo, paleta, tipografía, sistema de aplicaciones.",
     seekTags: ["agencias creativas", "startups tech"],
     seekText: "Me interesa colaborar con agencias que necesiten capacidad creativa adicional.",
-
-    // CONTACTO
     contact: {
       phone: "+57 300 123 4567",
       email: "hola@sofiarestrepo.co",
       linkedin: "linkedin.com/in/sofia-restrepo-arte",
       preferredContact: "email",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_005",
@@ -176,7 +164,6 @@ export const members = [
     ],
   },
   {
-    // PERSONA
     id: "user_005",
     name: "Roberto Anselmo Fuentes-Carreño",
     bio: "Abogado con 20 años de experiencia en derecho comercial transfronterizo.",
@@ -185,22 +172,20 @@ export const members = [
     isFounder: false,
     location: "Puerto Montt",
     country: "Chile",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "man",
+    isSenior: true,
     offerTags: ["contratos B2B internacionales", "due diligence M&A", "compliance Chile-UE"],
     offerText: "Redactamos y revisamos contratos internacionales y acompañamos procesos de M&A.",
     seekTags: ["estudios jurídicos Argentina", "estudios jurídicos España", "firma electrónica"],
     seekText: "Buscamos estudios jurídicos aliados en Buenos Aires y Madrid.",
-
-    // CONTACTO
     contact: {
       phone: "+56 65 234 5678",
       email: "rfuentes@lexpatagonia.cl",
       linkedin: "linkedin.com/in/roberto-fuentes-carreño",
       preferredContact: "phone",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_006",
@@ -217,31 +202,28 @@ export const members = [
     ],
   },
   {
-    // PERSONA
     id: "user_006",
-    name: "Valentina Koczorowski Brzezińska",
+    name: "Valentina Koczorowski",
     bio: "Estadística de formación, economista comportamental de vocación.",
     image: "/src/assets/placeholder.webp",
     tags: ["Data", "Estadística", "Economía Comportamental", "Finanzas"],
     isFounder: true,
     location: "Bogotá",
     country: "Colombia",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "woman",
+    isSenior: false,
     offerTags: ["business intelligence", "modelos predictivos", "ingeniería de datos"],
     offerText: "Construimos dashboards desde cero o mejoramos los existentes.",
     seekTags: ["retail analytics", "consultoras de estrategia", "alianzas LATAM"],
     seekText: "Buscamos socios que trabajen con retailers o empresas de consumo masivo.",
-
-    // CONTACTO
     contact: {
       phone: "+57 310 987 6543",
       email: "valentina@datasur.co",
       linkedin: "linkedin.com/in/valentina-koczorowski",
       preferredContact: "linkedin",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_007",
@@ -258,36 +240,33 @@ export const members = [
     ],
   },
   {
-    // PERSONA — caso estrés: dos empresas en países distintos
     id: "user_007",
-    name: "Ignacio Maximiliano Bertolotti Sáenz de Ugarte",
+    name: "Ignacio Maximiliano Bertolotti",
     bio: "Más de una década estructurando fondos de inversión inmobiliaria en Uruguay, Argentina y Colombia.",
     image: "/src/assets/placeholder2.webp",
     tags: ["Real Estate", "Finanzas", "Blockchain", "Inversiones", "Emprendimiento"],
     isFounder: false,
     location: "Montevideo",
     country: "Uruguay",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "man",
+    isSenior: false,
     offerTags: ["estructuración de fondos inmobiliarios", "tokenización de activos", "due diligence"],
     offerText: "Estructuramos vehículos de inversión inmobiliaria con o sin tokenización.",
     seekTags: ["desarrolladoras inmobiliarias Chile", "desarrolladoras inmobiliarias Colombia", "fondos alternativos"],
     seekText: "Buscamos desarrolladoras inmobiliarias medianas en Chile y Colombia.",
-
-    // CONTACTO
     contact: {
       phone: "+598 99 876 543",
       email: "ibertolotti@proptech-ventures.uy",
       linkedin: "linkedin.com/in/ignacio-bertolotti",
       preferredContact: "email",
     },
-
-    // EMPRESAS — dos para estresar
+    favorites: [],
     companies: [
       {
         id: "company_008",
         name: "PropTech Ventures Latinoamérica",
-        title: "CEO & Estructurador de Fondos de Inversión Inmobiliaria con Tecnología Aplicada",
+        title: "CEO & Estructurador de Fondos",
         about: "Plataforma que conecta inversión tradicional con tecnología aplicada al real estate.",
         idealClient: "Desarrolladoras inmobiliarias medianas que quieran atraer capital digital.",
         rubroTags: ["Real Estate", "PropTech", "Inversiones", "Finanzas"],
@@ -311,7 +290,6 @@ export const members = [
     ],
   },
   {
-    // PERSONA
     id: "user_008",
     name: "Felipe Muñoz",
     bio: "Especialista en ventas y procesos comerciales para equipos B2B en crecimiento.",
@@ -320,22 +298,20 @@ export const members = [
     isFounder: true,
     location: "Santiago",
     country: "Chile",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "man",
+    isSenior: false,
     offerTags: ["ventas B2B", "implementación CRM", "automatización comercial"],
     offerText: "Implementamos CRMs y diseñamos los flujos comerciales alrededor.",
     seekTags: ["agencias de marketing", "partners tecnológicos", "herramientas no-code"],
     seekText: "Buscamos agencias de marketing con las que podamos colaborar en proyectos de clientes.",
-
-    // CONTACTO
     contact: {
       phone: "+56 9 8765 4321",
       email: "felipe@growthpartners.cl",
       linkedin: "linkedin.com/in/felipemuñoz-crm",
       preferredContact: "phone",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_010",
@@ -352,31 +328,28 @@ export const members = [
     ],
   },
   {
-    // PERSONA
     id: "user_009",
-    name: "Ana Fernández del Valle Gutiérrez-Morales",
+    name: "Ana Fernández del Valle",
     bio: "15 años desarrollando estrategias de marca y contenido para empresas que quieren crecer.",
     image: "/src/assets/placeholder4.webp",
     tags: ["Estrategia", "Marca", "Contenido", "Internacionalización"],
     isFounder: false,
     location: "Madrid",
     country: "España",
-
-    // TRANSACCIONAL
+    isLGBT: true,
+    gender: "woman",
+    isSenior: false,
     offerTags: ["branding internacional", "estrategia SEO", "contenido B2B"],
     offerText: "Ayudamos a empresas a adaptar su propuesta de valor para nuevos mercados.",
     seekTags: ["copywriters LATAM", "diseñadores visuales", "alianzas agencias LATAM"],
     seekText: "Buscamos copywriters con experiencia en mercados latinoamericanos específicos.",
-
-    // CONTACTO
     contact: {
       phone: "+34 91 234 5678",
       email: "ana@brandlab-internacional.com",
       linkedin: "linkedin.com/in/ana-fernandez-brandlab",
       preferredContact: "linkedin",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_011",
@@ -393,7 +366,6 @@ export const members = [
     ],
   },
   {
-    // PERSONA
     id: "user_010",
     name: "Camila Torres",
     bio: "Ayudo a empresas pequeñas y medianas a ahorrar tiempo automatizando procesos repetitivos.",
@@ -402,22 +374,20 @@ export const members = [
     isFounder: true,
     location: "Lima",
     country: "Perú",
-
-    // TRANSACCIONAL
+    isLGBT: false,
+    gender: "woman",
+    isSenior: false,
     offerTags: ["automatización no-code", "Zapier", "Make", "Airtable"],
     offerText: "Mapeamos procesos y construimos automatizaciones con herramientas no-code.",
     seekTags: ["agencias de marketing", "consultores CRM", "partners tecnológicos"],
     seekText: "Buscamos colaborar con agencias y consultores que detecten problemas operativos.",
-
-    // CONTACTO
     contact: {
       phone: "+51 9 8765 4321",
       email: "camila@flowops.studio",
       linkedin: "linkedin.com/in/camila-torres-flowops",
       preferredContact: "email",
     },
-
-    // EMPRESAS
+    favorites: [],
     companies: [
       {
         id: "company_012",

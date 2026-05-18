@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Completa tu perfil — Vitrinexo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
+  <link href="/src/style.css" rel="stylesheet" />
+</head>
+<body style="background:var(--color-ice-500);min-height:100vh">
+
+<!-- NAVBAR mínimo -->
+<nav class="navbar bg-white border-bottom px-4 py-2">
+  <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
+    <svg width="90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.1 89.72" style="flex-shrink:0">
+      <defs><style>.vx-cls{fill:#2ead6e;}</style></defs>
+      <g>
+        <polygon class="vx-cls" points="47.69 21 47.69 13.87 94.67 6.91 94.67 21 100.63 21 100.63 0 41.73 8.72 41.73 21 47.69 21"/>
+        <path class="vx-cls" d="M94.67,38.29v37.56l-46.98,6.96v-44.52c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98v51.43s58.9-8.72,58.9-8.72v-42.7c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98Z"/>
+      </g>
+      <g>
+        <path class="vx-cls" d="M6.67,26.99l10.92,28.62,1.3,4.41h-.34l1.3-4.41,10.92-28.62h6.28l-14.82,38.46h-7.35L0,26.99h6.67Z"/>
+        <path class="vx-cls" d="M214.02,66.19c-2.9,0-5.41-.63-7.52-1.89-2.11-1.26-3.73-3.08-4.86-5.46s-1.7-5.18-1.7-8.43c0-3.43.57-6.33,1.73-8.68,1.15-2.36,2.79-4.15,4.92-5.37,2.13-1.22,4.61-1.84,7.44-1.84s5.47.64,7.58,1.92c2.11,1.28,3.72,3.1,4.84,5.46,1.11,2.36,1.67,5.19,1.67,8.51s-.57,6.21-1.7,8.57c-1.13,2.36-2.75,4.15-4.86,5.37-2.11,1.22-4.62,1.84-7.52,1.84ZM214.02,61.1c2.56,0,4.52-.92,5.88-2.77,1.36-1.85,2.04-4.49,2.04-7.92s-.68-6.14-2.04-8c-1.36-1.87-3.32-2.8-5.88-2.8s-4.53.92-5.88,2.77c-1.36,1.85-2.04,4.52-2.04,8.03s.69,6.07,2.06,7.92c1.38,1.85,3.33,2.77,5.85,2.77Z"/>
+      </g>
+    </svg>
+    <span style="font-size:11px;color:var(--color-text-secondary);font-weight:400">by Maggiore</span>
+  </a>
+</nav>
+
+<div class="container py-5" style="max-width:680px">
+
+  <!-- PROGRESS DE PASOS -->
+  <div class="d-flex align-items-center justify-content-center mb-5">
+    <!-- Step 1 (activo) -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--color-green-500);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
+      <span style="font-size:11px;font-weight:600;color:var(--color-green-500);white-space:nowrap">Datos personales</span>
+    </div>
+    <div style="height:2px;width:60px;background:var(--color-border);margin:0 8px;margin-bottom:18px"></div>
+    <!-- Step 2 -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--color-border);color:var(--color-text-secondary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">2</div>
+      <span style="font-size:11px;color:var(--color-text-secondary);white-space:nowrap">Tu empresa</span>
+    </div>
+    <div style="height:2px;width:60px;background:var(--color-border);margin:0 8px;margin-bottom:18px"></div>
+    <!-- Step 3 -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--color-border);color:var(--color-text-secondary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">3</div>
+      <span style="font-size:11px;color:var(--color-text-secondary);white-space:nowrap">Ofreces y buscas</span>
+    </div>
+    <div style="height:2px;width:60px;background:var(--color-border);margin:0 8px;margin-bottom:18px"></div>
+    <!-- Step 4 -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--color-border);color:var(--color-text-secondary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">4</div>
+      <span style="font-size:11px;color:var(--color-text-secondary);white-space:nowrap">Revisión</span>
+    </div>
+  </div>
+
+  <!-- CARD PASO 1 -->
+  <div class="modal-vx" style="padding:36px">
+
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div>
+        <h2 class="fw-bold mb-1" style="font-size:1.3rem;color:var(--color-text-primary)">Datos personales</h2>
+        <p style="color:var(--color-text-secondary);font-size:14px;margin:0">Paso 1 de 4 — Esta información es pública en tu perfil</p>
+      </div>
+    </div>
+
+    <!-- Foto de perfil -->
+    <div class="d-flex align-items-center gap-4 mb-4 pb-4" style="border-bottom:1px solid var(--color-border)">
+      <div style="width:100px;height:100px;border-radius:50%;background:var(--color-ice-500);border:2px dashed var(--color-border);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer">
+        <i class="ti ti-user" style="font-size:32px;color:var(--color-border)"></i>
+        <span style="font-size:10px;color:var(--color-text-secondary);margin-top:4px">Foto</span>
+      </div>
+      <div>
+        <p class="fw-semibold mb-1" style="font-size:14px;color:var(--color-text-primary)">Foto de perfil</p>
+        <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:10px">Recomendado: cuadrada, mínimo 400×400px</p>
+        <button class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-upload me-1"></i>Subir foto</button>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <div class="mb-4">
+      <label class="form-label-vx">Bio profesional</label>
+      <textarea class="form-control-vx" rows="3" placeholder="Describe brevemente quién eres y qué haces. Ej: 'Especialista en ventas B2B con 10 años ayudando a equipos a crecer de forma sostenible.'"></textarea>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin-top:4px">Máximo 280 caracteres. Se verá en tu tarjeta del directorio.</p>
+    </div>
+
+    <!-- Ciudad + País -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-6">
+        <label class="form-label-vx">Ciudad</label>
+        <input type="text" class="form-control-vx" placeholder="Ej: Bogotá">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label-vx">País</label>
+        <select class="form-control-vx">
+          <option value="">Selecciona</option>
+          <option>Colombia</option>
+          <option>México</option>
+          <option>Argentina</option>
+          <option>Chile</option>
+          <option>Perú</option>
+          <option>España</option>
+          <option>Uruguay</option>
+          <option>Otros</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tags personales -->
+    <div class="mb-4">
+      <label class="form-label-vx">Etiquetas personales</label>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:10px">Palabras clave que te describen como profesional (máx. 6)</p>
+      <div class="d-flex flex-wrap gap-2 mb-2">
+        <span class="tag-vx d-flex align-items-center gap-1">Marketing <button style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;color:var(--color-text-secondary);line-height:1">&times;</button></span>
+        <span class="tag-vx d-flex align-items-center gap-1">Estrategia <button style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;color:var(--color-text-secondary);line-height:1">&times;</button></span>
+        <span class="tag-vx d-flex align-items-center gap-1">B2B <button style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;color:var(--color-text-secondary);line-height:1">&times;</button></span>
+      </div>
+      <input type="text" class="form-control-vx" placeholder="Escribe una etiqueta y presiona Enter..." style="max-width:320px">
+    </div>
+
+    <!-- Separador comunidades -->
+    <div style="border-top:1px solid var(--color-border);padding-top:24px;margin-bottom:24px">
+      <h5 class="fw-semibold mb-1" style="font-size:14px;color:var(--color-text-primary)">Comunidades</h5>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:16px">Esta información es opcional y privada. Solo se usa para mostrarte en comunidades específicas del directorio.</p>
+
+      <div class="mb-3">
+        <label class="form-label-vx">Género</label>
+        <select class="form-control-vx" style="max-width:280px">
+          <option value="">Prefiero no decir</option>
+          <option value="man">Hombre</option>
+          <option value="woman">Mujer</option>
+          <option value="other">Otro</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="d-flex align-items-start gap-3" style="cursor:pointer">
+          <input type="checkbox" style="margin-top:3px;accent-color:var(--color-pink-500);width:16px;height:16px;flex-shrink:0">
+          <div>
+            <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Soy parte de la comunidad LGBTQ+</span>
+            <p style="font-size:12px;color:var(--color-text-secondary);margin:2px 0 0">Aparecer en la comunidad OUT2B del directorio</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="mb-2">
+        <label class="d-flex align-items-start gap-3" style="cursor:pointer">
+          <input type="checkbox" style="margin-top:3px;accent-color:var(--color-green-500);width:16px;height:16px;flex-shrink:0">
+          <div>
+            <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Soy ejecutivo/a Senior</span>
+            <p style="font-size:12px;color:var(--color-text-secondary);margin:2px 0 0">Requiere verificación manual por nuestro equipo (10+ años de trayectoria)</p>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="d-flex align-items-center justify-content-between pt-2">
+      <button class="btn-vx btn-ghost-vx btn-vx-md" disabled style="opacity:0.4"><i class="ti ti-arrow-left me-1"></i>Anterior</button>
+      <span style="font-size:13px;color:var(--color-text-secondary)">Paso 1 de 4</span>
+      <a href="verificacion-pendiente.html" class="btn-vx btn-primary-vx btn-vx-md">Siguiente <i class="ti ti-arrow-right ms-1"></i></a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PASO 2: Tu empresa (oculto) -->
+<div style="display:none">
+  <div class="container py-5" style="max-width:680px">
+    <div class="modal-vx" style="padding:36px">
+      <h2 class="fw-bold mb-1" style="font-size:1.3rem">Tu empresa</h2>
+      <p style="color:var(--color-text-secondary);font-size:14px;margin-bottom:24px">Paso 2 de 4</p>
+      <div class="mb-3"><label class="form-label-vx">Nombre de la empresa</label><input type="text" class="form-control-vx" placeholder="Ej: Growth Partners"></div>
+      <div class="mb-3"><label class="form-label-vx">Tu cargo / título</label><input type="text" class="form-control-vx" placeholder="Ej: Consultor Comercial B2B"></div>
+      <div class="mb-3"><label class="form-label-vx">Sobre la empresa</label><textarea class="form-control-vx" rows="3" placeholder="Describe brevemente qué hace tu empresa..."></textarea></div>
+      <div class="mb-3"><label class="form-label-vx">Rubro / industria</label><input type="text" class="form-control-vx" placeholder="Ej: Consultoría, Ventas, CRM"></div>
+      <div class="mb-3"><label class="form-label-vx">Sitio web (opcional)</label><input type="url" class="form-control-vx" placeholder="https://tuempresa.com"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PASO 3: Ofreces y buscas (oculto) -->
+<div style="display:none">
+  <div class="container py-5" style="max-width:680px">
+    <div class="modal-vx" style="padding:36px">
+      <h2 class="fw-bold mb-1" style="font-size:1.3rem">¿Qué ofreces y qué buscas?</h2>
+      <p style="color:var(--color-text-secondary);font-size:14px;margin-bottom:24px">Paso 3 de 4 — Estas palabras clave alimentan el matching del directorio</p>
+      <div class="mb-4">
+        <label class="form-label-vx">Tags de lo que ofreces</label>
+        <input type="text" class="form-control-vx mb-2" placeholder="Ej: ventas B2B, CRM, automatización comercial">
+        <textarea class="form-control-vx" rows="2" placeholder="Describe brevemente tu propuesta de valor..."></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="form-label-vx">Tags de lo que buscas</label>
+        <input type="text" class="form-control-vx mb-2" placeholder="Ej: agencias de marketing, partners tecnológicos">
+        <textarea class="form-control-vx" rows="2" placeholder="¿Por qué lo buscas? ¿Para qué proyecto?"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PASO 4: Revisión (oculto) -->
+<div style="display:none">
+  <div class="container py-5" style="max-width:680px">
+    <div class="modal-vx" style="padding:36px;text-align:center">
+      <i class="ti ti-check-circle" style="font-size:56px;color:var(--color-green-500);display:block;margin-bottom:16px"></i>
+      <h2 class="fw-bold mb-2" style="font-size:1.3rem">Todo listo para revisar</h2>
+      <p style="color:var(--color-text-secondary);margin-bottom:24px">Revisa tu información antes de enviarla. Nuestro equipo verificará tu perfil en 24-48 hs.</p>
+      <a href="verificacion-pendiente.html" class="btn-vx btn-primary-vx btn-vx-lg">Enviar para revisión <i class="ti ti-send ms-1"></i></a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
