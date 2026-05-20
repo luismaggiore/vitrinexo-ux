@@ -18,7 +18,7 @@
   --color-cyan-300: #80e2e8;
   --color-cyan-400: #6bdde4;
   --color-cyan-500: #2cced6;
-  --color-cyan-600: #27b8bf;
+  --color-cyan-600: #00aeb8;
   --color-cyan-700: #22a1a7;
   --color-cyan-800: #1b8186;
   --color-cyan-900: #156467;
@@ -1604,7 +1604,7 @@ select.form-control-vx {
 }
 
 /* ============================================================
-   LANDING SECTIONS — Shared rhythm + all section variants
+   LANDING SECTIONS — Sistema unificado
    ============================================================ */
 
 /* ── Shared wrapper ── */
@@ -1656,39 +1656,7 @@ select.form-control-vx {
   margin: 0;
 }
 
-/* ── Subsection heading ── */
-.section-heading-vx {
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 0.75rem;
-}
-
-.section-subheading-vx {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  color: var(--color-text-primary);
-  margin: 0;
-}
-
-/* ── Stats grid ── */
-.stats-grid-vx {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-}
-
-.stat-card-vx--accent .stat-num-vx {
-  color: var(--color-accent);
-}
-
-.stat-hint {
-  font-size: 11px;
-  color: var(--color-text-secondary);
-  margin-top: 4px;
-}
-
-/* ── Split layout (used by stats+copy, vitrina+nexo) ── */
+/* ── Split layout (stats+copy, vitrina+nexo) ── */
 .landing-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1706,11 +1674,6 @@ select.form-control-vx {
 .landing-split__copy {
   display: flex;
   flex-direction: column;
-  gap: 0;
-}
-
-.landing-split__stats {
-  /* inherits grid */
 }
 
 .landing-split__cards {
@@ -1720,12 +1683,10 @@ select.form-control-vx {
 }
 
 @media (max-width: 860px) {
-  .landing-split {
+  .landing-split,
+  .landing-split--reverse {
     grid-template-columns: 1fr;
     gap: 2rem;
-    direction: ltr;
-  }
-  .landing-split--reverse {
     direction: ltr;
   }
 }
