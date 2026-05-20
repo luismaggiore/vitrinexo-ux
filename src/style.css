@@ -1602,3 +1602,278 @@ select.form-control-vx {
   font-weight: light; /* Cambia el grosor de la fuente */
   font-size: 1.2rem; /* Cambia el tamaño del número */
 }
+
+/* ============================================================
+   LANDING SECTIONS — Para quién es · Multiverso · Socio Fundador
+   ============================================================ */
+
+/* Shared section wrapper */
+.section-landing {
+  padding: 5rem 0;
+}
+
+.section-landing-head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.section-landing-label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.section-landing-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.section-landing-title strong {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.section-landing-lead {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Para quién es — chips grid ── */
+.audience-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+.audience-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.audience-chip {
+  background: var(--color-ice-300);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  cursor: default;
+}
+
+.audience-chip:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-active);
+}
+
+/* ── Multiverso grid ── */
+.multiverse-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+.multiverse-grid > .multiverse-card:first-child {
+  grid-row: span 2;
+}
+
+.multiverse-card {
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.multiverse-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.multiverse-card--main {
+  background: linear-gradient(135deg, #0f2540 0%, #2b5ea7 100%);
+  min-height: 360px;
+}
+
+.multiverse-card--out2b {
+  background: linear-gradient(135deg, #3a1558 0%, #7b35b5 100%);
+}
+
+.multiverse-card--woman {
+  background: linear-gradient(135deg, #4a1528 0%, #d0305a 100%);
+}
+
+.multiverse-card--senior {
+  background: linear-gradient(135deg, #2a3518 0%, #7a8f32 100%);
+}
+
+.multiverse-card--dinner {
+  background: linear-gradient(135deg, #3a2a08 0%, #c99522 100%);
+  grid-column: span 2;
+}
+
+.multiverse-card__label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.multiverse-card__title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.multiverse-card__title em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.multiverse-card__desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .multiverse-grid {
+    grid-template-columns: 1fr;
+  }
+  .multiverse-grid > .multiverse-card:first-child {
+    grid-row: auto;
+    min-height: 240px;
+  }
+  .multiverse-card--dinner {
+    grid-column: auto;
+  }
+}
+
+/* ── Socio Fundador ── */
+.founder-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  box-shadow: var(--shadow-sm);
+}
+
+.founder-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.founder-benefits li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.93rem;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.founder-benefits li:first-child {
+  border-top: none;
+}
+
+.founder-benefits li i {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.founder-form-card {
+  background: var(--color-ice-300);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.founder-form-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.03em;
+}
+
+.founder-form-card .form-sub {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  margin-bottom: 1.25rem;
+}
+
+.founder-form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.founder-form-success.show {
+  display: block;
+}
+
+.founder-form-success h3 {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.founder-form-success p {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .founder-block {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+  .audience-block {
+    padding: 2rem 1.25rem;
+  }
+}
