@@ -1604,17 +1604,23 @@ select.form-control-vx {
 }
 
 /* ============================================================
-   LANDING SECTIONS — Para quién es · Multiverso · Socio Fundador
+   LANDING SECTIONS — Shared rhythm + all section variants
    ============================================================ */
 
-/* Shared section wrapper */
+/* ── Shared wrapper ── */
 .section-landing {
   padding: 5rem 0;
 }
 
+.section-landing--alt {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
 .section-landing-head {
   text-align: center;
-  max-width: 680px;
+  max-width: 700px;
   margin: 0 auto 3rem;
 }
 
@@ -1630,17 +1636,17 @@ select.form-control-vx {
 
 .section-landing-title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(1.9rem, 3.8vw, 2.8rem);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
   color: var(--color-text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .section-landing-title strong {
-  color: var(--color-primary);
   font-weight: 500;
+  color: var(--color-primary);
 }
 
 .section-landing-lead {
@@ -1650,7 +1656,204 @@ select.form-control-vx {
   margin: 0;
 }
 
-/* ── Para quién es — chips grid ── */
+/* ── Subsection heading ── */
+.section-heading-vx {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.75rem;
+}
+
+.section-subheading-vx {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ── Stats grid ── */
+.stats-grid-vx {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-card-vx--accent .stat-num-vx {
+  color: var(--color-accent);
+}
+
+.stat-hint {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* ── Split layout (used by stats+copy, vitrina+nexo) ── */
+.landing-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.landing-split--reverse {
+  direction: rtl;
+}
+.landing-split--reverse > * {
+  direction: ltr;
+}
+
+.landing-split__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.landing-split__stats {
+  /* inherits grid */
+}
+
+.landing-split__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 860px) {
+  .landing-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    direction: ltr;
+  }
+  .landing-split--reverse {
+    direction: ltr;
+  }
+}
+
+/* ── Concept cards (Vitrina / Nexo) ── */
+.concept-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.concept-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.concept-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.concept-card--primary .concept-card__icon {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-active);
+}
+
+.concept-card--secondary .concept-card__icon {
+  background: var(--color-secondary-soft);
+  color: var(--color-secondary-active);
+}
+
+.concept-card__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.concept-card__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Steps grid (Cómo funciona) ── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.step-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.step-card__num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.step-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-active);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 0.25rem;
+}
+
+.step-card__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.step-card__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* ── Para quién es — audience block ── */
 .audience-block {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -1684,6 +1887,12 @@ select.form-control-vx {
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
   color: var(--color-primary-active);
+}
+
+@media (max-width: 860px) {
+  .audience-block {
+    padding: 2rem 1.25rem;
+  }
 }
 
 /* ── Multiverso grid ── */
@@ -1839,12 +2048,6 @@ select.form-control-vx {
   letter-spacing: -0.03em;
 }
 
-.founder-form-card .form-sub {
-  color: var(--color-text-secondary);
-  font-size: 0.88rem;
-  margin-bottom: 1.25rem;
-}
-
 .founder-form-success {
   display: none;
   text-align: center;
@@ -1860,6 +2063,7 @@ select.form-control-vx {
   font-family: var(--font-display);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
 }
 
 .founder-form-success p {
@@ -1872,8 +2076,5 @@ select.form-control-vx {
     grid-template-columns: 1fr;
     padding: 2rem 1.5rem;
     gap: 2rem;
-  }
-  .audience-block {
-    padding: 2rem 1.25rem;
   }
 }
