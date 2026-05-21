@@ -2589,11 +2589,11 @@ select.form-control-vx {
     gap: 1rem;
   }
 }
-#seeks {
+section#seeks {
   background-color: var(--color-ice-500);
   border-top: var(--color-ice-600) solid 1px;
 }
-#offers {
+section#offers {
   border-top: var(--color-ice-600) solid 1px;
 
   background-color: var(--color-ice-400);
