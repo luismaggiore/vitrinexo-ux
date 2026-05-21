@@ -3085,3 +3085,156 @@ section#offers {
   color: #fff;
   font-size: 18px;
 }
+
+/* ============================================================
+   ONBOARDING
+   ============================================================ */
+
+/* Steps indicator — solo círculos, sin texto */
+.ob-step-label { display: none; }
+
+.ob-step-line {
+  width: 24px;
+  height: 2px;
+  background: var(--color-border);
+  flex-shrink: 0;
+  transition: background .2s ease;
+}
+
+/* Bienvenida — lista de pasos del proceso */
+.ob-welcome-list {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  max-width: 340px;
+  margin: 0 auto 2rem;
+}
+
+.ob-welcome-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.ob-welcome-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ob-welcome-icon--green  { background: var(--color-green-50);  color: var(--color-success); }
+.ob-welcome-icon--cyan   { background: var(--color-cyan-50);   color: var(--color-primary); }
+.ob-welcome-icon--pink   { background: var(--color-pink-50);   color: var(--color-accent); }
+.ob-welcome-icon--purple { background: var(--color-purple-50); color: var(--color-secondary); }
+
+/* Foto/logo upload row */
+.ob-upload-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ob-upload-meta-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 3px;
+}
+
+.ob-upload-meta-hint {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0 0 8px;
+}
+
+/* URL prefix icon */
+.input-prefix {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+/* Tags ofrece/busca section labels */
+.ob-tag-section-label {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+.ob-tag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ob-tag-dot--offer { background: var(--color-success); }
+.ob-tag-dot--seek  { background: var(--color-accent); }
+
+/* Paso 6 — Listo */
+.ob-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-green-50);
+  border: 2px solid var(--color-green-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.75rem;
+  color: var(--color-success);
+}
+
+.ob-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+}
+
+/* Community icon variants */
+.community-toggle__icon--out2b   { background: linear-gradient(135deg, #7c3aed, #ec4899); }
+.community-toggle__icon--woman   { background: linear-gradient(135deg, #be185d, #ec4899); }
+.community-toggle__icon--senior  { background: linear-gradient(135deg, #92400e, #d97706); }
+.community-toggle__icon--dinner  { background: linear-gradient(135deg, #3a2a08, #c99522); font-size: 18px; }
+
+/* Onboarding — utility classes for previously inline styles */
+.ob-footer--center {
+  border-top: none;
+  padding-top: 0;
+  justify-content: center;
+}
+
+.ob-select-sm { max-width: 220px; }
+
+.ob-section-divider {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ob-input-sm { max-width: 260px; }
+
+.ob-community-icon-i {
+  color: #fff;
+  font-size: 16px;
+}
+
+.ob-success-check { font-size: 1.75rem; }
+
+.text-primary-color { color: var(--color-primary); }
+
+.ob-logo-placeholder {
+  font-size: 22px;
+  color: var(--color-border);
+}

@@ -7,225 +7,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
   <link href="/src/style.css" rel="stylesheet" />
-  <style>
-    /* ── Onboarding layout ── */
-    .ob-shell {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: var(--color-ice-500);
-    }
-
-    .ob-nav {
-      background: #fff;
-      border-bottom: 1px solid var(--color-border);
-      padding: .75rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    /* Progress bar */
-    .ob-progress {
-      flex: 1;
-      max-width: 320px;
-    }
-    .ob-progress-track {
-      height: 4px;
-      background: var(--color-ice-400);
-      border-radius: var(--radius-pill);
-      overflow: hidden;
-    }
-    .ob-progress-fill {
-      height: 100%;
-      background: var(--color-primary);
-      border-radius: var(--radius-pill);
-      transition: width .4s ease;
-    }
-    .ob-progress-label {
-      font-size: 11px;
-      color: var(--color-text-secondary);
-      margin-top: 4px;
-      text-align: right;
-    }
-
-    /* Steps indicator */
-    .ob-steps {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
-    .ob-step {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--color-text-secondary);
-      white-space: nowrap;
-    }
-    .ob-step-dot {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      border: 2px solid var(--color-border);
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--color-text-secondary);
-      flex-shrink: 0;
-      transition: all .2s ease;
-    }
-    .ob-step--done .ob-step-dot {
-      background: var(--color-primary);
-      border-color: var(--color-primary);
-      color: #fff;
-    }
-    .ob-step--active .ob-step-dot {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-      font-weight: 700;
-    }
-    .ob-step--active .ob-step-label {
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-    .ob-step-line {
-      width: 24px;
-      height: 2px;
-      background: var(--color-border);
-      flex-shrink: 0;
-      transition: background .2s ease;
-    }
-    .ob-step-line--done {
-      background: var(--color-primary);
-    }
-
-    /* Step panels */
-    .ob-panel { display: none; }
-    .ob-panel--active { display: block; }
-
-    /* Step card */
-    .ob-card {
-      background: #fff;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem 2rem;
-      box-shadow: var(--shadow-sm);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .ob-step-eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      color: var(--color-primary);
-      margin-bottom: .5rem;
-    }
-
-    .ob-title {
-      font-size: clamp(1.4rem, 3vw, 1.8rem);
-      font-weight: 400;
-      letter-spacing: -.04em;
-      color: var(--color-text-primary);
-      margin-bottom: .4rem;
-      line-height: 1.15;
-    }
-
-    .ob-lead {
-      font-size: 14px;
-      color: var(--color-text-secondary);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    /* Tag selector */
-    .tag-selector {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-    }
-    .tag-option {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 12px;
-      border-radius: var(--radius-sm);
-      border: 1.5px solid var(--color-border);
-      background: var(--color-surface);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--color-text-secondary);
-      cursor: pointer;
-      transition: all .15s ease;
-      user-select: none;
-    }
-    .tag-option:hover {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-    }
-    .tag-option--selected-offer {
-      border-color: var(--color-success);
-      background: var(--color-green-50);
-      color: var(--color-green-800);
-    }
-    .tag-option--selected-seek {
-      border-color: var(--color-accent);
-      background: var(--color-pink-50);
-      color: var(--color-pink-800);
-    }
-
-    /* Community toggle card */
-    .community-toggle {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      border: 1.5px solid var(--color-border);
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      transition: border-color .15s ease, background .15s ease;
-      margin-bottom: .75rem;
-    }
-    .community-toggle:hover { border-color: var(--color-primary); }
-    .community-toggle--selected { border-color: var(--color-primary); background: var(--color-primary-soft); }
-    .community-toggle__icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .community-toggle__title { font-size: 13px; font-weight: 600; color: var(--color-text-primary); }
-    .community-toggle__desc  { font-size: 12px; color: var(--color-text-secondary); }
-    .community-toggle__check { margin-left: auto; font-size: 18px; color: var(--color-border); transition: color .15s ease; }
-    .community-toggle--selected .community-toggle__check { color: var(--color-primary); }
-
-    /* Nav buttons */
-    .ob-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--color-border);
-      gap: 1rem;
-    }
-
-    @media (max-width: 640px) {
-      .ob-step-label { display: none; }
-      .ob-step-line  { width: 16px; }
-      .ob-card { padding: 1.5rem 1.25rem; }
-    }
-  </style>
 </head>
 <body class="ob-shell">
 
@@ -235,48 +16,30 @@
       <img src="/src/assets/vitrinexo.svg" width="90" alt="Vitrinexo">
     </a>
 
-    <!-- Steps indicator -->
+    <!-- Steps — solo círculos, sin texto -->
     <div class="ob-steps d-none d-md-flex" id="ob-steps-indicator">
-      <div class="ob-step ob-step--done" id="dot-1">
-        <div class="ob-step-dot"><i class="ti ti-check" style="font-size:11px"></i></div>
-      </div>
-      <div class="ob-step-line ob-step-line--done" id="line-1"></div>
-      <div class="ob-step ob-step--active" id="dot-2">
-        <div class="ob-step-dot">2</div>
-        <span class="ob-step-label ms-1">Tú</span>
-      </div>
+      <div class="ob-step" id="dot-1"><div class="ob-step-dot">1</div></div>
+      <div class="ob-step-line" id="line-1"></div>
+      <div class="ob-step" id="dot-2"><div class="ob-step-dot">2</div></div>
       <div class="ob-step-line" id="line-2"></div>
-      <div class="ob-step" id="dot-3">
-        <div class="ob-step-dot">3</div>
-        <span class="ob-step-label ms-1">Empresa</span>
-      </div>
+      <div class="ob-step" id="dot-3"><div class="ob-step-dot">3</div></div>
       <div class="ob-step-line" id="line-3"></div>
-      <div class="ob-step" id="dot-4">
-        <div class="ob-step-dot">4</div>
-        <span class="ob-step-label ms-1">Ofrece / Busca</span>
-      </div>
+      <div class="ob-step" id="dot-4"><div class="ob-step-dot">4</div></div>
       <div class="ob-step-line" id="line-4"></div>
-      <div class="ob-step" id="dot-5">
-        <div class="ob-step-dot">5</div>
-        <span class="ob-step-label ms-1">Comunidades</span>
-      </div>
+      <div class="ob-step" id="dot-5"><div class="ob-step-dot">5</div></div>
       <div class="ob-step-line" id="line-5"></div>
-      <div class="ob-step" id="dot-6">
-        <div class="ob-step-dot">6</div>
-      </div>
+      <div class="ob-step" id="dot-6"><div class="ob-step-dot">6</div></div>
     </div>
 
     <!-- Progress bar mobile -->
     <div class="ob-progress d-md-none">
       <div class="ob-progress-track">
-        <div class="ob-progress-fill" id="ob-progress-fill" style="width:16%"></div>
+        <div class="ob-progress-fill" id="ob-progress-fill"></div>
       </div>
       <div class="ob-progress-label" id="ob-progress-label">Paso 1 de 6</div>
     </div>
 
-    <a href="dashboard.html" style="font-size:12px;color:var(--color-text-secondary);text-decoration:none">
-      Completar después
-    </a>
+    <a href="dashboard.html" class="dashboard-date text-decoration-none">Completar después</a>
   </nav>
 
   <!-- PASOS -->
@@ -285,41 +48,30 @@
     <!-- ── PASO 1: Bienvenida ── -->
     <div class="ob-panel ob-panel--active" id="panel-1">
       <div class="ob-card text-center">
-        <div style="font-size:3rem;margin-bottom:1rem">👋</div>
         <div class="ob-step-eyebrow">Paso 1 de 6</div>
         <h1 class="ob-title">Hola, Ana.<br>Construyamos tu vitrina.</h1>
-        <p class="ob-lead">
-          Te vamos a hacer unas preguntas para que tu perfil quede completo y la red pueda encontrarte. Son 5 pasos cortos — menos de 5 minutos.
-        </p>
+        <p class="ob-lead">Te vamos a hacer unas preguntas para que tu perfil quede completo y la red pueda encontrarte. Son 5 pasos cortos — menos de 5 minutos.</p>
 
-        <div class="d-flex flex-column gap-2 mb-4" style="max-width:340px;margin:0 auto">
-          <div class="d-flex align-items-center gap-3" style="font-size:13px;color:var(--color-text-secondary)">
-            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-green-50);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-user" style="color:var(--color-success)"></i>
-            </div>
+        <div class="ob-welcome-list">
+          <div class="ob-welcome-item">
+            <div class="ob-welcome-icon ob-welcome-icon--green"><i class="ti ti-user"></i></div>
             Datos básicos de tu perfil
           </div>
-          <div class="d-flex align-items-center gap-3" style="font-size:13px;color:var(--color-text-secondary)">
-            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-cyan-50);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-building" style="color:var(--color-primary)"></i>
-            </div>
+          <div class="ob-welcome-item">
+            <div class="ob-welcome-icon ob-welcome-icon--cyan"><i class="ti ti-building"></i></div>
             Tu empresa y tu rol
           </div>
-          <div class="d-flex align-items-center gap-3" style="font-size:13px;color:var(--color-text-secondary)">
-            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-pink-50);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-arrows-exchange" style="color:var(--color-accent)"></i>
-            </div>
+          <div class="ob-welcome-item">
+            <div class="ob-welcome-icon ob-welcome-icon--pink"><i class="ti ti-arrows-exchange"></i></div>
             Qué ofreces y qué buscas en la red
           </div>
-          <div class="d-flex align-items-center gap-3" style="font-size:13px;color:var(--color-text-secondary)">
-            <div style="width:32px;height:32px;border-radius:50%;background:var(--color-purple-50);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-users" style="color:var(--color-secondary)"></i>
-            </div>
+          <div class="ob-welcome-item">
+            <div class="ob-welcome-icon ob-welcome-icon--purple"><i class="ti ti-users"></i></div>
             Comunidades a las que quieres pertenecer
           </div>
         </div>
 
-        <div class="ob-footer" style="border-top:none;padding-top:0;justify-content:center">
+        <div class="ob-footer ob-footer--center">
           <button class="btn-vx btn-primary-vx btn-vx-lg" onclick="goTo(2)">
             Empezar <i class="ti ti-arrow-right ms-1"></i>
           </button>
@@ -332,18 +84,17 @@
       <div class="ob-card">
         <div class="ob-step-eyebrow">Paso 2 de 6</div>
         <h2 class="ob-title">Cuéntanos sobre ti</h2>
-        <p class="ob-lead">Esta información aparece en tu ficha pública. Tu nombre no se puede cambiar después.</p>
+        <p class="ob-lead">Esta información aparece en tu ficha pública.</p>
 
-        <!-- Foto -->
-        <div class="d-flex align-items-center gap-4 mb-4 pb-4" style="border-bottom:1px solid var(--color-border)">
-          <div class="logo-upload-zone" style="width:72px;height:72px" onclick="document.getElementById('foto-input').click()">
+        <div class="ob-upload-row">
+          <div class="logo-upload-zone" onclick="document.getElementById('foto-input').click()">
             <img src="/src/assets/placeholder3.webp" alt="Tu foto" id="foto-preview">
             <div class="logo-upload-overlay"><i class="ti ti-camera"></i></div>
           </div>
           <input type="file" id="foto-input" accept="image/*" style="display:none" onchange="previewImg(this,'foto-preview')">
           <div>
-            <div style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin-bottom:3px">Tu foto de perfil</div>
-            <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Recomendado: foto profesional, fondo neutro</div>
+            <p class="ob-upload-meta-title">Tu foto de perfil</p>
+            <p class="ob-upload-meta-hint">Recomendado: foto profesional, fondo neutro</p>
             <button class="btn-vx btn-ghost-vx btn-vx-sm" type="button" onclick="document.getElementById('foto-input').click()">
               <i class="ti ti-upload me-1"></i>Subir foto
             </button>
@@ -362,9 +113,8 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label-vx">Bio profesional <span style="color:var(--color-text-secondary);font-weight:400">(opcional)</span></label>
+          <label class="form-label-vx">Bio profesional <span class="form-hint d-inline">(opcional)</span></label>
           <textarea class="form-control-vx" rows="3" placeholder="Ej: Especialista en marketing B2B con 8 años de experiencia en LATAM..."></textarea>
-          <div class="form-hint">Aparece en tu perfil público. Puedes completarla después.</div>
         </div>
 
         <div class="row g-3 mb-3">
@@ -384,7 +134,7 @@
 
         <div class="mb-3">
           <label class="form-label-vx">Preferencia de contacto</label>
-          <select class="form-control-vx" style="max-width:220px">
+          <select class="form-control-vx ob-select-sm">
             <option>Email</option><option>Teléfono</option><option>LinkedIn</option>
           </select>
         </div>
@@ -407,18 +157,16 @@
         <h2 class="ob-title">Tu empresa</h2>
         <p class="ob-lead">La empresa con la que apareces en el directorio. Puedes agregar más desde tu perfil.</p>
 
-        <!-- Logo empresa -->
-        <div class="d-flex align-items-center gap-4 mb-4 pb-4" style="border-bottom:1px solid var(--color-border)">
+        <div class="ob-upload-row">
           <div class="logo-upload-zone" onclick="document.getElementById('logo-empresa-input').click()">
-            <i class="ti ti-building" style="font-size:22px;color:var(--color-border)" id="logo-empresa-icon"></i>
+            <i class="ti ti-building ob-logo-placeholder" id="logo-empresa-icon"></i>
             <img src="" alt="Logo empresa" id="logo-empresa-preview" style="display:none">
             <div class="logo-upload-overlay"><i class="ti ti-camera"></i></div>
           </div>
-          <input type="file" id="logo-empresa-input" accept="image/*" style="display:none"
-            onchange="previewLogoEmpresa(this)">
+          <input type="file" id="logo-empresa-input" accept="image/*" style="display:none" onchange="previewLogoEmpresa(this)">
           <div>
-            <div style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin-bottom:3px">Logo de la empresa</div>
-            <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:8px">Circular · Fondo blanco recomendado</div>
+            <p class="ob-upload-meta-title">Logo de la empresa</p>
+            <p class="ob-upload-meta-hint">Circular · Fondo blanco recomendado</p>
             <button class="btn-vx btn-ghost-vx btn-vx-sm" type="button" onclick="document.getElementById('logo-empresa-input').click()">
               <i class="ti ti-upload me-1"></i>Subir logo
             </button>
@@ -436,15 +184,15 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label-vx">Sitio web <span style="color:var(--color-text-secondary);font-weight:400">(opcional)</span></label>
+          <label class="form-label-vx">Sitio web <span class="form-hint d-inline">(opcional)</span></label>
           <div class="input-group-vx">
-            <span class="input-icon" style="font-size:12px;color:var(--color-text-secondary);padding:0 10px">https://</span>
+            <span class="input-icon input-prefix">https://</span>
             <input type="text" placeholder="tuempresa.com">
           </div>
         </div>
 
         <div class="mb-3">
-          <label class="form-label-vx">LinkedIn empresa <span style="color:var(--color-text-secondary);font-weight:400">(opcional)</span></label>
+          <label class="form-label-vx">LinkedIn empresa <span class="form-hint d-inline">(opcional)</span></label>
           <div class="input-group-vx">
             <span class="input-icon"><i class="ti ti-brand-linkedin"></i></span>
             <input type="text" placeholder="linkedin.com/company/tuempresa">
@@ -452,7 +200,7 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label-vx">Descripción breve <span style="color:var(--color-text-secondary);font-weight:400">(opcional)</span></label>
+          <label class="form-label-vx">Descripción breve <span class="form-hint d-inline">(opcional)</span></label>
           <textarea class="form-control-vx" rows="2" placeholder="En qué se especializa la empresa, a quién atiende..."></textarea>
         </div>
 
@@ -475,10 +223,10 @@
         <p class="ob-lead">Estos tags son la base de tus matches. Selecciona los que mejor te representen — puedes editarlos después.</p>
 
         <!-- Ofrece -->
-        <div class="mb-4 pb-4" style="border-bottom:1px solid var(--color-border)">
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <div style="width:8px;height:8px;border-radius:50%;background:var(--color-success);flex-shrink:0"></div>
-            <label class="form-label-vx" style="margin:0">¿Qué ofreces? <span style="font-weight:400;color:var(--color-text-secondary)">(selecciona hasta 5)</span></label>
+        <div class="mb-4 pb-4 ob-section-divider">
+          <div class="ob-tag-section-label">
+            <div class="ob-tag-dot ob-tag-dot--offer"></div>
+            <label class="form-label-vx mb-0">¿Qué ofreces? <span class="form-hint d-inline">(hasta 5)</span></label>
           </div>
           <div class="tag-selector mb-3" id="tags-offer">
             <span class="tag-option" onclick="toggleTag(this,'offer')">Marketing digital</span>
@@ -496,7 +244,7 @@
             <span class="tag-option" onclick="toggleTag(this,'offer')">Producción audiovisual</span>
             <span class="tag-option" onclick="toggleTag(this,'offer')">Real estate</span>
           </div>
-          <div class="input-group-vx" style="max-width:260px">
+          <div class="input-group-vx ob-input-sm">
             <span class="input-icon"><i class="ti ti-plus"></i></span>
             <input type="text" placeholder="Agregar otro...">
           </div>
@@ -504,9 +252,9 @@
 
         <!-- Busca -->
         <div class="mb-3">
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <div style="width:8px;height:8px;border-radius:50%;background:var(--color-accent);flex-shrink:0"></div>
-            <label class="form-label-vx" style="margin:0">¿Qué buscas? <span style="font-weight:400;color:var(--color-text-secondary)">(selecciona hasta 5)</span></label>
+          <div class="ob-tag-section-label">
+            <div class="ob-tag-dot ob-tag-dot--seek"></div>
+            <label class="form-label-vx mb-0">¿Qué buscas? <span class="form-hint d-inline">(hasta 5)</span></label>
           </div>
           <div class="tag-selector mb-3" id="tags-seek">
             <span class="tag-option" onclick="toggleTag(this,'seek')">Marketing digital</span>
@@ -524,7 +272,7 @@
             <span class="tag-option" onclick="toggleTag(this,'seek')">Partners tecnológicos</span>
             <span class="tag-option" onclick="toggleTag(this,'seek')">Alianzas comerciales</span>
           </div>
-          <div class="input-group-vx" style="max-width:260px">
+          <div class="input-group-vx ob-input-sm">
             <span class="input-icon"><i class="ti ti-plus"></i></span>
             <input type="text" placeholder="Agregar otro...">
           </div>
@@ -545,12 +293,12 @@
     <div class="ob-panel" id="panel-5">
       <div class="ob-card">
         <div class="ob-step-eyebrow">Paso 5 de 6</div>
-        <h2 class="ob-title">¿A qué comunidades<br>perteneces?</h2>
+        <h2 class="ob-title">¿A qué comunidades perteneces?</h2>
         <p class="ob-lead">Opcionales. Puedes activarlas o desactivarlas en cualquier momento desde tu perfil.</p>
 
         <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon" style="background:linear-gradient(135deg,#7c3aed,#ec4899)">
-            <i class="ti ti-rainbow" style="color:#fff;font-size:16px"></i>
+          <div class="community-toggle__icon community-toggle__icon--out2b">
+            <i class="ti ti-rainbow ob-community-icon-i"></i>
           </div>
           <div>
             <div class="community-toggle__title">Out2B</div>
@@ -560,8 +308,8 @@
         </div>
 
         <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon" style="background:linear-gradient(135deg,#be185d,#ec4899)">
-            <i class="ti ti-gender-female" style="color:#fff;font-size:16px"></i>
+          <div class="community-toggle__icon community-toggle__icon--woman">
+            <i class="ti ti-gender-female ob-community-icon-i"></i>
           </div>
           <div>
             <div class="community-toggle__title">Woman</div>
@@ -571,8 +319,8 @@
         </div>
 
         <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon" style="background:linear-gradient(135deg,#92400e,#d97706)">
-            <i class="ti ti-award" style="color:#fff;font-size:16px"></i>
+          <div class="community-toggle__icon community-toggle__icon--senior">
+            <i class="ti ti-award ob-community-icon-i"></i>
           </div>
           <div>
             <div class="community-toggle__title">Senior</div>
@@ -582,7 +330,7 @@
         </div>
 
         <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon" style="background:linear-gradient(135deg,#3a2a08,#c99522);font-size:18px">🍽</div>
+          <div class="community-toggle__icon community-toggle__icon--dinner">🍽</div>
           <div>
             <div class="community-toggle__title">4Dinner</div>
             <div class="community-toggle__desc">Cenas de networking — 4 personas, 1 mesa, miércoles 8pm</div>
@@ -604,16 +352,15 @@
     <!-- ── PASO 6: Listo ── -->
     <div class="ob-panel" id="panel-6">
       <div class="ob-card text-center">
-        <div style="width:72px;height:72px;border-radius:50%;background:var(--color-green-50);border:2px solid var(--color-green-200);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:2rem">✓</div>
+        <div class="ob-success-icon">
+          <i class="ti ti-check ob-success-check"></i>
+        </div>
         <div class="ob-step-eyebrow">¡Listo!</div>
-        <h2 class="ob-title">Tu vitrina está<br><strong style="color:var(--color-primary)">lista para la red.</strong></h2>
-        <p class="ob-lead">
-          Tu perfil ya está activo en el directorio. Puedes completar más detalles en cualquier momento desde el editor de perfil.
-        </p>
+        <h2 class="ob-title">Tu vitrina está<br><strong class="text-primary-color">lista para la red.</strong></h2>
+        <p class="ob-lead">Tu perfil ya está activo en el directorio. Puedes completar más detalles en cualquier momento desde el editor de perfil.</p>
 
-        <!-- Preview mini de la tarjeta -->
         <div class="d-flex justify-content-center mb-4">
-          <div class="card" style="max-width:200px;text-align:left">
+          <div class="card my-card-preview">
             <div class="card-img-container">
               <div class="card-blur-gradient"></div>
               <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="Tu foto">
@@ -632,7 +379,7 @@
           </div>
         </div>
 
-        <div class="d-flex flex-column gap-2 align-items-center">
+        <div class="ob-success-actions">
           <a href="dashboard.html" class="btn-vx btn-primary-vx btn-vx-lg">
             Ir a mi dashboard <i class="ti ti-arrow-right ms-1"></i>
           </a>
@@ -643,7 +390,7 @@
       </div>
     </div>
 
-  </div><!-- /flex-grow-1 -->
+  </div>
 
   <script>
     const TOTAL = 6;
@@ -658,79 +405,59 @@
     }
 
     function updateIndicators() {
-      // Progress bar (mobile)
       const pct = Math.round(((current - 1) / (TOTAL - 1)) * 100);
       document.getElementById('ob-progress-fill').style.width = pct + '%';
       document.getElementById('ob-progress-label').textContent = 'Paso ' + current + ' de ' + TOTAL;
 
-      // Dots (desktop)
       for (let i = 1; i <= TOTAL; i++) {
         const dot = document.getElementById('dot-' + i);
         if (!dot) continue;
         dot.classList.remove('ob-step--done', 'ob-step--active');
-        if (i < current)      dot.classList.add('ob-step--done');
+        if (i < current)       dot.classList.add('ob-step--done');
         else if (i === current) dot.classList.add('ob-step--active');
-
-        // Dot inner
         const dotEl = dot.querySelector('.ob-step-dot');
-        if (i < current) {
-          dotEl.innerHTML = '<i class="ti ti-check" style="font-size:11px"></i>';
-        } else {
-          dotEl.textContent = i;
-        }
+        dotEl.innerHTML = i < current ? '<i class="ti ti-check" style="font-size:11px"></i>' : i;
       }
 
-      // Lines
       for (let i = 1; i < TOTAL; i++) {
         const line = document.getElementById('line-' + i);
-        if (!line) continue;
-        line.classList.toggle('ob-step-line--done', i < current);
+        if (line) line.classList.toggle('ob-step-line--done', i < current);
       }
     }
 
     function toggleTag(el, type) {
       const cls = type === 'offer' ? 'tag-option--selected-offer' : 'tag-option--selected-seek';
-      const limit = 5;
-      const container = el.closest('.tag-selector');
-      const selected = container.querySelectorAll('.' + cls).length;
-      if (el.classList.contains(cls)) {
-        el.classList.remove(cls);
-      } else if (selected < limit) {
-        el.classList.add(cls);
-      }
+      if (el.classList.contains(cls)) { el.classList.remove(cls); return; }
+      if (el.closest('.tag-selector').querySelectorAll('.' + cls).length < 5) el.classList.add(cls);
     }
 
     function toggleCommunity(el) {
-      const isSelected = el.classList.contains('community-toggle--selected');
-      el.classList.toggle('community-toggle--selected');
+      const on = el.classList.toggle('community-toggle--selected');
       const icon = el.querySelector('.community-toggle__check');
-      icon.classList.toggle('ti-circle', isSelected);
-      icon.classList.toggle('ti-circle-check', !isSelected);
+      icon.classList.toggle('ti-circle', !on);
+      icon.classList.toggle('ti-circle-check', on);
     }
 
-    function previewImg(input, previewId) {
+    function previewImg(input, id) {
       if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = e => { document.getElementById(previewId).src = e.target.result; };
-        reader.readAsDataURL(input.files[0]);
+        const r = new FileReader();
+        r.onload = e => { document.getElementById(id).src = e.target.result; };
+        r.readAsDataURL(input.files[0]);
       }
     }
 
     function previewLogoEmpresa(input) {
       if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = e => {
-          const preview = document.getElementById('logo-empresa-preview');
-          const icon    = document.getElementById('logo-empresa-icon');
-          preview.src = e.target.result;
-          preview.style.display = 'block';
-          icon.style.display = 'none';
+        const r = new FileReader();
+        r.onload = e => {
+          const p = document.getElementById('logo-empresa-preview');
+          p.src = e.target.result; p.style.display = 'block';
+          document.getElementById('logo-empresa-icon').style.display = 'none';
         };
-        reader.readAsDataURL(input.files[0]);
+        r.readAsDataURL(input.files[0]);
       }
     }
 
-    // Init
     updateIndicators();
   </script>
 </body>
