@@ -184,6 +184,28 @@
 
         <!-- Formulario empresa (expandible) -->
         <div class="empresa-form" style="display:none">
+
+          <!-- Logo de empresa -->
+          <div class="mb-4 pb-3" style="border-bottom:1px solid var(--color-border)">
+            <label class="form-label-vx mb-2">Logo de empresa</label>
+            <div class="d-flex align-items-center gap-3">
+              <div class="logo-upload-zone" onclick="document.getElementById('logo-input-1').click()">
+                <img src="/src/assets/placeholder2.webp" alt="Logo empresa" id="logo-preview-1">
+                <div class="logo-upload-overlay"><i class="ti ti-camera"></i></div>
+              </div>
+              <input type="file" id="logo-input-1" accept="image/*" style="display:none"
+                onchange="previewLogo(this, 'logo-preview-1')">
+              <div>
+                <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 2px">Logo de la empresa</p>
+                <p style="font-size:12px;color:var(--color-text-secondary);margin:0">Circular · Fondo blanco recomendado · PNG o JPG</p>
+                <button class="btn-vx btn-ghost-vx btn-vx-sm mt-2" type="button"
+                  onclick="document.getElementById('logo-input-1').click()">
+                  <i class="ti ti-upload me-1"></i>Subir logo
+                </button>
+              </div>
+            </div>
+          </div>
+
           <div class="mb-3">
             <label class="form-label-vx">Nombre de la empresa</label>
             <input type="text" class="form-control-vx" value="Growth Partners">
