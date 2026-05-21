@@ -1,0 +1,134 @@
+<!-- MODAL CONECTAR -->
+<div class="modal fade" id="modalConectar" tabindex="-1" aria-labelledby="modalConectarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-vx" style="width:100%;max-width:500px;margin:auto">
+
+      <div class="modal-vx-header">
+        <div>
+          <h5 class="modal-vx-title" id="modalConectarLabel">Conectar con <span id="modal-receptor-nombre">esta persona</span></h5>
+          <p class="modal-subtitle"><span id="modal-receptor-empresa"></span></p>
+        </div>
+        <button type="button" class="btn-vx btn-ghost-vx btn-vx-icon-sm" data-bs-dismiss="modal" aria-label="Cerrar">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body-pad">
+        <form id="form-conectar" action="https://formspree.io/f/REPLACE_ID" method="POST">
+
+          <!-- Campos ocultos — datos del emisor (se rellenan via JS desde el perfil del usuario logueado) -->
+          <input type="hidden" name="emisor_id"                value="">
+          <input type="hidden" name="emisor_nombre"            value="">
+          <input type="hidden" name="emisor_email"             value="">
+          <input type="hidden" name="emisor_telefono"          value="">
+          <input type="hidden" name="emisor_linkedin"          value="">
+          <input type="hidden" name="emisor_contacto_preferido" value="">
+          <!-- Campos ocultos — datos del receptor -->
+          <input type="hidden" name="receptor_id"             value="">
+          <input type="hidden" name="receptor_nombre"         value="">
+          <input type="hidden" name="receptor_email"          value="">
+
+          <!-- Selector de empresa — solo visible si el emisor tiene más de una empresa -->
+          <div class="mb-3" id="campo-empresa" style="display:none">
+            <label class="form-label-vx">¿Desde qué empresa contactas?</label>
+            <select class="form-control-vx" name="emisor_empresa" id="select-empresa">
+              <!-- Opciones rellenadas via JS con las empresas del usuario logueado -->
+            </select>
+          </div>
+
+          <!-- Pitch -->
+          <div class="mb-3">
+            <label class="form-label-vx">Tu mensaje <span style="color:var(--color-text-secondary);font-weight:400">(por qué quieres conectar)</span></label>
+            <textarea
+              class="form-control-vx"
+              name="pitch"
+              rows="4"
+              placeholder="Cuéntale el motivo de tu contacto, qué tienes en mente o en qué crees que pueden colaborar..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-vx btn-primary-vx btn-vx-sm w-100">
+            <i class="ti ti-send"></i> Enviar solicitud de conexión
+          </button>
+
+          <p style="font-size:11px;color:var(--color-text-secondary);text-align:center;margin-top:8px">
+            <i class="ti ti-lock" style="font-size:11px"></i>
+            Tus datos de contacto solo se revelan si la persona acepta la conexión.
+          </p>
+
+        </form>
+
+        <!-- Estado: enviado -->
+        <div id="modal-success" style="display:none;text-align:center;padding:1.5rem 0">
+          <div style="font-size:2rem;margin-bottom:.75rem">✓</div>
+          <div style="font-size:15px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Solicitud enviada</div>
+          <p style="font-size:13px;color:var(--color-text-secondary);margin:0">
+            <span id="modal-receptor-nombre-success"></span> recibirá tu mensaje y podrá aceptar o responder desde su correo.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Modal conectar — lógica ──────────────────────────────────
+(function () {
+  const modal = document.getElementById('modalConectar');
+  if (!modal) return;
+
+  // Al abrir el modal, recibe los datos del perfil clickeado via data-* attributes
+  modal.addEventListener('show.bs.modal', function (event) {
+    const trigger = event.relatedTarget;
+    if (!trigger) return;
+
+    // Datos del receptor desde data-attributes del botón Conectar
+    const receptorId      = trigger.dataset.receptorId      || '';
+    const receptorNombre  = trigger.dataset.receptorNombre  || '';
+    const receptorEmpresa = trigger.dataset.receptorEmpresa || '';
+    const receptorEmail   = trigger.dataset.receptorEmail   || '';
+
+    modal.querySelector('#modal-receptor-nombre').textContent           = receptorNombre || 'esta persona';
+    modal.querySelector('#modal-receptor-nombre-success').textContent   = receptorNombre || 'La persona';
+    modal.querySelector('#modal-receptor-empresa').textContent          = receptorEmpresa;
+    modal.querySelector('[name="receptor_id"]').value                   = receptorId;
+    modal.querySelector('[name="receptor_nombre"]').value               = receptorNombre;
+    modal.querySelector('[name="receptor_email"]').value                = receptorEmail;
+
+    // Resetear estado
+    document.getElementById('form-conectar').style.display  = '';
+    document.getElementById('modal-success').style.display  = 'none';
+  });
+
+  // Envío del formulario via fetch (sin redirección)
+  document.getElementById('form-conectar').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type="submit"]');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="ti ti-loader-2"></i> Enviando...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-conectar').style.display = 'none';
+        document.getElementById('modal-success').style.display = '';
+      } else {
+        btn.innerHTML = orig;
+        btn.disabled = false;
+        alert('No se pudo enviar. Intenta de nuevo.');
+      }
+    } catch {
+      btn.innerHTML = orig;
+      btn.disabled = false;
+      alert('Error de conexión. Intenta de nuevo.');
+    }
+  });
+})();
+</script>

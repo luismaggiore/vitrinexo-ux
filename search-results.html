@@ -501,59 +501,9 @@
     </section>
     <!-- TODOS LOS MIEMBROS -->
 
-    <!-- MODAL CONECTAR -->
-    <div class="modal fade" id="modalConectar" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div
-          class="modal-vx"
-          style="width: 100%; max-width: 500px; margin: auto"
-        >
-          <div class="modal-vx-header">
-            <div>
-              <h5 class="modal-vx-title">Conectar con Roberto Abarca</h5>
-              <p
-                style="
-                  margin: 2px 0 0;
-                  font-size: 13px;
-                  color: var(--color-text-secondary);
-                "
-              >
-                Minotauro Marketing · Buenos Aires, Argentina
-              </p>
-            </div>
-            <button
-              type="button"
-              class="btn-vx btn-ghost-vx btn-vx-icon-sm"
-              data-bs-dismiss="modal"
-            >
-              <i class="ti ti-x"></i>
-            </button>
-          </div>
-          <div style="padding: 24px">
-            <div class="mb-3">
-              <label class="form-label-vx">¿Por qué quieres conectar?</label>
-              <textarea
-                class="form-control-vx"
-                rows="4"
-                placeholder="Cuéntale por qué quieres conectar con Roberto. Sé específico sobre lo que buscas lograr..."
-              ></textarea>
-            </div>
-            <div
-              class="alert-vx alert-info d-flex gap-2 align-items-start"
-              style="padding: 10px 14px"
-            >
-              <i
-                class="ti ti-info-circle"
-                style="flex-shrink: 0; margin-top: 1px"
-              ></i>
-              <p style="margin: 0; font-size: 13px">
-                Tu nombre, empresa y email serán visibles para
-                <strong>Roberto</strong> al recibir tu solicitud.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <include src="src/components/modal-conectar.html"></include>
+
+</div>
     </div>
 
     <include src="src/components/footer-logged.html"></include>
