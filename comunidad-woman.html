@@ -1,210 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comunidad Woman — Vitrinexo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
-  <link href="/src/style.css" rel="stylesheet" />
-</head>
-<body style="background:var(--color-ice-500)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comunidad Woman — Vitrinexo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
+  <body style="background: var(--color-ice-500)">
+    <include src="src/components/nav-logged.html"></include>
 
-<include src="src/components/nav-logged.html"></include>
-
-<!-- COMMUNITY HEADER -->
-<div class="community-header-vx community-header-vx--woman">
-  <div class="container">
-    <div class="community-header-vx__inner">
-      <div class="community-header-vx__icon-wrap">
-        <i class="ti ti-gender-female"></i>
-      </div>
-      <div>
-        <span class="community-header-vx__label">Comunidad vertical</span>
-        <h1 class="community-header-vx__title">Vitrinexo <em>Woman</em></h1>
-        <p class="community-header-vx__desc">El espacio de las mujeres que lideran negocios en Latinoamérica y España. Networking real entre profesionales que entienden el camino.</p>
-      </div>
-      <span class="community-header-vx__count">5 miembros</span>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN -->
-<div class="container py-4">
-
-  <div class="page-section-heading mb-3">
-    <h2 class="page-section-heading__title">Miembros de Woman</h2>
-    <span class="badge-vx badge-accent">5 perfiles</span>
-  </div>
-
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
-
-    <!-- user_003 — María Guadalupe -->
-    <div class="col">
-      <div class="card card--community-woman">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
+    <!-- COMMUNITY HEADER -->
+    <div class="community-header-vx community-header-vx--woman">
+      <div class="container">
+        <div class="community-header-vx__inner">
+          <div>
+            <span class="community-header-vx__label">Comunidad vertical</span>
+            <h1 class="community-header-vx__title">Vitrinexo <em>Woman</em></h1>
+            <p class="community-header-vx__desc">
+              El espacio de las mujeres que lideran negocios en Latinoamérica y
+              España. Networking real entre profesionales que entienden el
+              camino.
+            </p>
           </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe Estévez-Montoya">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:9px">Senior</span></h5>
-            <p class="member-company">Consultoría Iberoamericana</p>
-            <p class="member-company">CDMX (MEX)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">transformación digital</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">socios tecnológicos</span>
-          </div>
+          <span class="community-header-vx__count">5 miembros</span>
         </div>
       </div>
     </div>
 
-    <!-- user_004 — Sofía -->
-    <div class="col">
-      <div class="card card--community-woman">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
+    <!-- MAIN -->
+    <div class="container py-4">
+      <div class="page-section-heading mb-3">
+        <h2 class="page-section-heading__title">Miembros de Woman</h2>
+        <span class="badge-vx badge-accent">5 perfiles</span>
+      </div>
+
+      <div
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5"
+      >
+        <!-- user_003 — María Guadalupe -->
+        <div class="col">
+          <div class="card card--community-woman">
+            <div class="card-img-container">
+              <div class="card-enlaces">
+                <a
+                  href="perfil.html"
+                  class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Ver perfil"
+                  ><i class="ti ti-external-link"></i
+                ></a>
+                <button
+                  class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Guardar perfil"
+                >
+                  <i class="ti ti-heart"></i>
+                </button>
+                <button class="btn-vx btn-soft-primary btn-vx-sm">
+                  <i class="ti ti-send"></i> Conectar
+                </button>
+              </div>
+              <div class="card-blur-gradient"></div>
+              <img
+                class="card-img-top"
+                src="/src/assets/placeholder3.webp"
+                alt="María Guadalupe Estévez-Montoya"
+              />
+            </div>
+            <div class="card-body">
+              <div class="info mb-2">
+                <h5 class="h6 py-0 my-0">
+                  María G. Estévez-Montoya
+                  <span class="badge-vx badge-neutral" style="font-size: 9px"
+                    >Senior</span
+                  >
+                </h5>
+                <p class="member-company">Consultoría Iberoamericana</p>
+                <p class="member-company">CDMX (MEX)</p>
+              </div>
+              <p class="p-offers mb-1">Ofrece</p>
+              <div class="d-flex flex-wrap gap-1 mb-1">
+                <span class="tag-vx tag-offers">transformación digital</span>
+              </div>
+              <p class="p-seeks mb-1">Busca</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="tag-vx tag-seeks">socios tecnológicos</span>
+              </div>
+            </div>
           </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Sofía Restrepo">
         </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Sofía Restrepo <span class="founder-tooltip" data-tooltip="Miembro fundador" aria-label="Miembro fundador" tabindex="0"><i class="founder-tag ti ti-star" aria-hidden="true"></i></span></h5>
-            <p class="member-company">Sofía Restrepo Studio</p>
-            <p class="member-company">Medellín (COL)</p>
+
+        <!-- user_004 — Sofía -->
+        <div class="col">
+          <div class="card card--community-woman">
+            <div class="card-img-container">
+              <div class="card-enlaces">
+                <a
+                  href="perfil.html"
+                  class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Ver perfil"
+                  ><i class="ti ti-external-link"></i
+                ></a>
+                <button
+                  class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Guardar perfil"
+                >
+                  <i class="ti ti-heart"></i>
+                </button>
+                <button class="btn-vx btn-soft-primary btn-vx-sm">
+                  <i class="ti ti-send"></i> Conectar
+                </button>
+              </div>
+              <div class="card-blur-gradient"></div>
+              <img
+                class="card-img-top"
+                src="/src/assets/placeholder4.webp"
+                alt="Sofía Restrepo"
+              />
+            </div>
+            <div class="card-body">
+              <div class="info mb-2">
+                <h5 class="h6 py-0 my-0">
+                  Sofía Restrepo
+                  <span
+                    class="founder-tooltip"
+                    data-tooltip="Miembro fundador"
+                    aria-label="Miembro fundador"
+                    tabindex="0"
+                    ><i class="founder-tag ti ti-star" aria-hidden="true"></i
+                  ></span>
+                </h5>
+                <p class="member-company">Sofía Restrepo Studio</p>
+                <p class="member-company">Medellín (COL)</p>
+              </div>
+              <p class="p-offers mb-1">Ofrece</p>
+              <div class="d-flex flex-wrap gap-1 mb-1">
+                <span class="tag-vx tag-offers">identidad visual</span>
+              </div>
+              <p class="p-seeks mb-1">Busca</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="tag-vx tag-seeks">agencias creativas</span>
+              </div>
+            </div>
           </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">identidad visual</span>
+        </div>
+
+        <!-- user_006 — Valentina -->
+        <div class="col">
+          <div class="card card--community-woman">
+            <div class="card-img-container">
+              <div class="card-enlaces">
+                <a
+                  href="perfil.html"
+                  class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Ver perfil"
+                  ><i class="ti ti-external-link"></i
+                ></a>
+                <button
+                  class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Guardar perfil"
+                >
+                  <i class="ti ti-heart"></i>
+                </button>
+                <button class="btn-vx btn-soft-primary btn-vx-sm">
+                  <i class="ti ti-send"></i> Conectar
+                </button>
+              </div>
+              <div class="card-blur-gradient"></div>
+              <img
+                class="card-img-top"
+                src="/src/assets/placeholder.webp"
+                alt="Valentina Koczorowski"
+              />
+            </div>
+            <div class="card-body">
+              <div class="info mb-2">
+                <h5 class="h6 py-0 my-0">
+                  Valentina Koczorowski
+                  <span
+                    class="founder-tooltip"
+                    data-tooltip="Miembro fundador"
+                    aria-label="Miembro fundador"
+                    tabindex="0"
+                    ><i class="founder-tag ti ti-star" aria-hidden="true"></i
+                  ></span>
+                </h5>
+                <p class="member-company">DataSur Analytics</p>
+                <p class="member-company">Bogotá (COL)</p>
+              </div>
+              <p class="p-offers mb-1">Ofrece</p>
+              <div class="d-flex flex-wrap gap-1 mb-1">
+                <span class="tag-vx tag-offers">business intelligence</span>
+              </div>
+              <p class="p-seeks mb-1">Busca</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="tag-vx tag-seeks">retail analytics</span>
+              </div>
+            </div>
           </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">agencias creativas</span>
+        </div>
+
+        <!-- user_009 — Ana -->
+        <div class="col">
+          <div class="card card--community-woman">
+            <div class="card-img-container">
+              <div class="card-enlaces">
+                <a
+                  href="perfil.html"
+                  class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Ver perfil"
+                  ><i class="ti ti-external-link"></i
+                ></a>
+                <button
+                  class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Guardar perfil"
+                >
+                  <i class="ti ti-heart"></i>
+                </button>
+                <button class="btn-vx btn-soft-primary btn-vx-sm">
+                  <i class="ti ti-send"></i> Conectar
+                </button>
+              </div>
+              <div class="card-blur-gradient"></div>
+              <img
+                class="card-img-top"
+                src="/src/assets/placeholder4.webp"
+                alt="Ana Fernández del Valle"
+              />
+            </div>
+            <div class="card-body">
+              <div class="info mb-2">
+                <h5 class="h6 py-0 my-0">Ana Fernández del Valle</h5>
+                <p class="member-company">BrandLab Internacional</p>
+                <p class="member-company">Madrid (ESP)</p>
+              </div>
+              <p class="p-offers mb-1">Ofrece</p>
+              <div class="d-flex flex-wrap gap-1 mb-1">
+                <span class="tag-vx tag-offers">branding internacional</span>
+              </div>
+              <p class="p-seeks mb-1">Busca</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="tag-vx tag-seeks">copywriters LATAM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- user_010 — Camila -->
+        <div class="col">
+          <div class="card card--community-woman">
+            <div class="card-img-container">
+              <div class="card-enlaces">
+                <a
+                  href="perfil.html"
+                  class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Ver perfil"
+                  ><i class="ti ti-external-link"></i
+                ></a>
+                <button
+                  class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Guardar perfil"
+                >
+                  <i class="ti ti-heart"></i>
+                </button>
+                <button class="btn-vx btn-soft-primary btn-vx-sm">
+                  <i class="ti ti-send"></i> Conectar
+                </button>
+              </div>
+              <div class="card-blur-gradient"></div>
+              <img
+                class="card-img-top"
+                src="/src/assets/placeholder5.webp"
+                alt="Camila Torres"
+              />
+            </div>
+            <div class="card-body">
+              <div class="info mb-2">
+                <h5 class="h6 py-0 my-0">
+                  Camila Torres
+                  <span
+                    class="founder-tooltip"
+                    data-tooltip="Miembro fundador"
+                    aria-label="Miembro fundador"
+                    tabindex="0"
+                    ><i class="founder-tag ti ti-star" aria-hidden="true"></i
+                  ></span>
+                </h5>
+                <p class="member-company">FlowOps Studio</p>
+                <p class="member-company">Lima (PER)</p>
+              </div>
+              <p class="p-offers mb-1">Ofrece</p>
+              <div class="d-flex flex-wrap gap-1 mb-1">
+                <span class="tag-vx tag-offers">automatización no-code</span>
+              </div>
+              <p class="p-seeks mb-1">Busca</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="tag-vx tag-seeks">consultores CRM</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- user_006 — Valentina -->
-    <div class="col">
-      <div class="card card--community-woman">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina Koczorowski">
+      <!-- Gate: no miembro -->
+      <div class="community-gate-vx community-gate-vx--woman">
+        <div class="community-gate-vx__icon-wrap">
+          <i class="ti ti-lock"></i>
         </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Valentina Koczorowski <span class="founder-tooltip" data-tooltip="Miembro fundador" aria-label="Miembro fundador" tabindex="0"><i class="founder-tag ti ti-star" aria-hidden="true"></i></span></h5>
-            <p class="member-company">DataSur Analytics</p>
-            <p class="member-company">Bogotá (COL)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">business intelligence</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">retail analytics</span>
-          </div>
-        </div>
+        <h5 class="community-gate-vx__title">
+          Solo los miembros de Woman pueden ver este directorio
+        </h5>
+        <p class="community-gate-vx__desc">
+          Si te identificas como mujer, actívalo en tu perfil para aparecer en
+          la comunidad y ver a todas las integrantes.
+        </p>
+        <a
+          href="editor-perfil.html"
+          class="btn-vx btn-vx-md community-gate-vx__btn"
+          >Activar en mi perfil <i class="ti ti-arrow-right ms-1"></i
+        ></a>
       </div>
     </div>
 
-    <!-- user_009 — Ana -->
-    <div class="col">
-      <div class="card card--community-woman">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Ana Fernández del Valle">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Ana Fernández del Valle</h5>
-            <p class="member-company">BrandLab Internacional</p>
-            <p class="member-company">Madrid (ESP)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">branding internacional</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">copywriters LATAM</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <include src="src/components/footer-logged.html"></include>
 
-    <!-- user_010 — Camila -->
-    <div class="col">
-      <div class="card card--community-woman">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Camila Torres">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Camila Torres <span class="founder-tooltip" data-tooltip="Miembro fundador" aria-label="Miembro fundador" tabindex="0"><i class="founder-tag ti ti-star" aria-hidden="true"></i></span></h5>
-            <p class="member-company">FlowOps Studio</p>
-            <p class="member-company">Lima (PER)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">automatización no-code</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">consultores CRM</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Gate: no miembro -->
-  <div class="community-gate-vx community-gate-vx--woman">
-    <div class="community-gate-vx__icon-wrap">
-      <i class="ti ti-lock"></i>
-    </div>
-    <h5 class="community-gate-vx__title">Solo los miembros de Woman pueden ver este directorio</h5>
-    <p class="community-gate-vx__desc">Si te identificas como mujer, actívalo en tu perfil para aparecer en la comunidad y ver a todas las integrantes.</p>
-    <a href="editor-perfil.html" class="btn-vx btn-vx-md community-gate-vx__btn">Activar en mi perfil <i class="ti ti-arrow-right ms-1"></i></a>
-  </div>
-
-</div>
-
-<include src="src/components/footer-logged.html"></include>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

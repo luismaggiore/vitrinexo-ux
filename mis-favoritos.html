@@ -1,156 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mis favoritos — Vitrinexo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
-  <link href="/src/style.css" rel="stylesheet" />
-</head>
-<body style="background:var(--color-ice-500)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis favoritos — Vitrinexo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
+  <body style="background: var(--color-ice-500)">
+    <include src="src/components/nav-logged.html"></include>
 
-<include src="src/components/nav-logged.html"></include>
-
-<!-- PAGE HEADER -->
-<div class="page-header-vx">
-  <div class="container">
-    <div class="page-header-vx__inner">
-      <div>
-        <div class="d-flex align-items-center gap-2 mb-1">
-          <i class="ti ti-heart page-header-vx__icon"></i>
-          <span class="section-landing-label" style="margin:0">Mis favoritos</span>
-        </div>
-        <h1 class="page-header-vx__title">Perfiles guardados</h1>
-        <p class="page-header-vx__lead">Empresas que marcaste para retomar cuando quieras.</p>
-      </div>
-      <div class="d-flex align-items-center gap-2 flex-wrap">
-        <span class="badge-vx badge-neutral"><i class="ti ti-bookmark me-1"></i>3 guardados</span>
-        <a href="directorio.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-layout-grid"></i> Ir al directorio</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN -->
-<main>
-<div class="container py-4">
-
-  <div class="page-section-heading mb-3">
-    <h2 class="page-section-heading__title">Todos los guardados</h2>
-    <span class="badge-vx badge-neutral">3 perfiles</span>
-  </div>
-
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
-
-    <!-- user_003 — María Guadalupe -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)" aria-label="Quitar de favoritos"><i class="ti ti-heart-filled"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
+    <!-- PAGE HEADER -->
+    <div class="page-header-vx">
+      <div class="container">
+        <div class="page-header-vx__inner">
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="section-landing-label" style="margin: 0"
+                >Mis favoritos</span
+              >
+            </div>
+            <h1 class="page-header-vx__title">Perfiles guardados</h1>
+            <p class="page-header-vx__lead">
+              Empresas que marcaste para retomar cuando quieras.
+            </p>
           </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe Estévez-Montoya">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:9px">Senior</span></h5>
-            <p class="member-company">Consultoría Iberoamericana</p>
-            <p class="member-company">Ciudad de México (MEX)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">transformación digital</span>
-            <span class="tag-vx tag-offers">change management</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">socios tecnológicos</span>
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-vx badge-neutral"
+              ><i class="ti ti-bookmark me-1"></i>3 guardados</span
+            >
+            <a href="directorio.html" class="btn-vx btn-ghost-vx btn-vx-sm"
+              ><i class="ti ti-layout-grid"></i> Ir al directorio</a
+            >
           </div>
         </div>
       </div>
     </div>
 
-    <!-- user_006 — Valentina -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)" aria-label="Quitar de favoritos"><i class="ti ti-heart-filled"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina Koczorowski">
+    <!-- MAIN -->
+    <main>
+      <div class="container py-4">
+        <div class="page-section-heading mb-3">
+          <h2 class="page-section-heading__title">Todos los guardados</h2>
+          <span class="badge-vx badge-neutral">3 perfiles</span>
         </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Valentina Koczorowski <span class="founder-tooltip" data-tooltip="Miembro fundador" aria-label="Miembro fundador" tabindex="0"><i class="founder-tag ti ti-star" aria-hidden="true"></i></span></h5>
-            <p class="member-company">DataSur Analytics</p>
-            <p class="member-company">Bogotá (COL)</p>
+
+        <div
+          class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5"
+        >
+          <!-- user_003 — María Guadalupe -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img-container">
+                <div class="card-enlaces">
+                  <a
+                    href="perfil.html"
+                    class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                    aria-label="Ver perfil"
+                    ><i class="ti ti-external-link"></i
+                  ></a>
+                  <button
+                    class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                    style="color: var(--color-pink-500)"
+                    aria-label="Quitar de favoritos"
+                  >
+                    <i class="ti ti-heart-filled"></i>
+                  </button>
+                  <button class="btn-vx btn-soft-primary btn-vx-sm">
+                    <i class="ti ti-send"></i> Conectar
+                  </button>
+                </div>
+                <div class="card-blur-gradient"></div>
+                <img
+                  class="card-img-top"
+                  src="/src/assets/placeholder3.webp"
+                  alt="María Guadalupe Estévez-Montoya"
+                />
+              </div>
+              <div class="card-body">
+                <div class="info mb-2">
+                  <h5 class="h6 py-0 my-0">
+                    María G. Estévez-Montoya
+                    <span class="badge-vx badge-neutral" style="font-size: 9px"
+                      >Senior</span
+                    >
+                  </h5>
+                  <p class="member-company">Consultoría Iberoamericana</p>
+                  <p class="member-company">Ciudad de México (MEX)</p>
+                </div>
+                <p class="p-offers mb-1">Ofrece</p>
+                <div class="d-flex flex-wrap gap-1 mb-1">
+                  <span class="tag-vx tag-offers">transformación digital</span>
+                  <span class="tag-vx tag-offers">change management</span>
+                </div>
+                <p class="p-seeks mb-1">Busca</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="tag-vx tag-seeks">socios tecnológicos</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">business intelligence</span>
-            <span class="tag-vx tag-offers">modelos predictivos</span>
+
+          <!-- user_006 — Valentina -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img-container">
+                <div class="card-enlaces">
+                  <a
+                    href="perfil.html"
+                    class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                    aria-label="Ver perfil"
+                    ><i class="ti ti-external-link"></i
+                  ></a>
+                  <button
+                    class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                    style="color: var(--color-pink-500)"
+                    aria-label="Quitar de favoritos"
+                  >
+                    <i class="ti ti-heart-filled"></i>
+                  </button>
+                  <button class="btn-vx btn-soft-primary btn-vx-sm">
+                    <i class="ti ti-send"></i> Conectar
+                  </button>
+                </div>
+                <div class="card-blur-gradient"></div>
+                <img
+                  class="card-img-top"
+                  src="/src/assets/placeholder.webp"
+                  alt="Valentina Koczorowski"
+                />
+              </div>
+              <div class="card-body">
+                <div class="info mb-2">
+                  <h5 class="h6 py-0 my-0">
+                    Valentina Koczorowski
+                    <span
+                      class="founder-tooltip"
+                      data-tooltip="Miembro fundador"
+                      aria-label="Miembro fundador"
+                      tabindex="0"
+                      ><i class="founder-tag ti ti-star" aria-hidden="true"></i
+                    ></span>
+                  </h5>
+                  <p class="member-company">DataSur Analytics</p>
+                  <p class="member-company">Bogotá (COL)</p>
+                </div>
+                <p class="p-offers mb-1">Ofrece</p>
+                <div class="d-flex flex-wrap gap-1 mb-1">
+                  <span class="tag-vx tag-offers">business intelligence</span>
+                  <span class="tag-vx tag-offers">modelos predictivos</span>
+                </div>
+                <p class="p-seeks mb-1">Busca</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="tag-vx tag-seeks">retail analytics</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">retail analytics</span>
+
+          <!-- user_009 — Ana -->
+          <div class="col">
+            <div class="card">
+              <div class="card-img-container">
+                <div class="card-enlaces">
+                  <a
+                    href="perfil.html"
+                    class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                    aria-label="Ver perfil"
+                    ><i class="ti ti-external-link"></i
+                  ></a>
+                  <button
+                    class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                    style="color: var(--color-pink-500)"
+                    aria-label="Quitar de favoritos"
+                  >
+                    <i class="ti ti-heart-filled"></i>
+                  </button>
+                  <button class="btn-vx btn-soft-primary btn-vx-sm">
+                    <i class="ti ti-send"></i> Conectar
+                  </button>
+                </div>
+                <div class="card-blur-gradient"></div>
+                <img
+                  class="card-img-top"
+                  src="/src/assets/placeholder4.webp"
+                  alt="Ana Fernández del Valle"
+                />
+              </div>
+              <div class="card-body">
+                <div class="info mb-2">
+                  <h5 class="h6 py-0 my-0">Ana Fernández del Valle</h5>
+                  <p class="member-company">BrandLab Internacional</p>
+                  <p class="member-company">Madrid (ESP)</p>
+                </div>
+                <p class="p-offers mb-1">Ofrece</p>
+                <div class="d-flex flex-wrap gap-1 mb-1">
+                  <span class="tag-vx tag-offers">branding internacional</span>
+                  <span class="tag-vx tag-offers">estrategia SEO</span>
+                </div>
+                <p class="p-seeks mb-1">Busca</p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="tag-vx tag-seeks">copywriters LATAM</span>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Estado vacío -->
+        <div id="empty-state" class="empty-state-vx" style="display: none">
+          <i class="ti ti-heart empty-state-vx__icon"></i>
+          <h5 class="empty-state-vx__title">Aún no guardaste ningún perfil</h5>
+          <p class="empty-state-vx__desc">
+            Cuando guardes perfiles desde el directorio, aparecerán aquí para
+            que puedas revisarlos cuando quieras.
+          </p>
+          <a href="directorio.html" class="btn-vx btn-primary-vx btn-vx-md"
+            >Explorar el directorio <i class="ti ti-arrow-right ms-1"></i
+          ></a>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!-- user_009 — Ana -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)" aria-label="Quitar de favoritos"><i class="ti ti-heart-filled"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Ana Fernández del Valle">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Ana Fernández del Valle</h5>
-            <p class="member-company">BrandLab Internacional</p>
-            <p class="member-company">Madrid (ESP)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">branding internacional</span>
-            <span class="tag-vx tag-offers">estrategia SEO</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">copywriters LATAM</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <include src="src/components/footer-logged.html"></include>
 
-  </div>
-
-  <!-- Estado vacío -->
-  <div id="empty-state" class="empty-state-vx" style="display:none">
-    <i class="ti ti-heart empty-state-vx__icon"></i>
-    <h5 class="empty-state-vx__title">Aún no guardaste ningún perfil</h5>
-    <p class="empty-state-vx__desc">Cuando guardes perfiles desde el directorio, aparecerán aquí para que puedas revisarlos cuando quieras.</p>
-    <a href="directorio.html" class="btn-vx btn-primary-vx btn-vx-md">Explorar el directorio <i class="ti ti-arrow-right ms-1"></i></a>
-  </div>
-
-</div>
-</main>
-
-<include src="src/components/footer-logged.html"></include>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

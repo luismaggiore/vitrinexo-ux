@@ -1,128 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comunidad Senior — Vitrinexo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
-  <link href="/src/style.css" rel="stylesheet" />
-</head>
-<body style="background:var(--color-ice-500)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comunidad Senior — Vitrinexo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
+  <body style="background: var(--color-ice-500)">
+    <include src="src/components/nav-logged.html"></include>
 
-<include src="src/components/nav-logged.html"></include>
-
-<!-- COMMUNITY HEADER -->
-<div class="community-header-vx community-header-vx--senior">
-  <div class="container">
-    <div class="community-header-vx__inner">
-      <div class="community-header-vx__icon-wrap">
-        <i class="ti ti-award"></i>
-      </div>
-      <div>
-        <span class="community-header-vx__label">Comunidad vertical</span>
-        <h1 class="community-header-vx__title">Vitrinexo <em>Senior</em></h1>
-        <p class="community-header-vx__desc">Ejecutivos con trayectoria verificada. Experiencia que genera conexiones de alto valor. Solo para profesionales con 10 o más años de carrera comprobable.</p>
-      </div>
-      <span class="community-header-vx__count">2 miembros verificados</span>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN -->
-<div class="container py-4">
-
-  <!-- Aviso de verificación -->
-  <div class="alert-vx alert-neutral d-flex align-items-center gap-3 mb-4">
-    <i class="ti ti-shield-check" style="font-size:18px;color:#b8860b;flex-shrink:0"></i>
-    <p style="margin:0;font-size:13px">Los perfiles Senior son verificados manualmente por el equipo de Vitrinexo. La verificación puede tomar hasta 5 días hábiles.</p>
-  </div>
-
-  <div class="page-section-heading mb-3">
-    <h2 class="page-section-heading__title">Miembros verificados</h2>
-    <span class="badge-vx badge-neutral" style="background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>2 Senior</span>
-  </div>
-
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
-
-    <!-- user_003 — María Guadalupe -->
-    <div class="col">
-      <div class="card card--community-senior">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
+    <!-- COMMUNITY HEADER -->
+    <div class="community-header-vx community-header-vx--senior">
+      <div class="container">
+        <div class="community-header-vx__inner">
+          <div>
+            <span class="community-header-vx__label">Comunidad vertical</span>
+            <h1 class="community-header-vx__title">
+              Vitrinexo <em>Senior</em>
+            </h1>
+            <p class="community-header-vx__desc">
+              Ejecutivos con trayectoria verificada. Experiencia que genera
+              conexiones de alto valor. Solo para profesionales con 10 o más
+              años de carrera comprobable.
+            </p>
           </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe Estévez-Montoya">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span></h5>
-            <p class="member-company">Consultoría Iberoamericana</p>
-            <p class="member-company">CDMX (MEX)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">transformación digital</span>
-            <span class="tag-vx tag-offers">change management</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">socios tecnológicos</span>
-          </div>
+          <span class="community-header-vx__count">2 miembros verificados</span>
         </div>
       </div>
     </div>
 
-    <!-- user_005 — Roberto -->
-    <div class="col">
-      <div class="card card--community-senior">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
+    <!-- MAIN -->
+    <div class="container py-4">
+      <!-- Aviso de verificación -->
+      <div class="alert-vx alert-neutral d-flex align-items-center gap-3 mb-4">
+        <i
+          class="ti ti-shield-check"
+          style="font-size: 18px; color: #b8860b; flex-shrink: 0"
+        ></i>
+        <p style="margin: 0; font-size: 13px">
+          Los perfiles Senior son verificados manualmente por el equipo de
+          Vitrinexo. La verificación puede tomar hasta 5 días hábiles.
+        </p>
+      </div>
+
+      <div class="page-section-heading mb-3">
+        <h2 class="page-section-heading__title">Miembros verificados</h2>
+        <span
+          class="badge-vx badge-neutral"
+          style="background: #fef3c7; color: #92400e; border-color: #fde68a"
+          ><i class="ti ti-award me-1"></i>2 Senior</span
+        >
+      </div>
+
+      <div
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5"
+      >
+        <!-- user_003 — María Guadalupe -->
+        <div class="col">
+          <div class="card card--community-senior">
+            <div class="card-img-container">
+              <div class="card-enlaces">
+                <a
+                  href="perfil.html"
+                  class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Ver perfil"
+                  ><i class="ti ti-external-link"></i
+                ></a>
+                <button
+                  class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Guardar perfil"
+                >
+                  <i class="ti ti-heart"></i>
+                </button>
+                <button class="btn-vx btn-soft-primary btn-vx-sm">
+                  <i class="ti ti-send"></i> Conectar
+                </button>
+              </div>
+              <div class="card-blur-gradient"></div>
+              <img
+                class="card-img-top"
+                src="/src/assets/placeholder3.webp"
+                alt="María Guadalupe Estévez-Montoya"
+              />
+            </div>
+            <div class="card-body">
+              <div class="info mb-2">
+                <h5 class="h6 py-0 my-0">
+                  María G. Estévez-Montoya
+                  <span
+                    class="badge-vx badge-neutral"
+                    style="
+                      font-size: 9px;
+                      background: #fef3c7;
+                      color: #92400e;
+                      border-color: #fde68a;
+                    "
+                    ><i class="ti ti-award me-1"></i>Senior</span
+                  >
+                </h5>
+                <p class="member-company">Consultoría Iberoamericana</p>
+                <p class="member-company">CDMX (MEX)</p>
+              </div>
+              <p class="p-offers mb-1">Ofrece</p>
+              <div class="d-flex flex-wrap gap-1 mb-1">
+                <span class="tag-vx tag-offers">transformación digital</span>
+                <span class="tag-vx tag-offers">change management</span>
+              </div>
+              <p class="p-seeks mb-1">Busca</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="tag-vx tag-seeks">socios tecnológicos</span>
+              </div>
+            </div>
           </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Roberto Fuentes-Carreño">
         </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Roberto A. Fuentes-Carreño <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span></h5>
-            <p class="member-company">Lex Patagonia Abogados</p>
-            <p class="member-company">Puerto Montt (CHL)</p>
-          </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
-            <span class="tag-vx tag-offers">contratos B2B</span>
-            <span class="tag-vx tag-offers">due diligence M&amp;A</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-seeks">estudios jurídicos</span>
+
+        <!-- user_005 — Roberto -->
+        <div class="col">
+          <div class="card card--community-senior">
+            <div class="card-img-container">
+              <div class="card-enlaces">
+                <a
+                  href="perfil.html"
+                  class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Ver perfil"
+                  ><i class="ti ti-external-link"></i
+                ></a>
+                <button
+                  class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
+                  aria-label="Guardar perfil"
+                >
+                  <i class="ti ti-heart"></i>
+                </button>
+                <button class="btn-vx btn-soft-primary btn-vx-sm">
+                  <i class="ti ti-send"></i> Conectar
+                </button>
+              </div>
+              <div class="card-blur-gradient"></div>
+              <img
+                class="card-img-top"
+                src="/src/assets/placeholder5.webp"
+                alt="Roberto Fuentes-Carreño"
+              />
+            </div>
+            <div class="card-body">
+              <div class="info mb-2">
+                <h5 class="h6 py-0 my-0">
+                  Roberto A. Fuentes-Carreño
+                  <span
+                    class="badge-vx badge-neutral"
+                    style="
+                      font-size: 9px;
+                      background: #fef3c7;
+                      color: #92400e;
+                      border-color: #fde68a;
+                    "
+                    ><i class="ti ti-award me-1"></i>Senior</span
+                  >
+                </h5>
+                <p class="member-company">Lex Patagonia Abogados</p>
+                <p class="member-company">Puerto Montt (CHL)</p>
+              </div>
+              <p class="p-offers mb-1">Ofrece</p>
+              <div class="d-flex flex-wrap gap-1 mb-1">
+                <span class="tag-vx tag-offers">contratos B2B</span>
+                <span class="tag-vx tag-offers">due diligence M&amp;A</span>
+              </div>
+              <p class="p-seeks mb-1">Busca</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="tag-vx tag-seeks">estudios jurídicos</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Gate: no verificado -->
+      <div class="community-gate-vx community-gate-vx--senior">
+        <div class="community-gate-vx__icon-wrap">
+          <i class="ti ti-award"></i>
+        </div>
+        <h5 class="community-gate-vx__title">
+          ¿Tienes 10+ años de trayectoria?
+        </h5>
+        <p class="community-gate-vx__desc">
+          Solicita tu verificación Senior. Nuestro equipo revisará tu
+          experiencia y, si corresponde, activará tu badge y acceso a esta
+          comunidad.
+        </p>
+        <a
+          href="editor-perfil.html"
+          class="btn-vx btn-vx-md community-gate-vx__btn"
+          >Solicitar verificación Senior <i class="ti ti-arrow-right ms-1"></i
+        ></a>
+      </div>
     </div>
 
-  </div>
+    <include src="src/components/footer-logged.html"></include>
 
-  <!-- Gate: no verificado -->
-  <div class="community-gate-vx community-gate-vx--senior">
-    <div class="community-gate-vx__icon-wrap">
-      <i class="ti ti-award"></i>
-    </div>
-    <h5 class="community-gate-vx__title">¿Tienes 10+ años de trayectoria?</h5>
-    <p class="community-gate-vx__desc">Solicita tu verificación Senior. Nuestro equipo revisará tu experiencia y, si corresponde, activará tu badge y acceso a esta comunidad.</p>
-    <a href="editor-perfil.html" class="btn-vx btn-vx-md community-gate-vx__btn">Solicitar verificación Senior <i class="ti ti-arrow-right ms-1"></i></a>
-  </div>
-
-</div>
-
-<include src="src/components/footer-logged.html"></include>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
