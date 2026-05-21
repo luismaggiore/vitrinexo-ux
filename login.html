@@ -23,14 +23,14 @@
     <div style="width:100%;max-width:420px">
 
       <!-- TABS -->
-      <div class="d-flex mb-4 border-bottom" id="auth-tabs">
-        <button id="tab-login" onclick="switchTab('login')" class="auth-tab auth-tab--active">
+      <nav class="vx-tabs mb-4" id="auth-tabs">
+        <button id="tab-login" onclick="switchTab('login')" class="vx-tab vx-tab--active">
           Ingresar
         </button>
-        <button id="tab-registro" onclick="switchTab('registro')" class="auth-tab">
+        <button id="tab-registro" onclick="switchTab('registro')" class="vx-tab">
           Registrarse
         </button>
-      </div>
+      </nav>
 
       <!-- PANEL LOGIN -->
       <div id="panel-login" class="card-vx" style="padding:2rem">
@@ -127,30 +127,12 @@
     </div>
   </div>
 
-  <style>
-    .auth-tab {
-      flex: 1;
-      padding: 12px 0;
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      font-weight: 500;
-      font-size: 15px;
-      color: var(--color-text-secondary);
-      cursor: pointer;
-      transition: all .2s ease;
-    }
-    .auth-tab--active {
-      border-bottom-color: var(--color-primary);
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-  </style>
+
 
   <script>
     function switchTab(tab) {
-      document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('auth-tab--active'));
-      document.getElementById('tab-' + tab).classList.add('auth-tab--active');
+      document.querySelectorAll('.vx-tab').forEach(t => t.classList.remove('vx-tab--active'));
+      document.getElementById('tab-' + tab).classList.add('vx-tab--active');
       document.getElementById('panel-login').style.display    = tab === 'login'    ? 'block' : 'none';
       document.getElementById('panel-registro').style.display = tab === 'registro' ? 'block' : 'none';
     }
