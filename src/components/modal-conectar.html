@@ -5,7 +5,9 @@
 
       <div class="modal-vx-header">
         <div>
-          <h5 class="modal-vx-title" id="modalConectarLabel">Conectar con <span id="modal-receptor-nombre">esta persona</span></h5>
+          <h5 class="modal-vx-title" id="modalConectarLabel">
+            Conectar con <span id="modal-receptor-nombre">esta persona</span>
+          </h5>
           <p class="modal-subtitle"><span id="modal-receptor-empresa"></span></p>
         </div>
         <button type="button" class="btn-vx btn-ghost-vx btn-vx-icon-sm" data-bs-dismiss="modal" aria-label="Cerrar">
@@ -16,29 +18,59 @@
       <div class="modal-body-pad">
         <form id="form-conectar" action="https://formspree.io/f/REPLACE_ID" method="POST">
 
-          <!-- Campos ocultos — datos del emisor (se rellenan via JS desde el perfil del usuario logueado) -->
-          <input type="hidden" name="emisor_id"                value="">
-          <input type="hidden" name="emisor_nombre"            value="">
-          <input type="hidden" name="emisor_email"             value="">
-          <input type="hidden" name="emisor_telefono"          value="">
-          <input type="hidden" name="emisor_linkedin"          value="">
-          <input type="hidden" name="emisor_contacto_preferido" value="">
-          <!-- Campos ocultos — datos del receptor -->
-          <input type="hidden" name="receptor_id"             value="">
-          <input type="hidden" name="receptor_nombre"         value="">
-          <input type="hidden" name="receptor_email"          value="">
+          <!-- Campos ocultos — emisor -->
+          <input type="hidden" name="emisor_id"                 value="user_felipe">
+          <input type="hidden" name="emisor_nombre"             value="Felipe Muñoz">
+          <input type="hidden" name="emisor_email"              value="felipe@maggiore.cl">
+          <input type="hidden" name="emisor_telefono"           value="+56 9 9876 5432">
+          <input type="hidden" name="emisor_linkedin"           value="linkedin.com/in/felipemuñoz">
+          <input type="hidden" name="emisor_contacto_preferido" value="email">
+          <!-- Campos ocultos — receptor (se rellenan via JS) -->
+          <input type="hidden" name="receptor_id"    value="">
+          <input type="hidden" name="receptor_nombre" value="">
+          <input type="hidden" name="receptor_email"  value="">
 
-          <!-- Selector de empresa — solo visible si el emisor tiene más de una empresa -->
-          <div class="mb-3" id="campo-empresa" style="display:none">
+          <!-- ── Selector de empresa (visible porque tiene 2) ── -->
+          <div class="mb-3" id="campo-empresa">
             <label class="form-label-vx">¿Desde qué empresa contactas?</label>
-            <select class="form-control-vx" name="emisor_empresa" id="select-empresa">
-              <!-- Opciones rellenadas via JS con las empresas del usuario logueado -->
-            </select>
+
+            <!-- Opción 1 -->
+            <label class="modal-empresa-option" id="empresa-opt-1">
+              <input type="radio" name="emisor_empresa" value="Maggiore Marketing" checked style="display:none">
+              <div class="modal-empresa-card modal-empresa-card--selected" id="card-empresa-1">
+                <div class="modal-empresa-avatar" style="background:linear-gradient(135deg,var(--color-cyan-600),var(--color-green-500))">
+                  M
+                </div>
+                <div class="modal-empresa-info">
+                  <div class="modal-empresa-name">Maggiore Marketing</div>
+                  <div class="modal-empresa-role">Director General · Santiago, Chile</div>
+                </div>
+                <i class="ti ti-circle-check modal-empresa-check" id="check-1"></i>
+              </div>
+            </label>
+
+            <!-- Opción 2 -->
+            <label class="modal-empresa-option" id="empresa-opt-2">
+              <input type="radio" name="emisor_empresa" value="Vitrinexo" style="display:none">
+              <div class="modal-empresa-card" id="card-empresa-2">
+                <div class="modal-empresa-avatar" style="background:linear-gradient(135deg,var(--color-purple-600),var(--color-cyan-500))">
+                  V
+                </div>
+                <div class="modal-empresa-info">
+                  <div class="modal-empresa-name">Vitrinexo</div>
+                  <div class="modal-empresa-role">Fundador · Santiago, Chile</div>
+                </div>
+                <i class="ti ti-circle modal-empresa-check" id="check-2"></i>
+              </div>
+            </label>
           </div>
 
-          <!-- Pitch -->
+          <!-- ── Pitch ── -->
           <div class="mb-3">
-            <label class="form-label-vx">Tu mensaje <span style="color:var(--color-text-secondary);font-weight:400">(por qué quieres conectar)</span></label>
+            <label class="form-label-vx">
+              Tu mensaje
+              <span style="color:var(--color-text-secondary);font-weight:400">(por qué quieres conectar)</span>
+            </label>
             <textarea
               class="form-control-vx"
               name="pitch"
@@ -61,10 +93,11 @@
 
         <!-- Estado: enviado -->
         <div id="modal-success" style="display:none;text-align:center;padding:1.5rem 0">
-          <div style="font-size:2rem;margin-bottom:.75rem">✓</div>
+          <div style="font-size:2.5rem;margin-bottom:.75rem">✓</div>
           <div style="font-size:15px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Solicitud enviada</div>
           <p style="font-size:13px;color:var(--color-text-secondary);margin:0">
-            <span id="modal-receptor-nombre-success"></span> recibirá tu mensaje y podrá aceptar o responder desde su correo.
+            <span id="modal-receptor-nombre-success"></span> recibirá tu mensaje y podrá aceptar desde su correo.
+            Sus datos de contacto se revelarán solo si acepta.
           </p>
         </div>
 
@@ -73,42 +106,130 @@
   </div>
 </div>
 
+<style>
+/* ── Modal empresa selector ── */
+.modal-empresa-option {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.modal-empresa-option:last-child { margin-bottom: 0; }
+
+.modal-empresa-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  transition: border-color .15s ease, background .15s ease;
+  user-select: none;
+}
+.modal-empresa-card:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+.modal-empresa-card--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.modal-empresa-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.modal-empresa-info { flex: 1; min-width: 0; }
+.modal-empresa-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+.modal-empresa-role {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 1px;
+}
+
+.modal-empresa-check {
+  font-size: 16px;
+  color: var(--color-border);
+  flex-shrink: 0;
+  transition: color .15s ease;
+}
+.modal-empresa-card--selected .modal-empresa-check {
+  color: var(--color-primary);
+}
+</style>
+
 <script>
-// ── Modal conectar — lógica ──────────────────────────────────
 (function () {
   const modal = document.getElementById('modalConectar');
   if (!modal) return;
 
-  // Al abrir el modal, recibe los datos del perfil clickeado via data-* attributes
+  // ── Selector de empresa interactivo ──
+  const options = modal.querySelectorAll('.modal-empresa-option');
+  options.forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      // Deselect all
+      modal.querySelectorAll('.modal-empresa-card').forEach(function (card) {
+        card.classList.remove('modal-empresa-card--selected');
+      });
+      modal.querySelectorAll('.modal-empresa-check').forEach(function (icon) {
+        icon.classList.remove('ti-circle-check');
+        icon.classList.add('ti-circle');
+        icon.style.color = '';
+      });
+      // Select clicked
+      const card  = opt.querySelector('.modal-empresa-card');
+      const check = opt.querySelector('.modal-empresa-check');
+      const radio = opt.querySelector('input[type="radio"]');
+      card.classList.add('modal-empresa-card--selected');
+      check.classList.remove('ti-circle');
+      check.classList.add('ti-circle-check');
+      radio.checked = true;
+    });
+  });
+
+  // ── Rellenar datos del receptor al abrir ──
   modal.addEventListener('show.bs.modal', function (event) {
     const trigger = event.relatedTarget;
     if (!trigger) return;
 
-    // Datos del receptor desde data-attributes del botón Conectar
-    const receptorId      = trigger.dataset.receptorId      || '';
     const receptorNombre  = trigger.dataset.receptorNombre  || '';
     const receptorEmpresa = trigger.dataset.receptorEmpresa || '';
+    const receptorId      = trigger.dataset.receptorId      || '';
     const receptorEmail   = trigger.dataset.receptorEmail   || '';
 
-    modal.querySelector('#modal-receptor-nombre').textContent           = receptorNombre || 'esta persona';
-    modal.querySelector('#modal-receptor-nombre-success').textContent   = receptorNombre || 'La persona';
-    modal.querySelector('#modal-receptor-empresa').textContent          = receptorEmpresa;
-    modal.querySelector('[name="receptor_id"]').value                   = receptorId;
-    modal.querySelector('[name="receptor_nombre"]').value               = receptorNombre;
-    modal.querySelector('[name="receptor_email"]').value                = receptorEmail;
+    modal.querySelector('#modal-receptor-nombre').textContent         = receptorNombre || 'esta persona';
+    modal.querySelector('#modal-receptor-nombre-success').textContent = receptorNombre || 'La persona';
+    modal.querySelector('#modal-receptor-empresa').textContent        = receptorEmpresa;
+    modal.querySelector('[name="receptor_id"]').value                 = receptorId;
+    modal.querySelector('[name="receptor_nombre"]').value             = receptorNombre;
+    modal.querySelector('[name="receptor_email"]').value              = receptorEmail;
 
-    // Resetear estado
-    document.getElementById('form-conectar').style.display  = '';
-    document.getElementById('modal-success').style.display  = 'none';
+    // Reset form/success state
+    document.getElementById('form-conectar').style.display = '';
+    document.getElementById('modal-success').style.display = 'none';
   });
 
-  // Envío del formulario via fetch (sin redirección)
+  // ── Envío async ──
   document.getElementById('form-conectar').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const btn = this.querySelector('[type="submit"]');
+    const btn  = this.querySelector('[type="submit"]');
     const orig = btn.innerHTML;
     btn.innerHTML = '<i class="ti ti-loader-2"></i> Enviando...';
-    btn.disabled = true;
+    btn.disabled  = true;
 
     try {
       const res = await fetch(this.action, {
@@ -121,12 +242,12 @@
         document.getElementById('modal-success').style.display = '';
       } else {
         btn.innerHTML = orig;
-        btn.disabled = false;
+        btn.disabled  = false;
         alert('No se pudo enviar. Intenta de nuevo.');
       }
     } catch {
       btn.innerHTML = orig;
-      btn.disabled = false;
+      btn.disabled  = false;
       alert('Error de conexión. Intenta de nuevo.');
     }
   });
