@@ -32,11 +32,11 @@
 
           <!-- ── Selector de empresa (visible porque tiene 2) ── -->
           <div class="mb-3" id="campo-empresa">
-            <label class="form-label-vx">¿Desde qué empresa contactas?</label>
+            <label class="form-label-vx">¿Desde qué empresa(s) contactas? <span style="color:var(--color-text-secondary);font-weight:400">(puedes seleccionar más de una)</span></label>
 
             <!-- Opción 1 -->
             <label class="modal-empresa-option" id="empresa-opt-1">
-              <input type="radio" name="emisor_empresa" value="Maggiore Marketing" checked style="display:none">
+              <input type="checkbox" name="emisor_empresa[]" value="Maggiore Marketing" checked style="display:none">
               <div class="modal-empresa-card modal-empresa-card--selected" id="card-empresa-1">
                 <div class="modal-empresa-avatar" style="background:linear-gradient(135deg,var(--color-cyan-600),var(--color-green-500))">
                   M
@@ -51,7 +51,7 @@
 
             <!-- Opción 2 -->
             <label class="modal-empresa-option" id="empresa-opt-2">
-              <input type="radio" name="emisor_empresa" value="Vitrinexo" style="display:none">
+              <input type="checkbox" name="emisor_empresa[]" value="Vitrinexo" style="display:none">
               <div class="modal-empresa-card" id="card-empresa-2">
                 <div class="modal-empresa-avatar" style="background:linear-gradient(135deg,var(--color-purple-600),var(--color-cyan-500))">
                   V
@@ -177,27 +177,26 @@
   const modal = document.getElementById('modalConectar');
   if (!modal) return;
 
-  // ── Selector de empresa interactivo ──
+  // ── Selector de empresa — checkbox múltiple ──
   const options = modal.querySelectorAll('.modal-empresa-option');
   options.forEach(function (opt) {
     opt.addEventListener('click', function () {
-      // Deselect all
-      modal.querySelectorAll('.modal-empresa-card').forEach(function (card) {
+      const card     = opt.querySelector('.modal-empresa-card');
+      const check    = opt.querySelector('.modal-empresa-check');
+      const checkbox = opt.querySelector('input[type="checkbox"]');
+
+      // Toggle este item
+      checkbox.checked = !checkbox.checked;
+
+      if (checkbox.checked) {
+        card.classList.add('modal-empresa-card--selected');
+        check.classList.remove('ti-circle');
+        check.classList.add('ti-circle-check');
+      } else {
         card.classList.remove('modal-empresa-card--selected');
-      });
-      modal.querySelectorAll('.modal-empresa-check').forEach(function (icon) {
-        icon.classList.remove('ti-circle-check');
-        icon.classList.add('ti-circle');
-        icon.style.color = '';
-      });
-      // Select clicked
-      const card  = opt.querySelector('.modal-empresa-card');
-      const check = opt.querySelector('.modal-empresa-check');
-      const radio = opt.querySelector('input[type="radio"]');
-      card.classList.add('modal-empresa-card--selected');
-      check.classList.remove('ti-circle');
-      check.classList.add('ti-circle-check');
-      radio.checked = true;
+        check.classList.remove('ti-circle-check');
+        check.classList.add('ti-circle');
+      }
     });
   });
 

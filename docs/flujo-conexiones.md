@@ -43,6 +43,8 @@ El modal existe en el HTML estático (`directorio.html`, `dashboard.html`, `matc
 
 Estos campos no los ve el usuario pero se envían junto al formulario para que WordPress pueda registrar la conexión completa:
 
+> El campo de empresa usa **checkboxes** (`name="emisor_empresa[]"`) para permitir selección múltiple — el usuario puede contactar representando una o varias de sus empresas en el mismo mensaje.
+
 ```html
 <input type="hidden" name="emisor_id" value="{{ usuario_actual.id }}" />
 <input type="hidden" name="emisor_nombre" value="{{ usuario_actual.nombre }}" />
@@ -389,6 +391,8 @@ El modal existe en el HTML estático (`directorio.html`, `dashboard.html`, `matc
 ### Campos ocultos que viajan en el formulario
 
 Estos campos no los ve el usuario pero se envían junto al formulario para que WordPress pueda registrar la conexión completa:
+
+> El campo de empresa usa **checkboxes** (`name="emisor_empresa[]"`) para permitir selección múltiple — el usuario puede contactar representando una o varias de sus empresas en el mismo mensaje.
 
 ```html
 <input type="hidden" name="emisor_id" value="{{ usuario_actual.id }}" />
