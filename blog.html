@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Vitrinexo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
+  <link href="/src/style.css" rel="stylesheet" />
+</head>
+<body style="background:var(--color-ice-500)">
+
+<include src="src/components/nav-logged.html"></include>
+
+<!-- PAGE HEADER -->
+<div class="page-header-vx">
+  <div class="container">
+    <div class="page-header-vx__inner">
+      <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+          <i class="ti ti-news page-header-vx__icon"></i>
+          <span class="section-landing-label" style="margin:0">Blog</span>
+        </div>
+        <h1 class="page-header-vx__title">Ideas, tendencias y<br><strong>casos B2B</strong></h1>
+        <p class="page-header-vx__lead">Ensayos, entrevistas y data sobre el ecosistema de servicios B2B en Hispanoamérica.</p>
+      </div>
+      <div class="d-flex gap-2 flex-wrap">
+        <button class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-filter"></i> Categoría</button>
+        <button class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-world"></i> País</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+<div class="container py-4">
+
+  <!-- ARTÍCULO DESTACADO -->
+  <div class="card-vx mb-4 p-0" style="overflow:hidden">
+    <div class="row g-0">
+      <div class="col-12 col-md-5">
+        <div style="height:100%;min-height:200px;background:linear-gradient(135deg,var(--color-cyan-700) 0%,var(--color-green-600) 100%);display:flex;align-items:flex-end;padding:1.5rem;position:relative">
+          <span class="badge-vx" style="position:absolute;top:14px;left:14px;background:rgba(255,255,255,.2);color:#fff">
+            <i class="ti ti-star me-1"></i> Destacado
+          </span>
+          <div>
+            <div style="font-size:11px;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:4px">Internacionalización</div>
+            <div style="font-size:1.35rem;font-weight:600;color:#fff;line-height:1.25">Cómo exportar servicios sin abrir oficinas locales</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-7 d-flex flex-column" style="padding:1.5rem">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="/src/assets/placeholder3.webp" style="width:28px;height:28px;border-radius:50%;object-fit:cover" alt="">
+          <span style="font-size:12px;color:var(--color-text-secondary)">Felipe M. · <span>12 mayo 2026</span> · 8 min</span>
+        </div>
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;flex-grow:1;margin-bottom:1rem">
+          En los últimos dos años, más de 60 empresas de servicios latinoamericanas han expandido su operación a otros países sin ninguna presencia física local. ¿Cómo lo hicieron? Analizamos los patrones comunes, los errores más frecuentes y las condiciones necesarias para que funcione.
+        </p>
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <div class="d-flex gap-1 flex-wrap">
+            <span class="tag-vx">Internacionalización</span>
+            <span class="tag-vx">Estrategia</span>
+            <span class="tag-vx">B2B</span>
+          </div>
+          <a href="single-blog.html" class="btn-vx btn-soft-primary btn-vx-sm">
+            Leer artículo <i class="ti ti-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID DE ARTÍCULOS -->
+  <div class="mb-3">
+    <span class="subsection-label">Recientes</span>
+    <h2 class="subsection-title">Últimas publicaciones</h2>
+  </div>
+
+  <div class="row g-3 mb-5">
+
+    <!-- Artículo 2 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="single-blog.html" class="text-decoration-none d-block h-100">
+        <div class="card-vx p-0 h-100" style="overflow:hidden;transition:box-shadow .2s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+          <div style="height:110px;background:linear-gradient(135deg,var(--color-purple-600),var(--color-purple-400));display:flex;align-items:flex-end;padding:.75rem 1rem">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(255,255,255,.8)">Tendencias B2B</div>
+          </div>
+          <div style="padding:1.25rem;display:flex;flex-direction:column;gap:.75rem">
+            <h3 style="font-size:15px;font-weight:600;color:var(--color-text-primary);line-height:1.3;margin:0">El directorio como reputación: por qué importa cómo te describes</h3>
+            <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0;flex-grow:1">La ficha de una empresa en un directorio B2B no es solo información — es una señal de confianza. Cómo redactarla para que trabaje por ti.</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <img src="/src/assets/placeholder2.webp" style="width:22px;height:22px;border-radius:50%;object-fit:cover" alt="">
+                <span style="font-size:11px;color:var(--color-text-secondary)">5 may 2026 · 5 min</span>
+              </div>
+              <span class="tag-vx">Perfil</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Artículo 3 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="single-blog.html" class="text-decoration-none d-block h-100">
+        <div class="card-vx p-0 h-100" style="overflow:hidden;transition:box-shadow .2s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+          <div style="height:110px;background:linear-gradient(135deg,var(--color-pink-600),var(--color-pink-400));display:flex;align-items:flex-end;padding:.75rem 1rem">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(255,255,255,.8)">Comunidad</div>
+          </div>
+          <div style="padding:1.25rem;display:flex;flex-direction:column;gap:.75rem">
+            <h3 style="font-size:15px;font-weight:600;color:var(--color-text-primary);line-height:1.3;margin:0">El networking que no molesta: cómo conectar sin parecer vendedor</h3>
+            <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0;flex-grow:1">Estudios y experiencias reales sobre cómo construir relaciones comerciales genuinas en entornos B2B latinoamericanos.</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <img src="/src/assets/placeholder4.webp" style="width:22px;height:22px;border-radius:50%;object-fit:cover" alt="">
+                <span style="font-size:11px;color:var(--color-text-secondary)">28 abr 2026 · 6 min</span>
+              </div>
+              <span class="tag-vx">Networking</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Artículo 4 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="single-blog.html" class="text-decoration-none d-block h-100">
+        <div class="card-vx p-0 h-100" style="overflow:hidden;transition:box-shadow .2s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+          <div style="height:110px;background:linear-gradient(135deg,#f59e0b,#f97316);display:flex;align-items:flex-end;padding:.75rem 1rem">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(255,255,255,.8)">Datos</div>
+          </div>
+          <div style="padding:1.25rem;display:flex;flex-direction:column;gap:.75rem">
+            <h3 style="font-size:15px;font-weight:600;color:var(--color-text-primary);line-height:1.3;margin:0">Mapa del ecosistema B2B hispanohablante: quién opera desde dónde</h3>
+            <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0;flex-grow:1">Un análisis de los primeros 700 miembros de Vitrinexo: rubros, países y los sectores con más demanda cruzada.</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <img src="/src/assets/placeholder.webp" style="width:22px;height:22px;border-radius:50%;object-fit:cover" alt="">
+                <span style="font-size:11px;color:var(--color-text-secondary)">20 abr 2026 · 9 min</span>
+              </div>
+              <span class="tag-vx">Datos</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Artículo 5 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="single-blog.html" class="text-decoration-none d-block h-100">
+        <div class="card-vx p-0 h-100" style="overflow:hidden;transition:box-shadow .2s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+          <div style="height:110px;background:linear-gradient(135deg,#0ea5e9,#6366f1);display:flex;align-items:flex-end;padding:.75rem 1rem">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(255,255,255,.8)">Entrevistas</div>
+          </div>
+          <div style="padding:1.25rem;display:flex;flex-direction:column;gap:.75rem">
+            <h3 style="font-size:15px;font-weight:600;color:var(--color-text-primary);line-height:1.3;margin:0">«Firmé mi primer cliente en Argentina sin haber pisado el país»</h3>
+            <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0;flex-grow:1">Entrevista con Camila Torres, fundadora de FlowOps Studio en Lima, sobre su expansión continental usando solo herramientas digitales.</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <img src="/src/assets/placeholder5.webp" style="width:22px;height:22px;border-radius:50%;object-fit:cover" alt="">
+                <span style="font-size:11px;color:var(--color-text-secondary)">10 abr 2026 · 7 min</span>
+              </div>
+              <span class="tag-vx">Entrevista</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Artículo 6 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="single-blog.html" class="text-decoration-none d-block h-100">
+        <div class="card-vx p-0 h-100" style="overflow:hidden;transition:box-shadow .2s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+          <div style="height:110px;background:linear-gradient(135deg,var(--color-green-700),var(--color-cyan-600));display:flex;align-items:flex-end;padding:.75rem 1rem">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(255,255,255,.8)">Pagos</div>
+          </div>
+          <div style="padding:1.25rem;display:flex;flex-direction:column;gap:.75rem">
+            <h3 style="font-size:15px;font-weight:600;color:var(--color-text-primary);line-height:1.3;margin:0">Cobrar en LATAM sin perder el 15% en comisiones: guía práctica</h3>
+            <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0;flex-grow:1">Las mejores opciones para hacer y recibir pagos entre países de Hispanoamérica en 2026, con costos reales comparados.</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <img src="/src/assets/placeholder2.webp" style="width:22px;height:22px;border-radius:50%;object-fit:cover" alt="">
+                <span style="font-size:11px;color:var(--color-text-secondary)">2 abr 2026 · 10 min</span>
+              </div>
+              <span class="tag-vx">Pagos</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Artículo 7 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <a href="single-blog.html" class="text-decoration-none d-block h-100">
+        <div class="card-vx p-0 h-100" style="overflow:hidden;transition:box-shadow .2s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
+          <div style="height:110px;background:linear-gradient(135deg,#be185d,#ec4899);display:flex;align-items:flex-end;padding:.75rem 1rem">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(255,255,255,.8)">Liderazgo</div>
+          </div>
+          <div style="padding:1.25rem;display:flex;flex-direction:column;gap:.75rem">
+            <h3 style="font-size:15px;font-weight:600;color:var(--color-text-primary);line-height:1.3;margin:0">Mujeres que lideran empresas B2B: tres perfiles, tres caminos</h3>
+            <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0;flex-grow:1">Un reportaje sobre fundadoras y directivas que están construyendo redes de servicios B2B en América Latina desde cero.</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <img src="/src/assets/placeholder4.webp" style="width:22px;height:22px;border-radius:50%;object-fit:cover" alt="">
+                <span style="font-size:11px;color:var(--color-text-secondary)">22 mar 2026 · 6 min</span>
+              </div>
+              <span class="tag-vx">Liderazgo</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- PAGINACIÓN -->
+  <nav aria-label="Navegación del blog" class="mb-5">
+    <ul class="pagination">
+      <li class="page-item disabled"><a class="page-link" href="#"><i class="ti ti-chevron-left"></i></a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#"><i class="ti ti-chevron-right"></i></a></li>
+    </ul>
+  </nav>
+
+</div>
+</main>
+
+<include src="src/components/footer-logged.html"></include>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
