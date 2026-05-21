@@ -540,6 +540,7 @@ h2 strong {
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 400;
+  letter-spacing: -0.03em;
   color: var(--color-text-primary);
   line-height: 1.2;
   margin: 0 0 2px;
@@ -553,9 +554,15 @@ h2 strong {
 }
 
 .profile-company {
+  display: inline-block;
   font-size: 13px;
   color: var(--color-text-secondary);
   margin: 0 0 4px;
+  text-decoration: none;
+}
+
+a.profile-company:hover {
+  color: var(--color-primary);
 }
 
 .profile-location {
@@ -591,6 +598,50 @@ h2 strong {
   gap: 0.35rem;
   padding: 0.75rem 1.5rem 0;
   border-top: 1px solid var(--color-border);
+}
+
+.profile-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.25rem;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.profile-tab {
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.55rem 0.8rem;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.profile-tab:hover {
+  background: var(--color-ice-300);
+  color: var(--color-text-primary);
+}
+
+.profile-tab-active {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-founder {
+  border-color: var(--color-primary);
 }
 
 /* ── Body: secciones de texto ── */
@@ -679,6 +730,13 @@ h2 strong {
 
 .profile-pill-title i {
   font-size: 13px;
+}
+
+.profile-pill p {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin: 0 0 0.75rem;
 }
 
 .profile-pill-tags {
@@ -1130,6 +1188,10 @@ select.form-control-vx {
   box-shadow: var(--shadow-lg);
 }
 
+.profile-editor-card {
+  max-width: none;
+}
+
 .modal-vx-header {
   display: flex;
   align-items: center;
@@ -1345,6 +1407,125 @@ select.form-control-vx {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: 4px 0;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-vx {
+  background: #fff;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 38px 0 24px;
+}
+
+.footer-vx__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer-vx__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.footer-vx__brand img {
+  width: 104px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.footer-vx__brand span {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.footer-vx__grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.6fr) repeat(2, minmax(130px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+.footer-vx--logged .footer-vx__grid {
+  grid-template-columns: minmax(220px, 1.6fr) repeat(3, minmax(120px, 1fr));
+}
+
+.footer-vx__text {
+  max-width: 360px;
+  margin: 0 0 0.9rem;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-vx__label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--color-text-primary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer-vx__nav {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+}
+
+.footer-vx__link,
+.footer-vx__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-vx__link:hover,
+.footer-vx__contact:hover {
+  color: var(--color-primary-hover);
+}
+
+.footer-vx__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .footer-vx__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-vx__grid,
+  .footer-vx--logged .footer-vx__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-vx__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
 }
 
 /* ============================================================
