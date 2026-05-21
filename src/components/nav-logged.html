@@ -20,17 +20,20 @@
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navPublic"
-      aria-controls="navPublic"
+      data-bs-target="#navLogged"
+      aria-controls="navLogged"
       aria-expanded="false"
       aria-label="Abrir navegacion"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navPublic">
+    <div class="collapse navbar-collapse" id="navLogged">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4 gap-1">
         <li class="nav-item">
           <a class="nav-link" href="directorio.html">Directorio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mis-favoritos.html">Mis favoritos</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -69,9 +72,55 @@
         </li>
       </ul>
       <div class="d-flex align-items-center gap-2">
-        <a href="login.html" class="btn-vx btn-ghost-vx btn-vx-sm">
-          Ingresar
-        </a>
+        <button
+          class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
+          type="button"
+          aria-label="Ver notificaciones"
+        >
+          <i class="ti ti-bell"></i>
+        </button>
+        <div class="dropdown">
+          <button
+            class="btn-vx btn-ghost-vx btn-vx-sm d-flex align-items-center gap-2"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="/src/assets/placeholder3.webp"
+              alt="Tu avatar"
+              style="
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                object-fit: cover;
+              "
+            />
+            <span style="font-size: 13px; font-weight: 500">Felipe M.</span>
+            <i class="ti ti-chevron-down" style="font-size: 12px"></i>
+          </button>
+          <ul
+            class="dropdown-menu dropdown-menu-end dropdown-vx border-0 shadow"
+            style="padding: 6px 0"
+          >
+            <li>
+              <a class="dropdown-vx-item" href="perfil.html">
+                <i class="ti ti-user"></i>Mi perfil
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-vx-item" href="editor-perfil.html">
+                <i class="ti ti-pencil"></i>Editar perfil
+              </a>
+            </li>
+            <li><hr class="dropdown-vx-divider my-1" /></li>
+            <li>
+              <a class="dropdown-vx-item danger" href="login.html">
+                <i class="ti ti-logout"></i>Cerrar sesion
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

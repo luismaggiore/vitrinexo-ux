@@ -13,12 +13,23 @@ let mouse = {
 };
 
 const settings = {
-  particleCount: 120,
-  maxDistance: 310,
-  minimumConnections: 3,
+  particleCount: 70,
+  maxDistance: 1010,
+  minimumConnections: 1,
+  maximumConnections: 5,
+  offscreenMargin: 180,
   particleRadius: 2.4,
   speed: 0.28,
 };
+
+function getSimulationBounds() {
+  return {
+    left: -settings.offscreenMargin,
+    right: width + settings.offscreenMargin,
+    top: -settings.offscreenMargin,
+    bottom: height + settings.offscreenMargin,
+  };
+}
 
 function resizeCanvas() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -39,15 +50,15 @@ function createParticles() {
 
   const area = width * height;
   const responsiveCount = Math.floor(area / 7600);
-  const total = Math.max(
-    120,
-    Math.min(settings.particleCount, responsiveCount),
-  );
+  const total = Math.max(10, Math.min(settings.particleCount, responsiveCount));
+  const bounds = getSimulationBounds();
+  const simulationWidth = bounds.right - bounds.left;
+  const simulationHeight = bounds.bottom - bounds.top;
 
   for (let i = 0; i < total; i++) {
     particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
+      x: bounds.left + Math.random() * simulationWidth,
+      y: bounds.top + Math.random() * simulationHeight,
       vx: (Math.random() - 0.5) * settings.speed,
       vy: (Math.random() - 0.5) * settings.speed,
       radius: Math.random() * settings.particleRadius + 1.2,
@@ -110,14 +121,21 @@ function drawConnection(p1, p2, distance, opacityMultiplier = 1) {
 
 function drawLines() {
   const drawnConnections = new Set();
+  const connectionCounts = new Array(particles.length).fill(0);
+  const maximumConnections = Math.max(
+    settings.minimumConnections,
+    settings.maximumConnections,
+  );
 
   for (let i = 0; i < particles.length; i++) {
     const p1 = particles[i];
     const nearest = getNearestParticles(p1, i);
 
-    let connections = 0;
+    let connections = connectionCounts[i];
 
     for (let j = 0; j < nearest.length; j++) {
+      if (connections >= maximumConnections) break;
+
       const p2 = nearest[j].particle;
       const distance = nearest[j].distance;
       const p2Index = particles.indexOf(p2);
@@ -125,6 +143,7 @@ function drawLines() {
       const key = i < p2Index ? `${i}-${p2Index}` : `${p2Index}-${i}`;
 
       if (drawnConnections.has(key)) continue;
+      if (connectionCounts[p2Index] >= maximumConnections) continue;
 
       const isCloseEnough = distance < settings.maxDistance;
       const needsMinimumConnection = connections < settings.minimumConnections;
@@ -133,6 +152,8 @@ function drawLines() {
         drawConnection(p1, p2, distance, isCloseEnough ? 1 : 0.42);
 
         drawnConnections.add(key);
+        connectionCounts[i]++;
+        connectionCounts[p2Index]++;
         connections++;
       }
 
@@ -147,12 +168,19 @@ function drawLines() {
 }
 
 function updateParticles() {
+  const bounds = getSimulationBounds();
+
   particles.forEach((particle) => {
     particle.x += particle.vx;
     particle.y += particle.vy;
 
-    if (particle.x <= 0 || particle.x >= width) particle.vx *= -1;
-    if (particle.y <= 0 || particle.y >= height) particle.vy *= -1;
+    if (particle.x <= bounds.left || particle.x >= bounds.right) {
+      particle.vx *= -1;
+    }
+
+    if (particle.y <= bounds.top || particle.y >= bounds.bottom) {
+      particle.vy *= -1;
+    }
 
     if (mouse.x !== null && mouse.y !== null) {
       const dx = particle.x - mouse.x;
