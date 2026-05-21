@@ -1,30 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
   <div class="container-fluid px-4">
-    <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
-      <img
-        width="100"
-        src="/src/assets/vitrinexo.svg"
-        alt="Vitrinexo"
-        style="flex-shrink: 0"
-      />
-      <span
-        style="
-          font-size: 11px;
-          color: var(--color-text-secondary);
-          font-weight: 400;
-        "
-        >by Maggiore</span
-      >
+    <a href="dashboard.html" class="navbar-brand d-flex align-items-center gap-2">
+      <img width="100" src="/src/assets/vitrinexo.svg" alt="Vitrinexo" style="flex-shrink:0" />
+      <span style="font-size:11px;color:var(--color-text-secondary);font-weight:400">by Maggiore</span>
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navLogged"
-      aria-controls="navLogged"
-      aria-expanded="false"
-      aria-label="Abrir navegacion"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLogged" aria-controls="navLogged" aria-expanded="false" aria-label="Abrir navegacion">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navLogged">
@@ -33,75 +13,57 @@
           <a class="nav-link" href="directorio.html">Directorio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mis-favoritos.html">Mis favoritos</a>
+          <a class="nav-link" href="mis-favoritos.html">Favoritos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="conexiones.html">Conexiones</a>
         </li>
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Comunidades
           </a>
           <ul class="dropdown-menu border-0 shadow-sm p-1">
             <li>
               <a class="dropdown-item rounded-2" href="comunidad-out2b.html">
-                OUT2B
+                <i class="ti ti-rainbow me-2" style="color:#a855f7"></i>Out2B
               </a>
             </li>
             <li>
               <a class="dropdown-item rounded-2" href="comunidad-woman.html">
-                Woman
+                <i class="ti ti-gender-female me-2" style="color:#ec4899"></i>Woman
               </a>
             </li>
             <li>
               <a class="dropdown-item rounded-2" href="comunidad-senior.html">
-                Senior
+                <i class="ti ti-award me-2" style="color:#d97706"></i>Senior
+              </a>
+            </li>
+            <li><hr class="dropdown-divider my-1"></li>
+            <li>
+              <a class="dropdown-item rounded-2" href="4dinner.html">
+                <span class="me-2">🍽</span>4Dinner
               </a>
             </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="4dinner.html">4Dinner</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="blog.html">Blog</a>
         </li>
       </ul>
       <div class="d-flex align-items-center gap-2">
-        <button
-          class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-          type="button"
-          aria-label="Ver notificaciones"
-        >
+        <!-- Notificaciones -->
+        <button class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm position-relative" type="button" aria-label="Notificaciones">
           <i class="ti ti-bell"></i>
+          <span class="notif-dot"></span>
         </button>
+        <!-- User menu -->
         <div class="dropdown">
-          <button
-            class="btn-vx btn-ghost-vx btn-vx-sm d-flex align-items-center gap-2"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="/src/assets/placeholder3.webp"
-              alt="Tu avatar"
-              style="
-                width: 26px;
-                height: 26px;
-                border-radius: 50%;
-                object-fit: cover;
-              "
-            />
-            <span style="font-size: 13px; font-weight: 500">Felipe M.</span>
-            <i class="ti ti-chevron-down" style="font-size: 12px"></i>
+          <button class="btn-vx btn-ghost-vx btn-vx-sm d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="/src/assets/placeholder3.webp" alt="Tu avatar" style="width:26px;height:26px;border-radius:50%;object-fit:cover" />
+            <span style="font-size:13px;font-weight:500">Felipe M.</span>
+            <i class="ti ti-chevron-down" style="font-size:12px"></i>
           </button>
-          <ul
-            class="dropdown-menu dropdown-menu-end dropdown-vx border-0 shadow"
-            style="padding: 6px 0"
-          >
+          <ul class="dropdown-menu dropdown-menu-end dropdown-vx border-0 shadow" style="padding:6px 0;min-width:180px">
             <li>
               <a class="dropdown-vx-item" href="dashboard.html">
                 <i class="ti ti-layout-dashboard"></i>Dashboard
@@ -117,10 +79,25 @@
                 <i class="ti ti-pencil"></i>Editar perfil
               </a>
             </li>
+            <li>
+              <a class="dropdown-vx-item" href="conexiones.html">
+                <i class="ti ti-network"></i>Mis conexiones
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-vx-item" href="mis-favoritos.html">
+                <i class="ti ti-heart"></i>Mis favoritos
+              </a>
+            </li>
             <li><hr class="dropdown-vx-divider my-1" /></li>
             <li>
+              <a class="dropdown-vx-item" href="configuracion.html">
+                <i class="ti ti-settings"></i>Configuración
+              </a>
+            </li>
+            <li>
               <a class="dropdown-vx-item danger" href="login.html">
-                <i class="ti ti-logout"></i>Cerrar sesion
+                <i class="ti ti-logout"></i>Cerrar sesión
               </a>
             </li>
           </ul>
