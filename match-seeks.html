@@ -13,17 +13,17 @@
 <include src="src/components/nav-logged.html"></include>
 
 <!-- PAGE HEADER -->
-<div class="page-header-vx" style="background:linear-gradient(135deg, var(--color-pink-50) 0%, #fff 60%)">
+<div class="page-header-vx" class="match-header--seeks">
   <div class="container">
     <div class="page-header-vx__inner">
       <div>
-        <h1 class="page-header-vx__title">Ofrecen lo que <strong style="color:var(--color-accent)">buscas</strong></h1>
+        <h1 class="page-header-vx__title">Ofrecen lo que <strong class="match-section-label--seeks">buscas</strong></h1>
         <p class="page-header-vx__lead">Empresas cuya oferta coincide con lo que declaraste buscar en tu perfil.</p>
       </div>
       <div class="d-flex align-items-center gap-3 flex-wrap">
         <!-- Tags que generan el match -->
         <div>
-          <span style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-secondary);display:block;margin-bottom:5px">Tu perfil busca</span>
+          <span class="match-profile-label">Tu perfil busca</span>
           <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">agencias de marketing</span>
             <span class="tag-vx tag-seeks">partners tecnológicos</span>
@@ -75,7 +75,7 @@
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:10px">Senior</span></h5>
+            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" class="badge-vx badge-neutral">Senior</span></h5>
             <p class="member-company">Consultoría Iberoamericana</p>
             <p class="member-company">Ciudad de México (MX)</p>
           </div>
@@ -253,10 +253,10 @@
   </div>
 
   <!-- CTA editar perfil -->
-  <div class="card-vx d-flex align-items-center justify-content-between gap-3" style="flex-wrap:wrap;border-left:3px solid var(--color-accent)">
+  <div class="card-vx d-flex align-items-center justify-content-between gap-3" class="cta-card--seeks">
     <div>
-      <p style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin:0 0 2px">¿Ves pocos matches?</p>
-      <p style="font-size:12px;color:var(--color-text-secondary);margin:0">Amplía o ajusta lo que declaras buscar en tu perfil para encontrar más conexiones.</p>
+      <p class="cta-card__title">¿Ves pocos matches?</p>
+      <p class="cta-card__desc">Amplía o ajusta lo que declaras buscar en tu perfil para encontrar más conexiones.</p>
     </div>
     <a href="editor-perfil.html" class="btn-vx btn-soft-accent btn-vx-sm">
       <i class="ti ti-pencil"></i> Editar lo que busco
@@ -269,15 +269,15 @@
 <!-- MODAL CONECTAR -->
 <div class="modal fade" id="modalConectar" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-vx" style="width:100%;max-width:500px;margin:auto">
+    <div class="modal-vx" >
       <div class="modal-vx-header">
         <div>
           <h5 class="modal-vx-title">Conectar</h5>
-          <p style="margin:2px 0 0;font-size:13px;color:var(--color-text-secondary)">Envía un mensaje de presentación</p>
+          <p class="modal-subtitle">Envía un mensaje de presentación</p>
         </div>
         <button type="button" class="btn-vx btn-ghost-vx btn-vx-icon-sm" data-bs-dismiss="modal"><i class="ti ti-x"></i></button>
       </div>
-      <div style="padding:24px">
+      <div class="modal-body-pad">
         <div class="mb-3">
           <label class="form-label-vx">¿Por qué quieres conectar?</label>
           <textarea class="form-control-vx" rows="3" placeholder="Cuéntale a qué viene tu contacto..."></textarea>

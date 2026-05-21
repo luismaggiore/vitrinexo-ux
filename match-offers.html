@@ -13,17 +13,17 @@
 <include src="src/components/nav-logged.html"></include>
 
 <!-- PAGE HEADER -->
-<div class="page-header-vx" style="background:linear-gradient(135deg, var(--color-green-50) 0%, #fff 60%)">
+<div class="page-header-vx match-header--offers">
   <div class="container">
     <div class="page-header-vx__inner">
       <div>
-        <h1 class="page-header-vx__title">Buscan lo que <strong style="color:var(--color-success)">ofreces</strong></h1>
+        <h1 class="page-header-vx__title">Buscan lo que <strong >ofreces</strong></h1>
         <p class="page-header-vx__lead">Empresas cuya búsqueda coincide con lo que declaraste ofrecer en tu perfil.</p>
       </div>
       <div class="d-flex align-items-center gap-3 flex-wrap">
         <!-- Tags que generan el match -->
         <div>
-          <span style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-secondary);display:block;margin-bottom:5px">Tu perfil ofrece</span>
+          <span class="match-profile-label">Tu perfil ofrece</span>
           <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-offers">marketing digital</span>
             <span class="tag-vx tag-offers">branding</span>
@@ -195,10 +195,10 @@
   </div>
 
   <!-- CTA editar perfil -->
-  <div class="card-vx d-flex align-items-center justify-content-between gap-3" style="flex-wrap:wrap;border-left:3px solid var(--color-success)">
+  <div class="card-vx d-flex align-items-center justify-content-between gap-3 cta-card--offers">
     <div>
-      <p style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin:0 0 2px">¿Ves pocos matches?</p>
-      <p style="font-size:12px;color:var(--color-text-secondary);margin:0">Detalla mejor lo que ofreces en tu perfil para que más empresas te encuentren.</p>
+      <p class="cta-card__title">¿Ves pocos matches?</p>
+      <p class="cta-card__desc">Detalla mejor lo que ofreces en tu perfil para que más empresas te encuentren.</p>
     </div>
     <a href="editor-perfil.html" class="btn-vx btn-soft-primary btn-vx-sm">
       <i class="ti ti-pencil"></i> Editar lo que ofrezco
@@ -215,11 +215,11 @@
       <div class="modal-vx-header">
         <div>
           <h5 class="modal-vx-title">Conectar</h5>
-          <p style="margin:2px 0 0;font-size:13px;color:var(--color-text-secondary)">Envía un mensaje de presentación</p>
+          <p class="modal-subtitle">Envía un mensaje de presentación</p>
         </div>
         <button type="button" class="btn-vx btn-ghost-vx btn-vx-icon-sm" data-bs-dismiss="modal"><i class="ti ti-x"></i></button>
       </div>
-      <div style="padding:24px">
+      <div class="modal-body-pad">
         <div class="mb-3">
           <label class="form-label-vx">¿Por qué quieres conectar?</label>
           <textarea class="form-control-vx" rows="3" placeholder="Cuéntale a qué viene tu contacto..."></textarea>

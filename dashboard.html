@@ -4,65 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard — Vitrinexo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
     <link href="/src/style.css" rel="stylesheet" />
   </head>
   <body>
     <include src="src/components/nav-logged.html"></include>
 
-    <!-- ============================================================
-     PAGE HEADER
-     ============================================================ -->
+    <!-- PAGE HEADER -->
     <div class="page-header-vx">
       <div class="container">
         <div class="page-header-vx__inner">
           <div>
-            <p
-              style="
-                font-size: 12px;
-                color: var(--color-text-secondary);
-                margin: 0 0 2px;
-              "
-            >
-              Miércoles, 20 de mayo 2026
-            </p>
-            <h1 class="page-header-vx__title">
-              Bienvenido, <strong>Felipe</strong>
-            </h1>
-            <p class="page-header-vx__lead">
-              Tienes 3 matches nuevos y 1 solicitud de conexión pendiente.
-            </p>
+            <p class="dashboard-date">Miércoles, 20 de mayo 2026</p>
+            <h1 class="page-header-vx__title">Bienvenido, <strong>Felipe</strong></h1>
+            <p class="page-header-vx__lead">Tienes 3 matches nuevos y 1 solicitud de conexión pendiente.</p>
           </div>
           <div class="d-flex gap-2 align-items-center">
-            <button
-              class="btn-vx btn-ghost-vx btn-vx-sm position-relative"
-              aria-label="Notificaciones"
-            >
+            <button class="btn-vx btn-ghost-vx btn-vx-sm position-relative" aria-label="Notificaciones">
               <i class="ti ti-bell"></i>
-              <span
-                style="
-                  position: absolute;
-                  top: 4px;
-                  right: 4px;
-                  width: 7px;
-                  height: 7px;
-                  border-radius: 50%;
-                  background: var(--color-accent);
-                  border: 1.5px solid var(--color-surface);
-                "
-              ></span>
+              <span class="notif-dot"></span>
             </button>
-            <a
-              href="editor-perfil.html"
-              class="btn-vx btn-soft-primary btn-vx-sm"
-            >
+            <a href="editor-perfil.html" class="btn-vx btn-soft-primary btn-vx-sm">
               <i class="ti ti-pencil"></i> Editar perfil
             </a>
           </div>
@@ -70,68 +33,56 @@
       </div>
     </div>
 
-    <!-- ============================================================
-     STATS RÁPIDAS
-     ============================================================ -->
+    <!-- STATS RÁPIDAS -->
     <main>
       <div class="container py-4">
         <div class="row g-3 mb-4">
           <div class="col-6 col-md-3">
             <div class="stat-card-vx">
-              <div class="stat-num-vx" style="color: var(--color-primary)">
-                24
-              </div>
+              <div class="stat-num-vx stat-num-vx--primary">24</div>
               <div class="stat-label-vx">Visitas a tu perfil</div>
             </div>
           </div>
           <div class="col-6 col-md-3">
             <div class="stat-card-vx">
-              <div class="stat-num-vx" style="color: var(--color-accent)">
-                3
-              </div>
+              <div class="stat-num-vx stat-num-vx--accent">3</div>
               <div class="stat-label-vx">Matches nuevos</div>
             </div>
           </div>
           <div class="col-6 col-md-3">
             <div class="stat-card-vx">
-              <div class="stat-num-vx" style="color: var(--color-secondary)">
-                7
-              </div>
+              <div class="stat-num-vx stat-num-vx--secondary">7</div>
               <div class="stat-label-vx">Conexiones activas</div>
             </div>
           </div>
           <div class="col-6 col-md-3">
             <div class="stat-card-vx">
-              <div class="stat-num-vx" style="color: var(--color-success)">
-                12
-              </div>
+              <div class="stat-num-vx stat-num-vx--success">12</div>
               <div class="stat-label-vx">Guardados en favoritos</div>
             </div>
           </div>
         </div>
 
-        <!-- ============================================================
-       MIS COMUNIDADES
-       ============================================================ -->
+        <!-- MIS COMUNIDADES -->
         <div class="mb-5">
           <div class="d-flex align-items-center justify-content-between mb-3">
-            <h2 style="font-size:18px;margin:0;letter-spacing:-0.03em">Mis comunidades</h2>
-            <a href="editor-perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm" style="font-size:12px">
+            <h2 class="section-title-sm">Mis comunidades</h2>
+            <a href="editor-perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm">
               <i class="ti ti-settings"></i> Gestionar
             </a>
           </div>
           <div class="row g-2">
 
-            <!-- Vitrinexo principal — siempre activa -->
+            <!-- Vitrinexo principal -->
             <div class="col-12 col-sm-6 col-lg-3">
               <a href="directorio.html" class="text-decoration-none d-block">
-                <div class="card-vx d-flex align-items-center gap-3" style="border-left:3px solid var(--color-primary);transition:box-shadow .15s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
-                  <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--color-cyan-600),var(--color-green-500));display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                    <i class="ti ti-building" style="color:#fff;font-size:16px"></i>
+                <div class="card-vx d-flex align-items-center gap-3 comunidad-card">
+                  <div class="comunidad-icon comunidad-icon--vx">
+                    <i class="ti ti-building"></i>
                   </div>
-                  <div style="min-width:0">
-                    <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Vitrinexo</div>
-                    <div style="font-size:11px;color:var(--color-text-secondary)">Directorio principal · Activa</div>
+                  <div>
+                    <div class="comunidad-name">Vitrinexo</div>
+                    <div class="comunidad-status">Directorio principal · Activa</div>
                   </div>
                 </div>
               </a>
@@ -140,13 +91,13 @@
             <!-- Out2B -->
             <div class="col-12 col-sm-6 col-lg-3">
               <a href="comunidad-out2b.html" class="text-decoration-none d-block">
-                <div class="card-vx d-flex align-items-center gap-3" style="border-left:3px solid #a855f7;transition:box-shadow .15s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
-                  <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                    <i class="ti ti-rainbow" style="color:#fff;font-size:16px"></i>
+                <div class="card-vx d-flex align-items-center gap-3 comunidad-card comunidad-card--out2b">
+                  <div class="comunidad-icon comunidad-icon--out2b">
+                    <i class="ti ti-rainbow"></i>
                   </div>
-                  <div style="min-width:0">
-                    <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Out2B</div>
-                    <div style="font-size:11px;color:var(--color-text-secondary)">Comunidad LGBTQ+ · Activa</div>
+                  <div>
+                    <div class="comunidad-name">Out2B</div>
+                    <div class="comunidad-status">Comunidad LGBTQ+ · Activa</div>
                   </div>
                 </div>
               </a>
@@ -155,345 +106,126 @@
             <!-- 4Dinner -->
             <div class="col-12 col-sm-6 col-lg-3">
               <a href="4dinner.html" class="text-decoration-none d-block">
-                <div class="card-vx d-flex align-items-center gap-3" style="border-left:3px solid #c99522;transition:box-shadow .15s ease" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow=''">
-                  <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#3a2a08,#c99522);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px">🍽</div>
-                  <div style="min-width:0">
-                    <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">4Dinner</div>
-                    <div style="font-size:11px;color:var(--color-text-secondary)">Próx. miércoles 28 mayo</div>
+                <div class="card-vx d-flex align-items-center gap-3 comunidad-card comunidad-card--dinner">
+                  <div class="comunidad-icon comunidad-icon--dinner">🍽</div>
+                  <div>
+                    <div class="comunidad-name">4Dinner</div>
+                    <div class="comunidad-status">Próx. miércoles 28 mayo</div>
                   </div>
                 </div>
               </a>
             </div>
 
-            <!-- Woman — no activa, invitación -->
+            <!-- Woman — no activa -->
             <div class="col-12 col-sm-6 col-lg-3">
-              <div class="card-vx d-flex align-items-center gap-3" style="border-left:3px solid var(--color-border);opacity:.6">
-                <div style="width:38px;height:38px;border-radius:50%;background:var(--color-ice-400);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                  <i class="ti ti-gender-female" style="color:var(--color-text-secondary);font-size:16px"></i>
+              <div class="card-vx d-flex align-items-center gap-3 comunidad-card comunidad-card--inactive">
+                <div class="comunidad-icon comunidad-icon--inactive">
+                  <i class="ti ti-gender-female"></i>
                 </div>
-                <div style="min-width:0;flex:1">
-                  <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Woman</div>
-                  <div style="font-size:11px;color:var(--color-text-secondary)">No activa</div>
+                <div class="flex-grow-1">
+                  <div class="comunidad-name">Woman</div>
+                  <div class="comunidad-status">No activa</div>
                 </div>
-                <a href="comunidad-woman.html" class="btn-vx btn-ghost-vx btn-vx-sm" style="font-size:11px;white-space:nowrap">Unirse</a>
+                <a href="comunidad-woman.html" class="btn-vx btn-ghost-vx btn-vx-sm">Unirse</a>
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- ============================================================
-       BUSCADOR CON FILTROS
-       ============================================================ -->
+        <!-- BUSCADOR CON FILTROS -->
         <div class="card-vx mb-5">
           <div class="d-flex align-items-center gap-2 mb-3">
-            <i
-              class="ti ti-search"
-              style="color: var(--color-primary); font-size: 18px"
-            ></i>
-            <h2
-              style="
-                font-size: 18px;
-                margin: 0;
-                font-weight: 500;
-                letter-spacing: -0.02em;
-              "
-            >
-              Explorar directorio
-            </h2>
+            <i class="ti ti-search" style="color:var(--color-primary);font-size:18px"></i>
+            <h2 class="section-title-sm" style="font-weight:500">Explorar directorio</h2>
           </div>
           <div class="search-bar-vx mb-3">
-            <i
-              class="ti ti-search"
-              style="color: var(--color-text-secondary); font-size: 16px"
-            ></i>
-            <input
-              type="text"
-              placeholder="Buscar empresas, rubros, países..."
-            />
+            <i class="ti ti-search" style="color:var(--color-text-secondary);font-size:16px"></i>
+            <input type="text" placeholder="Buscar empresas, rubros, países..." />
             <a href="directorio.html" class="btn-vx btn-primary-vx btn-vx-sm">
               <i class="ti ti-search"></i> Buscar
             </a>
           </div>
           <div class="d-flex gap-2 flex-wrap">
-            <button class="btn-vx btn-ghost-vx btn-vx-sm">
-              <i class="ti ti-world"></i> País
-            </button>
-            <button class="btn-vx btn-ghost-vx btn-vx-sm">
-              <i class="ti ti-briefcase"></i> Rubro
-            </button>
-            <button class="btn-vx btn-ghost-vx btn-vx-sm">
-              <i class="ti ti-building"></i> Tamaño
-            </button>
-            <button class="btn-vx btn-soft-secondary btn-vx-sm">
-              <i class="ti ti-star"></i> Socios Fundadores
-            </button>
-            <a
-              href="directorio.html"
-              class="btn-vx btn-ghost-vx btn-vx-sm ms-auto"
-              style="color: var(--color-primary)"
-            >
+            <button class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-world"></i> País</button>
+            <button class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-briefcase"></i> Rubro</button>
+            <button class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-building"></i> Tamaño</button>
+            <button class="btn-vx btn-soft-secondary btn-vx-sm"><i class="ti ti-star"></i> Socios Fundadores</button>
+            <a href="directorio.html" class="btn-vx btn-ghost-vx btn-vx-sm ms-auto link-primary-color">
               Ver todo el directorio <i class="ti ti-arrow-right ms-1"></i>
             </a>
           </div>
         </div>
 
-        <!-- ============================================================
-       BANNER 4DINNER
-       ============================================================ -->
-        <div
-          class="mb-5"
-          style="
-            background: linear-gradient(
-              135deg,
-              #3a2a08 0%,
-              #c99522 60%,
-              #e8b84b 100%
-            );
-            border-radius: var(--radius-lg);
-            padding: 2rem 2.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            box-shadow: 0 8px 32px -8px rgba(201, 149, 34, 0.45);
-            position: relative;
-            overflow: hidden;
-          "
-        >
-          <!-- Decorative circles -->
-          <div
-            style="
-              position: absolute;
-              right: -40px;
-              top: -40px;
-              width: 180px;
-              height: 180px;
-              border-radius: 50%;
-              background: rgba(255, 255, 255, 0.07);
-              pointer-events: none;
-            "
-          ></div>
-          <div
-            style="
-              position: absolute;
-              right: 60px;
-              bottom: -60px;
-              width: 140px;
-              height: 140px;
-              border-radius: 50%;
-              background: rgba(255, 255, 255, 0.05);
-              pointer-events: none;
-            "
-          ></div>
-
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 1.25rem;
-              position: relative;
-              z-index: 1;
-            "
-          >
-            <div
-              style="
-                width: 52px;
-                height: 52px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.18);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                font-size: 24px;
-                backdrop-filter: blur(8px);
-              "
-            >
-              🍽
-            </div>
+        <!-- BANNER 4DINNER -->
+        <div class="banner-4dinner mb-5">
+          <div class="banner-4dinner__deco banner-4dinner__deco--1"></div>
+          <div class="banner-4dinner__deco banner-4dinner__deco--2"></div>
+          <div class="banner-4dinner__body">
+            <div class="banner-4dinner__icon">🍽</div>
             <div>
-              <div
-                style="
-                  font-size: 10px;
-                  letter-spacing: 0.18em;
-                  text-transform: uppercase;
-                  font-weight: 700;
-                  color: rgba(255, 255, 255, 0.7);
-                  margin-bottom: 2px;
-                "
-              >
-                Próximo evento
-              </div>
-              <div
-                style="
-                  font-size: 18px;
-                  font-weight: 600;
-                  color: #fff;
-                  line-height: 1.2;
-                  letter-spacing: -0.02em;
-                "
-              >
-                Habrá un <strong>4Dinner</strong> cerca tuyo
-              </div>
-              <div
-                style="
-                  font-size: 13px;
-                  color: rgba(255, 255, 255, 0.85);
-                  margin-top: 4px;
-                "
-              >
-                <i
-                  class="ti ti-map-pin"
-                  style="font-size: 12px; margin-right: 3px"
-                ></i
-                >Santiago, Chile &nbsp;·&nbsp;
-                <i
-                  class="ti ti-calendar"
-                  style="font-size: 12px; margin-right: 3px"
-                ></i
-                >Miércoles 28 mayo &nbsp;·&nbsp;
-                <i
-                  class="ti ti-clock"
-                  style="font-size: 12px; margin-right: 3px"
-                ></i
-                >8pm &nbsp;·&nbsp; 4 personas, 1 mesa
+              <div class="banner-4dinner__eyebrow">Próximo evento</div>
+              <div class="banner-4dinner__title">Habrá un <strong>4Dinner</strong> cerca tuyo</div>
+              <div class="banner-4dinner__meta">
+                <i class="ti ti-map-pin"></i>Santiago, Chile &nbsp;·&nbsp;
+                <i class="ti ti-calendar"></i>Miércoles 28 mayo &nbsp;·&nbsp;
+                <i class="ti ti-clock"></i>8pm &nbsp;·&nbsp; 4 personas, 1 mesa
               </div>
             </div>
           </div>
-
-          <a
-            href="4dinner.html"
-            class="btn-vx btn-vx-sm"
-            style="
-              background: #fff;
-              color: #8a5f0a;
-              font-weight: 700;
-              white-space: nowrap;
-              position: relative;
-              z-index: 1;
-              box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-            "
-          >
+          <a href="4dinner.html" class="btn-vx btn-vx-sm banner-4dinner__cta">
             Reservar mi lugar <i class="ti ti-arrow-right ms-1"></i>
           </a>
         </div>
 
-        <!-- ============================================================
-       OFRECEN LO QUE BUSCAS
-       ============================================================ -->
+        <!-- OFRECEN LO QUE BUSCAS -->
         <section class="mb-5">
-          <div
-            class="d-flex align-items-center justify-content-between mb-3 gap-2 flex-wrap"
-          >
-            <div>
-              <h2 style="font-size: 22px; margin: 0; letter-spacing: -0.04em">
-                Ofrecen lo que buscas
-              </h2>
-            </div>
+          <div class="d-flex align-items-center justify-content-between mb-3 gap-2 flex-wrap">
+            <h2 class="section-title-md">Ofrecen lo que buscas</h2>
             <div class="d-flex align-items-center gap-2">
               <div class="d-flex flex-wrap gap-1">
                 <span class="tag-vx tag-seeks">agencias de marketing</span>
                 <span class="tag-vx tag-seeks">partners tecnológicos</span>
               </div>
-              <a
-                href="match-seeks.html"
-                class="btn-vx btn-ghost-vx btn-vx-sm"
-                style="white-space: nowrap"
-                >Ver todos <i class="ti ti-arrow-right ms-1"></i
-              ></a>
+              <a href="match-seeks.html" class="btn-vx btn-ghost-vx btn-vx-sm">Ver todos <i class="ti ti-arrow-right ms-1"></i></a>
             </div>
           </div>
-
-          <div
-            class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2"
-          >
-            <!-- user_003 -->
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
             <div class="col">
               <div class="card">
                 <div class="card-img-container">
                   <div class="card-enlaces">
-                    <a
-                      href="perfil.html"
-                      class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                      ><i class="ti ti-external-link"></i
-                    ></a>
-                    <button
-                      class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
-                    >
-                      <i class="ti ti-heart"></i>
-                    </button>
-                    <button
-                      class="btn-vx btn-soft-primary btn-vx-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalConectar"
-                    >
-                      <i class="ti ti-send"></i> Conectar
-                    </button>
+                    <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+                    <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+                    <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
                   </div>
                   <div class="card-blur-gradient"></div>
-                  <img
-                    class="card-img-top"
-                    src="/src/assets/placeholder3.webp"
-                    alt="María Guadalupe"
-                  />
+                  <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe">
                 </div>
                 <div class="card-body">
                   <div class="info mb-2">
-                    <h5 class="h6 py-0 my-0">
-                      María G. Estévez-Montoya
-                      <span
-                        class="badge-vx badge-neutral"
-                        style="font-size: 10px"
-                        >Senior</span
-                      >
-                    </h5>
+                    <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:10px">Senior</span></h5>
                     <p class="member-company">Consultoría Iberoamericana</p>
                     <p class="member-company">Ciudad de México (MX)</p>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-1">
-                    <p class="p-offers">Ofrece</p>
-                  </div>
+                  <p class="p-offers mb-1">Ofrece</p>
                   <div class="d-flex flex-wrap gap-1">
-                    <span class="tag-vx tag-offers"
-                      >transformación digital</span
-                    >
+                    <span class="tag-vx tag-offers">transformación digital</span>
                     <span class="tag-vx tag-offers">change management</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- user_009 -->
             <div class="col">
               <div class="card">
                 <div class="card-img-container">
                   <div class="card-enlaces">
-                    <a
-                      href="perfil.html"
-                      class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                      ><i class="ti ti-external-link"></i
-                    ></a>
-                    <button
-                      class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
-                    >
-                      <i class="ti ti-heart"></i>
-                    </button>
-                    <button
-                      class="btn-vx btn-soft-primary btn-vx-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalConectar"
-                    >
-                      <i class="ti ti-send"></i> Conectar
-                    </button>
+                    <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+                    <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+                    <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
                   </div>
                   <div class="card-blur-gradient"></div>
-                  <img
-                    class="card-img-top"
-                    src="/src/assets/placeholder4.webp"
-                    alt="Ana Fernández"
-                  />
+                  <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Ana Fernández">
                 </div>
                 <div class="card-body">
                   <div class="info mb-2">
@@ -501,48 +233,24 @@
                     <p class="member-company">BrandLab Internacional</p>
                     <p class="member-company">Madrid (ESP)</p>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-1">
-                    <p class="p-offers">Ofrece</p>
-                  </div>
+                  <p class="p-offers mb-1">Ofrece</p>
                   <div class="d-flex flex-wrap gap-1">
-                    <span class="tag-vx tag-offers"
-                      >branding internacional</span
-                    >
+                    <span class="tag-vx tag-offers">branding internacional</span>
                     <span class="tag-vx tag-offers">estrategia SEO</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- user_002 -->
             <div class="col">
               <div class="card">
                 <div class="card-img-container">
                   <div class="card-enlaces">
-                    <a
-                      href="perfil.html"
-                      class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                      ><i class="ti ti-external-link"></i
-                    ></a>
-                    <button
-                      class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
-                    >
-                      <i class="ti ti-heart"></i>
-                    </button>
-                    <button
-                      class="btn-vx btn-soft-primary btn-vx-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalConectar"
-                    >
-                      <i class="ti ti-send"></i> Conectar
-                    </button>
+                    <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+                    <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+                    <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
                   </div>
                   <div class="card-blur-gradient"></div>
-                  <img
-                    class="card-img-top"
-                    src="/src/assets/placeholder2.webp"
-                    alt="Roberto Abarca"
-                  />
+                  <img class="card-img-top" src="/src/assets/placeholder2.webp" alt="Roberto Abarca">
                 </div>
                 <div class="card-body">
                   <div class="info mb-2">
@@ -550,9 +258,7 @@
                     <p class="member-company">Minotauro Marketing</p>
                     <p class="member-company">Buenos Aires (ARG)</p>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-1">
-                    <p class="p-offers">Ofrece</p>
-                  </div>
+                  <p class="p-offers mb-1">Ofrece</p>
                   <div class="d-flex flex-wrap gap-1">
                     <span class="tag-vx tag-offers">marketing digital</span>
                     <span class="tag-vx tag-offers">branding</span>
@@ -560,57 +266,26 @@
                 </div>
               </div>
             </div>
-
-            <!-- user_010 -->
             <div class="col">
               <div class="card">
                 <div class="card-img-container">
                   <div class="card-enlaces">
-                    <a
-                      href="perfil.html"
-                      class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                      ><i class="ti ti-external-link"></i
-                    ></a>
-                    <button
-                      class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
-                    >
-                      <i class="ti ti-heart"></i>
-                    </button>
-                    <button
-                      class="btn-vx btn-soft-primary btn-vx-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalConectar"
-                    >
-                      <i class="ti ti-send"></i> Conectar
-                    </button>
+                    <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+                    <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+                    <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
                   </div>
                   <div class="card-blur-gradient"></div>
-                  <img
-                    class="card-img-top"
-                    src="/src/assets/placeholder5.webp"
-                    alt="Camila Torres"
-                  />
+                  <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Camila Torres">
                 </div>
                 <div class="card-body">
                   <div class="info mb-2">
-                    <h5 class="h6 py-0 my-0">
-                      Camila Torres
-                      <span
-                        class="founder-tooltip"
-                        data-tooltip="Miembro fundador"
-                        ><i class="founder-tag ti ti-star"></i
-                      ></span>
-                    </h5>
+                    <h5 class="h6 py-0 my-0">Camila Torres <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
                     <p class="member-company">FlowOps Studio</p>
                     <p class="member-company">Lima (PER)</p>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-1">
-                    <p class="p-offers">Ofrece</p>
-                  </div>
+                  <p class="p-offers mb-1">Ofrece</p>
                   <div class="d-flex flex-wrap gap-1">
-                    <span class="tag-vx tag-offers"
-                      >automatización no-code</span
-                    >
+                    <span class="tag-vx tag-offers">automatización no-code</span>
                     <span class="tag-vx tag-offers">Zapier</span>
                   </div>
                 </div>
@@ -619,172 +294,77 @@
           </div>
         </section>
 
-        <!-- ============================================================
-       BUSCAN LO QUE OFRECES
-       ============================================================ -->
+        <!-- BUSCAN LO QUE OFRECES -->
         <section class="mb-5">
-          <div
-            class="d-flex align-items-center justify-content-between mb-3 gap-2 flex-wrap"
-          >
-            <div>
-              <h2 style="font-size: 22px; margin: 0; letter-spacing: -0.04em">
-                Buscan lo que ofreces
-              </h2>
-            </div>
+          <div class="d-flex align-items-center justify-content-between mb-3 gap-2 flex-wrap">
+            <h2 class="section-title-md">Buscan lo que ofreces</h2>
             <div class="d-flex align-items-center gap-2">
               <div class="d-flex flex-wrap gap-1">
                 <span class="tag-vx tag-offers">ventas B2B</span>
                 <span class="tag-vx tag-offers">CRM</span>
               </div>
-              <a
-                href="match-offers.html"
-                class="btn-vx btn-ghost-vx btn-vx-sm"
-                style="white-space: nowrap"
-                >Ver todos <i class="ti ti-arrow-right ms-1"></i
-              ></a>
+              <a href="match-offers.html" class="btn-vx btn-ghost-vx btn-vx-sm">Ver todos <i class="ti ti-arrow-right ms-1"></i></a>
             </div>
           </div>
-
-          <div
-            class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2"
-          >
-            <!-- user_006 -->
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2">
             <div class="col">
               <div class="card">
                 <div class="card-img-container">
                   <div class="card-enlaces">
-                    <a
-                      href="perfil.html"
-                      class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                      ><i class="ti ti-external-link"></i
-                    ></a>
-                    <button
-                      class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
-                    >
-                      <i class="ti ti-heart"></i>
-                    </button>
-                    <button
-                      class="btn-vx btn-soft-primary btn-vx-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalConectar"
-                    >
-                      <i class="ti ti-send"></i> Conectar
-                    </button>
+                    <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+                    <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+                    <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
                   </div>
                   <div class="card-blur-gradient"></div>
-                  <img
-                    class="card-img-top"
-                    src="/src/assets/placeholder.webp"
-                    alt="Valentina"
-                  />
+                  <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina">
                 </div>
                 <div class="card-body">
                   <div class="info mb-2">
-                    <h5 class="h6 py-0 my-0">
-                      Valentina Koczorowski
-                      <span
-                        class="founder-tooltip"
-                        data-tooltip="Miembro fundador"
-                        ><i class="founder-tag ti ti-star"></i
-                      ></span>
-                    </h5>
+                    <h5 class="h6 py-0 my-0">Valentina Koczorowski <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
                     <p class="member-company">DataSur Analytics</p>
                     <p class="member-company">Bogotá (COL)</p>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-1">
-                    <p class="p-seeks">Busca</p>
-                  </div>
+                  <p class="p-seeks mb-1">Busca</p>
                   <div class="d-flex flex-wrap gap-1">
-                    <span class="tag-vx tag-seeks"
-                      >consultoras de estrategia</span
-                    >
+                    <span class="tag-vx tag-seeks">consultoras de estrategia</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- user_001 -->
             <div class="col">
               <div class="card">
                 <div class="card-img-container">
                   <div class="card-enlaces">
-                    <a
-                      href="perfil.html"
-                      class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                      ><i class="ti ti-external-link"></i
-                    ></a>
-                    <button
-                      class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
-                    >
-                      <i class="ti ti-heart"></i>
-                    </button>
-                    <button
-                      class="btn-vx btn-soft-primary btn-vx-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalConectar"
-                    >
-                      <i class="ti ti-send"></i> Conectar
-                    </button>
+                    <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+                    <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+                    <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
                   </div>
                   <div class="card-blur-gradient"></div>
-                  <img
-                    class="card-img-top"
-                    src="/src/assets/placeholder.webp"
-                    alt="Li"
-                  />
+                  <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Li">
                 </div>
                 <div class="card-body">
                   <div class="info mb-2">
-                    <h5 class="h6 py-0 my-0">
-                      Li
-                      <span
-                        class="founder-tooltip"
-                        data-tooltip="Miembro fundador"
-                        ><i class="founder-tag ti ti-star"></i
-                      ></span>
-                    </h5>
+                    <h5 class="h6 py-0 my-0">Li <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
                     <p class="member-company">OK Studio</p>
                     <p class="member-company">Lima (PER)</p>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-1">
-                    <p class="p-seeks">Busca</p>
-                  </div>
+                  <p class="p-seeks mb-1">Busca</p>
                   <div class="d-flex flex-wrap gap-1">
                     <span class="tag-vx tag-seeks">clientes</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- user_007 -->
             <div class="col">
               <div class="card">
                 <div class="card-img-container">
                   <div class="card-enlaces">
-                    <a
-                      href="perfil.html"
-                      class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                      ><i class="ti ti-external-link"></i
-                    ></a>
-                    <button
-                      class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"
-                    >
-                      <i class="ti ti-heart"></i>
-                    </button>
-                    <button
-                      class="btn-vx btn-soft-primary btn-vx-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalConectar"
-                    >
-                      <i class="ti ti-send"></i> Conectar
-                    </button>
+                    <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+                    <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+                    <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
                   </div>
                   <div class="card-blur-gradient"></div>
-                  <img
-                    class="card-img-top"
-                    src="/src/assets/placeholder2.webp"
-                    alt="Ignacio"
-                  />
+                  <img class="card-img-top" src="/src/assets/placeholder2.webp" alt="Ignacio">
                 </div>
                 <div class="card-body">
                   <div class="info mb-2">
@@ -792,9 +372,7 @@
                     <p class="member-company">PropTech Ventures</p>
                     <p class="member-company">Montevideo (URY)</p>
                   </div>
-                  <div class="d-flex flex-wrap gap-1 mb-1">
-                    <p class="p-seeks">Busca</p>
-                  </div>
+                  <p class="p-seeks mb-1">Busca</p>
                   <div class="d-flex flex-wrap gap-1">
                     <span class="tag-vx tag-seeks">desarrolladoras Chile</span>
                   </div>
@@ -804,70 +382,32 @@
           </div>
         </section>
 
-        <!-- ============================================================
-       MI TARJETA + PREVIEW DE PERFIL
-       ============================================================ -->
+        <!-- MI TARJETA + PREVIEW DE PERFIL -->
         <div class="row g-4 mb-5">
-          <!-- Mi tarjeta (MemberCard preview) -->
+          <!-- Mi tarjeta -->
           <div class="col-12 col-lg-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
               <div>
-                <span
-                  style="
-                    font-size: 11px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.14em;
-                    font-weight: 600;
-                    color: var(--color-text-secondary);
-                  "
-                  >Tu tarjeta en el directorio</span
-                >
-                <h2
-                  style="
-                    font-size: 18px;
-                    margin: 4px 0 0;
-                    letter-spacing: -0.03em;
-                  "
-                >
-                  Así te ven otros
-                </h2>
+                <span class="subsection-label">Tu tarjeta en el directorio</span>
+                <h2 class="subsection-title">Así te ven otros</h2>
               </div>
-              <a
-                href="editor-perfil.html"
-                class="btn-vx btn-soft-primary btn-vx-sm"
-              >
+              <a href="editor-perfil.html" class="btn-vx btn-soft-primary btn-vx-sm">
                 <i class="ti ti-pencil"></i> Editar
               </a>
             </div>
-            <!-- Replica del MemberCard -->
-            <div class="card" style="max-width: 240px">
+            <div class="card my-card-preview">
               <div class="card-img-container">
                 <div class="card-enlaces">
-                  <a
-                    href="perfil.html"
-                    class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"
-                    aria-label="Ver mi perfil"
-                  >
+                  <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver mi perfil">
                     <i class="ti ti-external-link"></i>
                   </a>
                 </div>
                 <div class="card-blur-gradient"></div>
-                <img
-                  class="card-img-top"
-                  src="/src/assets/placeholder3.webp"
-                  alt="Felipe M."
-                />
+                <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="Felipe M.">
               </div>
               <div class="card-body">
                 <div class="info mb-2">
-                  <h5 class="h6 py-0 my-0">
-                    Felipe M.
-                    <span
-                      class="founder-tooltip"
-                      data-tooltip="Miembro fundador"
-                      ><i class="founder-tag ti ti-star"></i
-                    ></span>
-                  </h5>
+                  <h5 class="h6 py-0 my-0">Felipe M. <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
                   <p class="member-company">Maggiore Marketing</p>
                   <p class="member-company">Santiago (CHL)</p>
                 </div>
@@ -885,132 +425,58 @@
             </div>
           </div>
 
-          <!-- Preview de mi perfil completo -->
+          <!-- Preview perfil -->
           <div class="col-12 col-lg-8">
             <div class="d-flex align-items-center justify-content-between mb-3">
               <div>
-                <span
-                  style="
-                    font-size: 11px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.14em;
-                    font-weight: 600;
-                    color: var(--color-text-secondary);
-                  "
-                  >Tu perfil completo</span
-                >
-                <h2
-                  style="
-                    font-size: 18px;
-                    margin: 4px 0 0;
-                    letter-spacing: -0.03em;
-                  "
-                >
-                  Vista previa
-                </h2>
+                <span class="subsection-label">Tu perfil completo</span>
+                <h2 class="subsection-title">Vista previa</h2>
               </div>
               <div class="d-flex gap-2">
-                <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm">
-                  <i class="ti ti-eye"></i> Ver perfil
-                </a>
-                <a
-                  href="editor-perfil.html"
-                  class="btn-vx btn-soft-primary btn-vx-sm"
-                >
-                  <i class="ti ti-pencil"></i> Editar perfil
-                </a>
+                <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-eye"></i> Ver perfil</a>
+                <a href="editor-perfil.html" class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-pencil"></i> Editar perfil</a>
               </div>
             </div>
-
-            <!-- Perfil card embebido (versión compacta del MemberProfile) -->
-            <div class="profile" style="max-width: 100%">
-              <!-- Banner -->
+            <div class="profile profile-preview">
               <div class="profile-top">
                 <div class="profile-actions">
-                  <a
-                    href="editor-perfil.html"
-                    class="btn-vx btn-soft-primary btn-vx-sm"
-                  >
+                  <a href="editor-perfil.html" class="btn-vx btn-soft-primary btn-vx-sm">
                     <i class="ti ti-pencil"></i> Editar
                   </a>
                 </div>
-                <div
-                  class="banner-profile"
-                  style="
-                    background-image: url(&quot;https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw&quot;);
-                  "
-                ></div>
+                <div class="banner-profile" style="background-image:url('https://media.licdn.com/dms/image/v2/D4D16AQEegj9F9ZRmkA/profile-displaybackgroundimage-shrink_200_800/B4DZ0L9ZDfKUAU-/0/1774022136730?e=1779926400&v=beta&t=0QlykKZ-yZ1aKq9EHJaHZrv1R5BUy8XhHaPVzRiBkVw')"></div>
                 <div class="profile-row">
                   <div class="img-profile">
-                    <img src="/src/assets/placeholder3.webp" alt="Felipe M." />
+                    <img src="/src/assets/placeholder3.webp" alt="Felipe M.">
                   </div>
                   <div class="profile-info">
-                    <h1 class="profile-name">
-                      Felipe M.
-                      <span
-                        class="founder-tooltip mx-2"
-                        data-tooltip="Miembro fundador"
-                        tabindex="0"
-                      >
-                        <i class="founder-tag ti ti-star"></i>
-                      </span>
-                    </h1>
-                    <a
-                      href="https://maggiore.cl"
-                      class="profile-company"
-                      target="_blank"
-                      rel="noopener"
-                      >Maggiore Marketing</a
-                    >
+                    <h1 class="profile-name">Felipe M. <span class="founder-tooltip mx-2" data-tooltip="Miembro fundador" tabindex="0"><i class="founder-tag ti ti-star"></i></span></h1>
+                    <a href="https://maggiore.cl" class="profile-company" target="_blank" rel="noopener">Maggiore Marketing</a>
                     <p class="profile-title">Director General</p>
-                    <p class="profile-location">
-                      <i class="ti ti-map-pin"></i> Santiago, Chile
-                      <span class="profile-country-chip">CHL</span>
-                    </p>
+                    <p class="profile-location"><i class="ti ti-map-pin"></i> Santiago, Chile <span class="profile-country-chip">CHL</span></p>
                   </div>
                 </div>
               </div>
-
-              <!-- Tags -->
               <div class="profile-tags-row">
                 <span class="tag-vx">Marketing Digital</span>
                 <span class="tag-vx">Estrategia</span>
                 <span class="tag-vx">Branding</span>
                 <span class="tag-vx">Investigación de Mercados</span>
               </div>
-
-              <!-- Cuerpo -->
               <div class="profile-content">
                 <div class="profile-section">
                   <h2 class="profile-section-title">Sobre mí</h2>
-                  <p>
-                    Director de marketing digital con 10+ años de experiencia en
-                    mercados B2B de Hispanoamérica y Estados Unidos. Fundador de
-                    Maggiore Marketing y creador de Vitrinexo.
-                  </p>
+                  <p>Director de marketing digital con 10+ años de experiencia en mercados B2B de Hispanoamérica y Estados Unidos. Fundador de Maggiore Marketing y creador de Vitrinexo.</p>
                 </div>
                 <div class="profile-section">
-                  <h2 class="profile-section-title">
-                    Sobre Maggiore Marketing
-                  </h2>
-                  <p>
-                    Agencia de marketing digital e investigación de mercados con
-                    sede en Santiago. Trabajamos con empresas medianas y grandes
-                    en Hispanoamérica y Estados Unidos.
-                  </p>
+                  <h2 class="profile-section-title">Sobre Maggiore Marketing</h2>
+                  <p>Agencia de marketing digital e investigación de mercados con sede en Santiago. Trabajamos con empresas medianas y grandes en Hispanoamérica y Estados Unidos.</p>
                 </div>
               </div>
-
-              <!-- Offer / Seek pills -->
               <div class="profile-duo">
                 <div class="profile-pill profile-pill-offer">
-                  <h3 class="profile-pill-title">
-                    <i class="ti ti-circle-check"></i> Qué ofrezco
-                  </h3>
-                  <p>
-                    Estrategia, branding, páginas web, creatividad y campañas de
-                    medios.
-                  </p>
+                  <h3 class="profile-pill-title"><i class="ti ti-circle-check"></i> Qué ofrezco</h3>
+                  <p>Estrategia, branding, páginas web, creatividad y campañas de medios.</p>
                   <div class="profile-pill-tags">
                     <span class="tag-vx tag-offers">marketing digital</span>
                     <span class="tag-vx tag-offers">branding</span>
@@ -1018,13 +484,8 @@
                   </div>
                 </div>
                 <div class="profile-pill profile-pill-seek">
-                  <h3 class="profile-pill-title">
-                    <i class="ti ti-search"></i> Qué busco
-                  </h3>
-                  <p>
-                    Alianzas con socios tecnológicos y consultoras de CRM y
-                    ventas B2B.
-                  </p>
+                  <h3 class="profile-pill-title"><i class="ti ti-search"></i> Qué busco</h3>
+                  <p>Alianzas con socios tecnológicos y consultoras de CRM y ventas B2B.</p>
                   <div class="profile-pill-tags">
                     <span class="tag-vx tag-seeks">alianzas tecnológicas</span>
                     <span class="tag-vx tag-seeks">CRM</span>
@@ -1035,56 +496,33 @@
             </div>
           </div>
         </div>
+
       </div>
     </main>
 
     <!-- MODAL CONECTAR -->
     <div class="modal fade" id="modalConectar" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
-        <div
-          class="modal-vx"
-          style="width: 100%; max-width: 500px; margin: auto"
-        >
+        <div class="modal-vx" style="width:100%;max-width:500px;margin:auto">
           <div class="modal-vx-header">
             <div>
               <h5 class="modal-vx-title">Conectar</h5>
-              <p
-                style="
-                  margin: 2px 0 0;
-                  font-size: 13px;
-                  color: var(--color-text-secondary);
-                "
-              >
-                Envía un mensaje de presentación
-              </p>
+              <p class="modal-subtitle">Envía un mensaje de presentación</p>
             </div>
-            <button
-              type="button"
-              class="btn-vx btn-ghost-vx btn-vx-icon-sm"
-              data-bs-dismiss="modal"
-            >
-              <i class="ti ti-x"></i>
-            </button>
+            <button type="button" class="btn-vx btn-ghost-vx btn-vx-icon-sm" data-bs-dismiss="modal"><i class="ti ti-x"></i></button>
           </div>
-          <div style="padding: 24px">
+          <div class="modal-body-pad">
             <div class="mb-3">
               <label class="form-label-vx">¿Por qué quieres conectar?</label>
-              <textarea
-                class="form-control-vx"
-                rows="3"
-                placeholder="Cuéntale a qué viene tu contacto..."
-              ></textarea>
+              <textarea class="form-control-vx" rows="3" placeholder="Cuéntale a qué viene tu contacto..."></textarea>
             </div>
-            <button class="btn-vx btn-primary-vx btn-vx-sm w-100">
-              <i class="ti ti-send"></i> Enviar solicitud
-            </button>
+            <button class="btn-vx btn-primary-vx btn-vx-sm w-100"><i class="ti ti-send"></i> Enviar solicitud</button>
           </div>
         </div>
       </div>
     </div>
 
     <include src="src/components/footer-logged.html"></include>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -2598,3 +2598,287 @@ section#offers {
 
   background-color: var(--color-ice-400);
 }
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+
+/* Page header date */
+.dashboard-date {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0 0 2px;
+}
+
+/* Notification dot */
+.notif-dot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 1.5px solid var(--color-surface);
+}
+
+/* Stat numbers colored by semantic role */
+.stat-num-vx--primary   { color: var(--color-primary); }
+.stat-num-vx--accent    { color: var(--color-accent); }
+.stat-num-vx--secondary { color: var(--color-secondary); }
+.stat-num-vx--success   { color: var(--color-success); }
+
+/* Section headings (18px inline-style pattern) */
+.section-title-sm {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.section-title-md {
+  font-size: 22px;
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+/* Subsection label above a title */
+.subsection-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  display: block;
+}
+
+.subsection-title {
+  font-size: 18px;
+  margin: 4px 0 0;
+  letter-spacing: -0.03em;
+}
+
+/* Buscador link color override */
+.link-primary-color {
+  color: var(--color-primary);
+}
+
+/* ── 4Dinner banner ── */
+.banner-4dinner {
+  background: linear-gradient(135deg, #3a2a08 0%, #c99522 60%, #e8b84b 100%);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 32px -8px rgba(201, 149, 34, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-4dinner__deco {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.banner-4dinner__deco--1 {
+  right: -40px;
+  top: -40px;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.banner-4dinner__deco--2 {
+  right: 60px;
+  bottom: -60px;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.banner-4dinner__body {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-4dinner__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.banner-4dinner__eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2px;
+}
+
+.banner-4dinner__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.banner-4dinner__meta {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 4px;
+}
+
+.banner-4dinner__meta i {
+  font-size: 12px;
+  margin-right: 3px;
+}
+
+.banner-4dinner__cta {
+  background: #fff;
+  color: #8a5f0a;
+  font-weight: 700;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Mi tarjeta preview ── */
+.my-card-preview {
+  max-width: 240px;
+}
+
+/* ── Profile preview (full-width inside dashboard) ── */
+.profile-preview {
+  max-width: 100%;
+}
+
+/* ── Modal inner padding ── */
+.modal-body-pad {
+  padding: 24px;
+}
+
+.modal-subtitle {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* ── Mis comunidades ── */
+.comunidad-card {
+  border-left: 3px solid var(--color-primary);
+  transition: box-shadow 0.15s ease;
+}
+
+.comunidad-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.comunidad-card--out2b   { border-left-color: #a855f7; }
+.comunidad-card--dinner  { border-left-color: #c99522; }
+.comunidad-card--inactive {
+  border-left-color: var(--color-border);
+  opacity: 0.6;
+}
+
+.comunidad-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.comunidad-icon i {
+  font-size: 16px;
+  color: #fff;
+}
+
+.comunidad-icon--vx {
+  background: linear-gradient(135deg, var(--color-cyan-600), var(--color-green-500));
+}
+
+.comunidad-icon--out2b {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+}
+
+.comunidad-icon--dinner {
+  background: linear-gradient(135deg, #3a2a08, #c99522);
+  font-size: 18px;
+}
+
+.comunidad-icon--inactive {
+  background: var(--color-ice-400);
+}
+
+.comunidad-icon--inactive i {
+  color: var(--color-text-secondary);
+}
+
+.comunidad-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.comunidad-status {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+/* ── Match page headers ── */
+.match-header--seeks {
+  background: linear-gradient(135deg, var(--color-pink-50) 0%, #fff 60%);
+}
+
+.match-header--offers {
+  background: linear-gradient(135deg, var(--color-green-50) 0%, #fff 60%);
+}
+
+.match-section-label--seeks { color: var(--color-accent); }
+.match-section-label--offers { color: var(--color-success); }
+
+.match-profile-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* ── CTA footer card accent ── */
+.cta-card--seeks { border-left: 3px solid var(--color-accent); }
+.cta-card--offers { border-left: 3px solid var(--color-success); }
+
+.cta-card__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 2px;
+}
+
+.cta-card__desc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
