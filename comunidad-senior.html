@@ -10,7 +10,8 @@
 </head>
 <body style="background:var(--color-ice-500)">
 
-<include src="src/components/nav.html"></include>
+<!-- NAVBAR AUTENTICADO -->
+<include src="src/components/nav-logged.html"></include>
 
 <!-- COMMUNITY HEADER -->
 <div class="community-header-vx community-header-vx--senior">
@@ -28,30 +29,26 @@
     </div>
   </div>
 </div>
-
-<!-- MAIN CONTENT -->
+<!-- CONTENIDO -->
 <div class="container py-4">
 
-  <!-- Aviso de verificación -->
+  <!-- Badge verificado -->
   <div class="alert-vx alert-neutral d-flex align-items-center gap-3 mb-4">
-    <i class="ti ti-shield-check" style="font-size:18px;color:#b8860b;flex-shrink:0"></i>
-    <p style="margin:0;font-size:13px">Los perfiles Senior son verificados manualmente por el equipo de Vitrinexo. La verificación puede tomar hasta 5 días hábiles.</p>
+    <i class="ti ti-shield-check" style="font-size:20px;color:#b8860b;flex-shrink:0"></i>
+    <p style="margin:0;font-size:14px">Los perfiles Senior son verificados manualmente por el equipo de Vitrinexo. La verificación puede tomar hasta 5 días hábiles.</p>
   </div>
 
-  <div class="page-section-heading mb-3">
-    <h2 class="page-section-heading__title">Miembros verificados</h2>
-    <span class="badge-vx badge-neutral" style="background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>2 Senior</span>
-  </div>
+  <div class="page-section-heading mb-3"><h2 class="page-section-heading__title">Miembros verificados</h2><span class="badge-vx badge-neutral" style="background:#fef3c7;color:#92400e;border-color:#fde68a">2 Senior</span></div>
 
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
 
-    <!-- user_003 — María Guadalupe -->
+    <!-- user_003 — María Guadalupe (isSenior:true) -->
     <div class="col">
       <div class="card card--community-senior">
         <div class="card-img-container">
           <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
@@ -59,30 +56,30 @@
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span></h5>
+            <h5 class="h6 py-0 my-0" style="font-size:12px">
+              María G. Estévez-Montoya
+              <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span>
+            </h5>
             <p class="member-company">Consultoría Iberoamericana</p>
             <p class="member-company">CDMX (MEX)</p>
           </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
+          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
+          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-offers">transformación digital</span>
             <span class="tag-vx tag-offers">change management</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">socios tecnológicos</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- user_005 — Roberto -->
+    <!-- user_005 — Roberto Anselmo Fuentes-Carreño (isSenior:true) -->
     <div class="col">
       <div class="card card--community-senior">
         <div class="card-img-container">
           <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
@@ -90,17 +87,17 @@
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Roberto A. Fuentes-Carreño <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span></h5>
+            <h5 class="h6 py-0 my-0" style="font-size:12px">
+              Roberto A. Fuentes-Carreño
+              <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span>
+            </h5>
             <p class="member-company">Lex Patagonia Abogados</p>
             <p class="member-company">Puerto Montt (CHL)</p>
           </div>
-          <p class="p-offers mb-1">Ofrece</p>
-          <div class="d-flex flex-wrap gap-1 mb-1">
+          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
+          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-offers">contratos B2B</span>
             <span class="tag-vx tag-offers">due diligence M&A</span>
-          </div>
-          <p class="p-seeks mb-1">Busca</p>
-          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">estudios jurídicos</span>
           </div>
         </div>
@@ -109,7 +106,8 @@
 
   </div>
 
-  <!-- Estado: no verificado -->
+
+  <!-- Estado: acceso restringido -->
   <div class="community-gate-vx community-gate-vx--senior">
     <div class="community-gate-vx__icon-wrap">
       <i class="ti ti-award"></i>

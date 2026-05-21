@@ -24,7 +24,7 @@
         <h1 class="page-header-vx__title">Perfiles guardados</h1>
         <p class="page-header-vx__lead">Empresas que marcaste para retomar cuando quieras.</p>
       </div>
-      <div class="d-flex align-items-center gap-2">
+      <div class="d-flex align-items-center gap-2 flex-wrap">
         <span class="badge-vx badge-neutral"><i class="ti ti-bookmark me-1"></i>3 guardados</span>
         <a href="directorio.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-layout-grid"></i> Ir al directorio</a>
       </div>
@@ -32,10 +32,14 @@
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div class="container py-4">
 
-  <!-- Grid de favoritos -->
+  <div class="page-section-heading mb-3">
+    <h2 class="page-section-heading__title">Todos los guardados</h2>
+    <span class="badge-vx badge-neutral">3 perfiles</span>
+  </div>
+
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
 
     <!-- user_003 — María Guadalupe -->
@@ -48,7 +52,7 @@
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe">
+          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe Estévez-Montoya">
         </div>
         <div class="card-body">
           <div class="info mb-2">
@@ -133,7 +137,7 @@
 
   </div>
 
-  <!-- Estado vacío (oculto por defecto) -->
+  <!-- Estado vacío -->
   <div id="empty-state" class="empty-state-vx" style="display:none">
     <i class="ti ti-heart empty-state-vx__icon"></i>
     <h5 class="empty-state-vx__title">Aún no guardaste ningún perfil</h5>

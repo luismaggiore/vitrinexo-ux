@@ -1700,7 +1700,9 @@ select.form-control-vx {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .concept-card:hover {
@@ -1759,7 +1761,10 @@ select.form-control-vx {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .step-card:hover {
@@ -1840,7 +1845,10 @@ select.form-control-vx {
   font-size: 0.88rem;
   color: var(--color-text-primary);
   font-weight: 500;
-  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease;
   cursor: default;
 }
 
@@ -1878,7 +1886,9 @@ select.form-control-vx {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .multiverse-card:hover {
@@ -2087,6 +2097,16 @@ select.form-control-vx {
   }
 }
 
+.offer-section {
+  border-top: var(--color-ice-600) 1px solid;
+  background-color: var(--color-ice-500);
+}
+.seek-section {
+  border-top: var(--color-ice-600) 1px solid;
+  border-bottom: var(--color-ice-600) 1px solid;
+  background-color: var(--color-ice-400);
+}
+
 /* ============================================================
    PAGE HEADER — Mis favoritos y páginas internas
    ============================================================ */
@@ -2126,7 +2146,7 @@ select.form-control-vx {
 }
 
 /* ============================================================
-   PAGE SECTION HEADING — Within container (communities / favs)
+   PAGE SECTION HEADING
    ============================================================ */
 .page-section-heading {
   display: flex;
@@ -2146,7 +2166,7 @@ select.form-control-vx {
 }
 
 /* ============================================================
-   COMMUNITY HEADER — Shared structure, variant colors
+   COMMUNITY HEADER
    ============================================================ */
 .community-header-vx {
   padding: 3.5rem 0 3rem;
@@ -2173,7 +2193,7 @@ select.form-control-vx {
   color: #fff;
 }
 
-.community-header-vx > .container > .community-header-vx__inner > div:nth-child(2) {
+.community-header-vx__copy {
   flex: 1;
   min-width: 200px;
 }
@@ -2223,7 +2243,6 @@ select.form-control-vx {
   white-space: nowrap;
 }
 
-/* Community color variants */
 .community-header-vx--out2b {
   background: linear-gradient(135deg, #5b21b6 0%, #9333ea 45%, #ec4899 100%);
 }
@@ -2237,7 +2256,7 @@ select.form-control-vx {
 }
 
 /* ============================================================
-   COMMUNITY CARD BORDERS — Solo el borde, nada más
+   COMMUNITY CARD BORDERS
    ============================================================ */
 .card--community-out2b {
   border-color: #c084fc;
@@ -2252,7 +2271,7 @@ select.form-control-vx {
 }
 
 /* ============================================================
-   COMMUNITY GATE — Acceso restringido / verificación
+   COMMUNITY GATE
    ============================================================ */
 .community-gate-vx {
   background: #fff;
@@ -2300,39 +2319,26 @@ select.form-control-vx {
   text-decoration: none;
 }
 
-/* Gate color variants */
-.community-gate-vx--out2b .community-gate-vx__icon-wrap {
-  background: linear-gradient(135deg, #7c3aed, #ec4899);
-}
+.community-gate-vx--out2b { border-color: #e9d5ff; }
+.community-gate-vx--out2b .community-gate-vx__icon-wrap,
 .community-gate-vx--out2b .community-gate-vx__btn {
   background: linear-gradient(135deg, #7c3aed, #ec4899);
 }
-.community-gate-vx--out2b {
-  border-color: #e9d5ff;
-}
 
-.community-gate-vx--woman .community-gate-vx__icon-wrap {
-  background: linear-gradient(135deg, #be185d, #ec4899);
-}
+.community-gate-vx--woman { border-color: #fce7f3; }
+.community-gate-vx--woman .community-gate-vx__icon-wrap,
 .community-gate-vx--woman .community-gate-vx__btn {
   background: linear-gradient(135deg, #be185d, #ec4899);
 }
-.community-gate-vx--woman {
-  border-color: #fce7f3;
-}
 
-.community-gate-vx--senior .community-gate-vx__icon-wrap {
-  background: linear-gradient(135deg, #b45309, #d97706);
-}
+.community-gate-vx--senior { border-color: #fde68a; }
+.community-gate-vx--senior .community-gate-vx__icon-wrap,
 .community-gate-vx--senior .community-gate-vx__btn {
   background: linear-gradient(135deg, #b45309, #d97706);
 }
-.community-gate-vx--senior {
-  border-color: #fde68a;
-}
 
 /* ============================================================
-   EMPTY STATE — Mis favoritos sin guardados
+   EMPTY STATE
    ============================================================ */
 .empty-state-vx {
   text-align: center;
@@ -2366,20 +2372,8 @@ select.form-control-vx {
   line-height: 1.6;
 }
 
-/* Responsive adjustments */
 @media (max-width: 640px) {
-  .community-header-vx {
-    padding: 2.5rem 0 2rem;
-  }
-  .community-header-vx__inner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .community-header-vx__count {
-    align-self: flex-start;
-  }
-  .page-header-vx__inner {
-    flex-direction: column;
-    gap: 1rem;
-  }
+  .community-header-vx { padding: 2.5rem 0 2rem; }
+  .community-header-vx__inner { flex-direction: column; gap: 1rem; }
+  .page-header-vx__inner { flex-direction: column; gap: 1rem; }
 }
