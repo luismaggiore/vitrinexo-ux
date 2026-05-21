@@ -10,140 +10,97 @@
 </head>
 <body style="background:var(--color-ice-500)">
 
-<!-- NAVBAR AUTENTICADO -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-  <div class="container-fluid px-4">
-    <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
-      <svg width="90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.1 89.72" style="flex-shrink:0">
-        <defs><style>.vx-cls{fill:#2ead6e;}</style></defs>
-        <g>
-          <polygon class="vx-cls" points="47.69 21 47.69 13.87 94.67 6.91 94.67 21 100.63 21 100.63 0 41.73 8.72 41.73 21 47.69 21"/>
-          <path class="vx-cls" d="M94.67,38.29v37.56l-46.98,6.96v-44.52c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98v51.43s58.9-8.72,58.9-8.72v-42.7c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98Z"/>
-        </g>
-        <g>
-          <path class="vx-cls" d="M6.67,26.99l10.92,28.62,1.3,4.41h-.34l1.3-4.41,10.92-28.62h6.28l-14.82,38.46h-7.35L0,26.99h6.67Z"/>
-          <path class="vx-cls" d="M214.02,66.19c-2.9,0-5.41-.63-7.52-1.89-2.11-1.26-3.73-3.08-4.86-5.46s-1.7-5.18-1.7-8.43c0-3.43.57-6.33,1.73-8.68,1.15-2.36,2.79-4.15,4.92-5.37,2.13-1.22,4.61-1.84,7.44-1.84s5.47.64,7.58,1.92c2.11,1.28,3.72,3.1,4.84,5.46,1.11,2.36,1.67,5.19,1.67,8.51s-.57,6.21-1.7,8.57c-1.13,2.36-2.75,4.15-4.86,5.37-2.11,1.22-4.62,1.84-7.52,1.84ZM214.02,61.1c2.56,0,4.52-.92,5.88-2.77,1.36-1.85,2.04-4.49,2.04-7.92s-.68-6.14-2.04-8c-1.36-1.87-3.32-2.8-5.88-2.8s-4.53.92-5.88,2.77c-1.36,1.85-2.04,4.52-2.04,8.03s.69,6.07,2.06,7.92c1.38,1.85,3.33,2.77,5.85,2.77Z"/>
-        </g>
-      </svg>
-      <span style="font-size:11px;color:var(--color-text-secondary);font-weight:400">by Maggiore</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4 gap-1">
-        <li class="nav-item"><a class="nav-link fw-medium" href="directorio.html">Directorio</a></li>
-        <li class="nav-item"><a class="nav-link" href="mis-favoritos.html">Mis favoritos</a></li>
-        <li class="nav-item"><a class="nav-link fw-semibold" href="#" style="color:#b8860b">Comunidades</a></li>
-        <li class="nav-item"><a class="nav-link" href="4dinner.html">4Dinner</a></li>
-      </ul>
-      <div class="d-flex align-items-center gap-2">
-        <button class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-bell"></i></button>
-        <div class="dropdown">
-          <button class="btn-vx btn-ghost-vx btn-vx-sm d-flex align-items-center gap-2" data-bs-toggle="dropdown">
-            <span style="width:28px;height:28px;border-radius:50%;background:var(--color-green-500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">FM</span>
-            Felipe Muñoz <i class="ti ti-chevron-down" style="font-size:12px"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-vx border-0 shadow" style="padding:6px 0">
-            <li><a class="dropdown-vx-item" href="perfil.html"><i class="ti ti-user"></i> Mi perfil</a></li>
-            <li><a class="dropdown-vx-item" href="editor-perfil.html"><i class="ti ti-pencil"></i> Editar perfil</a></li>
-            <li><hr class="dropdown-vx-divider my-1"></li>
-            <li><a class="dropdown-vx-item danger" href="login.html"><i class="ti ti-logout"></i> Cerrar sesión</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+<include src="src/components/nav.html"></include>
 
-<!-- HEADER DE COMUNIDAD -->
-<div style="background:linear-gradient(135deg,#92400e 0%,#b8860b 45%,#d4a017 75%,#f0c040 100%);padding:56px 0 48px">
-  <div class="container text-center" style="max-width:700px">
-    <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;backdrop-filter:blur(8px)">
-      <i class="ti ti-award" style="font-size:36px;color:#fff"></i>
+<!-- COMMUNITY HEADER -->
+<div class="community-header-vx community-header-vx--senior">
+  <div class="container">
+    <div class="community-header-vx__inner">
+      <div class="community-header-vx__icon-wrap">
+        <i class="ti ti-award"></i>
+      </div>
+      <div>
+        <span class="community-header-vx__label">Comunidad vertical</span>
+        <h1 class="community-header-vx__title">Vitrinexo <em>Senior</em></h1>
+        <p class="community-header-vx__desc">Ejecutivos con trayectoria verificada. Experiencia que genera conexiones de alto valor. Solo para profesionales con 10 o más años de carrera comprobable.</p>
+      </div>
+      <span class="community-header-vx__count">2 miembros verificados</span>
     </div>
-    <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
-      <h1 class="fw-bold mb-0" style="color:#fff;font-size:2rem">Comunidad Senior</h1>
-      <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:var(--radius-pill);font-size:13px;font-weight:600;backdrop-filter:blur(8px)">2 miembros verificados</span>
-    </div>
-    <p style="color:rgba(255,255,255,0.92);font-size:1.05rem;line-height:1.7;margin:0">
-      Ejecutivos con trayectoria verificada. Experiencia que genera conexiones de alto valor. Solo para profesionales con 10 o más años de carrera comprobable.
-    </p>
   </div>
 </div>
 
-<!-- CONTENIDO -->
-<div class="container py-5" style="max-width:900px">
+<!-- MAIN CONTENT -->
+<div class="container py-4">
 
-  <!-- Badge verificado -->
+  <!-- Aviso de verificación -->
   <div class="alert-vx alert-neutral d-flex align-items-center gap-3 mb-4">
-    <i class="ti ti-shield-check" style="font-size:20px;color:#b8860b;flex-shrink:0"></i>
-    <p style="margin:0;font-size:14px">Los perfiles Senior son verificados manualmente por el equipo de Vitrinexo. La verificación puede tomar hasta 5 días hábiles.</p>
+    <i class="ti ti-shield-check" style="font-size:18px;color:#b8860b;flex-shrink:0"></i>
+    <p style="margin:0;font-size:13px">Los perfiles Senior son verificados manualmente por el equipo de Vitrinexo. La verificación puede tomar hasta 5 días hábiles.</p>
   </div>
 
-  <div class="d-flex align-items-center gap-3 mb-4">
-    <h2 class="fw-semibold mb-0" style="font-size:1.1rem;color:var(--color-text-primary)">Miembros verificados</h2>
-    <span class="badge-vx badge-neutral" style="background:#fef3c7;color:#92400e;border-color:#fde68a">2 Senior</span>
+  <div class="page-section-heading mb-3">
+    <h2 class="page-section-heading__title">Miembros verificados</h2>
+    <span class="badge-vx badge-neutral" style="background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>2 Senior</span>
   </div>
 
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 mb-5">
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
 
-    <!-- user_003 — María Guadalupe (isSenior:true) -->
+    <!-- user_003 — María Guadalupe -->
     <div class="col">
-      <div class="card" style="border-color:#fde68a">
+      <div class="card card--community-senior">
         <div class="card-img-container">
           <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe" style="width:100%;height:180px;object-fit:cover;">
+          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe">
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0" style="font-size:12px">
-              María G. Estévez-Montoya
-              <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span>
-            </h5>
+            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span></h5>
             <p class="member-company">Consultoría Iberoamericana</p>
             <p class="member-company">CDMX (MEX)</p>
           </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
+          <p class="p-offers mb-1">Ofrece</p>
+          <div class="d-flex flex-wrap gap-1 mb-1">
             <span class="tag-vx tag-offers">transformación digital</span>
             <span class="tag-vx tag-offers">change management</span>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">socios tecnológicos</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- user_005 — Roberto Anselmo Fuentes-Carreño (isSenior:true) -->
+    <!-- user_005 — Roberto -->
     <div class="col">
-      <div class="card" style="border-color:#fde68a">
+      <div class="card card--community-senior">
         <div class="card-img-container">
           <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil"><i class="ti ti-heart"></i></button>
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Roberto Fuentes" style="width:100%;height:180px;object-fit:cover;">
+          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Roberto Fuentes">
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0" style="font-size:12px">
-              Roberto A. Fuentes-Carreño
-              <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span>
-            </h5>
+            <h5 class="h6 py-0 my-0">Roberto A. Fuentes-Carreño <span class="badge-vx badge-neutral" style="font-size:9px;background:#fef3c7;color:#92400e;border-color:#fde68a"><i class="ti ti-award me-1"></i>Senior</span></h5>
             <p class="member-company">Lex Patagonia Abogados</p>
             <p class="member-company">Puerto Montt (CHL)</p>
           </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
+          <p class="p-offers mb-1">Ofrece</p>
+          <div class="d-flex flex-wrap gap-1 mb-1">
             <span class="tag-vx tag-offers">contratos B2B</span>
             <span class="tag-vx tag-offers">due diligence M&A</span>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">estudios jurídicos</span>
           </div>
         </div>
@@ -153,13 +110,13 @@
   </div>
 
   <!-- Estado: no verificado -->
-  <div style="background:#fff;border-radius:var(--radius-lg);border:1px solid #fde68a;padding:40px;text-align:center;max-width:520px;margin:0 auto">
-    <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#b8860b,#d4a017);display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
-      <i class="ti ti-award" style="font-size:24px;color:#fff"></i>
+  <div class="community-gate-vx community-gate-vx--senior">
+    <div class="community-gate-vx__icon-wrap">
+      <i class="ti ti-award"></i>
     </div>
-    <h5 class="fw-semibold mb-2" style="color:var(--color-text-primary)">¿Tienes 10+ años de trayectoria?</h5>
-    <p style="color:var(--color-text-secondary);font-size:14px;margin-bottom:20px">Solicita tu verificación Senior. Nuestro equipo revisará tu experiencia y, si corresponde, activará tu badge y acceso a esta comunidad.</p>
-    <a href="editor-perfil.html" class="btn-vx btn-vx-md" style="background:linear-gradient(135deg,#b8860b,#d4a017);color:#fff;border:none;border-radius:var(--radius-pill);padding:10px 24px;font-weight:600;text-decoration:none">Solicitar verificación Senior <i class="ti ti-arrow-right ms-1"></i></a>
+    <h5 class="community-gate-vx__title">¿Tienes 10+ años de trayectoria?</h5>
+    <p class="community-gate-vx__desc">Solicita tu verificación Senior. Nuestro equipo revisará tu experiencia y, si corresponde, activará tu badge y acceso a esta comunidad.</p>
+    <a href="editor-perfil.html" class="btn-vx btn-vx-md community-gate-vx__btn">Solicitar verificación Senior <i class="ti ti-arrow-right ms-1"></i></a>
   </div>
 
 </div>

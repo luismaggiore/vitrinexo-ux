@@ -2086,3 +2086,300 @@ select.form-control-vx {
     margin: 0.5rem auto;
   }
 }
+
+/* ============================================================
+   PAGE HEADER — Mis favoritos y páginas internas
+   ============================================================ */
+.page-header-vx {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  padding: 2rem 0 1.75rem;
+}
+
+.page-header-vx__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.page-header-vx__icon {
+  font-size: 18px;
+  color: var(--color-primary);
+}
+
+.page-header-vx__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: var(--color-text-primary);
+  margin: 0 0 0.25rem;
+  line-height: 1.1;
+}
+
+.page-header-vx__lead {
+  color: var(--color-text-secondary);
+  font-size: 0.93rem;
+  margin: 0;
+}
+
+/* ============================================================
+   PAGE SECTION HEADING — Within container (communities / favs)
+   ============================================================ */
+.page-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-section-heading__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ============================================================
+   COMMUNITY HEADER — Shared structure, variant colors
+   ============================================================ */
+.community-header-vx {
+  padding: 3.5rem 0 3rem;
+}
+
+.community-header-vx__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.community-header-vx__icon-wrap {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #fff;
+}
+
+.community-header-vx > .container > .community-header-vx__inner > div:nth-child(2) {
+  flex: 1;
+  min-width: 200px;
+}
+
+.community-header-vx__label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.community-header-vx__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  line-height: 1.05;
+}
+
+.community-header-vx__title em {
+  font-style: italic;
+}
+
+.community-header-vx__desc {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 560px;
+}
+
+.community-header-vx__count {
+  flex-shrink: 0;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+/* Community color variants */
+.community-header-vx--out2b {
+  background: linear-gradient(135deg, #5b21b6 0%, #9333ea 45%, #ec4899 100%);
+}
+
+.community-header-vx--woman {
+  background: linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f9a8d4 100%);
+}
+
+.community-header-vx--senior {
+  background: linear-gradient(135deg, #92400e 0%, #b45309 45%, #d97706 100%);
+}
+
+/* ============================================================
+   COMMUNITY CARD BORDERS — Solo el borde, nada más
+   ============================================================ */
+.card--community-out2b {
+  border-color: #c084fc;
+}
+
+.card--community-woman {
+  border-color: #f9a8d4;
+}
+
+.card--community-senior {
+  border-color: #fcd34d;
+}
+
+/* ============================================================
+   COMMUNITY GATE — Acceso restringido / verificación
+   ============================================================ */
+.community-gate-vx {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.community-gate-vx__icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+  margin: 0 auto 1rem;
+}
+
+.community-gate-vx__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.community-gate-vx__desc {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.community-gate-vx__btn {
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Gate color variants */
+.community-gate-vx--out2b .community-gate-vx__icon-wrap {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+}
+.community-gate-vx--out2b .community-gate-vx__btn {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+}
+.community-gate-vx--out2b {
+  border-color: #e9d5ff;
+}
+
+.community-gate-vx--woman .community-gate-vx__icon-wrap {
+  background: linear-gradient(135deg, #be185d, #ec4899);
+}
+.community-gate-vx--woman .community-gate-vx__btn {
+  background: linear-gradient(135deg, #be185d, #ec4899);
+}
+.community-gate-vx--woman {
+  border-color: #fce7f3;
+}
+
+.community-gate-vx--senior .community-gate-vx__icon-wrap {
+  background: linear-gradient(135deg, #b45309, #d97706);
+}
+.community-gate-vx--senior .community-gate-vx__btn {
+  background: linear-gradient(135deg, #b45309, #d97706);
+}
+.community-gate-vx--senior {
+  border-color: #fde68a;
+}
+
+/* ============================================================
+   EMPTY STATE — Mis favoritos sin guardados
+   ============================================================ */
+.empty-state-vx {
+  text-align: center;
+  padding: 5rem 1.5rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+}
+
+.empty-state-vx__icon {
+  font-size: 3rem;
+  color: var(--color-border);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.empty-state-vx__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-vx__desc {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  max-width: 380px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .community-header-vx {
+    padding: 2.5rem 0 2rem;
+  }
+  .community-header-vx__inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .community-header-vx__count {
+    align-self: flex-start;
+  }
+  .page-header-vx__inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -10,88 +10,59 @@
 </head>
 <body style="background:var(--color-ice-500)">
 
-<!-- NAVBAR AUTENTICADO -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-  <div class="container-fluid px-4">
-    <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
-      <svg width="90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.1 89.72" style="flex-shrink:0">
-        <defs><style>.vx-cls{fill:#2ead6e;}</style></defs>
-        <g>
-          <polygon class="vx-cls" points="47.69 21 47.69 13.87 94.67 6.91 94.67 21 100.63 21 100.63 0 41.73 8.72 41.73 21 47.69 21"/>
-          <path class="vx-cls" d="M94.67,38.29v37.56l-46.98,6.96v-44.52c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98v51.43s58.9-8.72,58.9-8.72v-42.7c0-1.65-1.33-2.98-2.98-2.98h0c-1.65,0-2.98,1.33-2.98,2.98Z"/>
-        </g>
-        <g>
-          <path class="vx-cls" d="M6.67,26.99l10.92,28.62,1.3,4.41h-.34l1.3-4.41,10.92-28.62h6.28l-14.82,38.46h-7.35L0,26.99h6.67Z"/>
-          <path class="vx-cls" d="M214.02,66.19c-2.9,0-5.41-.63-7.52-1.89-2.11-1.26-3.73-3.08-4.86-5.46s-1.7-5.18-1.7-8.43c0-3.43.57-6.33,1.73-8.68,1.15-2.36,2.79-4.15,4.92-5.37,2.13-1.22,4.61-1.84,7.44-1.84s5.47.64,7.58,1.92c2.11,1.28,3.72,3.1,4.84,5.46,1.11,2.36,1.67,5.19,1.67,8.51s-.57,6.21-1.7,8.57c-1.13,2.36-2.75,4.15-4.86,5.37-2.11,1.22-4.62,1.84-7.52,1.84ZM214.02,61.1c2.56,0,4.52-.92,5.88-2.77,1.36-1.85,2.04-4.49,2.04-7.92s-.68-6.14-2.04-8c-1.36-1.87-3.32-2.8-5.88-2.8s-4.53.92-5.88,2.77c-1.36,1.85-2.04,4.52-2.04,8.03s.69,6.07,2.06,7.92c1.38,1.85,3.33,2.77,5.85,2.77Z"/>
-        </g>
-      </svg>
-      <span style="font-size:11px;color:var(--color-text-secondary);font-weight:400">by Maggiore</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4 gap-1">
-        <li class="nav-item"><a class="nav-link fw-medium" href="directorio.html">Directorio</a></li>
-        <li class="nav-item"><a class="nav-link fw-semibold" href="mis-favoritos.html" style="color:var(--color-green-500)">Mis favoritos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Comunidades</a></li>
-        <li class="nav-item"><a class="nav-link" href="4dinner.html">4Dinner</a></li>
-      </ul>
-      <div class="d-flex align-items-center gap-2">
-        <button class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-bell"></i></button>
-        <div class="dropdown">
-          <button class="btn-vx btn-ghost-vx btn-vx-sm d-flex align-items-center gap-2" data-bs-toggle="dropdown">
-            <span style="width:28px;height:28px;border-radius:50%;background:var(--color-green-500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">FM</span>
-            Felipe Muñoz <i class="ti ti-chevron-down" style="font-size:12px"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-vx border-0 shadow" style="padding:6px 0">
-            <li><a class="dropdown-vx-item" href="perfil.html"><i class="ti ti-user"></i> Mi perfil</a></li>
-            <li><a class="dropdown-vx-item" href="editor-perfil.html"><i class="ti ti-pencil"></i> Editar perfil</a></li>
-            <li><hr class="dropdown-vx-divider my-1"></li>
-            <li><a class="dropdown-vx-item danger" href="login.html"><i class="ti ti-logout"></i> Cerrar sesión</a></li>
-          </ul>
+<include src="src/components/nav.html"></include>
+
+<!-- PAGE HEADER -->
+<div class="page-header-vx">
+  <div class="container">
+    <div class="page-header-vx__inner">
+      <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+          <i class="ti ti-heart page-header-vx__icon"></i>
+          <span class="section-landing-label" style="margin:0">Mis favoritos</span>
         </div>
+        <h1 class="page-header-vx__title">Perfiles guardados</h1>
+        <p class="page-header-vx__lead">Empresas que marcaste para retomar cuando quieras.</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge-vx badge-neutral"><i class="ti ti-bookmark me-1"></i>3 guardados</span>
+        <a href="directorio.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-layout-grid"></i> Ir al directorio</a>
       </div>
     </div>
   </div>
-</nav>
+</div>
 
+<!-- MAIN CONTENT -->
 <div class="container py-4">
 
-  <!-- Título -->
-  <div class="d-flex align-items-center gap-3 mb-4">
-    <h1 class="fw-bold mb-0" style="font-size:1.5rem;color:var(--color-text-primary)">Mis favoritos</h1>
-    <span class="badge-vx badge-neutral">3 perfiles guardados</span>
-  </div>
-
   <!-- Grid de favoritos -->
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 mb-5">
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
 
     <!-- user_003 — María Guadalupe -->
     <div class="col">
       <div class="card">
         <div class="card-img-container">
           <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)"><i class="ti ti-heart-filled"></i></button>
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)" aria-label="Quitar de favoritos"><i class="ti ti-heart-filled"></i></button>
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe" style="width:100%;height:180px;object-fit:cover;">
+          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe">
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0" style="font-size:13px">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:10px">Senior</span></h5>
+            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:9px">Senior</span></h5>
             <p class="member-company">Consultoría Iberoamericana</p>
             <p class="member-company">Ciudad de México (MEX)</p>
           </div>
+          <p class="p-offers mb-1">Ofrece</p>
           <div class="d-flex flex-wrap gap-1 mb-1">
-            <p class="p-offers">Ofrece</p>
-            <p class="p-seeks">Busca</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-offers">transformación digital</span>
             <span class="tag-vx tag-offers">change management</span>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">socios tecnológicos</span>
           </div>
         </div>
@@ -103,26 +74,26 @@
       <div class="card">
         <div class="card-img-container">
           <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)"><i class="ti ti-heart-filled"></i></button>
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)" aria-label="Quitar de favoritos"><i class="ti ti-heart-filled"></i></button>
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina" style="width:100%;height:180px;object-fit:cover;">
+          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina Koczorowski">
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0" style="font-size:13px">Valentina Koczorowski <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
+            <h5 class="h6 py-0 my-0">Valentina Koczorowski <span class="founder-tooltip" data-tooltip="Miembro fundador" aria-label="Miembro fundador" tabindex="0"><i class="founder-tag ti ti-star" aria-hidden="true"></i></span></h5>
             <p class="member-company">DataSur Analytics</p>
             <p class="member-company">Bogotá (COL)</p>
           </div>
+          <p class="p-offers mb-1">Ofrece</p>
           <div class="d-flex flex-wrap gap-1 mb-1">
-            <p class="p-offers">Ofrece</p>
-            <p class="p-seeks">Busca</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-offers">business intelligence</span>
             <span class="tag-vx tag-offers">modelos predictivos</span>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">retail analytics</span>
           </div>
         </div>
@@ -134,26 +105,26 @@
       <div class="card">
         <div class="card-img-container">
           <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)"><i class="ti ti-heart-filled"></i></button>
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm" aria-label="Ver perfil"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" style="color:var(--color-pink-500)" aria-label="Quitar de favoritos"><i class="ti ti-heart-filled"></i></button>
             <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Ana" style="width:100%;height:180px;object-fit:cover;">
+          <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Ana Fernández del Valle">
         </div>
         <div class="card-body">
           <div class="info mb-2">
-            <h5 class="h6 py-0 my-0" style="font-size:13px">Ana Fernández del Valle</h5>
+            <h5 class="h6 py-0 my-0">Ana Fernández del Valle</h5>
             <p class="member-company">BrandLab Internacional</p>
             <p class="member-company">Madrid (ESP)</p>
           </div>
+          <p class="p-offers mb-1">Ofrece</p>
           <div class="d-flex flex-wrap gap-1 mb-1">
-            <p class="p-offers">Ofrece</p>
-            <p class="p-seeks">Busca</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-offers">branding internacional</span>
             <span class="tag-vx tag-offers">estrategia SEO</span>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
             <span class="tag-vx tag-seeks">copywriters LATAM</span>
           </div>
         </div>
@@ -162,14 +133,12 @@
 
   </div>
 
-  <!-- Estado vacío (oculto — referencia de diseño) -->
-  <div style="display:none" id="empty-state">
-    <div style="text-align:center;padding:80px 24px;background:#fff;border-radius:var(--radius-lg);border:1px dashed var(--color-border)">
-      <i class="ti ti-heart" style="font-size:48px;color:var(--color-border);display:block;margin-bottom:16px"></i>
-      <h5 class="fw-semibold mb-2" style="color:var(--color-text-primary)">Aún no guardaste ningún perfil</h5>
-      <p style="color:var(--color-text-secondary);font-size:14px;margin-bottom:24px">Cuando guardes perfiles desde el directorio, aparecerán aquí para que puedas revisarlos cuando quieras.</p>
-      <a href="directorio.html" class="btn-vx btn-primary-vx btn-vx-md">Explorar el directorio <i class="ti ti-arrow-right ms-1"></i></a>
-    </div>
+  <!-- Estado vacío (oculto por defecto) -->
+  <div id="empty-state" class="empty-state-vx" style="display:none">
+    <i class="ti ti-heart empty-state-vx__icon"></i>
+    <h5 class="empty-state-vx__title">Aún no guardaste ningún perfil</h5>
+    <p class="empty-state-vx__desc">Cuando guardes perfiles desde el directorio, aparecerán aquí para que puedas revisarlos cuando quieras.</p>
+    <a href="directorio.html" class="btn-vx btn-primary-vx btn-vx-md">Explorar el directorio <i class="ti ti-arrow-right ms-1"></i></a>
   </div>
 
 </div>
