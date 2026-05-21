@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu cuenta fue aprobada — Vitrinexo</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#f3f9fd; font-family:-apple-system,'Segoe UI',sans-serif; font-size:14px; line-height:1.6; color:#3d444e; }
+    .wrapper { max-width:560px; margin:40px auto; padding:0 16px 40px; }
+    .card { background:#fff; border:1px solid #d7e4ef; border-radius:16px; overflow:hidden; }
+    .header { background:linear-gradient(135deg,#00aeb8 0%,#2ead6e 100%); padding:32px 40px; text-align:center; }
+    .header img { width:120px; }
+    .body { padding:40px; }
+    .eyebrow { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#2ead6e; margin-bottom:8px; }
+    .title { font-size:24px; font-weight:400; letter-spacing:-.03em; color:#3d444e; margin-bottom:12px; line-height:1.2; }
+    .title strong { font-weight:500; color:#2ead6e; }
+    .body p { color:#5e6b7a; margin-bottom:16px; }
+    .check-badge { display:inline-flex; align-items:center; gap:8px; background:#eaf7f1; border:1px solid #abe0c5; border-radius:99px; padding:6px 16px; font-size:13px; font-weight:600; color:#238453; margin-bottom:24px; }
+    .cta-wrap { text-align:center; margin:32px 0; }
+    .cta { display:inline-block; background:#2ead6e; color:#fff !important; text-decoration:none; font-weight:700; font-size:15px; padding:14px 36px; border-radius:999px; }
+    .divider { border:none; border-top:1px solid #d7e4ef; margin:24px 0; }
+    .link-fallback { font-size:12px; color:#93989c; word-break:break-all; }
+    .link-fallback a { color:#00aeb8; }
+    .security { background:#eaf7f1; border:1px solid #abe0c5; border-radius:8px; padding:12px 16px; font-size:12px; color:#238453; margin-top:20px; }
+    .what-next { background:#f3f9fd; border-radius:8px; padding:16px 20px; margin:20px 0; }
+    .what-next-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:#5e6b7a; margin-bottom:10px; }
+    .what-next-item { display:flex; align-items:center; gap:10px; font-size:13px; color:#5e6b7a; margin-bottom:6px; }
+    .what-next-num { width:20px; height:20px; border-radius:50%; background:#00aeb8; color:#fff; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .footer { text-align:center; padding:24px 16px 0; font-size:11px; color:#93989c; }
+    .footer a { color:#93989c; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <img src="https://vitrinexo.cl/src/assets/vitrinexo.svg" alt="Vitrinexo" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="eyebrow">Cuenta aprobada</div>
+        <h1 class="title"><strong>¡Bienvenida, Ana!</strong><br>Tu cuenta fue aprobada.</h1>
+        <span class="check-badge">✓ Verificada por el equipo de Vitrinexo</span>
+
+        <p>El equipo revisó tu solicitud y tu cuenta está lista. Haz clic abajo para activarla y completar tu perfil:</p>
+
+        <div class="cta-wrap">
+          <a href="#" class="cta">Activar mi cuenta y completar perfil →</a>
+        </div>
+
+        <div class="what-next">
+          <div class="what-next-title">Lo que viene</div>
+          <div class="what-next-item"><div class="what-next-num">1</div> Activas tu cuenta con este link</div>
+          <div class="what-next-item"><div class="what-next-num">2</div> Completas tu perfil en 5 pasos cortos</div>
+          <div class="what-next-item"><div class="what-next-num">3</div> Apareces en el directorio y empiezas a conectar</div>
+        </div>
+
+        <hr class="divider">
+
+        <p class="link-fallback">Si el botón no funciona, copia y pega este link:<br>
+          <a href="#">https://vitrinexo.com/activar-cuenta?accion=activar&uid=123&token=abc-uuid</a>
+        </p>
+
+        <div class="security">
+          🔒 Este link expira en <strong>72 horas</strong>. Si no te registraste en Vitrinexo, ignora este correo.
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      © 2026 Vitrinexo SpA · <a href="#">Términos</a> · <a href="#">Privacidad</a><br>
+      Alcántara 1791, Las Condes, Santiago, Chile
+    </div>
+  </div>
+</body>
+</html>

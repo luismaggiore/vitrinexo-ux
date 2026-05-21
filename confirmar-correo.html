@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revisa tu correo — Vitrinexo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
+  <link href="/src/style.css" rel="stylesheet" />
+</head>
+<body style="background:var(--color-ice-500);min-height:100vh;display:flex;flex-direction:column">
+
+  <nav class="navbar bg-white border-bottom px-4 py-2">
+    <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
+      <img src="/src/assets/vitrinexo.svg" width="104" alt="Vitrinexo">
+    </a>
+  </nav>
+
+  <div class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3">
+    <div style="width:100%;max-width:480px">
+      <div class="card-vx text-center" style="padding:2.5rem 2rem">
+
+        <div class="ob-success-icon mx-auto mb-3" style="background:var(--color-cyan-50);border-color:var(--color-cyan-200)">
+          <i class="ti ti-mail" style="font-size:1.75rem;color:var(--color-primary)"></i>
+        </div>
+
+        <span class="section-landing-label">Confirma tu cuenta</span>
+        <h1 style="font-size:1.6rem;font-weight:400;letter-spacing:-.04em;color:var(--color-text-primary);margin:.5rem 0 .75rem;line-height:1.2">
+          Revisa tu bandeja<br><strong style="color:var(--color-primary)">de entrada</strong>
+        </h1>
+        <p style="font-size:14px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6">
+          Enviamos un link de confirmación a <strong style="color:var(--color-text-primary)">ana@brandlab.com</strong>.<br>
+          Haz clic en ese link para activar tu cuenta.
+        </p>
+
+        <div class="alert-vx alert-info mb-4" style="text-align:left">
+          <i class="ti ti-info-circle"></i>
+          <span>¿No lo ves? Revisa la carpeta de <strong>spam o correo no deseado</strong>. A veces los filtros lo redirigen ahí.</span>
+        </div>
+
+        <hr style="border-color:var(--color-border);margin:1.5rem 0">
+
+        <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">¿No recibiste el correo?</p>
+
+        <button class="btn-vx btn-soft-primary btn-vx-md w-100 mb-3" id="btn-reenviar" onclick="reenviar()">
+          <i class="ti ti-refresh me-1"></i> Reenviar correo de confirmación
+        </button>
+
+        <p id="reenvio-msg" style="display:none;font-size:12px;color:var(--color-success);margin-bottom:.75rem">
+          <i class="ti ti-circle-check me-1"></i> Correo reenviado. Revisa tu bandeja.
+        </p>
+
+        <p style="font-size:12px;color:var(--color-text-secondary)">
+          ¿Escribiste mal el email?
+          <a href="login.html" style="color:var(--color-primary);text-decoration:none;font-weight:600">Volver al registro</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cooldown = false;
+    function reenviar() {
+      if (cooldown) return;
+      cooldown = true;
+      const btn = document.getElementById('btn-reenviar');
+      const msg = document.getElementById('reenvio-msg');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="ti ti-loader-2 me-1"></i> Enviando...';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="ti ti-refresh me-1"></i> Reenviar correo de confirmación';
+        btn.disabled = false;
+        msg.style.display = 'block';
+        setTimeout(() => { msg.style.display = 'none'; cooldown = false; }, 30000);
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

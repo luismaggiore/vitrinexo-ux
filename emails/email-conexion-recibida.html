@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alguien quiere conectar contigo — Vitrinexo</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#f3f9fd; font-family:-apple-system,'Segoe UI',sans-serif; font-size:14px; line-height:1.6; color:#3d444e; }
+    .wrapper { max-width:560px; margin:40px auto; padding:0 16px 40px; }
+    .card { background:#fff; border:1px solid #d7e4ef; border-radius:16px; overflow:hidden; }
+    .header { background:linear-gradient(135deg,#00aeb8 0%,#2ead6e 100%); padding:32px 40px; text-align:center; }
+    .header img { width:120px; }
+    .body { padding:40px; }
+    .eyebrow { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#00aeb8; margin-bottom:8px; }
+    .title { font-size:22px; font-weight:400; letter-spacing:-.03em; color:#3d444e; margin-bottom:20px; line-height:1.25; }
+    .title strong { font-weight:600; }
+    /* Emisor card */
+    .emisor-card { background:#f3f9fd; border:1px solid #d7e4ef; border-radius:10px; padding:16px; display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .emisor-avatar { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid #d7e4ef; flex-shrink:0; background:#d7e4ef; }
+    .emisor-name { font-size:15px; font-weight:600; color:#3d444e; margin-bottom:2px; }
+    .emisor-meta { font-size:12px; color:#5e6b7a; }
+    /* Pitch */
+    .pitch-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:#5e6b7a; margin-bottom:8px; }
+    .pitch-box { background:#fff; border:1px solid #d7e4ef; border-left:3px solid #00aeb8; border-radius:0 8px 8px 0; padding:14px 16px; font-size:13px; color:#3d444e; line-height:1.65; margin-bottom:24px; font-style:italic; }
+    /* Empresa */
+    .empresa-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:#5e6b7a; margin-bottom:8px; }
+    .empresa-row { display:flex; align-items:center; gap:10px; margin-bottom:24px; }
+    .empresa-logo { width:36px; height:36px; border-radius:50%; background:#fff; border:1.5px solid #d7e4ef; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:#5e6b7a; flex-shrink:0; }
+    .empresa-name { font-size:13px; font-weight:600; color:#3d444e; }
+    .empresa-meta { font-size:12px; color:#5e6b7a; }
+    /* Privacy note */
+    .privacy { background:#edf5fc; border:1px solid #d0d8de; border-radius:8px; padding:10px 14px; font-size:12px; color:#5e6b7a; margin-bottom:28px; }
+    /* CTA buttons */
+    .btns { display:flex; gap:12px; margin-bottom:8px; }
+    .btn-accept { flex:1; display:block; text-align:center; background:#2ead6e; color:#fff !important; text-decoration:none; font-weight:700; font-size:14px; padding:12px 20px; border-radius:999px; }
+    .btn-reject { flex:1; display:block; text-align:center; background:#fff; color:#5e6b7a !important; text-decoration:none; font-weight:600; font-size:14px; padding:12px 20px; border-radius:999px; border:1px solid #d7e4ef; }
+    .btns-note { font-size:11px; color:#93989c; text-align:center; }
+    .divider { border:none; border-top:1px solid #d7e4ef; margin:24px 0; }
+    .footer { text-align:center; padding:24px 16px 0; font-size:11px; color:#93989c; }
+    .footer a { color:#93989c; }
+    @media (max-width:480px) { .btns { flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <img src="https://vitrinexo.cl/src/assets/vitrinexo.svg" alt="Vitrinexo" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="eyebrow">Nueva solicitud de conexión</div>
+        <h1 class="title"><strong>Felipe Muñoz</strong> quiere conectar contigo en Vitrinexo</h1>
+
+        <!-- Datos del emisor -->
+        <div class="emisor-card">
+          <img src="https://vitrinexo.cl/src/assets/placeholder3.webp" alt="Felipe Muñoz" class="emisor-avatar" onerror="this.style.background='#d7e4ef'">
+          <div>
+            <div class="emisor-name">Felipe Muñoz</div>
+            <div class="emisor-meta">Director General · Santiago, Chile</div>
+          </div>
+        </div>
+
+        <!-- Empresa desde la que contacta -->
+        <div class="empresa-label">Contacta desde</div>
+        <div class="empresa-row">
+          <div class="empresa-logo">M</div>
+          <div>
+            <div class="empresa-name">Maggiore Marketing</div>
+            <div class="empresa-meta">Agencia de marketing digital · Chile</div>
+          </div>
+        </div>
+
+        <!-- Pitch -->
+        <div class="pitch-label">Su mensaje</div>
+        <div class="pitch-box">
+          "Vi tu perfil en Vitrinexo y me parece que hay mucha complementariedad entre lo que hace BrandLab y lo que ofrecemos en Maggiore. Me gustaría explorar si tiene sentido colaborar en proyectos para clientes que necesitan branding internacional con implementación regional."
+        </div>
+
+        <!-- Privacy note -->
+        <div class="privacy">
+          🔒 <strong>Sus datos de contacto están ocultos.</strong> Solo los verás si aceptas la conexión.
+        </div>
+
+        <!-- Botones -->
+        <div class="btns">
+          <a href="#" class="btn-accept">✓ Aceptar conexión</a>
+          <a href="#" class="btn-reject">Rechazar</a>
+        </div>
+        <p class="btns-note">Al aceptar, verás el email, teléfono y LinkedIn de Felipe.</p>
+
+        <hr class="divider">
+        <p style="font-size:12px;color:#93989c">Si no quieres recibir solicitudes de conexión, puedes <a href="#" style="color:#00aeb8">ajustar tus preferencias</a> desde tu perfil.</p>
+      </div>
+    </div>
+    <div class="footer">
+      © 2026 Vitrinexo SpA · <a href="#">Términos</a> · <a href="#">Privacidad</a><br>
+      Alcántara 1791, Las Condes, Santiago, Chile
+    </div>
+  </div>
+</body>
+</html>
