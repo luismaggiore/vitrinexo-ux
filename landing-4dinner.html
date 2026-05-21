@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4Dinner — Vitrinexo</title>
+  <meta name="description" content="4Dinner es una cena íntima de networking: 4 personas, 1 mesa, 1 conversación real. Cada miércoles a las 8pm en ciudades de toda Hispanoamérica.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
+  <link href="/src/style.css" rel="stylesheet" />
+</head>
+<body style="background:var(--color-ice-500)">
+
+<include src="src/components/nav.html"></include>
+
+<!-- HERO -->
+<div style="background:linear-gradient(135deg,#3a2a08 0%,#c99522 60%,#e8b84b 100%);overflow:hidden;position:relative">
+  <!-- Decorative circles -->
+  <div style="position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.06);pointer-events:none"></div>
+  <div style="position:absolute;left:-60px;bottom:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none"></div>
+
+  <div class="container py-5" style="position:relative;z-index:1">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-lg-6">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span style="background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:4px 12px;border-radius:var(--radius-pill)">Evento presencial</span>
+        </div>
+        <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:400;letter-spacing:-.04em;color:#fff;line-height:1.1;margin-bottom:1rem">
+          4 personas.<br>1 mesa.<br><em style="font-style:italic">1 conversación real.</em>
+        </h1>
+        <p style="font-size:1rem;color:rgba(255,255,255,.85);line-height:1.7;max-width:480px;margin-bottom:2rem">
+          Cada miércoles a las 8pm, cuatro miembros de Vitrinexo se sientan a cenar en una ciudad de Hispanoamérica. Sin agenda formal, sin pitches. Solo personas que ya se conocen por sus fichas y quieren dar el paso a lo presencial.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="login.html" class="btn-vx btn-vx-lg" style="background:#fff;color:#8a5f0a;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.2)">
+            Quiero participar <i class="ti ti-arrow-right ms-1"></i>
+          </a>
+          <a href="#como-funciona" class="btn-vx btn-vx-lg" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">
+            Cómo funciona
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!-- Stats card -->
+        <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius-lg);padding:2rem;backdrop-filter:blur(8px)">
+          <div class="row g-3 text-center text-white">
+            <div class="col-4">
+              <div style="font-size:2rem;font-weight:400;letter-spacing:-.04em;line-height:1">4</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.75);margin-top:3px">personas por mesa</div>
+            </div>
+            <div class="col-4">
+              <div style="font-size:2rem;font-weight:400;letter-spacing:-.04em;line-height:1">8pm</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.75);margin-top:3px">hora local, miércoles</div>
+            </div>
+            <div class="col-4">
+              <div style="font-size:2rem;font-weight:400;letter-spacing:-.04em;line-height:1">18+</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.75);margin-top:3px">ciudades activas</div>
+            </div>
+          </div>
+          <hr style="border-color:rgba(255,255,255,.2);margin:1.25rem 0">
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex align-items-center gap-2" style="font-size:13px;color:rgba(255,255,255,.85)">
+              <i class="ti ti-circle-check" style="color:rgba(255,255,255,.7)"></i>
+              Cada quien paga su consumo — sin costo de acceso
+            </div>
+            <div class="d-flex align-items-center gap-2" style="font-size:13px;color:rgba(255,255,255,.85)">
+              <i class="ti ti-circle-check" style="color:rgba(255,255,255,.7)"></i>
+              Perfiles mixtos de industria — nada de silos
+            </div>
+            <div class="d-flex align-items-center gap-2" style="font-size:13px;color:rgba(255,255,255,.85)">
+              <i class="ti ti-circle-check" style="color:rgba(255,255,255,.7)"></i>
+              Simultáneo en múltiples ciudades todos los miércoles
+            </div>
+            <div class="d-flex align-items-center gap-2" style="font-size:13px;color:rgba(255,255,255,.85)">
+              <i class="ti ti-circle-check" style="color:rgba(255,255,255,.7)"></i>
+              Exclusivo para miembros verificados de Vitrinexo
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+<div class="container py-5">
+
+  <!-- POR QUÉ FUNCIONA -->
+  <div class="row g-5 align-items-center mb-6" style="margin-bottom:5rem">
+    <div class="col-12 col-lg-5">
+      <span class="section-landing-label">La idea detrás</span>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.04em;color:var(--color-text-primary);margin:.5rem 0 1rem;line-height:1.2">
+        El networking que sí funciona es el que se parece a una cena con amigos
+      </h2>
+      <p style="color:var(--color-text-secondary);line-height:1.75;margin-bottom:1rem">
+        Las conferencias, los happy hours y los eventos masivos generan tarjetas de presentación. Las cenas íntimas generan relaciones reales.
+      </p>
+      <p style="color:var(--color-text-secondary);line-height:1.75;margin-bottom:1rem">
+        Con solo 4 personas en la mesa, no hay forma de esconderse ni de hacer networking superficial. La conversación va en serio porque tiene que ir en serio.
+      </p>
+      <p style="color:var(--color-text-secondary);line-height:1.75">
+        Y como todos son miembros verificados de Vitrinexo, ya se conocen por sus fichas antes de llegar — lo que hace que la primera hora valga por tres.
+      </p>
+    </div>
+    <div class="col-12 col-lg-7">
+      <div class="row g-3">
+        <div class="col-6">
+          <div class="card-vx" style="height:100%">
+            <div style="font-size:1.6rem;margin-bottom:.75rem">🤝</div>
+            <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Conexiones que perduran</div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin:0">Una cena de 4Dinner genera más conexiones de valor que una tarde entera en un evento masivo.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card-vx" style="height:100%">
+            <div style="font-size:1.6rem;margin-bottom:.75rem">🌎</div>
+            <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Continental y local</div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin:0">Simultáneo en 18+ ciudades. Lo que pasa en Santiago pasa también en Bogotá, Lima y México.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card-vx" style="height:100%">
+            <div style="font-size:1.6rem;margin-bottom:.75rem">✅</div>
+            <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Solo verificados</div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin:0">No hay sorpresas. Todos los comensales tienen ficha verificada en Vitrinexo.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card-vx" style="height:100%">
+            <div style="font-size:1.6rem;margin-bottom:.75rem">💸</div>
+            <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Sin costo de acceso</div>
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin:0">Cada persona paga su consumo. Vitrinexo coordina la mesa — gratis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CÓMO FUNCIONA -->
+  <div class="mb-5" id="como-funciona" style="scroll-margin-top:80px">
+    <div class="text-center mb-4">
+      <span class="section-landing-label">El proceso</span>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;letter-spacing:-.04em;color:var(--color-text-primary);margin:.5rem 0">¿Cómo funciona?</h2>
+    </div>
+    <div class="row g-3 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card-vx text-center" style="height:100%">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--color-green-50);border:2px solid var(--color-green-200);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:16px;font-weight:700;color:var(--color-success)">1</div>
+          <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Crea tu cuenta</div>
+          <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0">Regístrate en Vitrinexo y completa tu perfil. Es el punto de partida para todo.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card-vx text-center" style="height:100%">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--color-cyan-50);border:2px solid var(--color-cyan-200);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:16px;font-weight:700;color:var(--color-primary)">2</div>
+          <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Activa 4Dinner</div>
+          <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0">Desde tu perfil, activa la comunidad 4Dinner e indica tu ciudad y disponibilidad.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card-vx text-center" style="height:100%">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--color-purple-50);border:2px solid var(--color-purple-200);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:16px;font-weight:700;color:var(--color-secondary)">3</div>
+          <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Te asignamos una mesa</div>
+          <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0">El equipo de Vitrinexo arma la mesa con perfiles complementarios y te confirma el restaurante.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card-vx text-center" style="height:100%">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3a2a08,#c99522);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:18px">🍽</div>
+          <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Cenas el miércoles</div>
+          <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin:0">Llegas, te sientas y la conversación ocurre sola. Sin moderador, sin agenda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTOS PRÓXIMOS PREVIEW -->
+  <div class="mb-5">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <div>
+        <span class="section-landing-label">Agenda</span>
+        <h2 style="font-size:1.5rem;font-weight:400;letter-spacing:-.03em;color:var(--color-text-primary);margin:.25rem 0">Próximas cenas</h2>
+      </div>
+      <a href="login.html" class="btn-vx btn-ghost-vx btn-vx-sm link-primary-color">Ver todas al registrarte <i class="ti ti-arrow-right ms-1"></i></a>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="card-vx d-flex gap-3 align-items-start">
+          <div class="text-center" style="flex-shrink:0;width:48px">
+            <div class="subsection-label" style="margin-bottom:2px;font-size:9px">JUN</div>
+            <div style="font-size:1.8rem;font-weight:400;letter-spacing:-.03em;color:var(--color-success);line-height:1">4</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">MIÉ</div>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:3px">Bogotá</div>
+            <div style="font-size:12px;color:var(--color-text-secondary)"><i class="ti ti-users me-1"></i>1 cupo libre · 8pm</div>
+            <span class="badge-vx badge-primary mt-2">Disponible</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card-vx d-flex gap-3 align-items-start">
+          <div class="text-center" style="flex-shrink:0;width:48px">
+            <div class="subsection-label" style="margin-bottom:2px;font-size:9px">JUN</div>
+            <div style="font-size:1.8rem;font-weight:400;letter-spacing:-.03em;color:var(--color-success);line-height:1">11</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">MIÉ</div>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:3px">Santiago</div>
+            <div style="font-size:12px;color:var(--color-text-secondary)"><i class="ti ti-users me-1"></i>2 cupos libres · 8pm</div>
+            <span class="badge-vx badge-primary mt-2">Disponible</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card-vx d-flex gap-3 align-items-start">
+          <div class="text-center" style="flex-shrink:0;width:48px">
+            <div class="subsection-label" style="margin-bottom:2px;font-size:9px">JUN</div>
+            <div style="font-size:1.8rem;font-weight:400;letter-spacing:-.03em;color:var(--color-ice-700);line-height:1">18</div>
+            <div style="font-size:10px;color:var(--color-text-secondary)">MIÉ</div>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--color-text-primary);margin-bottom:3px">Madrid</div>
+            <div style="font-size:12px;color:var(--color-text-secondary)"><i class="ti ti-users me-1"></i>4/4 · 8pm</div>
+            <span class="badge-vx badge-neutral mt-2">Completo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIOS -->
+  <div class="mb-5">
+    <div class="text-center mb-4">
+      <span class="section-landing-label">Quienes ya fueron</span>
+      <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);font-weight:400;letter-spacing:-.04em;color:var(--color-text-primary);margin:.5rem 0">Lo que pasa en una mesa de 4Dinner</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="card-vx" style="height:100%">
+          <div style="font-size:1.2rem;color:var(--color-success);margin-bottom:.75rem">❝</div>
+          <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:1rem;font-style:italic">
+            "Llegué esperando conocer gente interesante. Me fui con una propuesta de colaboración concreta para el mes siguiente. Llevaba 3 horas en la mesa."
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <img src="/src/assets/placeholder3.webp" style="width:32px;height:32px;border-radius:50%;object-fit:cover" alt="">
+            <div>
+              <div style="font-size:12px;font-weight:600;color:var(--color-text-primary)">Roberto Abarca</div>
+              <div style="font-size:11px;color:var(--color-text-secondary)">Minotauro Marketing · Buenos Aires</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card-vx" style="height:100%">
+          <div style="font-size:1.2rem;color:var(--color-success);margin-bottom:.75rem">❝</div>
+          <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:1rem;font-style:italic">
+            "Lo que más me sorprendió fue que ya sabíamos quiénes éramos antes de llegar. La conversación empezó donde normalmente terminaría en una conferencia."
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <img src="/src/assets/placeholder4.webp" style="width:32px;height:32px;border-radius:50%;object-fit:cover" alt="">
+            <div>
+              <div style="font-size:12px;font-weight:600;color:var(--color-text-primary)">Ana Fernández del Valle</div>
+              <div style="font-size:11px;color:var(--color-text-secondary)">BrandLab Internacional · Madrid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card-vx" style="height:100%">
+          <div style="font-size:1.2rem;color:var(--color-success);margin-bottom:.75rem">❝</div>
+          <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:1rem;font-style:italic">
+            "La primera cena en Lima la organicé yo. Volvería cada semana si pudiera. Es el networking que siempre quise hacer."
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <img src="/src/assets/placeholder5.webp" style="width:32px;height:32px;border-radius:50%;object-fit:cover" alt="">
+            <div>
+              <div style="font-size:12px;font-weight:600;color:var(--color-text-primary)">Camila Torres</div>
+              <div style="font-size:11px;color:var(--color-text-secondary)">FlowOps Studio · Lima</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="banner-4dinner mb-5" style="text-align:center;flex-direction:column;align-items:center;padding:3rem 2rem">
+    <div class="banner-4dinner__deco banner-4dinner__deco--1"></div>
+    <div class="banner-4dinner__deco banner-4dinner__deco--2"></div>
+    <div style="position:relative;z-index:1">
+      <div style="font-size:2rem;margin-bottom:1rem">🍽</div>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;letter-spacing:-.04em;color:#fff;margin-bottom:.75rem;line-height:1.2">
+        ¿Quieres sentarte a la mesa?
+      </h2>
+      <p style="font-size:14px;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto 1.5rem;line-height:1.6">
+        Crea tu cuenta en Vitrinexo, completa tu perfil y activa 4Dinner desde tu dashboard. El equipo te asigna a la próxima mesa disponible en tu ciudad.
+      </p>
+      <a href="login.html" class="btn-vx btn-vx-lg" style="background:#fff;color:#8a5f0a;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.2)">
+        Registrarme en Vitrinexo <i class="ti ti-arrow-right ms-1"></i>
+      </a>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<include src="src/components/footer.html"></include>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
