@@ -2882,3 +2882,43 @@ section#offers {
   color: var(--color-text-secondary);
   margin: 0;
 }
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+.pagination {
+  justify-content: center;
+  gap: 4px;
+}
+
+.page-link {
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  background: var(--color-surface);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  line-height: 1.4;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.page-link:hover,
+.page-link:focus {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary-active);
+  box-shadow: none;
+}
+
+.page-item.active .page-link {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.page-item.disabled .page-link {
+  color: var(--color-ice-700);
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
