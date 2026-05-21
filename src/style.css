@@ -3238,3 +3238,237 @@ section#offers {
   font-size: 22px;
   color: var(--color-border);
 }
+
+/* ============================================================
+   ONBOARDING — base layout classes
+   (previously lived as <style> inside onboarding.html)
+   ============================================================ */
+
+.ob-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-ice-500);
+}
+
+.ob-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  padding: .75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ── Progress bar (mobile) ── */
+.ob-progress {
+  flex: 1;
+  max-width: 320px;
+}
+
+.ob-progress-track {
+  height: 4px;
+  background: var(--color-ice-400);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.ob-progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-pill);
+  transition: width .4s ease;
+  width: 0%;
+}
+
+.ob-progress-label {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* ── Steps indicator (desktop) ── */
+.ob-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.ob-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ob-step-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: all .2s ease;
+}
+
+.ob-step--done .ob-step-dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.ob-step--active .ob-step-dot {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.ob-step-line--done {
+  background: var(--color-primary);
+}
+
+/* ── Step panels ── */
+.ob-panel        { display: none; }
+.ob-panel--active { display: block; }
+
+/* ── Step card ── */
+.ob-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ob-step-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--color-primary);
+  margin-bottom: .5rem;
+}
+
+.ob-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 400;
+  letter-spacing: -.04em;
+  color: var(--color-text-primary);
+  margin-bottom: .4rem;
+  line-height: 1.15;
+}
+
+.ob-lead {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ── Tag selector ── */
+.tag-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.tag-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all .15s ease;
+  user-select: none;
+}
+
+.tag-option:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.tag-option--selected-offer {
+  border-color: var(--color-success);
+  background: var(--color-green-50);
+  color: var(--color-green-800);
+}
+
+.tag-option--selected-seek {
+  border-color: var(--color-accent);
+  background: var(--color-pink-50);
+  color: var(--color-pink-800);
+}
+
+/* ── Community toggle card ── */
+.community-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease;
+  margin-bottom: .75rem;
+}
+
+.community-toggle:hover { border-color: var(--color-primary); }
+
+.community-toggle--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.community-toggle__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.community-toggle__title { font-size: 13px; font-weight: 600; color: var(--color-text-primary); }
+.community-toggle__desc  { font-size: 12px; color: var(--color-text-secondary); }
+
+.community-toggle__check {
+  margin-left: auto;
+  font-size: 18px;
+  color: var(--color-border);
+  transition: color .15s ease;
+}
+
+.community-toggle--selected .community-toggle__check { color: var(--color-primary); }
+
+/* ── Footer nav ── */
+.ob-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  gap: 1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .ob-card { padding: 1.5rem 1.25rem; }
+}
