@@ -38,8 +38,8 @@
             <label class="modal-empresa-option" id="empresa-opt-1">
               <input type="checkbox" name="emisor_empresa[]" value="Maggiore Marketing" checked style="display:none">
               <div class="modal-empresa-card modal-empresa-card--selected" id="card-empresa-1">
-                <div class="modal-empresa-avatar" style="background:linear-gradient(135deg,var(--color-cyan-600),var(--color-green-500))">
-                  M
+                <div class="empresa-logo-circle">
+                  <img src="/src/assets/placeholder2.webp" alt="Logo Maggiore Marketing">
                 </div>
                 <div class="modal-empresa-info">
                   <div class="modal-empresa-name">Maggiore Marketing</div>
@@ -53,8 +53,8 @@
             <label class="modal-empresa-option" id="empresa-opt-2">
               <input type="checkbox" name="emisor_empresa[]" value="Vitrinexo" style="display:none">
               <div class="modal-empresa-card" id="card-empresa-2">
-                <div class="modal-empresa-avatar" style="background:linear-gradient(135deg,var(--color-purple-600),var(--color-cyan-500))">
-                  V
+                <div class="empresa-logo-circle">
+                  <img src="/src/assets/vitrinexo.svg" alt="Logo Vitrinexo">
                 </div>
                 <div class="modal-empresa-info">
                   <div class="modal-empresa-name">Vitrinexo</div>
@@ -133,19 +133,6 @@
 .modal-empresa-card--selected {
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
-}
-
-.modal-empresa-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  flex-shrink: 0;
 }
 
 .modal-empresa-info { flex: 1; min-width: 0; }
