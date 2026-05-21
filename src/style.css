@@ -124,6 +124,19 @@ body {
   color: var(--color-text-primary);
   font-size: 14px;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky footer — el contenido empuja el footer al fondo */
+body > .container,
+body > main {
+  flex: 1 0 auto;
+}
+
+.footer-vx {
+  flex-shrink: 0;
 }
 
 h1,
