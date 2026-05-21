@@ -8,21 +8,20 @@
   <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
   <link href="/src/style.css" rel="stylesheet" />
 </head>
-<body style="background:var(--color-ice-500)">
+<body >
 
 <!-- NAVBAR AUTENTICADO -->
 <include src="src/components/nav-logged.html"></include>
 
 <!-- CONTENIDO PRINCIPAL -->
-<div class="container py-4">
-
+<header class="pt-5">
     <div class="container py-5 text-center">
       <h1 class="mt-2 mb-5">Encuentra tu siguiente <strong>nexo</strong></h1>
         <!-- Filtros -->
 
 
   <!-- Banner 4Dinner -->
-  <div class="alert-vx alert-neutral d-flex align-items-center gap-3 mb-4" style="flex-wrap:wrap">
+  <div class="alert-vx bg-success text-white alert-neutral d-flex align-items-center gap-3 mb-4" style="flex-wrap:wrap">
     <i class="ti ti-calendar-event" style="font-size:22px;color:var(--color-green-500);flex-shrink:0"></i>
     <div class="flex-grow-1">
       <strong>Próximo 4Dinner —</strong> Santiago, Chile · Miércoles 28 de mayo, 8pm · Cena de networking para 4 personas de distintas industrias
@@ -51,14 +50,15 @@
           <button class="btn-vx btn-ghost-vx btn-vx-sm">
             <i class="ti ti-building"></i> Tamaño
           </button>
-   P
+   
           <button class="btn-vx btn-soft-secondary btn-vx-sm">
             <i class="ti ti-star"></i> Socios Fundadores
           </button>
         </div>
       </div>
     </div>
-    <section class="members-section">
+</header>
+    <section id="search-result" class="members-section pb-5">
       <div class="container">
         <div class="section-heading mb-4">
           <h2>Resultado de Búsqueda</h2>
@@ -71,9 +71,12 @@
 
 
   <!-- SECCIÓN: Ofrecen lo que buscas -->
+   <section id="seeks" class="py-5">
+    <div class="container ">
+
   <div class="mb-5">
-    <div class="d-flex align-items-center gap-3 mb-3">
-      <h2 class="fw-semibold mb-0" style="font-size:1.1rem;color:var(--color-text-primary)">Ofrecen lo que buscas</h2>
+    <div class="mb-3">
+      <h2 class="mb-3">Ofrecen lo que buscas</h2>
       <div class="d-flex flex-wrap gap-1">
         <span class="tag-vx tag-seeks">agencias de marketing</span>
         <span class="tag-vx tag-seeks">partners tecnológicos</span>
@@ -208,12 +211,15 @@
       </div>
 
     </div>
-  </div>
-
+  </div>  </div>
+</section>
   <!-- SECCIÓN: Buscan lo que ofreces -->
+   <section id="offers" class="py-5">    <div class="container ">
+
+
   <div class="mb-5">
-    <div class="d-flex align-items-center gap-3 mb-3">
-      <h2 class="fw-semibold mb-0" style="font-size:1.1rem;color:var(--color-text-primary)">Buscan lo que ofreces</h2>
+    <div class="mb-3">
+      <h2  class="mb-3">Buscan lo que ofreces</h2>
       <div class="d-flex flex-wrap gap-1">
         <span class="tag-vx tag-offers">ventas B2B</span>
         <span class="tag-vx tag-offers">CRM</span>
@@ -313,289 +319,10 @@
 
     </div>
   </div>
-
+   </div></section>
   <!-- TODOS LOS MIEMBROS -->
-  <div class="page-section-heading mb-3">
-    <h2 class="page-section-heading__title">Todos los miembros</h2>
-    <span class="badge-vx badge-neutral">10 miembros</span>
-  </div>
 
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
 
-    <!-- user_001 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Li">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Li <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
-            <p class="member-company">OK</p>
-            <p class="member-company">Lima (PER)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">desarrollo web</span>
-            <span class="tag-vx tag-seeks">clientes</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_002 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder2.webp" alt="Roberto">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Roberto Abarca</h5>
-            <p class="member-company">Minotauro Marketing</p>
-            <p class="member-company">Buenos Aires (ARG)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">marketing digital</span>
-            <span class="tag-vx tag-offers">branding</span>
-            <span class="tag-vx tag-seeks">diseño web</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_003 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="María Guadalupe">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">María G. Estévez-Montoya <span class="badge-vx badge-neutral" style="font-size:9px">Senior</span></h5>
-            <p class="member-company">Consultoría Iberoamericana</p>
-            <p class="member-company">CDMX (MEX)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">transformación digital</span>
-            <span class="tag-vx tag-seeks">socios tecnológicos</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_004 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Sofía">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Sofía <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
-            <p class="member-company">Sofía Restrepo Studio</p>
-            <p class="member-company">Medellín (COL)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">identidad visual</span>
-            <span class="tag-vx tag-seeks">agencias creativas</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_005 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Roberto Fuentes">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Roberto A. Fuentes-Carreño <span class="badge-vx badge-neutral" style="font-size:9px">Senior</span></h5>
-            <p class="member-company">Lex Patagonia</p>
-            <p class="member-company">Puerto Montt (CHL)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">contratos B2B</span>
-            <span class="tag-vx tag-seeks">estudios jurídicos</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_006 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Valentina Koczorowski <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
-            <p class="member-company">DataSur Analytics</p>
-            <p class="member-company">Bogotá (COL)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">business intelligence</span>
-            <span class="tag-vx tag-seeks">retail analytics</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_007 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder2.webp" alt="Ignacio">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Ignacio M. Bertolotti</h5>
-            <p class="member-company">PropTech Ventures</p>
-            <p class="member-company">Montevideo (URY)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">fondos inmobiliarios</span>
-            <span class="tag-vx tag-seeks">desarrolladoras Chile</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_008 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="Felipe">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Felipe Muñoz <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
-            <p class="member-company">Growth Partners</p>
-            <p class="member-company">Santiago (CHL)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">ventas B2B</span>
-            <span class="tag-vx tag-offers">CRM</span>
-            <span class="tag-vx tag-seeks">agencias marketing</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_009 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder4.webp" alt="Ana">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Ana Fernández del Valle</h5>
-            <p class="member-company">BrandLab Internacional</p>
-            <p class="member-company">Madrid (ESP)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">branding internacional</span>
-            <span class="tag-vx tag-seeks">copywriters LATAM</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- user_010 -->
-    <div class="col">
-      <div class="card">
-        <div class="card-img-container">
-          <div class="card-enlaces">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
-            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
-          </div>
-          <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Camila">
-        </div>
-        <div class="card-body">
-          <div class="info mb-2">
-            <h5 class="h6 py-0 my-0">Camila Torres <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
-            <p class="member-company">FlowOps Studio</p>
-            <p class="member-company">Lima (PER)</p>
-          </div>
-          <div class="d-flex flex-wrap gap-1 mb-1"><p class="p-offers">Ofrece</p><p class="p-seeks">Busca</p></div>
-          <div class="d-flex flex-wrap gap-1">
-            <span class="tag-vx tag-offers">automatización no-code</span>
-            <span class="tag-vx tag-seeks">consultores CRM</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 <!-- MODAL CONECTAR -->
 <div class="modal fade" id="modalConectar" tabindex="-1">
@@ -618,7 +345,6 @@
           <p style="margin:0;font-size:13px">Tu nombre, empresa y email serán visibles para <strong>Roberto</strong> al recibir tu solicitud.</p>
         </div>
       </div>
-    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
