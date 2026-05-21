@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscan lo que ofreces — Vitrinexo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
+  <link href="/src/style.css" rel="stylesheet" />
+</head>
+<body style="background:var(--color-ice-500)">
+
+<include src="src/components/nav-logged.html"></include>
+
+<!-- PAGE HEADER -->
+<div class="page-header-vx" style="background:linear-gradient(135deg, var(--color-green-50) 0%, #fff 60%)">
+  <div class="container">
+    <div class="page-header-vx__inner">
+      <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+          <i class="ti ti-sparkles" style="color:var(--color-success);font-size:16px"></i>
+          <span class="section-landing-label" style="margin:0;color:var(--color-success)">Matches · Buscan lo que ofreces</span>
+        </div>
+        <h1 class="page-header-vx__title">Buscan lo que <strong style="color:var(--color-success)">ofreces</strong></h1>
+        <p class="page-header-vx__lead">Empresas cuya búsqueda coincide con lo que declaraste ofrecer en tu perfil.</p>
+      </div>
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <!-- Tags que generan el match -->
+        <div>
+          <span style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-secondary);display:block;margin-bottom:5px">Tu perfil ofrece</span>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="tag-vx tag-offers">marketing digital</span>
+            <span class="tag-vx tag-offers">branding</span>
+            <span class="tag-vx tag-offers">estrategia</span>
+          </div>
+        </div>
+        <a href="editor-perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm">
+          <i class="ti ti-pencil"></i> Editar lo que ofrezco
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container py-4">
+
+  <!-- Filtros rápidos -->
+  <div class="d-flex align-items-center justify-content-between gap-3 mb-4 flex-wrap">
+    <div class="d-flex gap-2 flex-wrap">
+      <button class="btn-vx btn-ghost-vx btn-vx-sm">
+        <i class="ti ti-world"></i> País
+      </button>
+      <button class="btn-vx btn-ghost-vx btn-vx-sm">
+        <i class="ti ti-briefcase"></i> Rubro
+      </button>
+      <button class="btn-vx btn-soft-secondary btn-vx-sm">
+        <i class="ti ti-star"></i> Socios Fundadores
+      </button>
+    </div>
+    <span class="badge-vx badge-neutral"><i class="ti ti-users me-1"></i>5 matches</span>
+  </div>
+
+  <!-- Grid -->
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-2 mb-5">
+
+    <!-- user_006 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-img-container">
+          <div class="card-enlaces">
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
+          </div>
+          <div class="card-blur-gradient"></div>
+          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina">
+        </div>
+        <div class="card-body">
+          <div class="info mb-2">
+            <h5 class="h6 py-0 my-0">Valentina Koczorowski <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
+            <p class="member-company">DataSur Analytics</p>
+            <p class="member-company">Bogotá (COL)</p>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="tag-vx tag-seeks">consultoras de estrategia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- user_001 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-img-container">
+          <div class="card-enlaces">
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
+          </div>
+          <div class="card-blur-gradient"></div>
+          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Li">
+        </div>
+        <div class="card-body">
+          <div class="info mb-2">
+            <h5 class="h6 py-0 my-0">Li <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
+            <p class="member-company">OK Studio</p>
+            <p class="member-company">Lima (PER)</p>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="tag-vx tag-seeks">agencias de marketing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- user_007 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-img-container">
+          <div class="card-enlaces">
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
+          </div>
+          <div class="card-blur-gradient"></div>
+          <img class="card-img-top" src="/src/assets/placeholder2.webp" alt="Ignacio">
+        </div>
+        <div class="card-body">
+          <div class="info mb-2">
+            <h5 class="h6 py-0 my-0">Ignacio M. Bertolotti</h5>
+            <p class="member-company">PropTech Ventures</p>
+            <p class="member-company">Montevideo (URY)</p>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="tag-vx tag-seeks">estrategia de marca</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- user_011 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-img-container">
+          <div class="card-enlaces">
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
+          </div>
+          <div class="card-blur-gradient"></div>
+          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Paula Marchetti">
+        </div>
+        <div class="card-body">
+          <div class="info mb-2">
+            <h5 class="h6 py-0 my-0">Paula Marchetti</h5>
+            <p class="member-company">Grupo Expansión</p>
+            <p class="member-company">Buenos Aires (ARG)</p>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="tag-vx tag-seeks">marketing B2B</span>
+            <span class="tag-vx tag-seeks">posicionamiento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- user_012 -->
+    <div class="col">
+      <div class="card">
+        <div class="card-img-container">
+          <div class="card-enlaces">
+            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-external-link"></i></a>
+            <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
+            <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
+          </div>
+          <div class="card-blur-gradient"></div>
+          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="Carlos Medrano">
+        </div>
+        <div class="card-body">
+          <div class="info mb-2">
+            <h5 class="h6 py-0 my-0">Carlos Medrano <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span></h5>
+            <p class="member-company">Escala Ventures</p>
+            <p class="member-company">Santiago (CHL)</p>
+          </div>
+          <p class="p-seeks mb-1">Busca</p>
+          <div class="d-flex flex-wrap gap-1">
+            <span class="tag-vx tag-seeks">branding corporativo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA editar perfil -->
+  <div class="card-vx d-flex align-items-center justify-content-between gap-3" style="flex-wrap:wrap;border-left:3px solid var(--color-success)">
+    <div>
+      <p style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin:0 0 2px">¿Ves pocos matches?</p>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin:0">Detalla mejor lo que ofreces en tu perfil para que más empresas te encuentren.</p>
+    </div>
+    <a href="editor-perfil.html" class="btn-vx btn-soft-primary btn-vx-sm">
+      <i class="ti ti-pencil"></i> Editar lo que ofrezco
+    </a>
+  </div>
+
+</div>
+
+<!-- MODAL CONECTAR -->
+<div class="modal fade" id="modalConectar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-vx" style="width:100%;max-width:500px;margin:auto">
+      <div class="modal-vx-header">
+        <div>
+          <h5 class="modal-vx-title">Conectar</h5>
+          <p style="margin:2px 0 0;font-size:13px;color:var(--color-text-secondary)">Envía un mensaje de presentación</p>
+        </div>
+        <button type="button" class="btn-vx btn-ghost-vx btn-vx-icon-sm" data-bs-dismiss="modal"><i class="ti ti-x"></i></button>
+      </div>
+      <div style="padding:24px">
+        <div class="mb-3">
+          <label class="form-label-vx">¿Por qué quieres conectar?</label>
+          <textarea class="form-control-vx" rows="3" placeholder="Cuéntale a qué viene tu contacto..."></textarea>
+        </div>
+        <button class="btn-vx btn-primary-vx btn-vx-sm w-100"><i class="ti ti-send"></i> Enviar solicitud</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<include src="src/components/footer-logged.html"></include>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
