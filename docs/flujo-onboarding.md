@@ -11,21 +11,29 @@ Usuario llena formulario en login.html (tab Registrarse)
 WordPress crea la cuenta con estado "pendiente"
         ↓
 ¿El dominio del email es institucional?
-   ├─ SÍ → Envía email de confirmación con link de activación
-   │         → Usuario ve confirmar-correo.html
-   │         → Usuario hace clic en el link → cuenta activada
-   │         → Redirige a onboarding.html
-   │
-   └─ NO → Cuenta queda en verificación manual
+   ├─ SÍ  ── Flujo A (automático) ──────────────────────────────┐
+   │         → Genera token UUID (expira 24h)                    │
+   │         → Envía email de confirmación con link de activación│
+   │         → Usuario ve confirmar-correo.html                  │
+   │         → Usuario hace clic → valida token → cuenta activa  │
+   │         → Redirige a onboarding.html                        │
+   │                                                             │
+   └─ NO  ── Flujo B (manual) ────────────────────────────────── ┘
              → Usuario ve verificacion-pendiente.html
              → Admin revisa y aprueba desde WordPress
-             → Sistema envía email de bienvenida
-             → Usuario hace clic → redirige a onboarding.html
+             → Al aprobar: genera token UUID (expira 72h)
+             → Envía email al usuario: "Tu cuenta fue aprobada"
+               → El email incluye el link único de activación
+             → Usuario hace clic → valida token → cuenta activa
+             → Redirige a onboarding.html
         ↓
 Usuario completa onboarding (6 pasos)
         ↓
 Dashboard
 ```
+
+> **¿Por qué el link de activación también en el flujo manual?**
+> Garantiza que el dueño real del correo es quien activa la cuenta. Sin este paso, un admin podría aprobar una cuenta registrada con el correo de otra persona sin que esa persona lo sepa.
 
 ---
 
@@ -205,7 +213,61 @@ add_action( 'manage_users_custom_column', function( $val, $col, $uid ) {
 }, 10, 3 );
 ```
 
-Cuando el admin aprueba, cambia `vx_estado` a `activo` y el sistema envía un email de bienvenida con link directo al onboarding.
+### 4.4 Email de aprobación con link de activación
+
+Cuando el admin aprueba, el sistema **no activa la cuenta directamente** — genera un token y lo envía al usuario para que active él mismo:
+
+```php
+function vx_aprobar_cuenta_manual( int $user_id ): void {
+  // NO cambiar vx_estado a "activo" todavía — el usuario debe confirmar
+  $token  = wp_generate_uuid4();
+  $expira = time() + ( 72 * HOUR_IN_SECONDS ); // 72 horas
+
+  update_user_meta( $user_id, 'vx_token_confirmacion', $token );
+  update_user_meta( $user_id, 'vx_token_expira', $expira );
+
+  $user = get_userdata( $user_id );
+  $link = add_query_arg([
+    'accion' => 'activar',
+    'uid'    => $user_id,
+    'token'  => $token,
+  ], home_url( '/activar-cuenta/' ) );
+
+  wp_mail(
+    $user->user_email,
+    '¡Tu cuenta en Vitrinexo fue aprobada!',
+    vx_template_aprobacion( $user->display_name, $link )
+  );
+}
+```
+
+### 4.5 Estructura del email de aprobación
+
+```
+Asunto: Tu cuenta en Vitrinexo fue aprobada ✓
+
+────────────────────────────────────────
+  [Logo Vitrinexo]
+
+  Hola [Nombre],
+
+  Tu cuenta en Vitrinexo fue revisada y aprobada
+  por el equipo.
+
+  Para activarla y completar tu perfil, haz clic aquí:
+
+  [  Activar mi cuenta  ]
+  → https://vitrinexo.com/activar-cuenta?accion=activar&uid=...&token=...
+
+  Este link expira en 72 horas.
+  Si no te registraste en Vitrinexo, ignora este correo.
+
+────────────────────────────────────────
+```
+
+> **Seguridad:** El token expira en 72h (más holgado que el automático de 24h, porque el proceso manual puede tomar tiempo). Si expira, el admin puede reenviar la aprobación desde WP Admin.
+
+La activación del link usa exactamente la misma lógica del endpoint `/activar-cuenta/` descrito en la sección 3.3 — valida token, actualiza `vx_estado` a `activo`, hace login automático y redirige al onboarding.
 
 ---
 
