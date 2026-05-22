@@ -4488,3 +4488,6 @@ section#offers {
   margin: 0 auto 1.25rem;
   line-height: 1.6;
 }
+
+/* Narrow container for single-column reading pages */
+.container-narrow { max-width: 680px; }
