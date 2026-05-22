@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tus matches de esta semana — Vitrinexo</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#f3f9fd; font-family:-apple-system,'Segoe UI',sans-serif; font-size:14px; line-height:1.6; color:#3d444e; }
+    .wrapper { max-width:560px; margin:40px auto; padding:0 16px 40px; }
+    .card { background:#fff; border:1px solid #d7e4ef; border-radius:16px; overflow:hidden; }
+    .header { background:linear-gradient(135deg,#00aeb8 0%,#2ead6e 100%); padding:28px 40px; text-align:center; }
+    .header img { width:110px; }
+    .body { padding:36px 40px; }
+    .eyebrow { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#00aeb8; margin-bottom:8px; }
+    .title { font-size:20px; font-weight:400; letter-spacing:-.03em; color:#3d444e; margin-bottom:8px; line-height:1.25; }
+    .body p { color:#5e6b7a; margin-bottom:16px; }
+    /* Match section */
+    .match-section-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; margin-bottom:10px; }
+    .match-section-title--seeks { color:#e91e7d; }
+    .match-section-title--offers { color:#2ead6e; }
+    .match-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #d7e4ef; }
+    .match-row:last-child { border-bottom:none; }
+    .match-avatar { width:38px; height:38px; border-radius:50%; object-fit:cover; background:#d7e4ef; flex-shrink:0; }
+    .match-name { font-size:13px; font-weight:600; color:#3d444e; }
+    .match-meta { font-size:11px; color:#5e6b7a; }
+    .match-tag { display:inline-block; font-size:10px; font-weight:600; padding:2px 8px; border-radius:4px; }
+    .match-tag--seek  { background:#fdf0f7; color:#e91e7d; border:1px solid #f8b8db; }
+    .match-tag--offer { background:#eaf7f1; color:#238453; border:1px solid #abe0c5; }
+    .match-section { margin:20px 0; background:#f9fcfe; border:1px solid #d7e4ef; border-radius:10px; padding:16px; }
+    .cta-wrap { text-align:center; margin:28px 0; }
+    .cta { display:inline-block; background:#00aeb8; color:#fff !important; text-decoration:none; font-weight:700; font-size:14px; padding:12px 32px; border-radius:999px; }
+    .divider { border:none; border-top:1px solid #d7e4ef; margin:20px 0; }
+    .footer { text-align:center; padding:24px 16px 0; font-size:11px; color:#93989c; }
+    .footer a { color:#93989c; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <img src="https://vitrinexo.cl/src/assets/vitrinexo.svg" alt="Vitrinexo" onerror="this.style.display='none'">
+      </div>
+      <div class="body">
+        <div class="eyebrow">Resumen semanal</div>
+        <h1 class="title">Esta semana tienes<br><strong style="color:#00aeb8">5 matches nuevos</strong>, Ana.</h1>
+        <p>Perfiles que coinciden con lo que ofreces y buscas, incorporados al directorio esta semana.</p>
+
+        <!-- Ofrecen lo que buscas -->
+        <div class="match-section">
+          <div class="match-section-title match-section-title--seeks">Ofrecen lo que buscas · 3 nuevos</div>
+          <div class="match-row">
+            <img src="https://vitrinexo.cl/src/assets/placeholder3.webp" class="match-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div style="flex:1">
+              <div class="match-name">María G. Estévez-Montoya</div>
+              <div class="match-meta">Consultoría Iberoamericana · México</div>
+            </div>
+            <span class="match-tag match-tag--seek">change management</span>
+          </div>
+          <div class="match-row">
+            <img src="https://vitrinexo.cl/src/assets/placeholder5.webp" class="match-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div style="flex:1">
+              <div class="match-name">Camila Torres</div>
+              <div class="match-meta">FlowOps Studio · Lima</div>
+            </div>
+            <span class="match-tag match-tag--seek">automatización</span>
+          </div>
+          <div class="match-row">
+            <img src="https://vitrinexo.cl/src/assets/placeholder.webp" class="match-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div style="flex:1">
+              <div class="match-name">Diego Fontana</div>
+              <div class="match-meta">Nexo Digital · Santiago</div>
+            </div>
+            <span class="match-tag match-tag--seek">UX/UI</span>
+          </div>
+        </div>
+
+        <!-- Buscan lo que ofreces -->
+        <div class="match-section">
+          <div class="match-section-title match-section-title--offers">Buscan lo que ofreces · 2 nuevos</div>
+          <div class="match-row">
+            <img src="https://vitrinexo.cl/src/assets/placeholder4.webp" class="match-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div style="flex:1">
+              <div class="match-name">Paula Marchetti</div>
+              <div class="match-meta">Grupo Expansión · Buenos Aires</div>
+            </div>
+            <span class="match-tag match-tag--offer">marketing B2B</span>
+          </div>
+          <div class="match-row">
+            <img src="https://vitrinexo.cl/src/assets/placeholder2.webp" class="match-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div style="flex:1">
+              <div class="match-name">Carlos Medrano</div>
+              <div class="match-meta">Escala Ventures · Santiago</div>
+            </div>
+            <span class="match-tag match-tag--offer">branding corporativo</span>
+          </div>
+        </div>
+
+        <div class="cta-wrap">
+          <a href="https://vitrinexo.com/matches" class="cta">Ver todos mis matches →</a>
+        </div>
+
+        <hr class="divider">
+        <p style="font-size:12px;color:#93989c;text-align:center">
+          Para dejar de recibir este resumen, <a href="#" style="color:#00aeb8">ajusta tus notificaciones</a>.
+        </p>
+      </div>
+    </div>
+    <div class="footer">
+      © 2026 Vitrinexo SpA · <a href="#">Términos</a> · <a href="#">Privacidad</a><br>
+      Alcántara 1791, Las Condes, Santiago, Chile
+    </div>
+  </div>
+</body>
+</html>

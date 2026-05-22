@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu mesa 4Dinner está confirmada — Vitrinexo</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#f3f9fd; font-family:-apple-system,'Segoe UI',sans-serif; font-size:14px; line-height:1.6; color:#3d444e; }
+    .wrapper { max-width:560px; margin:40px auto; padding:0 16px 40px; }
+    .card { background:#fff; border:1px solid #d7e4ef; border-radius:16px; overflow:hidden; }
+    .header { background:linear-gradient(135deg,#3a2a08 0%,#c99522 60%,#e8b84b 100%); padding:32px 40px; text-align:center; position:relative; overflow:hidden; }
+    .header::before { content:''; position:absolute; right:-40px; top:-40px; width:160px; height:160px; border-radius:50%; background:rgba(255,255,255,.07); }
+    .header img { width:110px; margin-bottom:14px; display:block; margin-left:auto; margin-right:auto; position:relative; z-index:1; }
+    .header-emoji { font-size:2.5rem; margin-bottom:8px; display:block; position:relative; z-index:1; }
+    .header-title { font-size:20px; font-weight:600; color:#fff; position:relative; z-index:1; }
+    .body { padding:36px 40px; }
+    .eyebrow { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#c99522; margin-bottom:8px; }
+    .title { font-size:20px; font-weight:400; letter-spacing:-.03em; color:#3d444e; margin-bottom:8px; line-height:1.25; }
+    .body p { color:#5e6b7a; margin-bottom:16px; }
+    /* Event details */
+    .event-card { background:linear-gradient(135deg,#fef9ee,#fff8e7); border:1px solid #f5e0a0; border-radius:10px; padding:20px; margin:20px 0; }
+    .event-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; font-size:13px; color:#3d444e; }
+    .event-row:last-child { margin-bottom:0; }
+    .event-icon { width:28px; height:28px; border-radius:50%; background:#fff; border:1px solid #f5e0a0; display:flex; align-items:center; justify-content:center; font-size:13px; color:#c99522; flex-shrink:0; }
+    /* Comensales */
+    .comensales { margin:20px 0; }
+    .comensales-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:#5e6b7a; margin-bottom:12px; }
+    .comensal { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #d7e4ef; }
+    .comensal:last-child { border-bottom:none; }
+    .comensal-avatar { width:38px; height:38px; border-radius:50%; object-fit:cover; background:#d7e4ef; flex-shrink:0; }
+    .comensal-name { font-size:13px; font-weight:600; color:#3d444e; }
+    .comensal-meta { font-size:11px; color:#5e6b7a; }
+    .comensal-you { font-size:10px; font-weight:700; background:#fef0c0; color:#c99522; padding:1px 7px; border-radius:99px; margin-left:6px; }
+    /* Tips */
+    .tips { background:#f3f9fd; border:1px solid #d7e4ef; border-radius:10px; padding:16px 20px; margin:20px 0; }
+    .tips-title { font-size:12px; font-weight:700; color:#3d444e; margin-bottom:8px; }
+    .tip { font-size:12px; color:#5e6b7a; margin-bottom:5px; padding-left:14px; position:relative; }
+    .tip::before { content:'·'; position:absolute; left:0; }
+    .cta-wrap { text-align:center; margin:24px 0; }
+    .cta { display:inline-block; background:#c99522; color:#fff !important; text-decoration:none; font-weight:700; font-size:14px; padding:12px 32px; border-radius:999px; }
+    .divider { border:none; border-top:1px solid #d7e4ef; margin:20px 0; }
+    .footer { text-align:center; padding:24px 16px 0; font-size:11px; color:#93989c; }
+    .footer a { color:#93989c; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="header">
+        <img src="https://vitrinexo.cl/src/assets/vitrinexo.svg" alt="Vitrinexo" onerror="this.style.display='none'">
+        <span class="header-emoji">🍽</span>
+        <div class="header-title">Tu mesa está confirmada</div>
+      </div>
+      <div class="body">
+        <div class="eyebrow">4Dinner · Santiago</div>
+        <h1 class="title">Ana, cenarás el<br><strong style="color:#c99522">miércoles 11 de junio</strong>.</h1>
+        <p>Todo listo. Aquí están los detalles de tu cena y quiénes estarán en tu mesa.</p>
+
+        <div class="event-card">
+          <div class="event-row">
+            <div class="event-icon">📍</div>
+            <div><strong>La Favorita</strong> — Av. Italia 1234, Providencia, Santiago</div>
+          </div>
+          <div class="event-row">
+            <div class="event-icon">📅</div>
+            <div>Miércoles 11 de junio, <strong>8:00 pm</strong></div>
+          </div>
+          <div class="event-row">
+            <div class="event-icon">💳</div>
+            <div>Cada quien paga su consumo — sin cargo adicional</div>
+          </div>
+          <div class="event-row">
+            <div class="event-icon">📱</div>
+            <div>Reserva a nombre de <strong>Vitrinexo</strong></div>
+          </div>
+        </div>
+
+        <!-- Comensales -->
+        <div class="comensales">
+          <div class="comensales-title">Tu mesa · 4 personas</div>
+
+          <div class="comensal">
+            <img src="https://vitrinexo.cl/src/assets/placeholder3.webp" class="comensal-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div>
+              <div class="comensal-name">Ana García <span class="comensal-you">Tú</span></div>
+              <div class="comensal-meta">BrandLab Internacional · Marketing</div>
+            </div>
+          </div>
+
+          <div class="comensal">
+            <img src="https://vitrinexo.cl/src/assets/placeholder2.webp" class="comensal-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div>
+              <div class="comensal-name">Roberto Abarca</div>
+              <div class="comensal-meta">Minotauro Marketing · Estrategia</div>
+            </div>
+          </div>
+
+          <div class="comensal">
+            <img src="https://vitrinexo.cl/src/assets/placeholder5.webp" class="comensal-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div>
+              <div class="comensal-name">Camila Torres</div>
+              <div class="comensal-meta">FlowOps Studio · Automatización</div>
+            </div>
+          </div>
+
+          <div class="comensal">
+            <img src="https://vitrinexo.cl/src/assets/placeholder4.webp" class="comensal-avatar" alt="" onerror="this.style.background='#d7e4ef'">
+            <div>
+              <div class="comensal-name">Diego Fontana</div>
+              <div class="comensal-meta">Nexo Digital · Producto</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tips">
+          <div class="tips-title">Consejos para el 4Dinner</div>
+          <div class="tip">Ya conocen tus fichas — no necesitas presentarte desde cero.</div>
+          <div class="tip">Sin agenda ni moderador. La conversación ocurre sola.</div>
+          <div class="tip">Si algo surge post-cena, conecta desde Vitrinexo.</div>
+        </div>
+
+        <div class="cta-wrap">
+          <a href="https://vitrinexo.com/4dinner" class="cta">Ver más detalles →</a>
+        </div>
+
+        <hr class="divider">
+        <p style="font-size:12px;color:#93989c;text-align:center">
+          ¿No puedes asistir? Escríbenos a <a href="mailto:hola@vitrinexo.com" style="color:#c99522">hola@vitrinexo.com</a> con al menos 48h de anticipación.
+        </p>
+      </div>
+    </div>
+    <div class="footer">
+      © 2026 Vitrinexo SpA · <a href="#">Términos</a> · <a href="#">Privacidad</a><br>
+      Alcántara 1791, Las Condes, Santiago, Chile
+    </div>
+  </div>
+</body>
+</html>

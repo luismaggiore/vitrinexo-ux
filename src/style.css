@@ -4393,3 +4393,98 @@ section#offers {
   font-size: 10px;
   opacity: .6;
 }
+
+/* ============================================================
+   NOTIFICACIONES
+   ============================================================ */
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: .875rem;
+  transition: background .15s ease;
+}
+
+.notif-item--unread { border-left: 3px solid var(--color-primary); }
+.notif-item--success { border-left: 3px solid var(--color-success); }
+.notif-item--dinner  { border-left: 3px solid #c99522; }
+
+.notif-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.notif-icon--accent  { background: var(--color-pink-50);   color: var(--color-accent); }
+.notif-icon--primary { background: var(--color-primary-soft); color: var(--color-primary); }
+.notif-icon--success { background: var(--color-green-50);  color: var(--color-success); }
+.notif-icon--neutral { background: var(--color-ice-400);   color: var(--color-text-secondary); }
+.notif-icon--dinner  { background: #fef3cd; font-size: 18px; }
+
+.notif-body { flex: 1; min-width: 0; }
+
+.notif-text {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0 0 3px;
+  line-height: 1.5;
+}
+
+.notif-time {
+  font-size: 11px;
+  color: var(--color-ice-700);
+}
+
+.notif-actions {
+  display: flex;
+  gap: .4rem;
+  flex-shrink: 0;
+}
+
+.notif-chevron {
+  color: var(--color-border);
+  font-size: 16px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.empty-state__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-ice-400);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.empty-state__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: .4rem;
+}
+
+.empty-state__desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  max-width: 340px;
+  margin: 0 auto 1.25rem;
+  line-height: 1.6;
+}
