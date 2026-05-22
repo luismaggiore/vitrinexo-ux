@@ -329,14 +329,6 @@
           <i class="ti ti-circle community-toggle__check"></i>
         </div>
 
-        <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon community-toggle__icon--dinner">🍽</div>
-          <div>
-            <div class="community-toggle__title">4Dinner</div>
-            <div class="community-toggle__desc">Cenas de networking — 4 personas, 1 mesa, miércoles 8pm</div>
-          </div>
-          <i class="ti ti-circle community-toggle__check"></i>
-        </div>
 
         <div class="ob-footer">
           <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(4)">
@@ -352,39 +344,37 @@
     <!-- ── PASO 6: Listo ── -->
     <div class="ob-panel" id="panel-6">
       <div class="ob-card text-center">
-        <div class="ob-success-icon">
-          <i class="ti ti-check ob-success-check"></i>
-        </div>
-        <div class="ob-step-eyebrow">¡Listo!</div>
-        <h2 class="ob-title">Tu vitrina está<br><strong class="text-primary-color">lista para la red.</strong></h2>
-        <p class="ob-lead">Tu perfil ya está activo en el directorio. Puedes completar más detalles en cualquier momento desde el editor de perfil.</p>
-
-        <div class="d-flex justify-content-center mb-4">
-          <div class="card my-card-preview">
-            <div class="card-img-container">
-              <div class="card-blur-gradient"></div>
-              <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="Tu foto">
-            </div>
-            <div class="card-body">
-              <div class="info mb-2">
-                <h5 class="h6 py-0 my-0">Ana García</h5>
-                <p class="member-company">BrandLab Internacional</p>
-                <p class="member-company">Bogotá (COL)</p>
-              </div>
-              <p class="p-offers mb-1">Ofrece</p>
-              <div class="d-flex flex-wrap gap-1">
-                <span class="tag-vx tag-offers">Marketing digital</span>
-              </div>
-            </div>
+        <!-- Variante A: correo institucional -->
+        <div id="ob6-institucional">
+          <div class="ob-success-icon" style="background:var(--color-cyan-50);border-color:var(--color-cyan-200)">
+            <i class="ti ti-mail" style="font-size:1.75rem;color:var(--color-primary)"></i>
+          </div>
+          <div class="ob-step-eyebrow">¡Casi listo!</div>
+          <h2 class="ob-title">Revisa tu<br><strong class="text-primary-color">bandeja de entrada</strong></h2>
+          <p class="ob-lead">Te enviamos un link de confirmación. Haz clic en él para activar tu cuenta y aparecer en el directorio.</p>
+          <div class="alert-vx alert-info mb-3" style="text-align:left">
+            <i class="ti ti-info-circle"></i>
+            <span>¿No lo ves? Revisa la carpeta de <strong>spam</strong>. El link expira en 24 horas.</span>
           </div>
         </div>
 
-        <div class="ob-success-actions">
-          <a href="dashboard.html" class="btn-vx btn-primary-vx btn-vx-lg">
-            Ir a mi dashboard <i class="ti ti-arrow-right ms-1"></i>
+        <!-- Variante B: correo genérico -->
+        <div id="ob6-pendiente" style="display:none">
+          <div class="ob-success-icon" style="background:var(--color-purple-50);border-color:var(--color-purple-200)">
+            <i class="ti ti-clock" style="font-size:1.75rem;color:var(--color-secondary)"></i>
+          </div>
+          <div class="ob-step-eyebrow">Solicitud enviada</div>
+          <h2 class="ob-title">Tu cuenta está<br><strong style="color:var(--color-secondary)">siendo revisada</strong></h2>
+          <p class="ob-lead">El equipo de Vitrinexo revisará tu solicitud en 24–48 horas hábiles. Te avisaremos por correo cuando esté aprobada.</p>
+        </div>
+        <div id="ob6-actions-institucional" class="ob-success-actions">
+          <a href="confirmar-correo.html" class="btn-vx btn-primary-vx btn-vx-lg">
+            Ver instrucciones <i class="ti ti-arrow-right ms-1"></i>
           </a>
-          <a href="directorio.html" class="btn-vx btn-ghost-vx btn-vx-md">
-            Explorar el directorio
+        </div>
+        <div id="ob6-actions-pendiente" class="ob-success-actions" style="display:none">
+          <a href="verificacion-pendiente.html" class="btn-vx btn-soft-primary btn-vx-lg">
+            Ver estado de mi solicitud <i class="ti ti-arrow-right ms-1"></i>
           </a>
         </div>
       </div>
@@ -402,6 +392,20 @@
       document.getElementById('panel-' + current).classList.add('ob-panel--active');
       updateIndicators();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (step === 6) {
+        const emailInput = document.querySelector('#panel-2 input[type="email"]');
+        const email = emailInput ? emailInput.value : '';
+        const genericDomains = ['gmail.com','googlemail.com','yahoo.com','yahoo.es','hotmail.com',
+          'hotmail.es','outlook.com','outlook.es','live.com','icloud.com','me.com','mac.com',
+          'protonmail.com','proton.me','aol.com'];
+        const domain = (email.split('@')[1] || '').toLowerCase();
+        const isGeneric = genericDomains.includes(domain);
+        document.getElementById('ob6-institucional').style.display         = isGeneric ? 'none'  : 'block';
+        document.getElementById('ob6-pendiente').style.display             = isGeneric ? 'block' : 'none';
+        document.getElementById('ob6-actions-institucional').style.display = isGeneric ? 'none'  : 'flex';
+        document.getElementById('ob6-actions-pendiente').style.display     = isGeneric ? 'flex'  : 'none';
+      }
     }
 
     function updateIndicators() {
