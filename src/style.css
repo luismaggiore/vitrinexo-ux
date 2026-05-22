@@ -4491,3 +4491,58 @@ section#offers {
 
 /* Narrow container for single-column reading pages */
 .container-narrow { max-width: 680px; }
+
+/* ── Auth icon variants (recuperar contraseña) ── */
+.ob-success-icon--primary {
+  background: var(--color-primary-soft);
+  border-color: var(--color-cyan-200);
+}
+.ob-success-icon--primary i { color: var(--color-primary); }
+
+.ob-success-icon--cyan {
+  background: var(--color-cyan-50);
+  border-color: var(--color-cyan-200);
+}
+.ob-success-icon--cyan i { color: var(--color-primary); }
+
+/* Suppress bottom margin on ob-lead when needed */
+.ob-lead--no-mb { margin-bottom: 0; }
+
+/* Link styled as text with primary color */
+.link-text-primary {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.link-text-primary:hover { color: var(--color-primary-hover); }
+
+/* Password strength bar track */
+.pw-strength-track {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+/* Password strength fill — width set via JS */
+.pw-strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: width .3s ease, background .3s ease;
+  border-radius: var(--radius-pill);
+}
+
+/* ── Nav user avatar/name ── */
+.nav-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-username {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.nav-chevron { font-size: 12px; }
