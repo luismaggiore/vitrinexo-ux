@@ -1,468 +1,731 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Completa tu perfil — Vitrinexo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
-  <link href="/src/style.css" rel="stylesheet" />
-</head>
-<body class="ob-shell">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Completa tu perfil — Vitrinexo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
+  <body class="ob-shell">
+    <!-- NAV CON PROGRESO -->
+    <nav class="ob-nav">
+      <a
+        href="landing.html"
+        class="d-flex align-items-center gap-2 text-decoration-none"
+      >
+        <img src="/src/assets/vitrinexo.svg" width="90" alt="Vitrinexo" />
+      </a>
 
-  <!-- NAV CON PROGRESO -->
-  <nav class="ob-nav">
-    <a href="landing.html" class="d-flex align-items-center gap-2 text-decoration-none">
-      <img src="/src/assets/vitrinexo.svg" width="90" alt="Vitrinexo">
-    </a>
-
-    <!-- Steps — solo círculos, sin texto -->
-    <div class="ob-steps d-none d-md-flex" id="ob-steps-indicator">
-      <div class="ob-step" id="dot-1"><div class="ob-step-dot">1</div></div>
-      <div class="ob-step-line" id="line-1"></div>
-      <div class="ob-step" id="dot-2"><div class="ob-step-dot">2</div></div>
-      <div class="ob-step-line" id="line-2"></div>
-      <div class="ob-step" id="dot-3"><div class="ob-step-dot">3</div></div>
-      <div class="ob-step-line" id="line-3"></div>
-      <div class="ob-step" id="dot-4"><div class="ob-step-dot">4</div></div>
-      <div class="ob-step-line" id="line-4"></div>
-      <div class="ob-step" id="dot-5"><div class="ob-step-dot">5</div></div>
-      <div class="ob-step-line" id="line-5"></div>
-      <div class="ob-step" id="dot-6"><div class="ob-step-dot">6</div></div>
-    </div>
-
-    <!-- Progress bar mobile -->
-    <div class="ob-progress d-md-none">
-      <div class="ob-progress-track">
-        <div class="ob-progress-fill" id="ob-progress-fill"></div>
+      <!-- Steps — solo círculos, sin texto -->
+      <div class="ob-steps d-none d-md-flex" id="ob-steps-indicator">
+        <div class="ob-step" id="dot-1"><div class="ob-step-dot">1</div></div>
+        <div class="ob-step-line" id="line-1"></div>
+        <div class="ob-step" id="dot-2"><div class="ob-step-dot">2</div></div>
+        <div class="ob-step-line" id="line-2"></div>
+        <div class="ob-step" id="dot-3"><div class="ob-step-dot">3</div></div>
+        <div class="ob-step-line" id="line-3"></div>
+        <div class="ob-step" id="dot-4"><div class="ob-step-dot">4</div></div>
+        <div class="ob-step-line" id="line-4"></div>
+        <div class="ob-step" id="dot-5"><div class="ob-step-dot">5</div></div>
+        <div class="ob-step-line" id="line-5"></div>
+        <div class="ob-step" id="dot-6"><div class="ob-step-dot">6</div></div>
       </div>
-      <div class="ob-progress-label" id="ob-progress-label">Paso 1 de 6</div>
-    </div>
 
-    <a href="dashboard.html" class="dashboard-date text-decoration-none">Completar después</a>
-  </nav>
-
-  <!-- PASOS -->
-  <div class="flex-grow-1 py-4 px-3">
-
-    <!-- ── PASO 1: Bienvenida ── -->
-    <div class="ob-panel ob-panel--active" id="panel-1">
-      <div class="ob-card text-center">
-        <div class="ob-step-eyebrow">Paso 1 de 6</div>
-        <h1 class="ob-title">Hola, Ana.<br>Construyamos tu vitrina.</h1>
-        <p class="ob-lead">Te vamos a hacer unas preguntas para que tu perfil quede completo y la red pueda encontrarte. Son 5 pasos cortos — menos de 5 minutos.</p>
-
-        <div class="ob-welcome-list">
-          <div class="ob-welcome-item">
-            <div class="ob-welcome-icon ob-welcome-icon--green"><i class="ti ti-user"></i></div>
-            Datos básicos de tu perfil
-          </div>
-          <div class="ob-welcome-item">
-            <div class="ob-welcome-icon ob-welcome-icon--cyan"><i class="ti ti-building"></i></div>
-            Tu empresa y tu rol
-          </div>
-          <div class="ob-welcome-item">
-            <div class="ob-welcome-icon ob-welcome-icon--pink"><i class="ti ti-arrows-exchange"></i></div>
-            Qué ofreces y qué buscas en la red
-          </div>
-          <div class="ob-welcome-item">
-            <div class="ob-welcome-icon ob-welcome-icon--purple"><i class="ti ti-users"></i></div>
-            Comunidades a las que quieres pertenecer
-          </div>
+      <!-- Progress bar mobile -->
+      <div class="ob-progress d-md-none">
+        <div class="ob-progress-track">
+          <div class="ob-progress-fill" id="ob-progress-fill"></div>
         </div>
-
-        <div class="ob-footer ob-footer--center">
-          <button class="btn-vx btn-primary-vx btn-vx-lg" onclick="goTo(2)">
-            Empezar <i class="ti ti-arrow-right ms-1"></i>
-          </button>
-        </div>
+        <div class="ob-progress-label" id="ob-progress-label">Paso 1 de 6</div>
       </div>
-    </div>
 
-    <!-- ── PASO 2: Datos personales ── -->
-    <div class="ob-panel" id="panel-2">
-      <div class="ob-card">
-        <div class="ob-step-eyebrow">Paso 2 de 6</div>
-        <h2 class="ob-title">Cuéntanos sobre ti</h2>
-        <p class="ob-lead">Esta información aparece en tu ficha pública.</p>
+      <a href="dashboard.html" class="dashboard-date text-decoration-none"
+        >Completar después</a
+      >
+    </nav>
 
-        <div class="ob-upload-row">
-          <div class="logo-upload-zone" onclick="document.getElementById('foto-input').click()">
-            <img src="/src/assets/placeholder3.webp" alt="Tu foto" id="foto-preview">
-            <div class="logo-upload-overlay"><i class="ti ti-camera"></i></div>
+    <!-- PASOS -->
+    <div class="flex-grow-1 py-4 px-3">
+      <!-- ── PASO 1: Bienvenida ── -->
+      <div class="ob-panel ob-panel--active" id="panel-1">
+        <div class="ob-card text-center">
+          <div class="ob-step-eyebrow">Paso 1 de 6</div>
+          <h1 class="ob-title">Hola, Ana.<br />Construyamos tu vitrina.</h1>
+          <p class="ob-lead">
+            Te vamos a hacer unas preguntas para que tu perfil quede completo y
+            la red pueda encontrarte. Son 5 pasos cortos — menos de 5 minutos.
+          </p>
+
+          <div class="ob-welcome-list">
+            <div class="ob-welcome-item">
+              <div class="ob-welcome-icon ob-welcome-icon--green">
+                <i class="ti ti-user"></i>
+              </div>
+              Datos básicos de tu perfil
+            </div>
+            <div class="ob-welcome-item">
+              <div class="ob-welcome-icon ob-welcome-icon--cyan">
+                <i class="ti ti-building"></i>
+              </div>
+              Tu empresa y tu rol
+            </div>
+            <div class="ob-welcome-item">
+              <div class="ob-welcome-icon ob-welcome-icon--pink">
+                <i class="ti ti-arrows-exchange"></i>
+              </div>
+              Qué ofreces y qué buscas en la red
+            </div>
+            <div class="ob-welcome-item">
+              <div class="ob-welcome-icon ob-welcome-icon--purple">
+                <i class="ti ti-users"></i>
+              </div>
+              Comunidades a las que quieres pertenecer
+            </div>
           </div>
-          <input type="file" id="foto-input" accept="image/*" style="display:none" onchange="previewImg(this,'foto-preview')">
-          <div>
-            <p class="ob-upload-meta-title">Tu foto de perfil</p>
-            <p class="ob-upload-meta-hint">Recomendado: foto profesional, fondo neutro</p>
-            <button class="btn-vx btn-ghost-vx btn-vx-sm" type="button" onclick="document.getElementById('foto-input').click()">
-              <i class="ti ti-upload me-1"></i>Subir foto
+
+          <div class="ob-footer ob-footer--center">
+            <button class="btn-vx btn-primary-vx btn-vx-lg" onclick="goTo(2)">
+              Empezar <i class="ti ti-arrow-right ms-1"></i>
             </button>
           </div>
         </div>
+      </div>
 
-        <div class="row g-3 mb-3">
-          <div class="col-md-6">
-            <label class="form-label-vx">Nombre</label>
-            <input type="text" class="form-control-vx" value="Ana">
-          </div>
-          <div class="col-md-6">
-            <label class="form-label-vx">Apellido</label>
-            <input type="text" class="form-control-vx" value="García">
-          </div>
-        </div>
+      <!-- ── PASO 2: Datos personales ── -->
+      <div class="ob-panel" id="panel-2">
+        <div class="ob-card">
+          <div class="ob-step-eyebrow">Paso 2 de 6</div>
+          <h2 class="ob-title">Cuéntanos sobre ti</h2>
+          <p class="ob-lead">Esta información aparece en tu ficha pública.</p>
 
-        <div class="mb-3">
-          <label class="form-label-vx">Bio profesional <span class="form-hint d-inline">(opcional)</span></label>
-          <textarea class="form-control-vx" rows="3" placeholder="Ej: Especialista en marketing B2B con 8 años de experiencia en LATAM..."></textarea>
-        </div>
-
-        <div class="row g-3 mb-3">
-          <div class="col-md-6">
-            <label class="form-label-vx">Ciudad</label>
-            <input type="text" class="form-control-vx" placeholder="Bogotá">
+          <div class="ob-upload-row">
+            <div
+              class="logo-upload-zone"
+              onclick="document.getElementById('foto-input').click()"
+            >
+              <img
+                src="/src/assets/placeholder3.webp"
+                alt="Tu foto"
+                id="foto-preview"
+              />
+              <div class="logo-upload-overlay">
+                <i class="ti ti-camera"></i>
+              </div>
+            </div>
+            <input
+              type="file"
+              id="foto-input"
+              accept="image/*"
+              style="display: none"
+              onchange="previewImg(this, 'foto-preview')"
+            />
+            <div>
+              <p class="ob-upload-meta-title">Tu foto de perfil</p>
+              <p class="ob-upload-meta-hint">
+                Recomendado: foto profesional, fondo neutro
+              </p>
+              <button
+                class="btn-vx btn-ghost-vx btn-vx-sm"
+                type="button"
+                onclick="document.getElementById('foto-input').click()"
+              >
+                <i class="ti ti-upload me-1"></i>Subir foto
+              </button>
+            </div>
           </div>
-          <div class="col-md-6">
-            <label class="form-label-vx">País</label>
-            <select class="form-control-vx">
-              <option>Colombia</option><option>Chile</option><option>México</option>
-              <option>Argentina</option><option>Perú</option><option>España</option>
-              <option>Uruguay</option><option>Otro</option>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label-vx">Nombre</label>
+              <input type="text" class="form-control-vx" value="Ana" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-vx">Apellido</label>
+              <input type="text" class="form-control-vx" value="García" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label-vx"
+              >Bio profesional
+              <span class="form-hint d-inline">(opcional)</span></label
+            >
+            <textarea
+              class="form-control-vx"
+              rows="3"
+              placeholder="Ej: Especialista en marketing B2B con 8 años de experiencia en LATAM..."
+            ></textarea>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label-vx">Ciudad</label>
+              <input type="text" class="form-control-vx" placeholder="Bogotá" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-vx">País</label>
+              <select class="form-control-vx">
+                <option>Colombia</option>
+                <option>Chile</option>
+                <option>México</option>
+                <option>Argentina</option>
+                <option>Perú</option>
+                <option>España</option>
+                <option>Uruguay</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label-vx">Preferencia de contacto</label>
+            <select class="form-control-vx ob-select-sm">
+              <option>Email</option>
+              <option>Teléfono</option>
+              <option>LinkedIn</option>
             </select>
           </div>
-        </div>
 
-        <div class="mb-3">
-          <label class="form-label-vx">Preferencia de contacto</label>
-          <select class="form-control-vx ob-select-sm">
-            <option>Email</option><option>Teléfono</option><option>LinkedIn</option>
-          </select>
-        </div>
-
-        <div class="ob-footer">
-          <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(1)">
-            <i class="ti ti-arrow-left me-1"></i> Atrás
-          </button>
-          <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(3)">
-            Continuar <i class="ti ti-arrow-right ms-1"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── PASO 3: Tu empresa ── -->
-    <div class="ob-panel" id="panel-3">
-      <div class="ob-card">
-        <div class="ob-step-eyebrow">Paso 3 de 6</div>
-        <h2 class="ob-title">Tu empresa</h2>
-        <p class="ob-lead">La empresa con la que apareces en el directorio. Puedes agregar más desde tu perfil.</p>
-
-        <div class="ob-upload-row">
-          <div class="logo-upload-zone" onclick="document.getElementById('logo-empresa-input').click()">
-            <i class="ti ti-building ob-logo-placeholder" id="logo-empresa-icon"></i>
-            <img src="" alt="Logo empresa" id="logo-empresa-preview" style="display:none">
-            <div class="logo-upload-overlay"><i class="ti ti-camera"></i></div>
-          </div>
-          <input type="file" id="logo-empresa-input" accept="image/*" style="display:none" onchange="previewLogoEmpresa(this)">
-          <div>
-            <p class="ob-upload-meta-title">Logo de la empresa</p>
-            <p class="ob-upload-meta-hint">Circular · Fondo blanco recomendado</p>
-            <button class="btn-vx btn-ghost-vx btn-vx-sm" type="button" onclick="document.getElementById('logo-empresa-input').click()">
-              <i class="ti ti-upload me-1"></i>Subir logo
+          <div class="ob-footer">
+            <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(1)">
+              <i class="ti ti-arrow-left me-1"></i> Atrás
+            </button>
+            <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(3)">
+              Continuar <i class="ti ti-arrow-right ms-1"></i>
             </button>
           </div>
         </div>
+      </div>
 
-        <div class="mb-3">
-          <label class="form-label-vx">Nombre de la empresa *</label>
-          <input type="text" class="form-control-vx" placeholder="Ej: BrandLab Internacional">
-        </div>
+      <!-- ── PASO 3: Tu empresa ── -->
+      <div class="ob-panel" id="panel-3">
+        <div class="ob-card">
+          <div class="ob-step-eyebrow">Paso 3 de 6</div>
+          <h2 class="ob-title">Tu empresa</h2>
+          <p class="ob-lead">
+            La empresa con la que apareces en el directorio. Puedes agregar más
+            desde tu perfil.
+          </p>
 
-        <div class="mb-3">
-          <label class="form-label-vx">Tu cargo / rol *</label>
-          <input type="text" class="form-control-vx" placeholder="Ej: Directora de Estrategia">
-        </div>
+          <div class="ob-upload-row">
+            <div
+              class="logo-upload-zone"
+              onclick="document.getElementById('logo-empresa-input').click()"
+            >
+              <i
+                class="ti ti-building ob-logo-placeholder"
+                id="logo-empresa-icon"
+              ></i>
+              <img
+                src=""
+                alt="Logo empresa"
+                id="logo-empresa-preview"
+                style="display: none"
+              />
+              <div class="logo-upload-overlay">
+                <i class="ti ti-camera"></i>
+              </div>
+            </div>
+            <input
+              type="file"
+              id="logo-empresa-input"
+              accept="image/*"
+              style="display: none"
+              onchange="previewLogoEmpresa(this)"
+            />
+            <div>
+              <p class="ob-upload-meta-title">Logo de la empresa</p>
+              <p class="ob-upload-meta-hint">
+                Circular · Fondo blanco recomendado
+              </p>
+              <button
+                class="btn-vx btn-ghost-vx btn-vx-sm"
+                type="button"
+                onclick="document.getElementById('logo-empresa-input').click()"
+              >
+                <i class="ti ti-upload me-1"></i>Subir logo
+              </button>
+            </div>
+          </div>
 
-        <div class="mb-3">
-          <label class="form-label-vx">Sitio web <span class="form-hint d-inline">(opcional)</span></label>
-          <div class="input-group-vx">
-            <span class="input-icon input-prefix">https://</span>
-            <input type="text" placeholder="tuempresa.com">
+          <div class="mb-3">
+            <label class="form-label-vx">Nombre de la empresa *</label>
+            <input
+              type="text"
+              class="form-control-vx"
+              placeholder="Ej: BrandLab Internacional"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label-vx">Tu cargo / rol *</label>
+            <input
+              type="text"
+              class="form-control-vx"
+              placeholder="Ej: Directora de Estrategia"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label-vx"
+              >Sitio web
+              <span class="form-hint d-inline">(opcional)</span></label
+            >
+            <div class="input-group-vx">
+              <span class="input-icon input-prefix">https://</span>
+              <input type="text" placeholder="tuempresa.com" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label-vx"
+              >LinkedIn empresa
+              <span class="form-hint d-inline">(opcional)</span></label
+            >
+            <div class="input-group-vx">
+              <span class="input-icon"
+                ><i class="ti ti-brand-linkedin"></i
+              ></span>
+              <input type="text" placeholder="linkedin.com/company/tuempresa" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label-vx"
+              >Descripción breve
+              <span class="form-hint d-inline">(opcional)</span></label
+            >
+            <textarea
+              class="form-control-vx"
+              rows="2"
+              placeholder="En qué se especializa la empresa, a quién atiende..."
+            ></textarea>
+          </div>
+
+          <div class="ob-footer">
+            <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(2)">
+              <i class="ti ti-arrow-left me-1"></i> Atrás
+            </button>
+            <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(4)">
+              Continuar <i class="ti ti-arrow-right ms-1"></i>
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="mb-3">
-          <label class="form-label-vx">LinkedIn empresa <span class="form-hint d-inline">(opcional)</span></label>
-          <div class="input-group-vx">
-            <span class="input-icon"><i class="ti ti-brand-linkedin"></i></span>
-            <input type="text" placeholder="linkedin.com/company/tuempresa">
+      <!-- ── PASO 4: Ofrece / Busca ── -->
+      <div class="ob-panel" id="panel-4">
+        <div class="ob-card">
+          <div class="ob-step-eyebrow">Paso 4 de 6</div>
+          <h2 class="ob-title">¿Qué traes y qué buscas?</h2>
+          <p class="ob-lead">
+            Estos tags son la base de tus matches. Selecciona los que mejor te
+            representen — puedes editarlos después.
+          </p>
+
+          <!-- Ofrece -->
+          <div class="mb-4 pb-4 ob-section-divider">
+            <div class="ob-tag-section-label">
+              <div class="ob-tag-dot ob-tag-dot--offer"></div>
+              <label class="form-label-vx mb-0"
+                >¿Qué ofreces?
+                <span class="form-hint d-inline">(hasta 5)</span></label
+              >
+            </div>
+            <div class="tag-selector mb-3" id="tags-offer">
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Marketing digital</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Diseño y branding</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Desarrollo web</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Consultoría</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Ventas B2B</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >CRM</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Automatización</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Legal</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Finanzas</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >RRHH</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Data e inteligencia</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Logística</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Producción audiovisual</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'offer')"
+                >Real estate</span
+              >
+            </div>
+            <div class="input-group-vx ob-input-sm">
+              <span class="input-icon"><i class="ti ti-plus"></i></span>
+              <input type="text" placeholder="Agregar otro..." />
+            </div>
+          </div>
+
+          <!-- Busca -->
+          <div class="mb-3">
+            <div class="ob-tag-section-label">
+              <div class="ob-tag-dot ob-tag-dot--seek"></div>
+              <label class="form-label-vx mb-0"
+                >¿Qué buscas?
+                <span class="form-hint d-inline">(hasta 5)</span></label
+              >
+            </div>
+            <div class="tag-selector mb-3" id="tags-seek">
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Marketing digital</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Diseño y branding</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Desarrollo web</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Consultoría</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Ventas B2B</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >CRM</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Automatización</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Legal</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Finanzas</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >RRHH</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Data e inteligencia</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Logística</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Partners tecnológicos</span
+              >
+              <span class="tag-option" onclick="toggleTag(this, 'seek')"
+                >Alianzas comerciales</span
+              >
+            </div>
+            <div class="input-group-vx ob-input-sm">
+              <span class="input-icon"><i class="ti ti-plus"></i></span>
+              <input type="text" placeholder="Agregar otro..." />
+            </div>
+          </div>
+
+          <div class="ob-footer">
+            <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(3)">
+              <i class="ti ti-arrow-left me-1"></i> Atrás
+            </button>
+            <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(5)">
+              Continuar <i class="ti ti-arrow-right ms-1"></i>
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="mb-3">
-          <label class="form-label-vx">Descripción breve <span class="form-hint d-inline">(opcional)</span></label>
-          <textarea class="form-control-vx" rows="2" placeholder="En qué se especializa la empresa, a quién atiende..."></textarea>
+      <!-- ── PASO 5: Comunidades ── -->
+      <div class="ob-panel" id="panel-5">
+        <div class="ob-card">
+          <div class="ob-step-eyebrow">Paso 5 de 6</div>
+          <h2 class="ob-title">¿A qué comunidades perteneces?</h2>
+          <p class="ob-lead">
+            Opcionales. Puedes activarlas o desactivarlas en cualquier momento
+            desde tu perfil.
+          </p>
+
+          <div class="community-toggle" onclick="toggleCommunity(this)">
+            <div class="community-toggle__icon community-toggle__icon--out2b">
+              <i class="ti ti-rainbow ob-community-icon-i"></i>
+            </div>
+            <div>
+              <div class="community-toggle__title">Out2B</div>
+              <div class="community-toggle__desc">
+                Comunidad LGBTQ+ en el mundo empresarial
+              </div>
+            </div>
+            <i class="ti ti-circle community-toggle__check"></i>
+          </div>
+
+          <div class="community-toggle" onclick="toggleCommunity(this)">
+            <div class="community-toggle__icon community-toggle__icon--woman">
+              <i class="ti ti-gender-female ob-community-icon-i"></i>
+            </div>
+            <div>
+              <div class="community-toggle__title">Woman</div>
+              <div class="community-toggle__desc">
+                Mujeres en posiciones de liderazgo empresarial
+              </div>
+            </div>
+            <i class="ti ti-circle community-toggle__check"></i>
+          </div>
+
+          <div class="community-toggle" onclick="toggleCommunity(this)">
+            <div class="community-toggle__icon community-toggle__icon--senior">
+              <i class="ti ti-award ob-community-icon-i"></i>
+            </div>
+            <div>
+              <div class="community-toggle__title">Senior</div>
+              <div class="community-toggle__desc">
+                Ejecutivos con trayectoria consolidada — requiere verificación
+              </div>
+            </div>
+            <i class="ti ti-circle community-toggle__check"></i>
+          </div>
+
+          <div class="ob-footer">
+            <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(4)">
+              <i class="ti ti-arrow-left me-1"></i> Atrás
+            </button>
+            <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(6)">
+              Continuar <i class="ti ti-arrow-right ms-1"></i>
+            </button>
+          </div>
         </div>
+      </div>
 
-        <div class="ob-footer">
-          <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(2)">
-            <i class="ti ti-arrow-left me-1"></i> Atrás
-          </button>
-          <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(4)">
-            Continuar <i class="ti ti-arrow-right ms-1"></i>
-          </button>
+      <!-- ── PASO 6: Listo ── -->
+      <div class="ob-panel" id="panel-6">
+        <div class="ob-card text-center">
+          <!-- Variante A: correo institucional -->
+          <div id="ob6-institucional">
+            <div
+              class="ob-success-icon"
+              style="
+                background: var(--color-cyan-50);
+                border-color: var(--color-cyan-200);
+              "
+            >
+              <i
+                class="ti ti-mail"
+                style="font-size: 1.75rem; color: var(--color-primary)"
+              ></i>
+            </div>
+            <div class="ob-step-eyebrow">¡Casi listo!</div>
+            <h2 class="ob-title">
+              Revisa tu<br /><strong class="text-primary-color"
+                >bandeja de entrada</strong
+              >
+            </h2>
+            <p class="ob-lead">
+              Te enviamos un link de confirmación. Haz clic en él para activar
+              tu cuenta y aparecer en el directorio.
+            </p>
+            <div class="alert-vx alert-info mb-3" style="text-align: left">
+              <i class="ti ti-info-circle"></i>
+              <span
+                >¿No lo ves? Revisa la carpeta de <strong>spam</strong>. El link
+                expira en 24 horas.</span
+              >
+            </div>
+          </div>
+
+          <!-- Variante B: correo genérico -->
+          <div id="ob6-pendiente" style="display: none">
+            <div
+              class="ob-success-icon"
+              style="
+                background: var(--color-purple-50);
+                border-color: var(--color-purple-200);
+              "
+            >
+              <i
+                class="ti ti-clock"
+                style="font-size: 1.75rem; color: var(--color-secondary)"
+              ></i>
+            </div>
+            <div class="ob-step-eyebrow">Solicitud enviada</div>
+            <h2 class="ob-title">
+              Tu cuenta está<br /><strong style="color: var(--color-secondary)"
+                >siendo revisada</strong
+              >
+            </h2>
+            <p class="ob-lead">
+              El equipo de Vitrinexo revisará tu solicitud en 24–48 horas
+              hábiles. Te avisaremos por correo cuando esté aprobada.
+            </p>
+          </div>
+          <div id="ob6-actions-institucional" class="ob-success-actions">
+            <a
+              href="confirmar-correo.html"
+              class="btn-vx btn-primary-vx btn-vx-lg"
+            >
+              Ver instrucciones <i class="ti ti-arrow-right ms-1"></i>
+            </a>
+          </div>
+          <div
+            id="ob6-actions-pendiente"
+            class="ob-success-actions"
+            style="display: none"
+          >
+            <a
+              href="verificacion-pendiente.html"
+              class="btn-vx btn-soft-primary btn-vx-lg"
+            >
+              Ver estado de mi solicitud <i class="ti ti-arrow-right ms-1"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ── PASO 4: Ofrece / Busca ── -->
-    <div class="ob-panel" id="panel-4">
-      <div class="ob-card">
-        <div class="ob-step-eyebrow">Paso 4 de 6</div>
-        <h2 class="ob-title">¿Qué traes y qué buscas?</h2>
-        <p class="ob-lead">Estos tags son la base de tus matches. Selecciona los que mejor te representen — puedes editarlos después.</p>
+    <script>
+      const TOTAL = 6;
+      let current = 1;
 
-        <!-- Ofrece -->
-        <div class="mb-4 pb-4 ob-section-divider">
-          <div class="ob-tag-section-label">
-            <div class="ob-tag-dot ob-tag-dot--offer"></div>
-            <label class="form-label-vx mb-0">¿Qué ofreces? <span class="form-hint d-inline">(hasta 5)</span></label>
-          </div>
-          <div class="tag-selector mb-3" id="tags-offer">
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Marketing digital</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Diseño y branding</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Desarrollo web</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Consultoría</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Ventas B2B</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">CRM</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Automatización</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Legal</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Finanzas</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">RRHH</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Data e inteligencia</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Logística</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Producción audiovisual</span>
-            <span class="tag-option" onclick="toggleTag(this,'offer')">Real estate</span>
-          </div>
-          <div class="input-group-vx ob-input-sm">
-            <span class="input-icon"><i class="ti ti-plus"></i></span>
-            <input type="text" placeholder="Agregar otro...">
-          </div>
-        </div>
+      function goTo(step) {
+        document
+          .getElementById("panel-" + current)
+          .classList.remove("ob-panel--active");
+        current = step;
+        document
+          .getElementById("panel-" + current)
+          .classList.add("ob-panel--active");
+        updateIndicators();
+        window.scrollTo({ top: 0, behavior: "smooth" });
 
-        <!-- Busca -->
-        <div class="mb-3">
-          <div class="ob-tag-section-label">
-            <div class="ob-tag-dot ob-tag-dot--seek"></div>
-            <label class="form-label-vx mb-0">¿Qué buscas? <span class="form-hint d-inline">(hasta 5)</span></label>
-          </div>
-          <div class="tag-selector mb-3" id="tags-seek">
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Marketing digital</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Diseño y branding</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Desarrollo web</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Consultoría</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Ventas B2B</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">CRM</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Automatización</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Legal</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Finanzas</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">RRHH</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Data e inteligencia</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Logística</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Partners tecnológicos</span>
-            <span class="tag-option" onclick="toggleTag(this,'seek')">Alianzas comerciales</span>
-          </div>
-          <div class="input-group-vx ob-input-sm">
-            <span class="input-icon"><i class="ti ti-plus"></i></span>
-            <input type="text" placeholder="Agregar otro...">
-          </div>
-        </div>
+        if (step === 6) {
+          const emailInput = document.querySelector(
+            '#panel-2 input[type="email"]',
+          );
+          const email = emailInput ? emailInput.value : "";
+          const genericDomains = [
+            "gmail.com",
+            "googlemail.com",
+            "yahoo.com",
+            "yahoo.es",
+            "hotmail.com",
+            "hotmail.es",
+            "outlook.com",
+            "outlook.es",
+            "live.com",
+            "icloud.com",
+            "me.com",
+            "mac.com",
+            "protonmail.com",
+            "proton.me",
+            "aol.com",
+          ];
+          const domain = (email.split("@")[1] || "").toLowerCase();
+          const isGeneric = genericDomains.includes(domain);
+          document.getElementById("ob6-institucional").style.display = isGeneric
+            ? "none"
+            : "block";
+          document.getElementById("ob6-pendiente").style.display = isGeneric
+            ? "block"
+            : "none";
+          document.getElementById("ob6-actions-institucional").style.display =
+            isGeneric ? "none" : "flex";
+          document.getElementById("ob6-actions-pendiente").style.display =
+            isGeneric ? "flex" : "none";
+        }
+      }
 
-        <div class="ob-footer">
-          <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(3)">
-            <i class="ti ti-arrow-left me-1"></i> Atrás
-          </button>
-          <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(5)">
-            Continuar <i class="ti ti-arrow-right ms-1"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+      function updateIndicators() {
+        const pct = Math.round(((current - 1) / (TOTAL - 1)) * 100);
+        document.getElementById("ob-progress-fill").style.width = pct + "%";
+        document.getElementById("ob-progress-label").textContent =
+          "Paso " + current + " de " + TOTAL;
 
-    <!-- ── PASO 5: Comunidades ── -->
-    <div class="ob-panel" id="panel-5">
-      <div class="ob-card">
-        <div class="ob-step-eyebrow">Paso 5 de 6</div>
-        <h2 class="ob-title">¿A qué comunidades perteneces?</h2>
-        <p class="ob-lead">Opcionales. Puedes activarlas o desactivarlas en cualquier momento desde tu perfil.</p>
+        for (let i = 1; i <= TOTAL; i++) {
+          const dot = document.getElementById("dot-" + i);
+          if (!dot) continue;
+          dot.classList.remove("ob-step--done", "ob-step--active");
+          if (i < current) dot.classList.add("ob-step--done");
+          else if (i === current) dot.classList.add("ob-step--active");
+          const dotEl = dot.querySelector(".ob-step-dot");
+          dotEl.innerHTML =
+            i < current
+              ? '<i class="ti ti-check" style="font-size:11px"></i>'
+              : i;
+        }
 
-        <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon community-toggle__icon--out2b">
-            <i class="ti ti-rainbow ob-community-icon-i"></i>
-          </div>
-          <div>
-            <div class="community-toggle__title">Out2B</div>
-            <div class="community-toggle__desc">Comunidad LGBTQ+ en el mundo empresarial</div>
-          </div>
-          <i class="ti ti-circle community-toggle__check"></i>
-        </div>
+        for (let i = 1; i < TOTAL; i++) {
+          const line = document.getElementById("line-" + i);
+          if (line) line.classList.toggle("ob-step-line--done", i < current);
+        }
+      }
 
-        <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon community-toggle__icon--woman">
-            <i class="ti ti-gender-female ob-community-icon-i"></i>
-          </div>
-          <div>
-            <div class="community-toggle__title">Woman</div>
-            <div class="community-toggle__desc">Mujeres en posiciones de liderazgo empresarial</div>
-          </div>
-          <i class="ti ti-circle community-toggle__check"></i>
-        </div>
+      function toggleTag(el, type) {
+        const cls =
+          type === "offer"
+            ? "tag-option--selected-offer"
+            : "tag-option--selected-seek";
+        if (el.classList.contains(cls)) {
+          el.classList.remove(cls);
+          return;
+        }
+        if (el.closest(".tag-selector").querySelectorAll("." + cls).length < 5)
+          el.classList.add(cls);
+      }
 
-        <div class="community-toggle" onclick="toggleCommunity(this)">
-          <div class="community-toggle__icon community-toggle__icon--senior">
-            <i class="ti ti-award ob-community-icon-i"></i>
-          </div>
-          <div>
-            <div class="community-toggle__title">Senior</div>
-            <div class="community-toggle__desc">Ejecutivos con trayectoria consolidada — requiere verificación</div>
-          </div>
-          <i class="ti ti-circle community-toggle__check"></i>
-        </div>
+      function toggleCommunity(el) {
+        const on = el.classList.toggle("community-toggle--selected");
+        const icon = el.querySelector(".community-toggle__check");
+        icon.classList.toggle("ti-circle", !on);
+        icon.classList.toggle("ti-circle-check", on);
+      }
 
+      function previewImg(input, id) {
+        if (input.files && input.files[0]) {
+          const r = new FileReader();
+          r.onload = (e) => {
+            document.getElementById(id).src = e.target.result;
+          };
+          r.readAsDataURL(input.files[0]);
+        }
+      }
 
-        <div class="ob-footer">
-          <button class="btn-vx btn-ghost-vx btn-vx-md" onclick="goTo(4)">
-            <i class="ti ti-arrow-left me-1"></i> Atrás
-          </button>
-          <button class="btn-vx btn-primary-vx btn-vx-md" onclick="goTo(6)">
-            Continuar <i class="ti ti-arrow-right ms-1"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+      function previewLogoEmpresa(input) {
+        if (input.files && input.files[0]) {
+          const r = new FileReader();
+          r.onload = (e) => {
+            const p = document.getElementById("logo-empresa-preview");
+            p.src = e.target.result;
+            p.style.display = "block";
+            document.getElementById("logo-empresa-icon").style.display = "none";
+          };
+          r.readAsDataURL(input.files[0]);
+        }
+      }
 
-    <!-- ── PASO 6: Listo ── -->
-    <div class="ob-panel" id="panel-6">
-      <div class="ob-card text-center">
-        <!-- Variante A: correo institucional -->
-        <div id="ob6-institucional">
-          <div class="ob-success-icon" style="background:var(--color-cyan-50);border-color:var(--color-cyan-200)">
-            <i class="ti ti-mail" style="font-size:1.75rem;color:var(--color-primary)"></i>
-          </div>
-          <div class="ob-step-eyebrow">¡Casi listo!</div>
-          <h2 class="ob-title">Revisa tu<br><strong class="text-primary-color">bandeja de entrada</strong></h2>
-          <p class="ob-lead">Te enviamos un link de confirmación. Haz clic en él para activar tu cuenta y aparecer en el directorio.</p>
-          <div class="alert-vx alert-info mb-3" style="text-align:left">
-            <i class="ti ti-info-circle"></i>
-            <span>¿No lo ves? Revisa la carpeta de <strong>spam</strong>. El link expira en 24 horas.</span>
-          </div>
-        </div>
-
-        <!-- Variante B: correo genérico -->
-        <div id="ob6-pendiente" style="display:none">
-          <div class="ob-success-icon" style="background:var(--color-purple-50);border-color:var(--color-purple-200)">
-            <i class="ti ti-clock" style="font-size:1.75rem;color:var(--color-secondary)"></i>
-          </div>
-          <div class="ob-step-eyebrow">Solicitud enviada</div>
-          <h2 class="ob-title">Tu cuenta está<br><strong style="color:var(--color-secondary)">siendo revisada</strong></h2>
-          <p class="ob-lead">El equipo de Vitrinexo revisará tu solicitud en 24–48 horas hábiles. Te avisaremos por correo cuando esté aprobada.</p>
-        </div>
-        <div id="ob6-actions-institucional" class="ob-success-actions">
-          <a href="confirmar-correo.html" class="btn-vx btn-primary-vx btn-vx-lg">
-            Ver instrucciones <i class="ti ti-arrow-right ms-1"></i>
-          </a>
-        </div>
-        <div id="ob6-actions-pendiente" class="ob-success-actions" style="display:none">
-          <a href="verificacion-pendiente.html" class="btn-vx btn-soft-primary btn-vx-lg">
-            Ver estado de mi solicitud <i class="ti ti-arrow-right ms-1"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-    const TOTAL = 6;
-    let current = 1;
-
-    function goTo(step) {
-      document.getElementById('panel-' + current).classList.remove('ob-panel--active');
-      current = step;
-      document.getElementById('panel-' + current).classList.add('ob-panel--active');
       updateIndicators();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      if (step === 6) {
-        const emailInput = document.querySelector('#panel-2 input[type="email"]');
-        const email = emailInput ? emailInput.value : '';
-        const genericDomains = ['gmail.com','googlemail.com','yahoo.com','yahoo.es','hotmail.com',
-          'hotmail.es','outlook.com','outlook.es','live.com','icloud.com','me.com','mac.com',
-          'protonmail.com','proton.me','aol.com'];
-        const domain = (email.split('@')[1] || '').toLowerCase();
-        const isGeneric = genericDomains.includes(domain);
-        document.getElementById('ob6-institucional').style.display         = isGeneric ? 'none'  : 'block';
-        document.getElementById('ob6-pendiente').style.display             = isGeneric ? 'block' : 'none';
-        document.getElementById('ob6-actions-institucional').style.display = isGeneric ? 'none'  : 'flex';
-        document.getElementById('ob6-actions-pendiente').style.display     = isGeneric ? 'flex'  : 'none';
-      }
-    }
-
-    function updateIndicators() {
-      const pct = Math.round(((current - 1) / (TOTAL - 1)) * 100);
-      document.getElementById('ob-progress-fill').style.width = pct + '%';
-      document.getElementById('ob-progress-label').textContent = 'Paso ' + current + ' de ' + TOTAL;
-
-      for (let i = 1; i <= TOTAL; i++) {
-        const dot = document.getElementById('dot-' + i);
-        if (!dot) continue;
-        dot.classList.remove('ob-step--done', 'ob-step--active');
-        if (i < current)       dot.classList.add('ob-step--done');
-        else if (i === current) dot.classList.add('ob-step--active');
-        const dotEl = dot.querySelector('.ob-step-dot');
-        dotEl.innerHTML = i < current ? '<i class="ti ti-check" style="font-size:11px"></i>' : i;
-      }
-
-      for (let i = 1; i < TOTAL; i++) {
-        const line = document.getElementById('line-' + i);
-        if (line) line.classList.toggle('ob-step-line--done', i < current);
-      }
-    }
-
-    function toggleTag(el, type) {
-      const cls = type === 'offer' ? 'tag-option--selected-offer' : 'tag-option--selected-seek';
-      if (el.classList.contains(cls)) { el.classList.remove(cls); return; }
-      if (el.closest('.tag-selector').querySelectorAll('.' + cls).length < 5) el.classList.add(cls);
-    }
-
-    function toggleCommunity(el) {
-      const on = el.classList.toggle('community-toggle--selected');
-      const icon = el.querySelector('.community-toggle__check');
-      icon.classList.toggle('ti-circle', !on);
-      icon.classList.toggle('ti-circle-check', on);
-    }
-
-    function previewImg(input, id) {
-      if (input.files && input.files[0]) {
-        const r = new FileReader();
-        r.onload = e => { document.getElementById(id).src = e.target.result; };
-        r.readAsDataURL(input.files[0]);
-      }
-    }
-
-    function previewLogoEmpresa(input) {
-      if (input.files && input.files[0]) {
-        const r = new FileReader();
-        r.onload = e => {
-          const p = document.getElementById('logo-empresa-preview');
-          p.src = e.target.result; p.style.display = 'block';
-          document.getElementById('logo-empresa-icon').style.display = 'none';
-        };
-        r.readAsDataURL(input.files[0]);
-      }
-    }
-
-    updateIndicators();
-  </script>
-</body>
+    </script>
+  </body>
 </html>
