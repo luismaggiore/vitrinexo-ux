@@ -4377,3 +4377,19 @@ section#offers {
   margin: 0;
   flex-grow: 1;
 }
+
+/* ── Stat card clickable variant ── */
+.stat-card-vx--link {
+  cursor: pointer;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.stat-card-vx--link:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* ── Stat arrow icon ── */
+.stat-arrow {
+  font-size: 10px;
+  opacity: .6;
+}
