@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
   <link href="/src/style.css" rel="stylesheet" />
 </head>
-<body style="background:var(--color-ice-500);min-height:100vh;display:flex;flex-direction:column">
+<body class="page-auth-vx">
 
   <nav class="navbar bg-white border-bottom px-4 py-2">
     <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
@@ -17,67 +17,67 @@
   </nav>
 
   <div class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3">
-    <div style="width:100%;max-width:480px">
+    <div class="w-100" style="max-width:480px">
       <div class="card-vx text-center" style="padding:2.5rem 2rem">
 
         <div class="ob-success-icon mx-auto mb-3" style="background:var(--color-purple-50);border-color:var(--color-purple-200)">
-          <i class="ti ti-clock" style="font-size:1.75rem;color:var(--color-secondary)"></i>
+          <i class="ti ti-clock ic-secondary" style="font-size:1.75rem"></i>
         </div>
 
-        <span class="section-landing-label" style="color:var(--color-secondary)">Verificación pendiente</span>
+        <span class="section-landing-label ic-secondary">Verificación pendiente</span>
         <h1 style="font-size:1.6rem;font-weight:400;letter-spacing:-.04em;color:var(--color-text-primary);margin:.5rem 0 .75rem;line-height:1.2">
-          Tu cuenta está siendo<br><strong style="color:var(--color-secondary)">revisada</strong>
+          Tu cuenta está siendo<br><strong class="ic-secondary">revisada</strong>
         </h1>
-        <p style="font-size:14px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6">
+        <p class="text-md-muted mb-4" style="line-height:1.6">
           El equipo de Vitrinexo revisa las cuentas registradas con correo personal para garantizar la calidad de la red. Te avisaremos a <strong style="color:var(--color-text-primary)">ana@gmail.com</strong> cuando esté lista.
         </p>
 
         <!-- Timeline -->
         <div class="d-flex flex-column gap-2 mb-4 text-start">
           <div class="d-flex align-items-center gap-3">
-            <div style="width:28px;height:28px;border-radius:50%;background:var(--color-green-50);border:2px solid var(--color-success);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-check" style="font-size:12px;color:var(--color-success)"></i>
+            <div class="step-dot step-dot--green">
+              <i class="ti ti-check ic-success" style="font-size:12px"></i>
             </div>
             <div>
-              <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Cuenta registrada</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">Hoy</div>
+              <div class="text-body-label">Cuenta registrada</div>
+              <div class="text-xs-muted">Hoy</div>
             </div>
           </div>
-          <div style="width:2px;height:16px;background:var(--color-border);margin-left:13px"></div>
+          <div class="step-connector"></div>
           <div class="d-flex align-items-center gap-3">
-            <div style="width:28px;height:28px;border-radius:50%;background:var(--color-purple-50);border:2px solid var(--color-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-loader-2" style="font-size:12px;color:var(--color-secondary)"></i>
+            <div class="step-dot step-dot--purple">
+              <i class="ti ti-loader-2 ic-secondary" style="font-size:12px"></i>
             </div>
             <div>
-              <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Revisión por el equipo</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">24–48 horas hábiles</div>
+              <div class="text-body-label">Revisión por el equipo</div>
+              <div class="text-xs-muted">24–48 horas hábiles</div>
             </div>
           </div>
-          <div style="width:2px;height:16px;background:var(--color-border);margin-left:13px"></div>
+          <div class="step-connector"></div>
           <div class="d-flex align-items-center gap-3" style="opacity:.45">
-            <div style="width:28px;height:28px;border-radius:50%;background:var(--color-ice-400);border:2px solid var(--color-border);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-mail" style="font-size:12px;color:var(--color-text-secondary)"></i>
+            <div class="step-dot step-dot--gray">
+              <i class="ti ti-mail" class="text-sm-muted"></i>
             </div>
             <div>
-              <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Te enviamos el link de activación</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">Por correo al aprobarse</div>
+              <div class="text-body-label">Te enviamos el link de activación</div>
+              <div class="text-xs-muted">Por correo al aprobarse</div>
             </div>
           </div>
-          <div style="width:2px;height:16px;background:var(--color-border);margin-left:13px"></div>
+          <div class="step-connector"></div>
           <div class="d-flex align-items-center gap-3" style="opacity:.45">
-            <div style="width:28px;height:28px;border-radius:50%;background:var(--color-ice-400);border:2px solid var(--color-border);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <i class="ti ti-rocket" style="font-size:12px;color:var(--color-text-secondary)"></i>
+            <div class="step-dot step-dot--gray">
+              <i class="ti ti-rocket" class="text-sm-muted"></i>
             </div>
             <div>
-              <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">¡Completas tu perfil y entras!</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">Directorio + matches</div>
+              <div class="text-body-label">¡Completas tu perfil y entras!</div>
+              <div class="text-xs-muted">Directorio + matches</div>
             </div>
           </div>
         </div>
 
-        <hr style="border-color:var(--color-border);margin:1.25rem 0">
+        <hr class="hr-vx" style="margin:1.25rem 0">
 
-        <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">¿Tienes un correo institucional? Puedes usarlo para verificación automática.</p>
+        <p class="text-body-muted mb-3">¿Tienes un correo institucional? Puedes usarlo para verificación automática.</p>
 
         <button class="btn-vx btn-soft-primary btn-vx-md w-100 mb-2" id="btn-reenviar" onclick="reenviar()">
           <i class="ti ti-refresh me-1"></i> Reenviar notificación de solicitud
@@ -87,9 +87,9 @@
           <i class="ti ti-circle-check me-1"></i> Solicitud reenviada al equipo.
         </p>
 
-        <p style="font-size:12px;color:var(--color-text-secondary)">
+        <p class="text-sm-muted">
           ¿Tienes dudas?
-          <a href="mailto:hola@vitrinexo.com" style="color:var(--color-primary);text-decoration:none;font-weight:600">Escríbenos</a>
+          <a href="mailto:hola@vitrinexo.com" class="link-primary-color fw-semibold">Escríbenos</a>
         </p>
 
       </div>

@@ -14,7 +14,7 @@
     />
     <link href="/src/style.css" rel="stylesheet" />
   </head>
-  <body style="background: var(--color-ice-500)">
+  <body class="bg-page-vx">
     <include src="src/components/nav-logged.html"></include>
 
     <!-- PAGE HEADER -->
@@ -48,7 +48,7 @@
     <main>
       <div class="container py-4">
         <!-- ARTÍCULO DESTACADO -->
-        <div class="card-vx mb-4 p-0" style="overflow: hidden">
+        <div class="card-vx mb-4 p-0 overflow-hidden">
           <div class="row g-0">
             <div class="col-12 col-md-5">
               <div
@@ -111,28 +111,14 @@
               <div class="d-flex align-items-center gap-2 mb-3">
                 <img
                   src="/src/assets/placeholder3.webp"
-                  style="
-                    width: 28px;
-                    height: 28px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                  "
+                  class="avatar-sm"
                   alt=""
                 />
-                <span
-                  style="font-size: 12px; color: var(--color-text-secondary)"
+                <span class="text-sm-muted"
                   >Felipe M. · <span>12 mayo 2026</span> · 8 min</span
                 >
               </div>
-              <p
-                style="
-                  font-size: 13px;
-                  color: var(--color-text-secondary);
-                  line-height: 1.7;
-                  flex-grow: 1;
-                  margin-bottom: 1rem;
-                "
-              >
+              <p class="text-body-muted" style="line-height:1.7;flex-grow:1;margin-bottom:1rem">
                 En los últimos dos años, más de 60 empresas de servicios
                 latinoamericanas han expandido su operación a otros países sin
                 ninguna presencia física local. ¿Cómo lo hicieron? Analizamos
@@ -172,65 +158,21 @@
               class="text-decoration-none d-block h-100"
             >
               <div
-                class="card-vx p-0 h-100"
-                style="overflow: hidden; transition: box-shadow 0.2s ease"
+                class="card-vx p-0 h-100 overflow-hidden"
                 onmouseover="this.style.boxShadow = 'var(--shadow-md)'"
                 onmouseout="this.style.boxShadow = ''"
               >
-                <div
-                  style="
-                    height: 110px;
-                    background: linear-gradient(
-                      135deg,
-                      var(--color-purple-600),
-                      var(--color-purple-400)
-                    );
-                    display: flex;
-                    align-items: flex-end;
-                    padding: 0.75rem 1rem;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 10px;
-                      text-transform: uppercase;
-                      letter-spacing: 0.12em;
-                      font-weight: 700;
-                      color: rgba(255, 255, 255, 0.8);
-                    "
-                  >
+                <div class="blog-card-img-wrap" style="background:linear-gradient(135deg,var(--color-purple-600),var(--color-purple-400))">
+                  <div class="blog-card-cat">
                     Tendencias B2B
                   </div>
                 </div>
-                <div
-                  style="
-                    padding: 1.25rem;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                  "
-                >
-                  <h3
-                    style="
-                      font-size: 15px;
-                      font-weight: 600;
-                      color: var(--color-text-primary);
-                      line-height: 1.3;
-                      margin: 0;
-                    "
-                  >
+                <div class="blog-card-body">
+                  <h3 class="blog-card-title">
                     El directorio como reputación: por qué importa cómo te
                     describes
                   </h3>
-                  <p
-                    style="
-                      font-size: 12px;
-                      color: var(--color-text-secondary);
-                      line-height: 1.6;
-                      margin: 0;
-                      flex-grow: 1;
-                    "
-                  >
+                  <p class="blog-card-excerpt">
                     La ficha de una empresa en un directorio B2B no es solo
                     información — es una señal de confianza. Cómo redactarla
                     para que trabaje por ti.
@@ -241,19 +183,11 @@
                     <div class="d-flex align-items-center gap-2">
                       <img
                         src="/src/assets/placeholder2.webp"
-                        style="
-                          width: 22px;
-                          height: 22px;
-                          border-radius: 50%;
-                          object-fit: cover;
-                        "
+                        class="avatar-22"
                         alt=""
                       />
                       <span
-                        style="
-                          font-size: 11px;
-                          color: var(--color-text-secondary);
-                        "
+                        class="text-xs-muted"
                         >5 may 2026 · 5 min</span
                       >
                     </div>
@@ -271,65 +205,21 @@
               class="text-decoration-none d-block h-100"
             >
               <div
-                class="card-vx p-0 h-100"
-                style="overflow: hidden; transition: box-shadow 0.2s ease"
+                class="card-vx p-0 h-100 overflow-hidden"
                 onmouseover="this.style.boxShadow = 'var(--shadow-md)'"
                 onmouseout="this.style.boxShadow = ''"
               >
-                <div
-                  style="
-                    height: 110px;
-                    background: linear-gradient(
-                      135deg,
-                      var(--color-pink-600),
-                      var(--color-pink-400)
-                    );
-                    display: flex;
-                    align-items: flex-end;
-                    padding: 0.75rem 1rem;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 10px;
-                      text-transform: uppercase;
-                      letter-spacing: 0.12em;
-                      font-weight: 700;
-                      color: rgba(255, 255, 255, 0.8);
-                    "
-                  >
+                <div class="blog-card-img-wrap" style="background:linear-gradient(135deg,var(--color-pink-600),var(--color-pink-400))">
+                  <div class="blog-card-cat">
                     Comunidad
                   </div>
                 </div>
-                <div
-                  style="
-                    padding: 1.25rem;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                  "
-                >
-                  <h3
-                    style="
-                      font-size: 15px;
-                      font-weight: 600;
-                      color: var(--color-text-primary);
-                      line-height: 1.3;
-                      margin: 0;
-                    "
-                  >
+                <div class="blog-card-body">
+                  <h3 class="blog-card-title">
                     El networking que no molesta: cómo conectar sin parecer
                     vendedor
                   </h3>
-                  <p
-                    style="
-                      font-size: 12px;
-                      color: var(--color-text-secondary);
-                      line-height: 1.6;
-                      margin: 0;
-                      flex-grow: 1;
-                    "
-                  >
+                  <p class="blog-card-excerpt">
                     Estudios y experiencias reales sobre cómo construir
                     relaciones comerciales genuinas en entornos B2B
                     latinoamericanos.
@@ -340,19 +230,11 @@
                     <div class="d-flex align-items-center gap-2">
                       <img
                         src="/src/assets/placeholder4.webp"
-                        style="
-                          width: 22px;
-                          height: 22px;
-                          border-radius: 50%;
-                          object-fit: cover;
-                        "
+                        class="avatar-22"
                         alt=""
                       />
                       <span
-                        style="
-                          font-size: 11px;
-                          color: var(--color-text-secondary);
-                        "
+                        class="text-xs-muted"
                         >28 abr 2026 · 6 min</span
                       >
                     </div>
@@ -370,61 +252,21 @@
               class="text-decoration-none d-block h-100"
             >
               <div
-                class="card-vx p-0 h-100"
-                style="overflow: hidden; transition: box-shadow 0.2s ease"
+                class="card-vx p-0 h-100 overflow-hidden"
                 onmouseover="this.style.boxShadow = 'var(--shadow-md)'"
                 onmouseout="this.style.boxShadow = ''"
               >
-                <div
-                  style="
-                    height: 110px;
-                    background: linear-gradient(135deg, #f59e0b, #f97316);
-                    display: flex;
-                    align-items: flex-end;
-                    padding: 0.75rem 1rem;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 10px;
-                      text-transform: uppercase;
-                      letter-spacing: 0.12em;
-                      font-weight: 700;
-                      color: rgba(255, 255, 255, 0.8);
-                    "
-                  >
+                <div class="blog-card-img-wrap" style="background:linear-gradient(135deg,#f59e0b,#f97316)">
+                  <div class="blog-card-cat">
                     Datos
                   </div>
                 </div>
-                <div
-                  style="
-                    padding: 1.25rem;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                  "
-                >
-                  <h3
-                    style="
-                      font-size: 15px;
-                      font-weight: 600;
-                      color: var(--color-text-primary);
-                      line-height: 1.3;
-                      margin: 0;
-                    "
-                  >
+                <div class="blog-card-body">
+                  <h3 class="blog-card-title">
                     Mapa del ecosistema B2B hispanohablante: quién opera desde
                     dónde
                   </h3>
-                  <p
-                    style="
-                      font-size: 12px;
-                      color: var(--color-text-secondary);
-                      line-height: 1.6;
-                      margin: 0;
-                      flex-grow: 1;
-                    "
-                  >
+                  <p class="blog-card-excerpt">
                     Un análisis de los primeros 700 miembros de Vitrinexo:
                     rubros, países y los sectores con más demanda cruzada.
                   </p>
@@ -434,19 +276,11 @@
                     <div class="d-flex align-items-center gap-2">
                       <img
                         src="/src/assets/placeholder.webp"
-                        style="
-                          width: 22px;
-                          height: 22px;
-                          border-radius: 50%;
-                          object-fit: cover;
-                        "
+                        class="avatar-22"
                         alt=""
                       />
                       <span
-                        style="
-                          font-size: 11px;
-                          color: var(--color-text-secondary);
-                        "
+                        class="text-xs-muted"
                         >20 abr 2026 · 9 min</span
                       >
                     </div>
@@ -464,61 +298,21 @@
               class="text-decoration-none d-block h-100"
             >
               <div
-                class="card-vx p-0 h-100"
-                style="overflow: hidden; transition: box-shadow 0.2s ease"
+                class="card-vx p-0 h-100 overflow-hidden"
                 onmouseover="this.style.boxShadow = 'var(--shadow-md)'"
                 onmouseout="this.style.boxShadow = ''"
               >
-                <div
-                  style="
-                    height: 110px;
-                    background: linear-gradient(135deg, #0ea5e9, #6366f1);
-                    display: flex;
-                    align-items: flex-end;
-                    padding: 0.75rem 1rem;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 10px;
-                      text-transform: uppercase;
-                      letter-spacing: 0.12em;
-                      font-weight: 700;
-                      color: rgba(255, 255, 255, 0.8);
-                    "
-                  >
+                <div class="blog-card-img-wrap" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)">
+                  <div class="blog-card-cat">
                     Entrevistas
                   </div>
                 </div>
-                <div
-                  style="
-                    padding: 1.25rem;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                  "
-                >
-                  <h3
-                    style="
-                      font-size: 15px;
-                      font-weight: 600;
-                      color: var(--color-text-primary);
-                      line-height: 1.3;
-                      margin: 0;
-                    "
-                  >
+                <div class="blog-card-body">
+                  <h3 class="blog-card-title">
                     «Firmé mi primer cliente en Argentina sin haber pisado el
                     país»
                   </h3>
-                  <p
-                    style="
-                      font-size: 12px;
-                      color: var(--color-text-secondary);
-                      line-height: 1.6;
-                      margin: 0;
-                      flex-grow: 1;
-                    "
-                  >
+                  <p class="blog-card-excerpt">
                     Entrevista con Camila Torres, fundadora de FlowOps Studio en
                     Lima, sobre su expansión continental usando solo
                     herramientas digitales.
@@ -529,19 +323,11 @@
                     <div class="d-flex align-items-center gap-2">
                       <img
                         src="/src/assets/placeholder5.webp"
-                        style="
-                          width: 22px;
-                          height: 22px;
-                          border-radius: 50%;
-                          object-fit: cover;
-                        "
+                        class="avatar-22"
                         alt=""
                       />
                       <span
-                        style="
-                          font-size: 11px;
-                          color: var(--color-text-secondary);
-                        "
+                        class="text-xs-muted"
                         >10 abr 2026 · 7 min</span
                       >
                     </div>
@@ -559,65 +345,21 @@
               class="text-decoration-none d-block h-100"
             >
               <div
-                class="card-vx p-0 h-100"
-                style="overflow: hidden; transition: box-shadow 0.2s ease"
+                class="card-vx p-0 h-100 overflow-hidden"
                 onmouseover="this.style.boxShadow = 'var(--shadow-md)'"
                 onmouseout="this.style.boxShadow = ''"
               >
-                <div
-                  style="
-                    height: 110px;
-                    background: linear-gradient(
-                      135deg,
-                      var(--color-green-700),
-                      var(--color-cyan-600)
-                    );
-                    display: flex;
-                    align-items: flex-end;
-                    padding: 0.75rem 1rem;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 10px;
-                      text-transform: uppercase;
-                      letter-spacing: 0.12em;
-                      font-weight: 700;
-                      color: rgba(255, 255, 255, 0.8);
-                    "
-                  >
+                <div class="blog-card-img-wrap" style="background:linear-gradient(135deg,var(--color-green-700),var(--color-cyan-600))">
+                  <div class="blog-card-cat">
                     Pagos
                   </div>
                 </div>
-                <div
-                  style="
-                    padding: 1.25rem;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                  "
-                >
-                  <h3
-                    style="
-                      font-size: 15px;
-                      font-weight: 600;
-                      color: var(--color-text-primary);
-                      line-height: 1.3;
-                      margin: 0;
-                    "
-                  >
+                <div class="blog-card-body">
+                  <h3 class="blog-card-title">
                     Cobrar en LATAM sin perder el 15% en comisiones: guía
                     práctica
                   </h3>
-                  <p
-                    style="
-                      font-size: 12px;
-                      color: var(--color-text-secondary);
-                      line-height: 1.6;
-                      margin: 0;
-                      flex-grow: 1;
-                    "
-                  >
+                  <p class="blog-card-excerpt">
                     Las mejores opciones para hacer y recibir pagos entre países
                     de Hispanoamérica en 2026, con costos reales comparados.
                   </p>
@@ -627,19 +369,11 @@
                     <div class="d-flex align-items-center gap-2">
                       <img
                         src="/src/assets/placeholder2.webp"
-                        style="
-                          width: 22px;
-                          height: 22px;
-                          border-radius: 50%;
-                          object-fit: cover;
-                        "
+                        class="avatar-22"
                         alt=""
                       />
                       <span
-                        style="
-                          font-size: 11px;
-                          color: var(--color-text-secondary);
-                        "
+                        class="text-xs-muted"
                         >2 abr 2026 · 10 min</span
                       >
                     </div>
@@ -657,61 +391,21 @@
               class="text-decoration-none d-block h-100"
             >
               <div
-                class="card-vx p-0 h-100"
-                style="overflow: hidden; transition: box-shadow 0.2s ease"
+                class="card-vx p-0 h-100 overflow-hidden"
                 onmouseover="this.style.boxShadow = 'var(--shadow-md)'"
                 onmouseout="this.style.boxShadow = ''"
               >
-                <div
-                  style="
-                    height: 110px;
-                    background: linear-gradient(135deg, #be185d, #ec4899);
-                    display: flex;
-                    align-items: flex-end;
-                    padding: 0.75rem 1rem;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: 10px;
-                      text-transform: uppercase;
-                      letter-spacing: 0.12em;
-                      font-weight: 700;
-                      color: rgba(255, 255, 255, 0.8);
-                    "
-                  >
+                <div class="blog-card-img-wrap" style="background:linear-gradient(135deg,#be185d,#ec4899)">
+                  <div class="blog-card-cat">
                     Liderazgo
                   </div>
                 </div>
-                <div
-                  style="
-                    padding: 1.25rem;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                  "
-                >
-                  <h3
-                    style="
-                      font-size: 15px;
-                      font-weight: 600;
-                      color: var(--color-text-primary);
-                      line-height: 1.3;
-                      margin: 0;
-                    "
-                  >
+                <div class="blog-card-body">
+                  <h3 class="blog-card-title">
                     Mujeres que lideran empresas B2B: tres perfiles, tres
                     caminos
                   </h3>
-                  <p
-                    style="
-                      font-size: 12px;
-                      color: var(--color-text-secondary);
-                      line-height: 1.6;
-                      margin: 0;
-                      flex-grow: 1;
-                    "
-                  >
+                  <p class="blog-card-excerpt">
                     Un reportaje sobre fundadoras y directivas que están
                     construyendo redes de servicios B2B en América Latina desde
                     cero.
@@ -722,19 +416,11 @@
                     <div class="d-flex align-items-center gap-2">
                       <img
                         src="/src/assets/placeholder4.webp"
-                        style="
-                          width: 22px;
-                          height: 22px;
-                          border-radius: 50%;
-                          object-fit: cover;
-                        "
+                        class="avatar-22"
                         alt=""
                       />
                       <span
-                        style="
-                          font-size: 11px;
-                          color: var(--color-text-secondary);
-                        "
+                        class="text-xs-muted"
                         >22 mar 2026 · 6 min</span
                       >
                     </div>

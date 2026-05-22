@@ -14,7 +14,7 @@
     />
     <link href="/src/style.css" rel="stylesheet" />
   </head>
-  <body style="background: var(--color-ice-500)">
+  <body class="bg-page-vx">
     <include src="src/components/nav-logged.html"></include>
 
     <div class="page-header-vx">
@@ -40,7 +40,7 @@
         <div class="row g-4">
           <!-- SIDEBAR NAV -->
           <div class="col-12 col-lg-3">
-            <div class="card-vx p-0" style="overflow: hidden">
+            <div class="card-vx p-0 overflow-hidden">
               <nav class="d-flex flex-column">
                 <a
                   href="#cuenta"
@@ -114,15 +114,12 @@
                         type="email"
                         value="felipe@maggiore.cl"
                         readonly
-                        style="
-                          background: var(--color-ice-400);
-                          color: var(--color-text-secondary);
-                        "
+                        class="input-readonly-vx"
                       />
                     </div>
                     <div class="form-hint">
                       El email no se puede cambiar.
-                      <a href="#" style="color: var(--color-primary)"
+                      <a href="#" class="link-primary-color"
                         >Contactar soporte</a
                       >
                     </div>
@@ -207,30 +204,17 @@
                         style="font-size: 20px; color: var(--color-primary)"
                       ></i>
                       <div>
-                        <div
-                          style="
-                            font-size: 13px;
-                            font-weight: 600;
-                            color: var(--color-text-primary);
-                          "
-                        >
+                        <div class="text-body-label">
                           MacBook Pro · Chrome
                         </div>
-                        <div
-                          style="
-                            font-size: 11px;
-                            color: var(--color-text-secondary);
-                          "
-                        >
+                        <div class="text-xs-muted">
                           Santiago, Chile · Activa ahora
                         </div>
                       </div>
                     </div>
                     <span class="badge-vx badge-primary">Este dispositivo</span>
                   </div>
-                  <hr
-                    style="border-color: var(--color-border); margin: 4px 0"
-                  />
+                  <hr class="hr-vx" style="margin: 4px 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-2 flex-wrap"
                   >
@@ -243,28 +227,16 @@
                         "
                       ></i>
                       <div>
-                        <div
-                          style="
-                            font-size: 13px;
-                            font-weight: 600;
-                            color: var(--color-text-primary);
-                          "
-                        >
+                        <div class="text-body-label">
                           iPhone · Safari
                         </div>
-                        <div
-                          style="
-                            font-size: 11px;
-                            color: var(--color-text-secondary);
-                          "
-                        >
+                        <div class="text-xs-muted">
                           Santiago, Chile · Hace 2 horas
                         </div>
                       </div>
                     </div>
                     <button
-                      class="btn-vx btn-ghost-vx btn-vx-sm"
-                      style="color: var(--color-accent)"
+                      class="btn-vx btn-ghost-vx btn-vx-sm ic-accent"
                     >
                       Cerrar sesión
                     </button>
@@ -295,21 +267,10 @@
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Solicitudes de conexión
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Cuando alguien quiere conectar contigo
                       </div>
                     </div>
@@ -318,26 +279,15 @@
                       <span class="config-toggle-slider"></span>
                     </label>
                   </div>
-                  <hr style="border-color: var(--color-border); margin: 0" />
+                  <hr class="hr-vx" style="margin: 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Recordatorios de conexión
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Recordatorio a las 72h si no respondiste
                       </div>
                     </div>
@@ -346,26 +296,15 @@
                       <span class="config-toggle-slider"></span>
                     </label>
                   </div>
-                  <hr style="border-color: var(--color-border); margin: 0" />
+                  <hr class="hr-vx" style="margin: 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Matches nuevos
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Resumen semanal de nuevos perfiles que coinciden
                       </div>
                     </div>
@@ -374,26 +313,15 @@
                       <span class="config-toggle-slider"></span>
                     </label>
                   </div>
-                  <hr style="border-color: var(--color-border); margin: 0" />
+                  <hr class="hr-vx" style="margin: 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         4Dinner en tu ciudad
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Cuando se abre un evento cerca tuyo
                       </div>
                     </div>
@@ -402,26 +330,15 @@
                       <span class="config-toggle-slider"></span>
                     </label>
                   </div>
-                  <hr style="border-color: var(--color-border); margin: 0" />
+                  <hr class="hr-vx" style="margin: 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Novedades del blog
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Nuevos artículos publicados
                       </div>
                     </div>
@@ -430,26 +347,15 @@
                       <span class="config-toggle-slider"></span>
                     </label>
                   </div>
-                  <hr style="border-color: var(--color-border); margin: 0" />
+                  <hr class="hr-vx" style="margin: 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Comunicaciones de Vitrinexo
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Actualizaciones de la plataforma y anuncios
                       </div>
                     </div>
@@ -483,21 +389,10 @@
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Perfil visible en el directorio
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Si lo desactivas, no aparecerás en búsquedas
                       </div>
                     </div>
@@ -506,26 +401,15 @@
                       <span class="config-toggle-slider"></span>
                     </label>
                   </div>
-                  <hr style="border-color: var(--color-border); margin: 0" />
+                  <hr class="hr-vx" style="margin: 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Mostrar número de visitas al perfil
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Visible solo para ti en el dashboard
                       </div>
                     </div>
@@ -534,26 +418,15 @@
                       <span class="config-toggle-slider"></span>
                     </label>
                   </div>
-                  <hr style="border-color: var(--color-border); margin: 0" />
+                  <hr class="hr-vx" style="margin: 0" />
                   <div
                     class="d-flex align-items-center justify-content-between gap-3"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Permitir solicitudes de conexión
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Si lo desactivas, el botón Conectar no aparece en tu
                         perfil
                       </div>
@@ -574,10 +447,7 @@
 
             <!-- PLAN -->
             <div id="section-plan" class="config-section" style="display: none">
-              <div
-                class="card-vx mb-3"
-                style="border-left: 3px solid var(--color-primary)"
-              >
+              <div class="card-vx mb-3 border-left-primary">
                 <div
                   class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3"
                 >
@@ -592,42 +462,34 @@
                 </div>
                 <div class="d-flex flex-column gap-2 mb-4">
                   <div
-                    class="d-flex align-items-center gap-2"
-                    style="font-size: 13px; color: var(--color-text-secondary)"
+                    class="d-flex align-items-center gap-2 text-body-muted"
                   >
                     <i
-                      class="ti ti-circle-check"
-                      style="color: var(--color-success)"
+                      class="ti ti-circle-check ic-success"
                     ></i>
                     Perfil verificado en el directorio
                   </div>
                   <div
-                    class="d-flex align-items-center gap-2"
-                    style="font-size: 13px; color: var(--color-text-secondary)"
+                    class="d-flex align-items-center gap-2 text-body-muted"
                   >
                     <i
-                      class="ti ti-circle-check"
-                      style="color: var(--color-success)"
+                      class="ti ti-circle-check ic-success"
                     ></i>
                     Acceso a todas las comunidades
                   </div>
                   <div
-                    class="d-flex align-items-center gap-2"
-                    style="font-size: 13px; color: var(--color-text-secondary)"
+                    class="d-flex align-items-center gap-2 text-body-muted"
                   >
                     <i
-                      class="ti ti-circle-check"
-                      style="color: var(--color-success)"
+                      class="ti ti-circle-check ic-success"
                     ></i>
                     Conexiones ilimitadas
                   </div>
                   <div
-                    class="d-flex align-items-center gap-2"
-                    style="font-size: 13px; color: var(--color-text-secondary)"
+                    class="d-flex align-items-center gap-2 text-body-muted"
                   >
                     <i
-                      class="ti ti-circle-check"
-                      style="color: var(--color-success)"
+                      class="ti ti-circle-check ic-success"
                     ></i>
                     Precio preferente de por vida al renovar
                   </div>
@@ -653,10 +515,7 @@
                 class="card-vx"
                 style="border: 1px solid var(--color-accent)"
               >
-                <h2
-                  class="section-title-sm mb-1"
-                  style="color: var(--color-accent)"
-                >
+                <h2 class="section-title-sm mb-1 ic-accent">
                   Zona de peligro
                 </h2>
                 <p class="cta-card__desc mb-4">
@@ -667,21 +526,10 @@
                     class="d-flex align-items-center justify-content-between gap-3 flex-wrap"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Desactivar perfil temporalmente
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Tu perfil deja de aparecer en el directorio. Puedes
                         reactivarlo cuando quieras.
                       </div>
@@ -708,21 +556,10 @@
                     class="d-flex align-items-center justify-content-between gap-3 flex-wrap"
                   >
                     <div>
-                      <div
-                        style="
-                          font-size: 13px;
-                          font-weight: 600;
-                          color: var(--color-text-primary);
-                        "
-                      >
+                      <div class="text-body-label">
                         Eliminar cuenta
                       </div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          color: var(--color-text-secondary);
-                        "
-                      >
+                      <div class="text-sm-muted">
                         Elimina permanentemente tu cuenta, perfil y todas tus
                         conexiones. Esta acción no se puede deshacer.
                       </div>

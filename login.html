@@ -8,19 +8,19 @@
   <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
   <link href="/src/style.css" rel="stylesheet" />
 </head>
-<body style="background:var(--color-ice-500);min-height:100vh;display:flex;flex-direction:column">
+<body class="page-auth-vx">
 
   <!-- NAV MÍNIMO -->
   <nav class="navbar bg-white border-bottom px-4 py-2">
     <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
-      <img src="/src/assets/vitrinexo.svg" width="104" alt="Vitrinexo" style="flex-shrink:0">
-      <span style="font-size:11px;color:var(--color-text-secondary);font-weight:400">by Maggiore</span>
+      <img src="/src/assets/vitrinexo.svg" width="104" alt="Vitrinexo" class="flex-shrink-0">
+      <span class="nav-brand-tagline">by Maggiore</span>
     </a>
   </nav>
 
   <!-- CONTENIDO CENTRADO -->
   <div class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3">
-    <div style="width:100%;max-width:420px">
+    <div class="w-100" style="max-width:420px">
 
       <!-- TABS -->
       <nav class="vx-tabs mb-4" id="auth-tabs">
@@ -34,8 +34,8 @@
 
       <!-- PANEL LOGIN -->
       <div id="panel-login" class="card-vx" style="padding:2rem">
-        <h4 style="font-weight:600;color:var(--color-text-primary);margin:0 0 4px">Bienvenido de vuelta</h4>
-        <p style="color:var(--color-text-secondary);font-size:14px;margin-bottom:1.5rem">Ingresa a tu cuenta de Vitrinexo</p>
+        <h4 class="fw-semibold" style="color:var(--color-text-primary);margin:0 0 4px">Bienvenido de vuelta</h4>
+        <p class="text-md-muted mb-4">Ingresa a tu cuenta de Vitrinexo</p>
 
         <div class="mb-3">
           <label class="form-label-vx">Email</label>
@@ -54,26 +54,26 @@
         </div>
 
         <div class="d-flex align-items-center justify-content-between mb-4">
-          <label class="d-flex align-items-center gap-2" style="cursor:pointer;font-size:13px;color:var(--color-text-secondary)">
+          <label class="d-flex align-items-center gap-2 cursor-pointer text-body-muted">
             <input type="checkbox" style="accent-color:var(--color-primary)"> Recordarme
           </label>
-          <a href="#" style="font-size:13px;color:var(--color-primary);text-decoration:none">¿Olvidaste tu contraseña?</a>
+          <a href="#" class="link-primary-color text-decoration-none" style="font-size:13px">¿Olvidaste tu contraseña?</a>
         </div>
 
-        <a href="dashboard.html" class="btn-vx btn-primary-vx btn-vx-lg w-100 d-block text-center mb-4" style="text-decoration:none">
+        <a href="dashboard.html" class="btn-vx btn-primary-vx btn-vx-lg w-100 d-block text-center mb-4 text-decoration-none">
           Ingresar
         </a>
 
-        <p style="text-align:center;font-size:14px;color:var(--color-text-secondary)">
+        <p class="text-center text-md-muted">
           ¿No tienes cuenta?
-          <a href="#" onclick="switchTab('registro');return false" style="color:var(--color-primary);text-decoration:none;font-weight:600">Registrarse →</a>
+          <a href="#" onclick="switchTab('registro');return false" class="link-primary-color fw-semibold">Registrarse →</a>
         </p>
       </div>
 
       <!-- PANEL REGISTRO -->
       <div id="panel-registro" class="card-vx" style="padding:2rem;display:none">
-        <h4 style="font-weight:600;color:var(--color-text-primary);margin:0 0 4px">Crear tu cuenta</h4>
-        <p style="color:var(--color-text-secondary);font-size:14px;margin-bottom:1.5rem">Únete al directorio B2B hispanohablante</p>
+        <h4 class="fw-semibold" style="color:var(--color-text-primary);margin:0 0 4px">Crear tu cuenta</h4>
+        <p class="text-md-muted mb-4">Únete al directorio B2B hispanohablante</p>
 
         <div class="row g-2 mb-3">
           <div class="col-6">
@@ -109,18 +109,18 @@
           </select>
         </div>
 
-        <a href="onboarding.html" class="btn-vx btn-primary-vx btn-vx-lg w-100 d-block text-center mb-3" style="text-decoration:none">
+        <a href="onboarding.html" class="btn-vx btn-primary-vx btn-vx-lg w-100 d-block text-center mb-3 text-decoration-none">
           Crear cuenta y completar perfil →
         </a>
 
-        <p style="text-align:center;font-size:12px;color:var(--color-text-secondary)">
-          Al registrarte aceptas los <a href="#" style="color:var(--color-primary)">Términos de uso</a> y la <a href="#" style="color:var(--color-primary)">Política de privacidad</a>.
+        <p class="text-center text-sm-muted">
+          Al registrarte aceptas los <a href="#" class="link-primary-color">Términos de uso</a> y la <a href="#" class="link-primary-color">Política de privacidad</a>.
         </p>
 
-        <hr style="border-color:var(--color-border);margin:1rem 0">
-        <p style="text-align:center;font-size:14px;color:var(--color-text-secondary)">
+        <hr class="hr-vx" style="margin:1rem 0">
+        <p class="text-center text-md-muted">
           ¿Ya tienes cuenta?
-          <a href="#" onclick="switchTab('login');return false" style="color:var(--color-primary);text-decoration:none;font-weight:600">Ingresar →</a>
+          <a href="#" onclick="switchTab('login');return false" class="link-primary-color fw-semibold">Ingresar →</a>
         </p>
       </div>
 

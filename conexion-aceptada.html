@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
   <link href="/src/style.css" rel="stylesheet" />
 </head>
-<body style="background:var(--color-ice-500);min-height:100vh;display:flex;flex-direction:column">
+<body class="page-auth-vx">
 
   <nav class="navbar bg-white border-bottom px-4 py-2">
     <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
@@ -17,7 +17,7 @@
   </nav>
 
   <div class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3">
-    <div style="width:100%;max-width:520px">
+    <div class="w-100" style="max-width:520px">
       <div class="card-vx" style="padding:2.5rem 2rem">
 
         <div class="ob-success-icon mx-auto mb-3">
@@ -27,9 +27,9 @@
         <div class="text-center mb-4">
           <span class="section-landing-label">Conexión registrada</span>
           <h1 style="font-size:1.6rem;font-weight:400;letter-spacing:-.04em;color:var(--color-text-primary);margin:.5rem 0 .5rem;line-height:1.2">
-            Aceptaste la solicitud<br><strong style="color:var(--color-primary)">de Felipe Muñoz</strong>
+            Aceptaste la solicitud<br><strong class="ic-primary">de Felipe Muñoz</strong>
           </h1>
-          <p style="font-size:14px;color:var(--color-text-secondary)">La conexión quedó registrada. Aquí están sus datos de contacto:</p>
+          <p class="text-md-muted">La conexión quedó registrada. Aquí están sus datos de contacto:</p>
         </div>
 
         <!-- Datos de contacto revelados -->
@@ -39,36 +39,36 @@
             <div>
               <div style="font-size:15px;font-weight:600;color:var(--color-text-primary)">Felipe Muñoz</div>
               <div style="font-size:12px;color:var(--color-green-700)">Maggiore Marketing · Director General</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">Santiago, Chile</div>
+              <div class="text-xs-muted">Santiago, Chile</div>
             </div>
           </div>
 
           <div class="d-flex flex-column gap-2">
             <div class="d-flex align-items-center gap-2">
-              <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid var(--color-green-200);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                <i class="ti ti-mail" style="font-size:13px;color:var(--color-success)"></i>
+              <div class="step-dot step-dot--white">
+                <i class="ti ti-mail" class="ic-success" style="font-size:13px"></i>
               </div>
               <div>
-                <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-green-700)">Email <span class="badge-vx badge-primary" style="font-size:9px">Preferido</span></div>
-                <a href="mailto:felipe@maggiore.cl" style="font-size:13px;color:var(--color-text-primary);text-decoration:none;font-weight:500">felipe@maggiore.cl</a>
+                <div class="contact-label">Email <span class="badge-vx badge-primary" style="font-size:9px">Preferido</span></div>
+                <a href="mailto:felipe@maggiore.cl" class="contact-link">felipe@maggiore.cl</a>
               </div>
             </div>
             <div class="d-flex align-items-center gap-2">
-              <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid var(--color-green-200);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                <i class="ti ti-phone" style="font-size:13px;color:var(--color-success)"></i>
+              <div class="step-dot step-dot--white">
+                <i class="ti ti-phone" class="ic-success" style="font-size:13px"></i>
               </div>
               <div>
-                <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-green-700)">Teléfono</div>
-                <a href="tel:+56998765432" style="font-size:13px;color:var(--color-text-primary);text-decoration:none;font-weight:500">+56 9 9876 5432</a>
+                <div class="contact-label">Teléfono</div>
+                <a href="tel:+56998765432" class="contact-link">+56 9 9876 5432</a>
               </div>
             </div>
             <div class="d-flex align-items-center gap-2">
-              <div style="width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid var(--color-green-200);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                <i class="ti ti-brand-linkedin" style="font-size:13px;color:var(--color-success)"></i>
+              <div class="step-dot step-dot--white">
+                <i class="ti ti-brand-linkedin" class="ic-success" style="font-size:13px"></i>
               </div>
               <div>
-                <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-green-700)">LinkedIn</div>
-                <a href="#" style="font-size:13px;color:var(--color-text-primary);text-decoration:none;font-weight:500">linkedin.com/in/felipemuñoz</a>
+                <div class="contact-label">LinkedIn</div>
+                <a href="#" class="contact-link">linkedin.com/in/felipemuñoz</a>
               </div>
             </div>
           </div>

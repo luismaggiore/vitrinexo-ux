@@ -135,10 +135,6 @@ body > main {
   flex: 1 0 auto;
 }
 
-.footer-vx {
-  flex-shrink: 0;
-}
-
 h1,
 h2 {
   font-weight: 400;
@@ -417,7 +413,9 @@ h2 strong {
   color: var(--color-text-secondary);
 }
 
-.tag-vx {
+.tag-vx,
+.tag-seeks,
+.tag-offers {
   display: inline-block;
   font-size: 11px;
   font-weight: 500;
@@ -427,6 +425,8 @@ h2 strong {
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border);
 }
+.tag-seeks { border-color: var(--color-accent); }
+.tag-offers { border-color: var(--color-success); }
 .p-seeks {
   color: var(--color-accent);
   padding: 0;
@@ -440,26 +440,6 @@ h2 strong {
   margin: 0;
   font-size: 16px;
   font-variant: all-small-caps;
-}
-.tag-seeks {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 9px;
-  border-radius: var(--radius-sm);
-  background: var(--color-ice-300);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-accent);
-}
-.tag-offers {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 9px;
-  border-radius: var(--radius-sm);
-  background: var(--color-ice-300);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-success);
 }
 /* ============================================================
    PROFILE-MEMBERS
@@ -795,6 +775,14 @@ a.profile-company:hover {
     top: 8px;
     right: 8px;
   }
+  .match-visual {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+  }
+  .match-visual__arrow {
+    transform: rotate(90deg);
+    margin: 0.5rem auto;
+  }
 }
 .founder-tooltip {
   position: relative;
@@ -938,6 +926,7 @@ a.profile-company:hover {
   border-radius: var(--radius-md);
   padding: 1.25rem;
   box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
 }
 
 .card-vx-lg {
@@ -1426,6 +1415,7 @@ select.form-control-vx {
    FOOTER
    ============================================================ */
 .footer-vx {
+  flex-shrink: 0;
   background: #fff;
   border-top: 1px solid var(--color-border);
   color: var(--color-text-secondary);
@@ -1674,10 +1664,6 @@ select.form-control-vx {
   transform: translateX(18px);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .network-hero {
   position: relative;
   min-height: 100vh;
@@ -1887,6 +1873,28 @@ select.form-control-vx {
     gap: 2rem;
     direction: ltr;
   }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .audience-block {
+    padding: 2rem 1.25rem;
+  }
+  .multiverse-grid {
+    grid-template-columns: 1fr;
+  }
+  .multiverse-grid > .multiverse-card:first-child {
+    grid-row: auto;
+    min-height: 240px;
+  }
+  .multiverse-card--dinner {
+    grid-column: auto;
+  }
+  .founder-block {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
 }
 
 /* ── Concept cards (Vitrina / Nexo) ── */
@@ -2010,13 +2018,6 @@ select.form-control-vx {
   margin: 0;
 }
 
-@media (max-width: 860px) {
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-}
-
 /* ── Para quién es — audience block ── */
 .audience-block {
   background: var(--color-surface);
@@ -2054,12 +2055,6 @@ select.form-control-vx {
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
   color: var(--color-primary-active);
-}
-
-@media (max-width: 860px) {
-  .audience-block {
-    padding: 2rem 1.25rem;
-  }
 }
 
 /* ── Multiverso grid ── */
@@ -2147,18 +2142,6 @@ select.form-control-vx {
   margin: 0;
 }
 
-@media (max-width: 860px) {
-  .multiverse-grid {
-    grid-template-columns: 1fr;
-  }
-  .multiverse-grid > .multiverse-card:first-child {
-    grid-row: auto;
-    min-height: 240px;
-  }
-  .multiverse-card--dinner {
-    grid-column: auto;
-  }
-}
 
 /* ── Socio Fundador ── */
 .founder-block {
@@ -2240,14 +2223,6 @@ select.form-control-vx {
   font-size: 0.92rem;
 }
 
-@media (max-width: 860px) {
-  .founder-block {
-    grid-template-columns: 1fr;
-    padding: 2rem 1.5rem;
-    gap: 2rem;
-  }
-}
-
 /* ── Match visual (ofrece ↔ busca) inside Cómo funciona ── */
 .match-visual {
   display: grid;
@@ -2282,17 +2257,6 @@ select.form-control-vx {
   text-transform: uppercase;
   color: var(--color-text-secondary);
   white-space: nowrap;
-}
-
-@media (max-width: 600px) {
-  .match-visual {
-    grid-template-columns: 1fr;
-    max-width: 260px;
-  }
-  .match-visual__arrow {
-    transform: rotate(90deg);
-    margin: 0.5rem auto;
-  }
 }
 
 .offer-section {
@@ -2588,6 +2552,7 @@ select.form-control-vx {
     flex-direction: column;
     gap: 1rem;
   }
+  .ob-card { padding: 1.5rem 1.25rem; }
 }
 section#seeks {
   background-color: var(--color-ice-500);
@@ -3468,11 +3433,6 @@ section#offers {
   gap: 1rem;
 }
 
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .ob-card { padding: 1.5rem 1.25rem; }
-}
-
 /* ============================================================
    CONFIGURACIÓN — sidebar nav + toggles
    ============================================================ */
@@ -3695,3 +3655,326 @@ section#offers {
   margin-left: 4px;
   vertical-align: middle;
 }
+
+/* ============================================================
+   UTILITY CLASSES — replaces repeated inline styles
+   ============================================================ */
+
+/* Avatar images inside .av — eliminates 25+ inline style attrs */
+.avatar-group .av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Muted text helpers */
+.text-xs-muted   { font-size: 11px; color: var(--color-text-secondary); }
+.text-sm-muted   { font-size: 12px; color: var(--color-text-secondary); }
+.text-body-muted { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+.text-md-muted   { font-size: 14px; color: var(--color-text-secondary); }
+
+/* Icon color helpers */
+.ic-success   { color: var(--color-success); }
+.ic-primary   { color: var(--color-primary); }
+.ic-secondary { color: var(--color-secondary); }
+
+/* Border helpers */
+.border-bottom-vx { border-bottom: 1px solid var(--color-border); }
+
+/* Tag remove button reset */
+.btn-tag-remove {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+/* Page background variant (logged-in pages use ice-500) */
+.bg-page-vx { background: var(--color-ice-500); }
+
+/* Profile editor — card section structure */
+.card-section-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.card-section-body { padding: 24px; }
+
+/* Readonly input appearance */
+.input-readonly-vx {
+  background: var(--color-ice-400) !important;
+  color: var(--color-text-secondary) !important;
+}
+
+/* Banner upload zone */
+.banner-upload-zone {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  background: var(--color-ice-500);
+  cursor: pointer;
+}
+
+/* Event date column & day number */
+.event-date-col    { flex-shrink: 0; width: 52px; }
+.event-date-col--sm { flex-shrink: 0; width: 48px; }
+.event-date-day    { font-size: 1.8rem; line-height: 1; }
+.event-card-body   { flex-grow: 1; min-width: 200px; }
+.event-card-cta    { flex-shrink: 0; align-self: center; }
+
+/* Past event card */
+.badge-overlay {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+.event-past-header {
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem 1rem;
+}
+.event-past-header__month {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.event-past-header__city {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+.event-past-card-body { padding: 1rem; }
+
+/* Icon box (form sections, step indicators) */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+.icon-box--sm    { width: 44px; height: 44px; }
+.icon-box--green { background: var(--color-green-50); color: var(--color-green-600); }
+
+/* Stat number size modifier */
+.stat-num-vx--md { font-size: 22px; }
+
+/* 4Dinner page header variant */
+.page-header-vx--4dinner {
+  background: linear-gradient(135deg, #3a2a08 0%, #c99522 60%, #e8b84b 100%);
+  border-bottom: none;
+}
+
+/* Buttons / badges for dark 4Dinner backgrounds */
+.btn-4dinner-ghost {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-4dinner-cta {
+  background: #fff;
+  color: #8a5f0a;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.badge-4dinner-light {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Nav avatar (small circular image in navbar) */
+.nav-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Nav brand tagline "by Maggiore" */
+.nav-brand-tagline {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+/* Card title (14px semibold, repeated in feature cards) */
+.card-title-sm {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.4rem;
+}
+
+/* Landing step circles (numbered, colored) */
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+.step-circle--green  { background: var(--color-green-50);  border: 2px solid var(--color-green-200);  color: var(--color-success); }
+.step-circle--cyan   { background: var(--color-cyan-50);   border: 2px solid var(--color-cyan-200);   color: var(--color-primary); }
+.step-circle--purple { background: var(--color-purple-50); border: 2px solid var(--color-purple-200); color: var(--color-secondary); }
+.step-circle--golden { background: linear-gradient(135deg, #3a2a08, #c99522); color: #fff; font-size: 18px; }
+
+/* Testimonial quote mark */
+.quote-mark {
+  font-size: 1.2rem;
+  color: var(--color-success);
+  margin-bottom: 0.75rem;
+}
+
+/* Testimonial avatar (32×32 inline) */
+.avatar-22 { width:22px; height:22px; border-radius:50%; object-fit:cover; }
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Profile photo 60×60 */
+.avatar-60 { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+
+/* Page title (h1 in page header area) */
+.page-title-vx { font-size: 1.4rem; color: var(--color-text-primary); }
+
+/* Alert dismiss button */
+.btn-alert-close { background: none; border: none; cursor: pointer; margin-left: auto; font-size: 16px; color: inherit; padding: 0; }
+
+/* Pointer cursor utility */
+.cursor-pointer { cursor: pointer; }
+
+/* Upload zone icon */
+.upload-zone-icon { font-size: 28px; color: var(--color-border); display: block; margin-bottom: 8px; }
+
+/* Body-text label (13px medium primary, e.g. logo descriptions) */
+.text-body-label { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+
+/* Constrained input widths */
+.input-md-vx { max-width: 280px; }
+.input-sm-vx { max-width: 240px; }
+
+/* Dashed full-width action button (e.g. "Agregar empresa") */
+.btn-vx-dashed { border-style: dashed; width: 100%; justify-content: center; }
+
+/* ---- landing-4dinner.html ---- */
+
+/* Hero outer wrapper */
+.hero-4dinner { background: linear-gradient(135deg, #3a2a08 0%, #c99522 60%, #e8b84b 100%); overflow: hidden; position: relative; }
+
+/* Hero "Evento presencial" badge */
+.badge-hero-4dinner { background: rgba(255,255,255,0.2); color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; padding: 4px 12px; border-radius: var(--radius-pill); }
+
+/* Stats card in hero (frosted glass tile) */
+.stats-card-hero { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius-lg); padding: 2rem; backdrop-filter: blur(8px); }
+
+/* Stat number and label inside hero card */
+.stat-num-hero  { font-size: 2rem; font-weight: 400; letter-spacing: -0.04em; line-height: 1; }
+.stat-label-hero { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+
+/* Hero checklist rows */
+.checklist-item-hero { font-size: 13px; color: rgba(255,255,255,0.85); }
+.checklist-icon-hero  { color: rgba(255,255,255,0.7); }
+
+/* Body text with generous line-height (intro paragraphs) */
+.text-lead-muted { color: var(--color-text-secondary); line-height: 1.75; }
+
+/* Event day number (large date digit) */
+.event-day-num { font-size: 1.8rem; font-weight: 400; letter-spacing: -0.03em; line-height: 1; }
+
+/* Testimonial body text */
+.testimonial-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; font-style: italic; }
+
+/* Testimonial author name */
+.author-name-vx { font-size: 12px; font-weight: 600; color: var(--color-text-primary); }
+
+/* banner-4dinner centered variant (landing CTA) */
+.banner-4dinner--centered { text-align: center; flex-direction: column; align-items: center; padding: 3rem 2rem; }
+
+/* ---- auth / confirmation pages ---- */
+
+/* Body layout for auth + result pages */
+.page-auth-vx { background: var(--color-ice-500); min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Community brand icon colors */
+.ic-out2b  { color: #a855f7; }
+.ic-woman  { color: #ec4899; }
+.ic-senior { color: #d97706; }
+.ic-accent { color: var(--color-accent); }
+
+/* Nav username */
+.nav-user-name { font-size: 13px; font-weight: 500; }
+
+/* HR themed border (use with Bootstrap margin utilities) */
+.hr-vx { border-color: var(--color-border); }
+
+/* Inline step / progress dots */
+.step-dot         { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-dot--green  { background: var(--color-green-50);  border: 2px solid var(--color-success);        }
+.step-dot--purple { background: var(--color-purple-50); border: 2px solid var(--color-secondary);      }
+.step-dot--gray   { background: var(--color-ice-400);   border: 2px solid var(--color-border);         }
+.step-dot--white  { background: #fff;                   border: 1px solid var(--color-green-200);      }
+
+/* Vertical connector between step dots */
+.step-connector { width: 2px; height: 16px; background: var(--color-border); margin-left: 13px; }
+
+/* Left-border accent blocks */
+.border-left-primary { border-left: 3px solid var(--color-primary); }
+.border-left-accent  { border-left: 3px solid var(--color-accent);  }
+
+/* Eyebrow / section category label */
+.eyebrow-vx { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--color-primary); }
+
+/* Contact action label + link (conexion-aceptada) */
+.contact-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-green-700); }
+.contact-link  { font-size: 13px; color: var(--color-text-primary); text-decoration: none; font-weight: 500; }
+
+/* Stat box in dashboard/conexiones summary cards */
+.stat-box-vx { padding: 0.6rem 1rem; min-width: 80px; }
+.stat-num-lg  { font-size: 1.3rem; }
+
+/* Very small muted label (10px) */
+.text-xxs-muted { font-size: 10px; color: var(--color-text-secondary); }
+
+/* Blog article meta bar */
+.article-meta-bar { padding: 1.25rem 1.5rem; border-top: 1px solid var(--color-border); }
+
+/* Blog author avatar (36px with border) */
+.avatar-36 { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-border); flex-shrink: 0; }
+
+/* UI Kit sublabel (section divider labels in index-2.html) */
+.ui-sublabel { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-text-secondary); margin-bottom: 10px; }
+
+/* Card image container + action overlay positioning (index-2.html showcase cards) */
+.p-relative { position: relative; border-radius: 8px; overflow: hidden; }
+.p-absolute { bottom: 8px; left: 8px; position: absolute; z-index: 2; }
+
+/* Blog article grid card parts (blog.html) */
+.blog-card-img-wrap { height: 110px; display: flex; align-items: flex-end; padding: 0.75rem 1rem; }
+.blog-card-cat  { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: rgba(255,255,255,.8); }
+.blog-card-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.blog-card-title { font-size: 15px; font-weight: 600; color: var(--color-text-primary); line-height: 1.3; margin: 0; }
+.blog-card-excerpt { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; margin: 0; flex-grow: 1; }

@@ -25,7 +25,7 @@
     .article-body ul li { margin-bottom: .4rem; }
   </style>
 </head>
-<body style="background:var(--color-ice-500)">
+<body class="bg-page-vx">
 
 <include src="src/components/nav-logged.html"></include>
 
@@ -39,13 +39,13 @@
       <!-- Breadcrumb -->
       <nav aria-label="breadcrumb" class="mb-3">
         <ol class="breadcrumb" style="font-size:12px;background:none;padding:0;margin:0">
-          <li class="breadcrumb-item"><a href="blog.html" style="color:var(--color-primary)">Blog</a></li>
+          <li class="breadcrumb-item"><a href="blog.html" class="link-primary-color">Blog</a></li>
           <li class="breadcrumb-item active" style="color:var(--color-text-secondary)">Internacionalización</li>
         </ol>
       </nav>
 
       <!-- Header artículo -->
-      <div class="card-vx p-0 mb-4" style="overflow:hidden">
+      <div class="card-vx p-0 mb-4 overflow-hidden">
         <div style="height:220px;background:linear-gradient(135deg,var(--color-cyan-700) 0%,var(--color-green-600) 100%);display:flex;align-items:flex-end;padding:1.5rem;position:relative">
           <div>
             <span class="tag-vx" style="background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3);color:#fff;margin-bottom:.75rem;display:inline-block">Internacionalización</span>
@@ -54,13 +54,13 @@
             </h1>
           </div>
         </div>
-        <div style="padding:1.25rem 1.5rem;border-top:1px solid var(--color-border)">
+        <div class="article-meta-bar">
           <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
             <div class="d-flex align-items-center gap-2">
-              <img src="/src/assets/placeholder3.webp" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--color-border)" alt="Felipe M.">
+              <img src="/src/assets/placeholder3.webp" class="avatar-36" alt="Felipe M.">
               <div>
-                <div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Felipe M.</div>
-                <div style="font-size:11px;color:var(--color-text-secondary)">12 mayo 2026 · 8 min de lectura</div>
+                <div class="text-body-label">Felipe M.</div>
+                <div class="text-xs-muted">12 mayo 2026 · 8 min de lectura</div>
               </div>
             </div>
             <div class="d-flex gap-2">
@@ -143,10 +143,10 @@
           <img src="/src/assets/placeholder3.webp" style="width:52px;height:52px;border-radius:var(--radius-sm);object-fit:cover;border:2px solid var(--color-border)" alt="Felipe M.">
           <div>
             <div style="font-size:14px;font-weight:600;color:var(--color-text-primary)">Felipe M.</div>
-            <div style="font-size:11px;color:var(--color-text-secondary)">Director General · Maggiore Marketing</div>
+            <div class="text-xs-muted">Director General · Maggiore Marketing</div>
           </div>
         </div>
-        <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:.75rem">Fundador de Vitrinexo y director de Maggiore Marketing. Escribe sobre internacionalización de servicios B2B en Hispanoamérica.</p>
+        <p class="text-sm-muted" style="line-height:1.6;margin-bottom:.75rem">Fundador de Vitrinexo y director de Maggiore Marketing. Escribe sobre internacionalización de servicios B2B en Hispanoamérica.</p>
         <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm w-100"><i class="ti ti-user me-1"></i> Ver perfil en Vitrinexo</a>
       </div>
 
@@ -158,24 +158,24 @@
           <a href="single-blog.html" class="text-decoration-none d-flex gap-3 align-items-start">
             <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--color-purple-600),var(--color-purple-400));flex-shrink:0"></div>
             <div>
-              <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);line-height:1.35;margin-bottom:2px">El directorio como reputación: por qué importa cómo te describes</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">5 min · Tendencias B2B</div>
+              <div class="text-body-label" style="line-height:1.35;margin-bottom:2px">El directorio como reputación: por qué importa cómo te describes</div>
+              <div class="text-xs-muted">5 min · Tendencias B2B</div>
             </div>
           </a>
 
           <a href="single-blog.html" class="text-decoration-none d-flex gap-3 align-items-start">
             <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:linear-gradient(135deg,#f59e0b,#f97316);flex-shrink:0"></div>
             <div>
-              <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);line-height:1.35;margin-bottom:2px">Mapa del ecosistema B2B hispanohablante</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">9 min · Datos</div>
+              <div class="text-body-label" style="line-height:1.35;margin-bottom:2px">Mapa del ecosistema B2B hispanohablante</div>
+              <div class="text-xs-muted">9 min · Datos</div>
             </div>
           </a>
 
           <a href="single-blog.html" class="text-decoration-none d-flex gap-3 align-items-start">
             <div style="width:44px;height:44px;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--color-pink-600),var(--color-pink-400));flex-shrink:0"></div>
             <div>
-              <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);line-height:1.35;margin-bottom:2px">El networking que no molesta</div>
-              <div style="font-size:11px;color:var(--color-text-secondary)">6 min · Comunidad</div>
+              <div class="text-body-label" style="line-height:1.35;margin-bottom:2px">El networking que no molesta</div>
+              <div class="text-xs-muted">6 min · Comunidad</div>
             </div>
           </a>
 
@@ -184,9 +184,9 @@
       </div>
 
       <!-- CTA directorio -->
-      <div class="card-vx" style="border-left:3px solid var(--color-primary)">
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--color-primary);margin-bottom:.5rem">¿Ya estás en Vitrinexo?</div>
-        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:.75rem">Conecta con las empresas de las que habla este artículo. Están en el directorio.</p>
+      <div class="card-vx border-left-primary">
+        <div class="eyebrow-vx" style="margin-bottom:.5rem">¿Ya estás en Vitrinexo?</div>
+        <p class="text-body-muted" style="margin-bottom:.75rem">Conecta con las empresas de las que habla este artículo. Están en el directorio.</p>
         <a href="directorio.html" class="btn-vx btn-soft-primary btn-vx-sm w-100"><i class="ti ti-layout-grid me-1"></i> Explorar el directorio</a>
       </div>
 

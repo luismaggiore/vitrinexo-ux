@@ -1,7 +1,28 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\\" -Exclude \"node_modules\" | Where-Object {$_.Name -ne \"node_modules\"} | Select-Object Name, LastWriteTime | Format-Table -AutoSize)"
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\\" -Exclude \"node_modules\" | Where-Object {$_.Name -ne \"node_modules\"} | Select-Object Name, LastWriteTime | Format-Table -AutoSize)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\" -Filter \"*.html\" -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\src\\\\style.css\")",
+      "Bash(Select-Object -ExpandProperty Length)",
+      "Bash(grep -E \"^[\\\\.#\\\\[]?[a-zA-Z0-9\\\\-_:\\\\[\\\\]\\\\.#,\\\\s\\\\\\(\\\\\\)]*\\\\s*\\\\{\" \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\src\\\\style.css\")",
+      "Bash(awk -F: '{print $2, \"\\(\" $1 \"\\)\"}')",
+      "Bash(grep -n \"{$\")",
+      "Bash(grep -n \"{$\" \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\src\\\\style.css\")",
+      "Bash(awk '{print $0}')",
+      "Read(//tmp/**)",
+      "Bash(awk '$1 > 1 {print $0}')",
+      "Bash(awk -F: '{print $2}')",
+      "Bash(awk '$1 > 1')",
+      "Bash(awk -F: '{selector=$2; if \\(NR==1\\) {line=$1; sel=selector} else if \\(selector == sel\\) {print line \",\" $1 \": \" selector} else {line=$1; sel=selector}}')",
+      "Bash(grep -n '^\\\\s*[^/][^{]*{\\\\s*$' \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\src\\\\style.css\")",
+      "Bash(awk '{print NR\": \"$0}')",
+      "Bash(grep -En '^\\\\s*[^/][^{]*\\\\{\\\\s*$' \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\src\\\\style.css\")",
+      "Bash(awk '{print $2}')",
+      "Bash(grep -Ff /tmp/dupes.txt)",
+      "Bash(grep -En '^\\\\s*[a-zA-Z0-9\\\\.\\\\#\\\\-\\\\[\\\\:][^{]*\\\\{\\\\s*$' \"C:\\\\Users\\\\Luis\\\\Desktop\\\\VITRINEXO\\\\vitrinexo\\\\src\\\\style.css\")",
+      "Bash(awk -F: '{gsub\\(/^[0-9]+\\\\s*/, \"\", $2\\); selectors[$2]++; lines[$2] = \\(lines[$2] ? lines[$2] \",\" : \"\"\\) $1} END {for \\(sel in selectors\\) {if \\(selectors[sel] > 1\\) print sel \": \" lines[sel]}}')"
     ]
   }
 }

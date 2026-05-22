@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
   <link href="/src/style.css" rel="stylesheet" />
 </head>
-<body style="background:var(--color-ice-500);min-height:100vh;display:flex;flex-direction:column">
+<body class="page-auth-vx">
 
   <nav class="navbar bg-white border-bottom px-4 py-2">
     <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
@@ -17,30 +17,30 @@
   </nav>
 
   <div class="flex-grow-1 d-flex align-items-center justify-content-center py-5 px-3">
-    <div style="width:100%;max-width:480px">
+    <div class="w-100" style="max-width:480px">
       <div class="card-vx text-center" style="padding:2.5rem 2rem">
 
         <div class="ob-success-icon mx-auto mb-3" style="background:var(--color-cyan-50);border-color:var(--color-cyan-200)">
-          <i class="ti ti-mail" style="font-size:1.75rem;color:var(--color-primary)"></i>
+          <i class="ti ti-mail ic-primary" style="font-size:1.75rem"></i>
         </div>
 
         <span class="section-landing-label">Confirma tu cuenta</span>
         <h1 style="font-size:1.6rem;font-weight:400;letter-spacing:-.04em;color:var(--color-text-primary);margin:.5rem 0 .75rem;line-height:1.2">
-          Revisa tu bandeja<br><strong style="color:var(--color-primary)">de entrada</strong>
+          Revisa tu bandeja<br><strong class="ic-primary">de entrada</strong>
         </h1>
-        <p style="font-size:14px;color:var(--color-text-secondary);margin-bottom:1.5rem;line-height:1.6">
+        <p class="text-md-muted" style="margin-bottom:1.5rem">
           Enviamos un link de confirmación a <strong style="color:var(--color-text-primary)">ana@brandlab.com</strong>.<br>
           Haz clic en ese link para activar tu cuenta.
         </p>
 
-        <div class="alert-vx alert-info mb-4" style="text-align:left">
+        <div class="alert-vx alert-info mb-4 text-start">
           <i class="ti ti-info-circle"></i>
           <span>¿No lo ves? Revisa la carpeta de <strong>spam o correo no deseado</strong>. A veces los filtros lo redirigen ahí.</span>
         </div>
 
-        <hr style="border-color:var(--color-border);margin:1.5rem 0">
+        <hr class="hr-vx" style="margin:1.5rem 0">
 
-        <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">¿No recibiste el correo?</p>
+        <p class="text-body-muted mb-3">¿No recibiste el correo?</p>
 
         <button class="btn-vx btn-soft-primary btn-vx-md w-100 mb-3" id="btn-reenviar" onclick="reenviar()">
           <i class="ti ti-refresh me-1"></i> Reenviar correo de confirmación
@@ -50,9 +50,9 @@
           <i class="ti ti-circle-check me-1"></i> Correo reenviado. Revisa tu bandeja.
         </p>
 
-        <p style="font-size:12px;color:var(--color-text-secondary)">
+        <p class="text-sm-muted">
           ¿Escribiste mal el email?
-          <a href="login.html" style="color:var(--color-primary);text-decoration:none;font-weight:600">Volver al registro</a>
+          <a href="login.html" class="link-primary-color fw-semibold text-decoration-none">Volver al registro</a>
         </p>
 
       </div>

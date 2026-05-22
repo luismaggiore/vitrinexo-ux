@@ -1,280 +1,437 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mis conexiones — Vitrinexo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
-  <link href="/src/style.css" rel="stylesheet" />
-</head>
-<body style="background:var(--color-ice-500)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis conexiones — Vitrinexo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-page-vx">
+    <include src="src/components/nav-logged.html"></include>
 
-<include src="src/components/nav-logged.html"></include>
-
-<div class="page-header-vx">
-  <div class="container">
-    <div class="page-header-vx__inner">
-      <div>
-        <div class="d-flex align-items-center gap-2 mb-1">
-          <i class="ti ti-network page-header-vx__icon"></i>
-          <span class="section-landing-label" style="margin:0">Red</span>
-        </div>
-        <h1 class="page-header-vx__title">Mis conexiones</h1>
-        <p class="page-header-vx__lead">Solicitudes enviadas, recibidas y conexiones concretadas.</p>
-      </div>
-      <div class="d-flex gap-2">
-        <div class="stat-card-vx text-center" style="padding:.6rem 1rem;min-width:80px">
-          <div class="stat-num-vx stat-num-vx--success" style="font-size:1.3rem">4</div>
-          <div class="stat-label-vx">Concretadas</div>
-        </div>
-        <div class="stat-card-vx text-center" style="padding:.6rem 1rem;min-width:80px">
-          <div class="stat-num-vx stat-num-vx--accent" style="font-size:1.3rem">2</div>
-          <div class="stat-label-vx">Pendientes</div>
+    <div class="page-header-vx">
+      <div class="container">
+        <div class="page-header-vx__inner">
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="section-landing-label" style="margin: 0">Red</span>
+            </div>
+            <h1 class="page-header-vx__title">Mis conexiones</h1>
+            <p class="page-header-vx__lead">
+              Solicitudes enviadas, recibidas y conexiones concretadas.
+            </p>
+          </div>
+          <div class="d-flex gap-2">
+            <div
+              class="stat-card-vx text-center stat-box-vx"
+            >
+              <div
+                class="stat-num-vx stat-num-vx--success stat-num-lg"
+              >
+                4
+              </div>
+              <div class="stat-label-vx">Concretadas</div>
+            </div>
+            <div
+              class="stat-card-vx text-center stat-box-vx"
+            >
+              <div
+                class="stat-num-vx stat-num-vx--accent stat-num-lg"
+              >
+                2
+              </div>
+              <div class="stat-label-vx">Pendientes</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<main>
-<div class="container py-4">
+    <main>
+      <div class="container py-4">
+        <!-- TABS -->
+        <nav class="vx-tabs" id="conn-tabs">
+          <button
+            class="vx-tab vx-tab--active"
+            id="tab-concretadas"
+            onclick="switchTab('concretadas')"
+          >
+            <i class="ti ti-circle-check"></i> Concretadas
+            <span class="badge-vx badge-primary">4</span>
+          </button>
+          <button
+            class="vx-tab"
+            id="tab-enviadas"
+            onclick="switchTab('enviadas')"
+          >
+            <i class="ti ti-send"></i> Enviadas
+            <span class="badge-vx badge-neutral">5</span>
+          </button>
+          <button
+            class="vx-tab"
+            id="tab-recibidas"
+            onclick="switchTab('recibidas')"
+          >
+            <i class="ti ti-inbox"></i> Recibidas
+            <span class="badge-vx badge-accent">2</span>
+          </button>
+        </nav>
 
-  <!-- TABS -->
-  <nav class="vx-tabs" id="conn-tabs">
-    <button class="vx-tab vx-tab--active" id="tab-concretadas" onclick="switchTab('concretadas')">
-      <i class="ti ti-circle-check"></i> Concretadas
-      <span class="badge-vx badge-primary">4</span>
-    </button>
-    <button class="vx-tab" id="tab-enviadas" onclick="switchTab('enviadas')">
-      <i class="ti ti-send"></i> Enviadas
-      <span class="badge-vx badge-neutral">5</span>
-    </button>
-    <button class="vx-tab" id="tab-recibidas" onclick="switchTab('recibidas')">
-      <i class="ti ti-inbox"></i> Recibidas
-      <span class="badge-vx badge-accent">2</span>
-    </button>
-  </nav>
+        <!-- ── CONCRETADAS ── -->
+        <div id="panel-concretadas">
+          <p class="cta-card__desc mb-4">
+            Personas con las que la conexión fue aceptada — en cualquier
+            dirección. Sus datos de contacto están disponibles.
+          </p>
 
-  <!-- ── CONCRETADAS ── -->
-  <div id="panel-concretadas">
-    <p class="cta-card__desc mb-4">Personas con las que la conexión fue aceptada — en cualquier dirección. Sus datos de contacto están disponibles.</p>
-
-    <div class="row g-3">
-
-      <!-- Concretada 1 -->
-      <div class="col-12">
-        <div class="contact-reveal">
-          <img src="/src/assets/placeholder4.webp" alt="Ana" class="contact-reveal-avatar">
-          <div class="flex-grow-1">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <div class="contact-reveal-name">Ana Fernández del Valle</div>
-              <span class="badge-vx badge-neutral" style="font-size:10px"><i class="ti ti-send me-1"></i>Yo contacté</span>
+          <div class="row g-3">
+            <!-- Concretada 1 -->
+            <div class="col-12">
+              <div class="contact-reveal">
+                <img
+                  src="/src/assets/placeholder4.webp"
+                  alt="Ana"
+                  class="contact-reveal-avatar"
+                />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <div class="contact-reveal-name">
+                      Ana Fernández del Valle
+                    </div>
+                    <span class="badge-vx badge-neutral" style="font-size: 10px"
+                      ><i class="ti ti-send me-1"></i>Yo contacté</span
+                    >
+                  </div>
+                  <div class="contact-reveal-role">
+                    Directora · BrandLab Internacional · Madrid (ESP)
+                  </div>
+                  <div class="contact-reveal-links">
+                    <a
+                      href="mailto:ana@brandlab.com"
+                      class="contact-reveal-link"
+                    >
+                      <i class="ti ti-mail"></i> ana@brandlab.com
+                      <span class="contact-preferred-badge">Preferido</span>
+                    </a>
+                    <a href="tel:+34612345678" class="contact-reveal-link">
+                      <i class="ti ti-phone"></i> +34 612 345 678
+                    </a>
+                    <a href="#" class="contact-reveal-link">
+                      <i class="ti ti-brand-linkedin"></i> LinkedIn
+                    </a>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-end gap-1 flex-shrink-0">
+                  <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"
+                    ><i class="ti ti-external-link"></i
+                  ></a>
+                  <span
+                    class="text-xxs-muted"
+                    >19 may 2026</span
+                  >
+                </div>
+              </div>
             </div>
-            <div class="contact-reveal-role">Directora · BrandLab Internacional · Madrid (ESP)</div>
-            <div class="contact-reveal-links">
-              <a href="mailto:ana@brandlab.com" class="contact-reveal-link">
-                <i class="ti ti-mail"></i> ana@brandlab.com <span class="contact-preferred-badge">Preferido</span>
-              </a>
-              <a href="tel:+34612345678" class="contact-reveal-link">
-                <i class="ti ti-phone"></i> +34 612 345 678
-              </a>
-              <a href="#" class="contact-reveal-link">
-                <i class="ti ti-brand-linkedin"></i> LinkedIn
-              </a>
+
+            <!-- Concretada 2 -->
+            <div class="col-12">
+              <div class="contact-reveal">
+                <img
+                  src="/src/assets/placeholder.webp"
+                  alt="Valentina"
+                  class="contact-reveal-avatar"
+                />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <div class="contact-reveal-name">Valentina Koczorowski</div>
+                    <span class="badge-vx badge-neutral" style="font-size: 10px"
+                      ><i class="ti ti-inbox me-1"></i>Me contactó</span
+                    >
+                  </div>
+                  <div class="contact-reveal-role">
+                    Fundadora · DataSur Analytics · Bogotá (COL)
+                  </div>
+                  <div class="contact-reveal-links">
+                    <a href="mailto:vk@datasur.co" class="contact-reveal-link">
+                      <i class="ti ti-mail"></i> vk@datasur.co
+                      <span class="contact-preferred-badge">Preferido</span>
+                    </a>
+                    <a href="https://linkedin.com" class="contact-reveal-link">
+                      <i class="ti ti-brand-linkedin"></i> LinkedIn
+                    </a>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-end gap-1 flex-shrink-0">
+                  <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"
+                    ><i class="ti ti-external-link"></i
+                  ></a>
+                  <span
+                    class="text-xxs-muted"
+                    >11 may 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Concretada 3 -->
+            <div class="col-12">
+              <div class="contact-reveal">
+                <img
+                  src="/src/assets/placeholder5.webp"
+                  alt="Camila"
+                  class="contact-reveal-avatar"
+                />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <div class="contact-reveal-name">Camila Torres</div>
+                    <span class="badge-vx badge-neutral" style="font-size: 10px"
+                      ><i class="ti ti-inbox me-1"></i>Me contactó</span
+                    >
+                  </div>
+                  <div class="contact-reveal-role">
+                    CEO · FlowOps Studio · Lima (PER)
+                  </div>
+                  <div class="contact-reveal-links">
+                    <a
+                      href="mailto:camila@flowops.io"
+                      class="contact-reveal-link"
+                    >
+                      <i class="ti ti-mail"></i> camila@flowops.io
+                    </a>
+                    <a href="tel:+51987654321" class="contact-reveal-link">
+                      <i class="ti ti-phone"></i> +51 987 654 321
+                      <span class="contact-preferred-badge">Preferido</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-end gap-1 flex-shrink-0">
+                  <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"
+                    ><i class="ti ti-external-link"></i
+                  ></a>
+                  <span
+                    class="text-xxs-muted"
+                    >3 may 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Concretada 4 -->
+            <div class="col-12">
+              <div class="contact-reveal">
+                <img
+                  src="/src/assets/placeholder2.webp"
+                  alt="Ignacio"
+                  class="contact-reveal-avatar"
+                />
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <div class="contact-reveal-name">Ignacio M. Bertolotti</div>
+                    <span class="badge-vx badge-neutral" style="font-size: 10px"
+                      ><i class="ti ti-send me-1"></i>Yo contacté</span
+                    >
+                  </div>
+                  <div class="contact-reveal-role">
+                    Director · PropTech Ventures · Montevideo (URY)
+                  </div>
+                  <div class="contact-reveal-links">
+                    <a
+                      href="mailto:ignacio@proptech.uy"
+                      class="contact-reveal-link"
+                    >
+                      <i class="ti ti-mail"></i> ignacio@proptech.uy
+                      <span class="contact-preferred-badge">Preferido</span>
+                    </a>
+                    <a href="#" class="contact-reveal-link">
+                      <i class="ti ti-brand-linkedin"></i> LinkedIn
+                    </a>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-end gap-1 flex-shrink-0">
+                  <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"
+                    ><i class="ti ti-external-link"></i
+                  ></a>
+                  <span
+                    class="text-xxs-muted"
+                    >28 abr 2026</span
+                  >
+                </div>
+              </div>
             </div>
           </div>
-          <div class="d-flex flex-column align-items-end gap-1" style="flex-shrink:0">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-external-link"></i></a>
-            <span style="font-size:10px;color:var(--color-text-secondary)">19 may 2026</span>
+        </div>
+
+        <!-- ── ENVIADAS ── -->
+        <div id="panel-enviadas" style="display: none">
+          <div class="d-flex flex-column gap-3">
+            <!-- Pendiente -->
+            <div class="card-vx">
+              <div class="conn-row">
+                <img
+                  src="/src/assets/placeholder3.webp"
+                  alt=""
+                  class="conn-avatar"
+                />
+                <div class="conn-info">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <span class="conn-name">María G. Estévez-Montoya</span>
+                    <span class="badge-vx badge-neutral"
+                      ><i class="ti ti-clock me-1"></i>Pendiente</span
+                    >
+                  </div>
+                  <div class="conn-meta">
+                    Consultoría Iberoamericana · Ciudad de México (MX)
+                  </div>
+                  <div class="conn-date">
+                    <i class="ti ti-calendar"></i> Enviada el 15 may 2026
+                  </div>
+                  <div class="conn-pitch">
+                    "Hola María, vi que tienes experiencia en transformación
+                    digital..."
+                  </div>
+                </div>
+                <div class="flex-shrink-0">
+                  <button
+                    class="btn-vx btn-ghost-vx btn-vx-sm"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pitch-e1"
+                  >
+                    <i class="ti ti-message"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sin respuesta -->
+            <div class="card-vx" style="opacity: 0.65">
+              <div class="conn-row">
+                <img
+                  src="/src/assets/placeholder2.webp"
+                  alt=""
+                  class="conn-avatar"
+                />
+                <div class="conn-info">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <span class="conn-name">Roberto Abarca</span>
+                    <span class="badge-vx badge-neutral"
+                      ><i class="ti ti-minus me-1"></i>Sin respuesta</span
+                    >
+                  </div>
+                  <div class="conn-meta">
+                    Minotauro Marketing · Buenos Aires (ARG)
+                  </div>
+                  <div class="conn-date">
+                    <i class="ti ti-calendar"></i> Enviada el 1 may 2026 · +7
+                    días sin respuesta
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── RECIBIDAS ── -->
+        <div id="panel-recibidas" style="display: none">
+          <div class="d-flex flex-column gap-3">
+            <!-- Nueva -->
+            <div
+              class="card-vx border-left-accent"
+            >
+              <div class="conn-row">
+                <img
+                  src="/src/assets/placeholder5.webp"
+                  alt=""
+                  class="conn-avatar"
+                />
+                <div class="conn-info">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <span class="conn-name">Diego Fontana</span>
+                    <span class="badge-vx badge-accent"
+                      ><i class="ti ti-bell me-1"></i>Nueva</span
+                    >
+                  </div>
+                  <div class="conn-meta">Nexo Digital · Santiago (CHL)</div>
+                  <div class="conn-date">
+                    <i class="ti ti-calendar"></i> Recibida el 20 may 2026
+                  </div>
+                  <div class="conn-pitch">
+                    "Me interesa mucho explorar una colaboración en proyectos de
+                    automatización para clientes de marketing..."
+                  </div>
+                </div>
+                <div class="d-flex gap-2 flex-shrink-0">
+                  <button class="btn-vx btn-soft-primary btn-vx-sm">
+                    <i class="ti ti-check me-1"></i>Aceptar
+                  </button>
+                  <button class="btn-vx btn-ghost-vx btn-vx-sm">
+                    Rechazar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recibida pendiente 2 -->
+            <div
+              class="card-vx border-left-accent"
+            >
+              <div class="conn-row">
+                <img
+                  src="/src/assets/placeholder3.webp"
+                  alt=""
+                  class="conn-avatar"
+                />
+                <div class="conn-info">
+                  <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
+                    <span class="conn-name">Lucía Vega Contreras</span>
+                    <span class="badge-vx badge-accent"
+                      ><i class="ti ti-bell me-1"></i>Nueva</span
+                    >
+                  </div>
+                  <div class="conn-meta">TechBridge LATAM · Bogotá (COL)</div>
+                  <div class="conn-date">
+                    <i class="ti ti-calendar"></i> Recibida el 18 may 2026
+                  </div>
+                  <div class="conn-pitch">
+                    "Trabajo con varias empresas de marketing en LATAM y creo
+                    que podríamos encontrar proyectos en común..."
+                  </div>
+                </div>
+                <div class="d-flex gap-2 flex-shrink-0">
+                  <button class="btn-vx btn-soft-primary btn-vx-sm">
+                    <i class="ti ti-check me-1"></i>Aceptar
+                  </button>
+                  <button class="btn-vx btn-ghost-vx btn-vx-sm">
+                    Rechazar
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </main>
 
-      <!-- Concretada 2 -->
-      <div class="col-12">
-        <div class="contact-reveal">
-          <img src="/src/assets/placeholder.webp" alt="Valentina" class="contact-reveal-avatar">
-          <div class="flex-grow-1">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <div class="contact-reveal-name">Valentina Koczorowski</div>
-              <span class="badge-vx badge-neutral" style="font-size:10px"><i class="ti ti-inbox me-1"></i>Me contactó</span>
-            </div>
-            <div class="contact-reveal-role">Fundadora · DataSur Analytics · Bogotá (COL)</div>
-            <div class="contact-reveal-links">
-              <a href="mailto:vk@datasur.co" class="contact-reveal-link">
-                <i class="ti ti-mail"></i> vk@datasur.co <span class="contact-preferred-badge">Preferido</span>
-              </a>
-              <a href="https://linkedin.com" class="contact-reveal-link">
-                <i class="ti ti-brand-linkedin"></i> LinkedIn
-              </a>
-            </div>
-          </div>
-          <div class="d-flex flex-column align-items-end gap-1" style="flex-shrink:0">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-external-link"></i></a>
-            <span style="font-size:10px;color:var(--color-text-secondary)">11 may 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Concretada 3 -->
-      <div class="col-12">
-        <div class="contact-reveal">
-          <img src="/src/assets/placeholder5.webp" alt="Camila" class="contact-reveal-avatar">
-          <div class="flex-grow-1">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <div class="contact-reveal-name">Camila Torres</div>
-              <span class="badge-vx badge-neutral" style="font-size:10px"><i class="ti ti-inbox me-1"></i>Me contactó</span>
-            </div>
-            <div class="contact-reveal-role">CEO · FlowOps Studio · Lima (PER)</div>
-            <div class="contact-reveal-links">
-              <a href="mailto:camila@flowops.io" class="contact-reveal-link">
-                <i class="ti ti-mail"></i> camila@flowops.io
-              </a>
-              <a href="tel:+51987654321" class="contact-reveal-link">
-                <i class="ti ti-phone"></i> +51 987 654 321 <span class="contact-preferred-badge">Preferido</span>
-              </a>
-            </div>
-          </div>
-          <div class="d-flex flex-column align-items-end gap-1" style="flex-shrink:0">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-external-link"></i></a>
-            <span style="font-size:10px;color:var(--color-text-secondary)">3 may 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Concretada 4 -->
-      <div class="col-12">
-        <div class="contact-reveal">
-          <img src="/src/assets/placeholder2.webp" alt="Ignacio" class="contact-reveal-avatar">
-          <div class="flex-grow-1">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <div class="contact-reveal-name">Ignacio M. Bertolotti</div>
-              <span class="badge-vx badge-neutral" style="font-size:10px"><i class="ti ti-send me-1"></i>Yo contacté</span>
-            </div>
-            <div class="contact-reveal-role">Director · PropTech Ventures · Montevideo (URY)</div>
-            <div class="contact-reveal-links">
-              <a href="mailto:ignacio@proptech.uy" class="contact-reveal-link">
-                <i class="ti ti-mail"></i> ignacio@proptech.uy <span class="contact-preferred-badge">Preferido</span>
-              </a>
-              <a href="#" class="contact-reveal-link">
-                <i class="ti ti-brand-linkedin"></i> LinkedIn
-              </a>
-            </div>
-          </div>
-          <div class="d-flex flex-column align-items-end gap-1" style="flex-shrink:0">
-            <a href="perfil.html" class="btn-vx btn-ghost-vx btn-vx-sm"><i class="ti ti-external-link"></i></a>
-            <span style="font-size:10px;color:var(--color-text-secondary)">28 abr 2026</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ── ENVIADAS ── -->
-  <div id="panel-enviadas" style="display:none">
-    <div class="d-flex flex-column gap-3">
-
-      <!-- Pendiente -->
-      <div class="card-vx">
-        <div class="conn-row">
-          <img src="/src/assets/placeholder3.webp" alt="" class="conn-avatar">
-          <div class="conn-info">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <span class="conn-name">María G. Estévez-Montoya</span>
-              <span class="badge-vx badge-neutral"><i class="ti ti-clock me-1"></i>Pendiente</span>
-            </div>
-            <div class="conn-meta">Consultoría Iberoamericana · Ciudad de México (MX)</div>
-            <div class="conn-date"><i class="ti ti-calendar"></i> Enviada el 15 may 2026</div>
-            <div class="conn-pitch">"Hola María, vi que tienes experiencia en transformación digital..."</div>
-          </div>
-          <div class="flex-shrink-0">
-            <button class="btn-vx btn-ghost-vx btn-vx-sm" data-bs-toggle="collapse" data-bs-target="#pitch-e1">
-              <i class="ti ti-message"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sin respuesta -->
-      <div class="card-vx" style="opacity:.65">
-        <div class="conn-row">
-          <img src="/src/assets/placeholder2.webp" alt="" class="conn-avatar">
-          <div class="conn-info">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <span class="conn-name">Roberto Abarca</span>
-              <span class="badge-vx badge-neutral"><i class="ti ti-minus me-1"></i>Sin respuesta</span>
-            </div>
-            <div class="conn-meta">Minotauro Marketing · Buenos Aires (ARG)</div>
-            <div class="conn-date"><i class="ti ti-calendar"></i> Enviada el 1 may 2026 · +7 días sin respuesta</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ── RECIBIDAS ── -->
-  <div id="panel-recibidas" style="display:none">
-    <div class="d-flex flex-column gap-3">
-
-      <!-- Nueva -->
-      <div class="card-vx" style="border-left:3px solid var(--color-accent)">
-        <div class="conn-row">
-          <img src="/src/assets/placeholder5.webp" alt="" class="conn-avatar">
-          <div class="conn-info">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <span class="conn-name">Diego Fontana</span>
-              <span class="badge-vx badge-accent"><i class="ti ti-bell me-1"></i>Nueva</span>
-            </div>
-            <div class="conn-meta">Nexo Digital · Santiago (CHL)</div>
-            <div class="conn-date"><i class="ti ti-calendar"></i> Recibida el 20 may 2026</div>
-            <div class="conn-pitch">"Me interesa mucho explorar una colaboración en proyectos de automatización para clientes de marketing..."</div>
-          </div>
-          <div class="d-flex gap-2 flex-shrink-0">
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-check me-1"></i>Aceptar</button>
-            <button class="btn-vx btn-ghost-vx btn-vx-sm">Rechazar</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Recibida pendiente 2 -->
-      <div class="card-vx" style="border-left:3px solid var(--color-accent)">
-        <div class="conn-row">
-          <img src="/src/assets/placeholder3.webp" alt="" class="conn-avatar">
-          <div class="conn-info">
-            <div class="d-flex align-items-center gap-2 flex-wrap mb-1">
-              <span class="conn-name">Lucía Vega Contreras</span>
-              <span class="badge-vx badge-accent"><i class="ti ti-bell me-1"></i>Nueva</span>
-            </div>
-            <div class="conn-meta">TechBridge LATAM · Bogotá (COL)</div>
-            <div class="conn-date"><i class="ti ti-calendar"></i> Recibida el 18 may 2026</div>
-            <div class="conn-pitch">"Trabajo con varias empresas de marketing en LATAM y creo que podríamos encontrar proyectos en común..."</div>
-          </div>
-          <div class="d-flex gap-2 flex-shrink-0">
-            <button class="btn-vx btn-soft-primary btn-vx-sm"><i class="ti ti-check me-1"></i>Aceptar</button>
-            <button class="btn-vx btn-ghost-vx btn-vx-sm">Rechazar</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-</main>
-
-<include src="src/components/footer-logged.html"></include>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  function switchTab(tab) {
-    document.querySelectorAll('.vx-tab').forEach(t => t.classList.remove('vx-tab--active'));
-    document.getElementById('tab-' + tab).classList.add('vx-tab--active');
-    ['concretadas','enviadas','recibidas'].forEach(p => {
-      document.getElementById('panel-' + p).style.display = p === tab ? 'block' : 'none';
-    });
-  }
-</script>
-</body>
+    <include src="src/components/footer-logged.html"></include>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function switchTab(tab) {
+        document
+          .querySelectorAll(".vx-tab")
+          .forEach((t) => t.classList.remove("vx-tab--active"));
+        document.getElementById("tab-" + tab).classList.add("vx-tab--active");
+        ["concretadas", "enviadas", "recibidas"].forEach((p) => {
+          document.getElementById("panel-" + p).style.display =
+            p === tab ? "block" : "none";
+        });
+      }
+    </script>
+  </body>
 </html>
