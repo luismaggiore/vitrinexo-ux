@@ -16,10 +16,60 @@
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
       rel="stylesheet"
     />
-    <link href="/src/style.css" rel="stylesheet" />
+    <link href="src/style.css" rel="stylesheet" />
   </head>
   <body class="bg-page-vx">
-    <include src="src/components/nav.html"></include>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container-fluid px-4">
+    <a href="landing.html" class="navbar-brand d-flex align-items-center gap-2">
+      <img width="100" src="src/assets/vitrinexo.svg" alt="Vitrinexo" style="flex-shrink:0" />
+      <span class="dashboard-date">by Maggiore</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPublic" aria-controls="navPublic" aria-expanded="false" aria-label="Abrir navegacion">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navPublic">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4 gap-1">
+        <li class="nav-item">
+          <a class="nav-link" href="landing.html">Qué es</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Comunidades
+          </a>
+          <ul class="dropdown-menu border-0 shadow-sm p-1">
+            <li>
+              <a class="dropdown-item rounded-2" href="comunidad-out2b.html">
+                <i class="ti ti-rainbow me-2" style="color:#a855f7"></i>Out2B
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2" href="comunidad-woman.html">
+                <i class="ti ti-gender-female me-2" style="color:#ec4899"></i>Woman
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2" href="comunidad-senior.html">
+                <i class="ti ti-award me-2" style="color:#d97706"></i>Senior
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="landing-4dinner.html">4Dinner</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="login.html" class="btn-vx btn-ghost-vx btn-vx-sm">Ingresar</a>
+        <a href="login.html" class="btn-vx btn-primary-vx btn-vx-sm">Registrarse →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+</include>
 
     <!-- HERO -->
     <div class="hero-4dinner">
@@ -442,7 +492,7 @@
                 </p>
                 <div class="d-flex align-items-center gap-2">
                   <img
-                    src="/src/assets/placeholder3.webp"
+                    src="src/assets/placeholder3.webp"
                     class="avatar-sm"
                     alt=""
                   />
@@ -467,7 +517,7 @@
                 </p>
                 <div class="d-flex align-items-center gap-2">
                   <img
-                    src="/src/assets/placeholder4.webp"
+                    src="src/assets/placeholder4.webp"
                     class="avatar-sm"
                     alt=""
                   />
@@ -491,7 +541,7 @@
                 </p>
                 <div class="d-flex align-items-center gap-2">
                   <img
-                    src="/src/assets/placeholder5.webp"
+                    src="src/assets/placeholder5.webp"
                     class="avatar-sm"
                     alt=""
                   />
@@ -555,7 +605,53 @@
       </div>
     </main>
 
-    <include src="src/components/footer.html"></include>
+    <footer class="footer-vx">
+  <div class="container">
+    <div class="footer-vx__top">
+      <a href="landing.html" class="footer-vx__brand" aria-label="Ir a inicio">
+        <img src="src/assets/vitrinexo.svg" alt="Vitrinexo" />
+        <span>by Maggiore</span>
+      </a>
+      <a href="login.html" class="btn-vx btn-primary-vx btn-vx-sm">
+        <i class="ti ti-arrow-right"></i> Unirme a Vitrinexo
+      </a>
+    </div>
+    <div class="footer-vx__grid">
+      <div>
+        <p class="footer-vx__text">La vitrina B2B de Hispanoamérica. Construye tu reputación digital, encuentra nexos y haz negocios en 18+ países.</p>
+        <a class="footer-vx__contact" href="mailto:hola@vitrinexo.com">
+          <i class="ti ti-mail"></i> hola@vitrinexo.com
+        </a>
+      </div>
+      <nav class="footer-vx__nav" aria-label="Plataforma">
+        <span class="footer-vx__label">Plataforma</span>
+        <a class="footer-vx__link" href="landing.html">Qué es Vitrinexo</a>
+        <a class="footer-vx__link" href="landing-4dinner.html">4Dinner</a>
+        <a class="footer-vx__link" href="blog.html">Blog</a>
+      </nav>
+      <nav class="footer-vx__nav" aria-label="Comunidades">
+        <span class="footer-vx__label">Comunidades</span>
+        <a class="footer-vx__link" href="comunidad-out2b.html">Out2B</a>
+        <a class="footer-vx__link" href="comunidad-woman.html">Woman</a>
+        <a class="footer-vx__link" href="comunidad-senior.html">Senior</a>
+      </nav>
+      <nav class="footer-vx__nav" aria-label="Cuenta">
+        <span class="footer-vx__label">Cuenta</span>
+        <a class="footer-vx__link" href="login.html">Ingresar</a>
+        <a class="footer-vx__link" href="login.html">Registrarse</a>
+        <a class="footer-vx__link" href="recuperar-contrasena.html">Recuperar contraseña</a>
+      </nav>
+    </div>
+    <div class="footer-vx__bottom">
+      <span>© 2026 Vitrinexo SpA · RUT 78.392.317-3</span>
+      <div class="d-flex gap-3">
+        <a href="#" class="footer-vx__link">Privacidad</a>
+        <a href="#" class="footer-vx__link">Términos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</include>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

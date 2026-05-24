@@ -6,11 +6,92 @@
   <title>Buscan lo que ofreces — Vitrinexo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet" />
-  <link href="/src/style.css" rel="stylesheet" />
+  <link href="src/style.css" rel="stylesheet" />
 </head>
 <body class="bg-page-vx">
 
-<include src="src/components/nav-logged.html"></include>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container-fluid px-4">
+    <a href="dashboard.html" class="navbar-brand d-flex align-items-center gap-2">
+      <img width="100" src="src/assets/vitrinexo.svg" alt="Vitrinexo" style="flex-shrink:0" />
+      <span class="dashboard-date">by Maggiore</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLogged" aria-controls="navLogged" aria-expanded="false" aria-label="Abrir navegacion">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navLogged">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4 gap-1">
+        <li class="nav-item">
+          <a class="nav-link" href="directorio.html">Directorio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="matches.html">Matches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="conexiones.html">Conexiones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mis-favoritos.html">Favoritos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Comunidades
+          </a>
+          <ul class="dropdown-menu border-0 shadow-sm p-1">
+            <li>
+              <a class="dropdown-item rounded-2" href="comunidad-out2b.html">
+                <i class="ti ti-rainbow me-2" style="color:#a855f7"></i>Out2B
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2" href="comunidad-woman.html">
+                <i class="ti ti-gender-female me-2" style="color:#ec4899"></i>Woman
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2" href="comunidad-senior.html">
+                <i class="ti ti-award me-2" style="color:#d97706"></i>Senior
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="4dinner.html">4Dinner</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <a href="notificaciones.html" class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm position-relative" aria-label="Notificaciones">
+          <i class="ti ti-bell"></i>
+          <span class="notif-dot"></span>
+        </a>
+        <div class="dropdown">
+          <button class="btn-vx btn-ghost-vx btn-vx-sm d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="src/assets/placeholder3.webp" alt="Tu avatar" class="nav-avatar" />
+            <span class="nav-username">Felipe M.</span>
+            <i class="ti ti-chevron-down nav-chevron"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-vx border-0 shadow" style="padding:6px 0;min-width:190px">
+            <li><a class="dropdown-vx-item" href="dashboard.html"><i class="ti ti-layout-dashboard"></i>Dashboard</a></li>
+            <li><a class="dropdown-vx-item" href="perfil.html"><i class="ti ti-user"></i>Mi perfil</a></li>
+            <li><a class="dropdown-vx-item" href="editor-perfil.html"><i class="ti ti-pencil"></i>Editar perfil</a></li>
+            <li><hr class="dropdown-vx-divider my-1" /></li>
+            <li><a class="dropdown-vx-item" href="conexiones.html"><i class="ti ti-network"></i>Mis conexiones</a></li>
+            <li><a class="dropdown-vx-item" href="matches.html"><i class="ti ti-sparkles"></i>Mis matches</a></li>
+            <li><a class="dropdown-vx-item" href="mis-favoritos.html"><i class="ti ti-heart"></i>Mis favoritos</a></li>
+            <li><a class="dropdown-vx-item" href="notificaciones.html"><i class="ti ti-bell"></i>Notificaciones</a></li>
+            <li><hr class="dropdown-vx-divider my-1" /></li>
+            <li><a class="dropdown-vx-item" href="configuracion.html"><i class="ti ti-settings"></i>Configuración</a></li>
+            <li><a class="dropdown-vx-item danger" href="login.html"><i class="ti ti-logout"></i>Cerrar sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</include>
 
 <!-- PAGE HEADER -->
 <div class="page-header-vx match-header--offers">
@@ -71,7 +152,7 @@
             <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Valentina">
+          <img class="card-img-top" src="src/assets/placeholder.webp" alt="Valentina">
         </div>
         <div class="card-body">
           <div class="info mb-2">
@@ -97,7 +178,7 @@
             <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder.webp" alt="Li">
+          <img class="card-img-top" src="src/assets/placeholder.webp" alt="Li">
         </div>
         <div class="card-body">
           <div class="info mb-2">
@@ -123,7 +204,7 @@
             <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder2.webp" alt="Ignacio">
+          <img class="card-img-top" src="src/assets/placeholder2.webp" alt="Ignacio">
         </div>
         <div class="card-body">
           <div class="info mb-2">
@@ -149,7 +230,7 @@
             <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder5.webp" alt="Paula Marchetti">
+          <img class="card-img-top" src="src/assets/placeholder5.webp" alt="Paula Marchetti">
         </div>
         <div class="card-body">
           <div class="info mb-2">
@@ -176,7 +257,7 @@
             <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar"><i class="ti ti-send"></i> Conectar</button>
           </div>
           <div class="card-blur-gradient"></div>
-          <img class="card-img-top" src="/src/assets/placeholder3.webp" alt="Carlos Medrano">
+          <img class="card-img-top" src="src/assets/placeholder3.webp" alt="Carlos Medrano">
         </div>
         <div class="card-body">
           <div class="info mb-2">
@@ -218,12 +299,301 @@
 </div>
 </main>
 
-<include src="src/components/modal-conectar.html"></include>
+<!-- MODAL CONECTAR -->
+<div class="modal fade" id="modalConectar" tabindex="-1" aria-labelledby="modalConectarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-vx" style="width:100%;max-width:500px;margin:auto">
+
+      <div class="modal-vx-header">
+        <div>
+          <h5 class="modal-vx-title" id="modalConectarLabel">
+            Conectar con <span id="modal-receptor-nombre">esta persona</span>
+          </h5>
+          <p class="modal-subtitle"><span id="modal-receptor-empresa"></span></p>
+        </div>
+        <button type="button" class="btn-vx btn-ghost-vx btn-vx-icon-sm" data-bs-dismiss="modal" aria-label="Cerrar">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body-pad">
+        <form id="form-conectar" action="https://formspree.io/f/REPLACE_ID" method="POST">
+
+          <!-- Campos ocultos — emisor -->
+          <input type="hidden" name="emisor_id"                 value="user_felipe">
+          <input type="hidden" name="emisor_nombre"             value="Felipe Muñoz">
+          <input type="hidden" name="emisor_email"              value="felipe@maggiore.cl">
+          <input type="hidden" name="emisor_telefono"           value="+56 9 9876 5432">
+          <input type="hidden" name="emisor_linkedin"           value="linkedin.com/in/felipemuñoz">
+          <input type="hidden" name="emisor_contacto_preferido" value="email">
+          <!-- Campos ocultos — receptor (se rellenan via JS) -->
+          <input type="hidden" name="receptor_id"    value="">
+          <input type="hidden" name="receptor_nombre" value="">
+          <input type="hidden" name="receptor_email"  value="">
+
+          <!-- ── Selector de empresa (visible porque tiene 2) ── -->
+          <div class="mb-3" id="campo-empresa">
+            <label class="form-label-vx">¿Desde qué empresa(s) contactas? <span style="color:var(--color-text-secondary);font-weight:400">(puedes seleccionar más de una)</span></label>
+
+            <!-- Opción 1 -->
+            <label class="modal-empresa-option" id="empresa-opt-1">
+              <input type="checkbox" name="emisor_empresa[]" value="Maggiore Marketing" checked style="display:none">
+              <div class="modal-empresa-card modal-empresa-card--selected" id="card-empresa-1">
+                <div class="empresa-logo-circle">
+                  <img src="src/assets/placeholder2.webp" alt="Logo Maggiore Marketing">
+                </div>
+                <div class="modal-empresa-info">
+                  <div class="modal-empresa-name">Maggiore Marketing</div>
+                  <div class="modal-empresa-role">Director General · Santiago, Chile</div>
+                </div>
+                <i class="ti ti-circle-check modal-empresa-check" id="check-1"></i>
+              </div>
+            </label>
+
+            <!-- Opción 2 -->
+            <label class="modal-empresa-option" id="empresa-opt-2">
+              <input type="checkbox" name="emisor_empresa[]" value="Vitrinexo" style="display:none">
+              <div class="modal-empresa-card" id="card-empresa-2">
+                <div class="empresa-logo-circle">
+                  <img src="src/assets/vitrinexo.svg" alt="Logo Vitrinexo">
+                </div>
+                <div class="modal-empresa-info">
+                  <div class="modal-empresa-name">Vitrinexo</div>
+                  <div class="modal-empresa-role">Fundador · Santiago, Chile</div>
+                </div>
+                <i class="ti ti-circle modal-empresa-check" id="check-2"></i>
+              </div>
+            </label>
+          </div>
+
+          <!-- ── Pitch ── -->
+          <div class="mb-3">
+            <label class="form-label-vx">
+              Tu mensaje
+              <span style="color:var(--color-text-secondary);font-weight:400">(por qué quieres conectar)</span>
+            </label>
+            <textarea
+              class="form-control-vx"
+              name="pitch"
+              rows="4"
+              placeholder="Cuéntale el motivo de tu contacto, qué tienes en mente o en qué crees que pueden colaborar..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-vx btn-primary-vx btn-vx-sm w-100">
+            <i class="ti ti-send"></i> Enviar solicitud de conexión
+          </button>
+
+          <p class="text-xs-muted text-center" style="margin-top:8px">
+            <i class="ti ti-lock" style="font-size:11px"></i>
+            Tus datos de contacto solo se revelan si la persona acepta la conexión.
+          </p>
+
+        </form>
+
+        <!-- Estado: enviado -->
+        <div id="modal-success" style="display:none;text-align:center;padding:1.5rem 0">
+          <div style="font-size:2.5rem;margin-bottom:.75rem">✓</div>
+          <div style="font-size:15px;font-weight:600;color:var(--color-text-primary);margin-bottom:.4rem">Solicitud enviada</div>
+          <p class="text-body-muted mb-0">
+            <span id="modal-receptor-nombre-success"></span> recibirá tu mensaje y podrá aceptar desde su correo.
+            Sus datos de contacto se revelarán solo si acepta.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ── Modal empresa selector ── */
+.modal-empresa-option {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.modal-empresa-option:last-child { margin-bottom: 0; }
+
+.modal-empresa-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  transition: border-color .15s ease, background .15s ease;
+  user-select: none;
+}
+.modal-empresa-card:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+.modal-empresa-card--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.modal-empresa-info { flex: 1; min-width: 0; }
+.modal-empresa-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+.modal-empresa-role {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 1px;
+}
+
+.modal-empresa-check {
+  font-size: 16px;
+  color: var(--color-border);
+  flex-shrink: 0;
+  transition: color .15s ease;
+}
+.modal-empresa-card--selected .modal-empresa-check {
+  color: var(--color-primary);
+}
+</style>
+
+<script>
+(function () {
+  const modal = document.getElementById('modalConectar');
+  if (!modal) return;
+
+  // ── Selector de empresa — checkbox múltiple ──
+  const options = modal.querySelectorAll('.modal-empresa-option');
+  options.forEach(function (opt) {
+    opt.addEventListener('click', function () {
+      const card     = opt.querySelector('.modal-empresa-card');
+      const check    = opt.querySelector('.modal-empresa-check');
+      const checkbox = opt.querySelector('input[type="checkbox"]');
+
+      // Toggle este item
+      checkbox.checked = !checkbox.checked;
+
+      if (checkbox.checked) {
+        card.classList.add('modal-empresa-card--selected');
+        check.classList.remove('ti-circle');
+        check.classList.add('ti-circle-check');
+      } else {
+        card.classList.remove('modal-empresa-card--selected');
+        check.classList.remove('ti-circle-check');
+        check.classList.add('ti-circle');
+      }
+    });
+  });
+
+  // ── Rellenar datos del receptor al abrir ──
+  modal.addEventListener('show.bs.modal', function (event) {
+    const trigger = event.relatedTarget;
+    if (!trigger) return;
+
+    const receptorNombre  = trigger.dataset.receptorNombre  || '';
+    const receptorEmpresa = trigger.dataset.receptorEmpresa || '';
+    const receptorId      = trigger.dataset.receptorId      || '';
+    const receptorEmail   = trigger.dataset.receptorEmail   || '';
+
+    modal.querySelector('#modal-receptor-nombre').textContent         = receptorNombre || 'esta persona';
+    modal.querySelector('#modal-receptor-nombre-success').textContent = receptorNombre || 'La persona';
+    modal.querySelector('#modal-receptor-empresa').textContent        = receptorEmpresa;
+    modal.querySelector('[name="receptor_id"]').value                 = receptorId;
+    modal.querySelector('[name="receptor_nombre"]').value             = receptorNombre;
+    modal.querySelector('[name="receptor_email"]').value              = receptorEmail;
+
+    // Reset form/success state
+    document.getElementById('form-conectar').style.display = '';
+    document.getElementById('modal-success').style.display = 'none';
+  });
+
+  // ── Envío async ──
+  document.getElementById('form-conectar').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn  = this.querySelector('[type="submit"]');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="ti ti-loader-2"></i> Enviando...';
+    btn.disabled  = true;
+
+    try {
+      const res = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-conectar').style.display = 'none';
+        document.getElementById('modal-success').style.display = '';
+      } else {
+        btn.innerHTML = orig;
+        btn.disabled  = false;
+        alert('No se pudo enviar. Intenta de nuevo.');
+      }
+    } catch {
+      btn.innerHTML = orig;
+      btn.disabled  = false;
+      alert('Error de conexión. Intenta de nuevo.');
+    }
+  });
+})();
+</script>
+</include>
 
 </div>
 
 
-<include src="src/components/footer-logged.html"></include>
+<footer class="footer-vx footer-vx--logged">
+  <div class="container">
+    <div class="footer-vx__top">
+      <a href="dashboard.html" class="footer-vx__brand" aria-label="Ir al dashboard">
+        <img src="src/assets/vitrinexo.svg" alt="Vitrinexo" />
+        <span>by Maggiore</span>
+      </a>
+      <a href="editor-perfil.html" class="btn-vx btn-soft-primary btn-vx-sm">
+        <i class="ti ti-pencil"></i> Editar perfil
+      </a>
+    </div>
+    <div class="footer-vx__grid">
+      <div>
+        <p class="footer-vx__text">Sigue construyendo tu vitrina, guardando nexos relevantes y activando nuevas conversaciones B2B.</p>
+        <a class="footer-vx__contact" href="mailto:hola@vitrinexo.com">
+          <i class="ti ti-mail"></i> hola@vitrinexo.com
+        </a>
+      </div>
+      <nav class="footer-vx__nav" aria-label="Explorar">
+        <span class="footer-vx__label">Explorar</span>
+        <a class="footer-vx__link" href="directorio.html">Directorio</a>
+        <a class="footer-vx__link" href="matches.html">Mis matches</a>
+        <a class="footer-vx__link" href="mis-favoritos.html">Mis favoritos</a>
+        <a class="footer-vx__link" href="4dinner.html">4Dinner</a>
+        <a class="footer-vx__link" href="blog.html">Blog</a>
+      </nav>
+      <nav class="footer-vx__nav" aria-label="Comunidades">
+        <span class="footer-vx__label">Comunidades</span>
+        <a class="footer-vx__link" href="comunidad-out2b.html">Out2B</a>
+        <a class="footer-vx__link" href="comunidad-woman.html">Woman</a>
+        <a class="footer-vx__link" href="comunidad-senior.html">Senior</a>
+      </nav>
+      <nav class="footer-vx__nav" aria-label="Mi cuenta">
+        <span class="footer-vx__label">Mi cuenta</span>
+        <a class="footer-vx__link" href="dashboard.html">Dashboard</a>
+        <a class="footer-vx__link" href="perfil.html">Mi perfil</a>
+        <a class="footer-vx__link" href="conexiones.html">Mis conexiones</a>
+        <a class="footer-vx__link" href="notificaciones.html">Notificaciones</a>
+        <a class="footer-vx__link" href="configuracion.html">Configuración</a>
+        <a class="footer-vx__link" href="login.html">Cerrar sesión</a>
+      </nav>
+    </div>
+    <div class="footer-vx__bottom">
+      <span>© 2026 Vitrinexo by Maggiore</span>
+      <span>Vitrinea, conecta y colabora.</span>
+    </div>
+  </div>
+</footer>
+</include>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

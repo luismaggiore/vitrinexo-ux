@@ -1,595 +1,123 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vitrinexo — UI Kit</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link href="/src/style.css" rel="stylesheet" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrinexo — Maquetas UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+  <link href="src/style.css" rel="stylesheet">
+</head>
+<body style="background:var(--color-ice-500)">
 
-  <body>
-    <include src="src/components/nav.html"></include>
-
-    <section class="network-hero light">
-      <canvas id="networkCanvas"></canvas>
-
-      <div class="hero-content">
-        <img width="200" src="src/assets/Vitrinexo.svg" />
-        <h1 class="my-4">Conecta personas, ideas y oportunidades</h1>
-        <div class="mt-5">
-          <p>
-            Una red densa, viva y conectada en Hispanoamérica dónde las
-            proyecciones se convierten en proyectos reales
-          </p>
+  <div class="page-header-vx">
+    <div class="container">
+      <div class="page-header-vx__inner">
+        <div>
+          <h1 class="page-header-vx__title">Vitrinexo — Maquetas UI</h1>
+          <p class="page-header-vx__lead">Índice de todas las páginas del sistema. Para revisión del equipo.</p>
         </div>
-        <div class="card p-3 mt-4">
-          Aqui las empresas de servicios B2B construyen su reputación digital,
-          se encuentran entre pares y hacen negocios en 18+ países Un perfil. Un
-          continente.
-        </div>
-        <div class="mt-4">
-          <span class="badge-vx badge-verified"
-            ><i class="ti ti-shield-check"></i> Empresas verificadas</span
-          >
-          <span class="badge-vx badge-verified"
-            ><i class="ti ti-star"></i> Colaboración Real</span
-          >
-        </div>
-        <a class="btn-primary-vx btn rounded-pill mt-4"
-          >Quiero ser socio fundador</a
-        >
+        <span class="badge-vx badge-primary">Mayo 2026</span>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- ============================================================
-     VITRINA + NEXO
-     ============================================================ -->
-    <section class="section-landing" id="que-es">
-      <div class="container">
-        <div class="section-landing-head">
-          <span class="section-landing-label">Qué es Vitrinexo</span>
-          <h2 class="section-landing-title">
-            Una <strong>vitrina</strong> para tu empresa.<br />Un
-            <strong>nexo</strong> para el continente.
-          </h2>
-        </div>
-        <div class="landing-split landing-split--reverse">
-          <div class="landing-split__copy">
-            <p class="section-landing-lead mb-3">
-              Vitrinexo es el directorio B2B de Hispanoamérica donde las
-              personas detrás de las empresas se muestran, se encuentran y hacen
-              negocios reales. Tu vitrina es tu empresa. Tu nexo eres tú.
-            </p>
-            <p class="section-landing-lead mb-3">
-              No un marketplace genérico. No otro LinkedIn. La capa comercial
-              que el continente necesitaba.
-            </p>
-            <p class="section-landing-lead">
-              <strong>Vitrinea, Conecta y Colabora.</strong>
-            </p>
-          </div>
-          <div class="landing-split__cards">
-            <div class="concept-card concept-card--primary">
-              <span class="concept-card__icon"
-                ><i class="ti ti-layout-grid"></i
-              ></span>
-              <h3 class="concept-card__title">Vitrina</h3>
-              <p class="concept-card__desc">
-                El espacio donde cada empresa se exhibe con detalle: quién es,
-                qué hace, a quién atiende y en qué es experta.
-              </p>
-            </div>
-            <div class="concept-card concept-card--secondary">
-              <span class="concept-card__icon"
-                ><i class="ti ti-arrows-exchange"></i
-              ></span>
-              <h3 class="concept-card__title">Nexo</h3>
-              <p class="concept-card__desc">
-                La persona detrás de la empresa. El vínculo humano que hace
-                posible descubrir aliados, clientes y oportunidades en todo el
-                continente.
-              </p>
-            </div>
+  <div class="container py-4">
+    <div class="row g-4">
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-vx">
+          <div class="subsection-label mb-3">Páginas públicas</div>
+          <div class="d-flex flex-column gap-2">
+            <a href="landing.html" class="link-primary-color">landing.html — Landing principal</a>
+            <a href="landing-4dinner.html" class="link-primary-color">landing-4dinner.html — Landing 4Dinner</a>
+            <a href="blog.html" class="link-primary-color">blog.html — Blog</a>
+            <a href="single-blog.html" class="link-primary-color">single-blog.html — Artículo de blog</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ============================================================
-     CÓMO FUNCIONA
-     ============================================================ -->
-    <section class="section-landing section-landing--alt" id="como-funciona">
-      <div class="container">
-        <div class="section-landing-head">
-          <span class="section-landing-label">Cómo funciona</span>
-          <h2 class="section-landing-title">
-            Dices qué ofreces.<br />Dices qué buscas.<br /><strong
-              >Vitrinexo conecta los puntos.</strong
-            >
-          </h2>
-          <p class="section-landing-lead">
-            Cada empresa tiene un perfil verificado con información comercial
-            real: a quién atiende, en qué puede ayudar y qué necesita.
-          </p>
-        </div>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-card__num">01</div>
-            <div class="step-card__icon"><i class="ti ti-id-badge-2"></i></div>
-            <h3 class="step-card__title">Crea tu ficha</h3>
-            <p class="step-card__desc">
-              Publicas quién eres, qué haces y qué buscas. En 15 minutos estás
-              visible en el directorio B2B de Hispanoamérica.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-card__num">02</div>
-            <div class="step-card__icon"><i class="ti ti-search"></i></div>
-            <h3 class="step-card__title">Vitrinea el continente</h3>
-            <p class="step-card__desc">
-              Alguien ve tu perfil, o tú ves el de otra empresa, y se conecta la
-              oportunidad. Filtros por país, rubro, tamaño y más.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-card__num">03</div>
-            <div class="step-card__icon"><i class="ti ti-send"></i></div>
-            <h3 class="step-card__title">Haz negocios reales</h3>
-            <p class="step-card__desc">
-              Lo que era una idea se vuelve real. Contacto directo, sin
-              intermediarios. Solo empresas con ficha completa ven a otras.
-            </p>
-          </div>
-        </div>
-
-        <!-- Visual match: ofrece ↔ busca -->
-        <div class="match-visual">
-          <div class="match-visual__card">
-            <div class="card">
-              <div class="card-img-container">
-                <div class="card-blur-gradient"></div>
-                <img
-                  class="card-img-top"
-                  alt="Li — OK Studio"
-                  src="/src/assets/placeholder.webp"
-                />
-              </div>
-              <div class="card-body">
-                <div class="info mb-2">
-                  <h5 class="h6 py-0 my-0">Li</h5>
-                  <p class="member-company">OK Studio</p>
-                </div>
-                <p class="p-offers mb-1">Ofrece</p>
-                <div class="d-flex flex-wrap gap-1">
-                  <span class="tag-vx tag-offers">desarrollo web</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="match-visual__arrow" aria-hidden="true">
-            <svg
-              viewBox="0 0 120 40"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-            >
-              <circle cx="6" cy="6" r="3" fill="var(--color-success)" />
-              <line
-                x1="6"
-                y1="6"
-                x2="114"
-                y2="6"
-                stroke="var(--color-success)"
-                stroke-width="1"
-              />
-              <circle cx="114" cy="6" r="3" fill="var(--color-success)" />
-            </svg>
-            <span class="match-visual__label">Vitrinexo conecta</span>
-          </div>
-
-          <div class="match-visual__card">
-            <div class="card">
-              <div class="card-img-container">
-                <div class="card-blur-gradient"></div>
-                <img
-                  class="card-img-top"
-                  alt="Li — OK Studio"
-                  src="/src/assets/placeholder.webp"
-                />
-              </div>
-              <div class="card-body">
-                <div class="info mb-2">
-                  <h5 class="h6 py-0 my-0">Felipe</h5>
-                  <p class="member-company">Growth Partners</p>
-                </div>
-                <p class="p-seeks mb-1">Busca</p>
-                <div class="d-flex flex-wrap gap-1">
-                  <span class="tag-vx tag-seeks">desarrollo web</span>
-                </div>
-              </div>
-            </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-vx">
+          <div class="subsection-label mb-3">Autenticación</div>
+          <div class="d-flex flex-column gap-2">
+            <a href="login.html" class="link-primary-color">login.html — Login / Registro</a>
+            <a href="recuperar-contrasena.html" class="link-primary-color">recuperar-contrasena.html</a>
+            <a href="nueva-contrasena.html" class="link-primary-color">nueva-contrasena.html</a>
+            <a href="confirmar-correo.html" class="link-primary-color">confirmar-correo.html</a>
+            <a href="verificacion-pendiente.html" class="link-primary-color">verificacion-pendiente.html</a>
+            <a href="onboarding.html" class="link-primary-color">onboarding.html — Wizard de perfil</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ============================================================
-         PARA QUIÉN ES
-         ============================================================ -->
-    <section class="section-landing" id="para-quien">
-      <div class="container">
-        <div class="audience-block">
-          <div class="section-landing-head" style="margin-bottom: 2rem">
-            <span class="section-landing-label">Para quién es</span>
-            <h2 class="section-landing-title">
-              Hecho para empresas de servicios B2B<br />en
-              <strong>expansión continental</strong>
-            </h2>
-            <p class="section-landing-lead">
-              Si tu empresa ofrece servicios profesionales y quieres crecer más
-              allá de tus fronteras sin abrir oficinas locales, Vitrinexo es
-              para ti.
-            </p>
-          </div>
-          <div class="audience-chips">
-            <span class="audience-chip">Marketing y publicidad</span>
-            <span class="audience-chip">Tecnología y software</span>
-            <span class="audience-chip">Consultoría y estrategia</span>
-            <span class="audience-chip">Diseño y creatividad</span>
-            <span class="audience-chip">Legal y compliance</span>
-            <span class="audience-chip">Contabilidad y finanzas</span>
-            <span class="audience-chip">Recursos humanos</span>
-            <span class="audience-chip">Logística y supply chain</span>
-            <span class="audience-chip">Salud y bienestar</span>
-            <span class="audience-chip">Educación y capacitación</span>
-            <span class="audience-chip">Construcción e ingeniería</span>
-            <span class="audience-chip">Producción audiovisual</span>
-            <span class="audience-chip">Traducción y localización</span>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-vx">
+          <div class="subsection-label mb-3">App — Principal</div>
+          <div class="d-flex flex-column gap-2">
+            <a href="dashboard.html" class="link-primary-color">dashboard.html — Dashboard</a>
+            <a href="directorio.html" class="link-primary-color">directorio.html — Directorio</a>
+            <a href="search-results.html" class="link-primary-color">search-results.html — Resultados búsqueda</a>
+            <a href="matches.html" class="link-primary-color">matches.html — Mis matches</a>
+            <a href="match-seeks.html" class="link-primary-color">match-seeks.html — Ofrecen lo que busco</a>
+            <a href="match-offers.html" class="link-primary-color">match-offers.html — Buscan lo que ofrezco</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ============================================================
-         EL MULTIVERSO
-         ============================================================ -->
-    <section class="section-landing" id="multiverso">
-      <div class="container">
-        <div class="section-landing-head">
-          <span class="section-landing-label">El multiverso</span>
-          <h2 class="section-landing-title">
-            Una plataforma.<br /><strong>Muchas comunidades.</strong>
-          </h2>
-          <p class="section-landing-lead">
-            Vitrinexo no es una sola comunidad: es un multiverso.
-            Sub-comunidades verticales dentro de la misma plataforma, cada una
-            con su propia afinidad y propósito.
-          </p>
-        </div>
-        <div class="multiverse-grid">
-          <div class="multiverse-card multiverse-card--main">
-            <span class="multiverse-card__label">Plataforma principal</span>
-            <h3 class="multiverse-card__title">Vitrinexo</h3>
-            <p class="multiverse-card__desc">
-              El directorio B2B general. La vitrina donde cada empresa de
-              servicios se muestra y encuentra aliados, clientes y proveedores
-              en toda Hispanoamérica.
-            </p>
-          </div>
-          <div class="multiverse-card multiverse-card--out2b">
-            <span class="multiverse-card__label">Comunidad vertical</span>
-            <h3 class="multiverse-card__title">Vitrinexo <em>Out2B</em></h3>
-            <p class="multiverse-card__desc">
-              Para líderes y ejecutivos LGBTQ+ en el mundo empresarial.
-            </p>
-          </div>
-          <div class="multiverse-card multiverse-card--woman">
-            <span class="multiverse-card__label">Comunidad vertical</span>
-            <h3 class="multiverse-card__title">Vitrinexo <em>Woman</em></h3>
-            <p class="multiverse-card__desc">
-              Mujeres en posiciones de liderazgo empresarial.
-            </p>
-          </div>
-          <div class="multiverse-card multiverse-card--senior">
-            <span class="multiverse-card__label">Comunidad vertical</span>
-            <h3 class="multiverse-card__title">Vitrinexo <em>Senior</em></h3>
-            <p class="multiverse-card__desc">
-              Ejecutivos con trayectoria consolidada: experiencia como ventaja
-              competitiva.
-            </p>
-          </div>
-          <div class="multiverse-card multiverse-card--dinner">
-            <span class="multiverse-card__label">Experiencia presencial</span>
-            <h3 class="multiverse-card__title">Vitrinexo <em>4Dinner</em></h3>
-            <p class="multiverse-card__desc">
-              Cenas de networking en formato íntimo: 4 personas, 1 mesa, 1
-              conversación real. Miércoles 8pm hora local, simultáneamente en
-              múltiples ciudades.
-            </p>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-vx">
+          <div class="subsection-label mb-3">App — Perfil y conexiones</div>
+          <div class="d-flex flex-column gap-2">
+            <a href="perfil.html" class="link-primary-color">perfil.html — Perfil público</a>
+            <a href="editor-perfil.html" class="link-primary-color">editor-perfil.html — Editar perfil</a>
+            <a href="mis-favoritos.html" class="link-primary-color">mis-favoritos.html — Favoritos</a>
+            <a href="conexiones.html" class="link-primary-color">conexiones.html — Conexiones</a>
+            <a href="conexion-aceptada.html" class="link-primary-color">conexion-aceptada.html</a>
+            <a href="conexion-rechazada.html" class="link-primary-color">conexion-rechazada.html</a>
+            <a href="notificaciones.html" class="link-primary-color">notificaciones.html</a>
+            <a href="configuracion.html" class="link-primary-color">configuracion.html — Configuración</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ============================================================
-         SOCIO FUNDADOR
-         ============================================================ -->
-    <section class="section-landing" id="socio-fundador">
-      <div class="container">
-        <div class="founder-block">
-          <!-- Left: copy + benefits -->
-          <div>
-            <span class="badge-vx badge-founder mb-3 d-inline-flex"
-              ><i class="ti ti-star"></i> Socio Fundador · Gratis 6 meses</span
-            >
-            <h2 class="section-landing-title mb-3">
-              Sé parte desde<br /><strong>el primer día.</strong>
-            </h2>
-            <p class="section-landing-lead mb-4">
-              Los primeros 100 Socios Fundadores acceden gratis durante 6 meses
-              al lanzamiento y quedan inmortalizados en el "Salón de Fundadores"
-              de Vitrinexo. Cupos estrictamente limitados.
-            </p>
-            <ul class="founder-benefits">
-              <li>
-                <i class="ti ti-circle-check"></i
-                ><span
-                  ><strong>6 meses gratis</strong> desde el lanzamiento en mayo
-                  2026.</span
-                >
-              </li>
-              <li>
-                <i class="ti ti-circle-check"></i
-                ><span
-                  >Distintivo <strong>"Socio Fundador"</strong> visible en tu
-                  ficha para siempre.</span
-                >
-              </li>
-              <li>
-                <i class="ti ti-circle-check"></i
-                ><span
-                  >Acceso anticipado a las sub-comunidades
-                  <strong>Out2B, Woman, Senior</strong> y 4Dinner.</span
-                >
-              </li>
-              <li>
-                <i class="ti ti-circle-check"></i
-                ><span
-                  ><strong>Precio preferente de por vida</strong> al finalizar
-                  el período gratuito — nunca pagarás tarifa de lista.</span
-                >
-              </li>
-              <li>
-                <i class="ti ti-circle-check"></i
-                ><span
-                  ><strong>Onboarding uno a uno</strong> con el equipo de
-                  Maggiore para completar tu ficha.</span
-                >
-              </li>
-              <li>
-                <i class="ti ti-circle-check"></i
-                ><span
-                  >Sin compromiso. Si no te convence, simplemente no
-                  renuevas.</span
-                >
-              </li>
-            </ul>
-          </div>
-          <!-- Right: form -->
-          <div class="founder-form-card">
-            <div id="founderFormView">
-              <h3>Reserva tu lugar</h3>
-              <p class="form-sub">
-                Te contactamos antes del lanzamiento en mayo.
-                <strong>Sin spam.</strong>
-              </p>
-              <div
-                class="alert-vx alert-warning mb-3"
-                style="padding: 8px 12px"
-              >
-                <i class="ti ti-clock" style="font-size: 15px"></i>
-                <span style="font-size: 12px"
-                  >Quedan <strong>87 cupos</strong> de 100. Se cierra al
-                  completarse.</span
-                >
-              </div>
-              <form
-                id="founderForm"
-                action="https://formspree.io/f/mwvwnred"
-                method="POST"
-              >
-                <div class="row g-2 mb-2">
-                  <div class="col-6">
-                    <label class="form-label-vx">Nombre *</label>
-                    <input
-                      class="form-control-vx"
-                      name="nombre"
-                      required
-                      placeholder="João-Franco"
-                    />
-                  </div>
-                  <div class="col-6">
-                    <label class="form-label-vx">Apellido *</label>
-                    <input
-                      class="form-control-vx"
-                      name="apellido"
-                      required
-                      placeholder="Maggi"
-                    />
-                  </div>
-                </div>
-                <div class="mb-2">
-                  <label class="form-label-vx">Email corporativo *</label>
-                  <div class="input-group-vx">
-                    <span class="input-icon"><i class="ti ti-mail"></i></span>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="hola@tuempresa.com"
-                    />
-                  </div>
-                </div>
-                <div class="mb-2">
-                  <label class="form-label-vx">Empresa *</label>
-                  <input
-                    class="form-control-vx"
-                    name="empresa"
-                    required
-                    placeholder="Nombre de tu empresa"
-                  />
-                </div>
-                <div class="row g-2 mb-2">
-                  <div class="col-6">
-                    <label class="form-label-vx">País *</label>
-                    <select class="form-control-vx" name="pais" required>
-                      <option value="">Selecciona</option>
-                      <option>Chile</option>
-                      <option>México</option>
-                      <option>Colombia</option>
-                      <option>Argentina</option>
-                      <option>Perú</option>
-                      <option>España</option>
-                      <option>Ecuador</option>
-                      <option>Uruguay</option>
-                      <option>Venezuela</option>
-                      <option>Bolivia</option>
-                      <option>Paraguay</option>
-                      <option>Guatemala</option>
-                      <option>Honduras</option>
-                      <option>El Salvador</option>
-                      <option>Nicaragua</option>
-                      <option>Costa Rica</option>
-                      <option>Panamá</option>
-                      <option>Cuba</option>
-                      <option>República Dominicana</option>
-                      <option>Estados Unidos</option>
-                      <option>Otro</option>
-                    </select>
-                  </div>
-                  <div class="col-6">
-                    <label class="form-label-vx">Rubro *</label>
-                    <select class="form-control-vx" name="rubro" required>
-                      <option value="">Selecciona</option>
-                      <option>Marketing y publicidad</option>
-                      <option>Tecnología y software</option>
-                      <option>Consultoría y estrategia</option>
-                      <option>Diseño y creatividad</option>
-                      <option>Legal y compliance</option>
-                      <option>Contabilidad y finanzas</option>
-                      <option>Recursos humanos</option>
-                      <option>Logística y supply chain</option>
-                      <option>Salud y bienestar</option>
-                      <option>Educación y capacitación</option>
-                      <option>Construcción e ingeniería</option>
-                      <option>Otro</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label-vx"
-                    >Cuéntanos sobre tu empresa (opcional)</label
-                  >
-                  <textarea
-                    class="form-control-vx"
-                    name="mensaje"
-                    rows="3"
-                    placeholder="¿Qué hace tu empresa y a quién atiende?"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="btn-vx btn-primary-vx btn-vx-md w-100 justify-content-center"
-                >
-                  <i class="ti ti-star"></i> Reservar mi lugar como Socio
-                  Fundador
-                </button>
-                <p
-                  style="
-                    font-size: 11px;
-                    color: var(--color-text-secondary);
-                    text-align: center;
-                    margin-top: 8px;
-                    margin-bottom: 0;
-                  "
-                >
-                  <i
-                    class="ti ti-lock"
-                    style="font-size: 11px; vertical-align: -1px"
-                  ></i>
-                  Tus datos están seguros. Sin spam, sin compromisos.
-                </p>
-              </form>
-            </div>
-            <div class="founder-form-success" id="founderFormSuccess">
-              <h3>🎉 ¡Ya eres parte de Vitrinexo!</h3>
-              <p>
-                Te contactaremos antes del lanzamiento en mayo 2026.<br />Revisa
-                tu bandeja de entrada.
-              </p>
-            </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-vx">
+          <div class="subsection-label mb-3">Comunidades y 4Dinner</div>
+          <div class="d-flex flex-column gap-2">
+            <a href="comunidad-out2b.html" class="link-primary-color">comunidad-out2b.html</a>
+            <a href="comunidad-woman.html" class="link-primary-color">comunidad-woman.html</a>
+            <a href="comunidad-senior.html" class="link-primary-color">comunidad-senior.html</a>
+            <a href="4dinner.html" class="link-primary-color">4dinner.html — 4Dinner (app)</a>
           </div>
         </div>
       </div>
-    </section>
-    <include src="src/components/footer.html"></include>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-      integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-      crossorigin="anonymous"
-      async
-    ></script>
-    <script type="module" src="/src/main.jsx"></script>
-    <script src="/src/network.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Socio Fundador form — AJAX
-      const founderForm = document.getElementById("founderForm");
-      const founderFormView = document.getElementById("founderFormView");
-      const founderFormSuccess = document.getElementById("founderFormSuccess");
-      if (founderForm) {
-        founderForm.addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const btn = founderForm.querySelector('[type="submit"]');
-          const orig = btn.innerHTML;
-          btn.innerHTML = '<i class="ti ti-loader"></i> Enviando...';
-          btn.disabled = true;
-          try {
-            const res = await fetch(founderForm.action, {
-              method: "POST",
-              body: new FormData(founderForm),
-              headers: { Accept: "application/json" },
-            });
-            if (res.ok) {
-              founderFormView.style.display = "none";
-              founderFormSuccess.classList.add("show");
-            } else {
-              btn.innerHTML = orig;
-              btn.disabled = false;
-              alert(
-                "No pudimos enviar tu reserva. Escríbenos a hola@vitrinexo.com",
-              );
-            }
-          } catch {
-            btn.innerHTML = orig;
-            btn.disabled = false;
-            alert("Error de conexión. Intenta de nuevo.");
-          }
-        });
-      }
-    </script>
-  </body>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-vx">
+          <div class="subsection-label mb-3">Utilidades</div>
+          <div class="d-flex flex-column gap-2">
+            <a href="404.html" class="link-primary-color">404.html — Página no encontrada</a>
+            <a href="empty-states.html" class="link-primary-color">empty-states.html — Estados vacíos</a>
+          </div>
+          <hr style="border-color:var(--color-border);margin:1rem 0">
+          <div class="subsection-label mb-3">Emails</div>
+          <div class="d-flex flex-column gap-2">
+            <a href="emails/email-confirmacion.html" class="link-primary-color">Confirmación de cuenta</a>
+            <a href="emails/email-aprobacion.html" class="link-primary-color">Aprobación manual</a>
+            <a href="emails/email-bienvenida.html" class="link-primary-color">Bienvenida</a>
+            <a href="emails/email-conexion-recibida.html" class="link-primary-color">Conexión recibida</a>
+            <a href="emails/email-conexion-aceptada.html" class="link-primary-color">Conexión aceptada</a>
+            <a href="emails/email-recordatorio-conexion.html" class="link-primary-color">Recordatorio conexión</a>
+            <a href="emails/email-match-semanal.html" class="link-primary-color">Match semanal</a>
+            <a href="emails/email-4dinner-confirmacion.html" class="link-primary-color">4Dinner confirmación</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
