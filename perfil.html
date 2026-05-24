@@ -94,92 +94,121 @@
 </include>
 
 <main>
-  <div class="container py-4">
-    <div class="row g-4">
-      <div class="col-12 col-lg-4">
-        <!-- Profile card -->
-        <div class="card-vx text-center">
-          <div class="profile-banner mb-3" style="aspect-ratio:16/5;background:linear-gradient(135deg,var(--color-cyan-600),var(--color-green-400));border-radius:var(--radius-md);overflow:hidden">
-          </div>
-          <img src="src/assets/placeholder3.webp" alt="Felipe Muñoz"
-               style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-top:-40px;position:relative;z-index:1">
-          <h1 style="font-size:1.2rem;font-weight:600;letter-spacing:-.03em;margin:.5rem 0 0">Felipe Muñoz
-            <span class="founder-tooltip" data-tooltip="Miembro fundador"><i class="founder-tag ti ti-star"></i></span>
-          </h1>
-          <p class="member-company">Director General</p>
-          <p class="member-company">Santiago, Chile</p>
+<div class="container">
+  <div class="profile my-5">
 
-          <div class="d-flex justify-content-center gap-2 my-3">
-            <button class="btn-vx btn-primary-vx btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar">
-              <i class="ti ti-send me-1"></i> Conectar
-            </button>
-            <button class="btn-vx btn-ghost-vx btn-vx-sm btn-vx-icon-sm"><i class="ti ti-heart"></i></button>
-          </div>
-
-          <hr style="border-color:var(--color-border)">
-
-          <div class="text-start px-2 pb-2">
-            <div class="subsection-label mb-1">Tags</div>
-            <div class="d-flex flex-wrap gap-1 mb-3">
-              <p class="p-offers">Ofrece</p>
-              <p class="p-seeks">Busca</p>
-            </div>
-            <div class="d-flex flex-wrap gap-1 mb-3">
-              <span class="tag-vx tag-offers">marketing digital</span>
-              <span class="tag-vx tag-offers">branding</span>
-              <span class="tag-vx tag-offers">CRM</span>
-              <span class="tag-vx tag-seeks">alianzas comerciales</span>
-              <span class="tag-vx tag-seeks">partners tecnológicos</span>
-            </div>
-            <div class="subsection-label mb-1">Comunidades</div>
-            <div class="d-flex flex-wrap gap-1">
-              <span class="badge-vx badge-neutral">Senior</span>
-            </div>
-          </div>
-        </div>
+    <!-- HEADER -->
+    <div class="profile-top">
+      <div class="profile-actions">
+        <button class="btn-vx btn-soft-accent btn-vx-sm btn-vx-icon-sm" aria-label="Guardar perfil de María Guadalupe Estévez-Montoya">
+          <i class="ti ti-heart"></i>
+        </button>
+        <button class="btn-vx btn-soft-primary btn-vx-sm" data-bs-toggle="modal" data-bs-target="#modalConectar">
+          <i class="ti ti-send"></i> Conectar
+        </button>
       </div>
 
-      <div class="col-12 col-lg-8">
-        <!-- Company card -->
-        <div class="card-vx mb-3">
-          <div class="d-flex align-items-center gap-3 mb-3">
-            <div class="empresa-logo-circle flex-shrink-0">
-              <img src="src/assets/placeholder.webp" alt="Maggiore Marketing">
-            </div>
-            <div>
-              <h2 style="font-size:1.1rem;font-weight:700;margin:0">Maggiore Marketing</h2>
-              <p class="member-company mb-0">Agencia de marketing digital · Chile</p>
-              <div class="d-flex gap-2 mt-1">
-                <a href="#" class="profile-company-link"><i class="ti ti-world"></i> maggiore.cl</a>
-                <a href="#" class="profile-company-link"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
-              </div>
-            </div>
-          </div>
-          <div class="row g-3">
-            <div class="col-12">
-              <div class="subsection-label mb-1">Sobre la empresa</div>
-              <p style="font-size:14px;color:var(--color-text-secondary)">Agencia de marketing digital e investigación de mercados con sede en Santiago. Trabajamos con empresas medianas y grandes en Hispanoamérica y Estados Unidos.</p>
-            </div>
-            <div class="col-md-6">
-              <div class="subsection-label mb-1">En qué puede ayudar</div>
-              <p style="font-size:14px;color:var(--color-text-secondary)">Estrategia, branding, páginas web, creatividad, campañas de medios e investigación de mercados.</p>
-            </div>
-            <div class="col-md-6">
-              <div class="subsection-label mb-1">En qué necesita ayuda</div>
-              <p style="font-size:14px;color:var(--color-text-secondary)">Conectar con quienes orienten en asuntos comerciales, financieros y de recursos humanos.</p>
-            </div>
-          </div>
-        </div>
+      <div class="banner-profile" style="background-image:url(src/assets/placeholder3.webp);background-size:cover;background-position:center;"></div>
 
-        <!-- Bio -->
-        <div class="card-vx">
-          <div class="subsection-label mb-2">Bio profesional</div>
-          <p style="font-size:14px;color:var(--color-text-secondary)">Director de marketing B2B con más de 12 años de experiencia desarrollando estrategias de crecimiento para empresas medianas y grandes en Hispanoamérica y Estados Unidos.</p>
+      <div class="profile-row">
+        <div class="img-profile">
+          <img src="src/assets/placeholder3.webp" alt="Foto de María Guadalupe Estévez-Montoya">
+        </div>
+        <div class="profile-info">
+          <h1 class="profile-name">María Guadalupe Estévez-Montoya</h1>
+          <a href="https://consultoria-iberica.mx" class="profile-company" target="_blank" rel="noopener noreferrer">Consultoría Estratégica Iberoamericana</a>
+          <p class="profile-title">Socia Directora & Consultora Senior de Transformación Organizacional</p>
+          <p class="profile-location"><i class="ti ti-map-pin"></i> Ciudad de México<span class="profile-country-chip">MÉX</span></p>
         </div>
       </div>
     </div>
+
+    <!-- TAGS -->
+    <div class="profile-tags-row">
+      <span class="tag-vx">Consultoría</span><span class="tag-vx">Liderazgo</span><span class="tag-vx">Innovación</span><span class="tag-vx">Change Management</span><span class="tag-vx">Docencia</span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="profile-content">
+
+      <div class="profile-section">
+        <h2 class="profile-section-title">Sobre mí</h2>
+        <p>Con más de 18 años acompañando a corporaciones multinacionales en procesos de transformación cultural y digital.</p>
+      </div>
+
+      <!-- Company tabs (only if >1 company) -->
+      <div class="profile-tabs">
+        <button class="profile-tab profile-tab-active" onclick="switchProfileTab(0)">Consultoría Estratégica Iberoamericana</button>
+          <button class="profile-tab" onclick="switchProfileTab(1)">OKR Lab</button>
+          
+      </div>
+
+      <div class="profile-company-block" id="company-block-0" style="">
+          <div class="profile-company-card">
+            <div class="profile-company-logo"><span class="profile-company-logo-initial">C</span></div>
+            <div class="profile-company-meta">
+              <div class="profile-company-meta-name">Consultoría Estratégica Iberoamericana</div>
+              <div class="profile-company-meta-title">Socia Directora & Consultora Senior de Transformación Organizacional</div>
+              <div class="profile-company-meta-links"><a href="https://consultoria-iberica.mx" class="profile-company-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-world"></i> consultoria-iberica.mx</a><a href="https://linkedin.com/company/consultoria-iberica" class="profile-company-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-linkedin"></i> LinkedIn</a></div>
+            </div>
+          </div>
+          <div class="profile-section">
+            <h2 class="profile-section-title">Sobre Consultoría Estratégica Iberoamericana</h2>
+            <p>Firma especializada en transformación digital y estrategia corporativa.</p>
+          </div>
+          <div class="profile-section">
+            <h2 class="profile-section-title">Cliente ideal</h2>
+            <p>Corporaciones con más de 500 empleados atravesando procesos de digitalización.</p>
+          </div>
+        </div><div class="profile-company-block" id="company-block-1" style="display:none;">
+          <div class="profile-company-card">
+            <div class="profile-company-logo"><span class="profile-company-logo-initial">O</span></div>
+            <div class="profile-company-meta">
+              <div class="profile-company-meta-name">OKR Lab</div>
+              <div class="profile-company-meta-title">Socia</div>
+              <div class="profile-company-meta-links"><a href="https://okrlab.mx" class="profile-company-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-world"></i> okrlab.mx</a><a href="https://linkedin.com/company/okrlab" class="profile-company-link" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-linkedin"></i> LinkedIn</a></div>
+            </div>
+          </div>
+          <div class="profile-section">
+            <h2 class="profile-section-title">Sobre OKR Lab</h2>
+            <p>Boutique especializada en implementación de OKRs y cultura de alto rendimiento.</p>
+          </div>
+          <div class="profile-section">
+            <h2 class="profile-section-title">Cliente ideal</h2>
+            <p>Startups y scale-ups que quieran instalar una cultura de objetivos clara.</p>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- OFFER / SEEK -->
+    <div class="profile-duo">
+      <div class="profile-pill profile-pill-offer">
+        <h3 class="profile-pill-title"><i class="ti ti-circle-check"></i> Qué ofrezco</h3>
+        <p>Acompañamos a la alta dirección en procesos de cambio profundo.</p>
+        <div class="profile-pill-tags"><span class="tag-vx tag-offers">transformación digital</span><span class="tag-vx tag-offers">change management</span><span class="tag-vx tag-offers">estrategia corporativa</span><span class="tag-vx tag-offers">metodologías ágiles</span></div>
+      </div>
+      <div class="profile-pill profile-pill-seek">
+        <h3 class="profile-pill-title"><i class="ti ti-search"></i> Qué busco</h3>
+        <p>Estamos desarrollando un spin-off de tecnología para automatizar diagnósticos organizacionales.</p>
+        <div class="profile-pill-tags"><span class="tag-vx tag-seeks">socios tecnológicos LATAM</span><span class="tag-vx tag-seeks">desarrollo IA</span><span class="tag-vx tag-seeks">legal fintech</span><span class="tag-vx tag-seeks">inversión ángel</span></div>
+      </div>
+    </div>
+
   </div>
+</div>
 </main>
+
+<script>
+function switchProfileTab(idx) {
+  document.querySelectorAll('.profile-company-block').forEach((el, i) => {
+    el.style.display = i === idx ? 'block' : 'none';
+  });
+  document.querySelectorAll('.profile-tab').forEach((el, i) => {
+    el.classList.toggle('profile-tab-active', i === idx);
+  });
+}
+</script>
 
 <footer class="footer-vx footer-vx--logged">
   <div class="container">
