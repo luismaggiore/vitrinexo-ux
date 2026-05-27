@@ -678,3 +678,163 @@ class VX_Notification_Triggers {
     public static function on_onboarding_completed(int $user_id): void
 }
 ```
+
+---
+
+## modules/upload/class-vx-upload.php — Upload de imágenes
+
+**Responsabilidad:** Endpoint REST para subir imágenes a la Media Library de WordPress. Único punto de upload en todo el sistema.
+
+```php
+class VX_Upload {
+    const MAX_SIZE = 2 * 1024 * 1024;              // 2MB
+    const ALLOWED  = ['image/jpeg', 'image/png', 'image/webp'];
+
+    // Registra el endpoint — llamado en rest_api_init
+    public static function register_route(): void
+
+    // Handler del endpoint POST /wp-json/vitrinexo/v1/upload
+    // Recibe: $_FILES['file'] + $_POST['tipo'] ('foto' | 'logo' | 'banner')
+    // Devuelve: { success: true, attachment_id: int, url: string }
+    //       o:  { error: string } con código HTTP apropiado
+    public static function handle(WP_REST_Request $request): WP_REST_Response
+}
+```
+
+### Endpoint
+
+```
+POST /wp-json/vitrinexo/v1/upload
+Content-Type: multipart/form-data
+X-WP-Nonce: {nonce}
+
+file: [archivo imagen]
+tipo: 'foto' | 'logo' | 'banner'
+```
+
+### Flujo interno de handle()
+
+1. Validar que `$_FILES['file']` existe
+2. Validar que `$file['type']` está en `self::ALLOWED`
+3. Validar que `$file['size'] <= self::MAX_SIZE`
+4. `require_once ABSPATH . 'wp-admin/includes/image.php'` (y file.php, media.php)
+5. `$attachment_id = media_handle_upload('file', 0)`
+6. Si `is_wp_error($attachment_id)` → devolver error 500
+7. Asociar al usuario: `wp_update_post(['ID' => $attachment_id, 'post_author' => get_current_user_id()])`
+8. Devolver `{ success: true, attachment_id: $attachment_id, url: wp_get_attachment_image_url($attachment_id, 'medium') }`
+
+### Tamaños registrados en el theme
+
+```php
+// vitrinexo-theme/functions.php
+add_action('after_setup_theme', function() {
+    add_image_size('vx-avatar', 200, 200, true);   // foto perfil
+    add_image_size('vx-logo',   200, 200, true);   // logo empresa
+    add_image_size('vx-banner', 1200, 375, true);  // banner — proporción 16:5
+    add_image_size('vx-card',   400, 400, true);   // imagen en tarjeta del directorio
+});
+```
+
+### Uso en el onboarding (JS)
+
+El JS del onboarding hace upload inmediatamente al seleccionar el archivo, muestra preview, y guarda el `attachment_id` en un campo hidden. Al guardar el paso, ese ID se envía junto con los demás datos del paso.
+
+```javascript
+input.addEventListener('change', async function() {
+    // 1. Preview inmediato (FileReader, sin esperar el upload)
+    // 2. Upload via fetch al endpoint
+    const formData = new FormData();
+    formData.append('file', this.files[0]);
+    formData.append('tipo', 'foto'); // o 'logo' o 'banner'
+    const res = await fetch(vx_data.api_url + 'upload', {
+        method: 'POST',
+        headers: { 'X-WP-Nonce': vx_data.nonce },
+        body: formData // Sin Content-Type — el browser lo setea automáticamente
+    });
+    const json = await res.json();
+    if (json.success) {
+        document.getElementById('foto-attachment-id').value = json.attachment_id;
+    }
+});
+```
+
+### Relaciones
+
+- Llamado desde JS del onboarding (pasos 2 y 3) y del editor de perfil
+- El `attachment_id` resultante se guarda como `vx_foto` (user meta) o `vx_logo`/`vx_banner` (post meta de vx_empresa)
+- Ningún otro módulo hace uploads — todo pasa por esta clase
+
+---
+
+## shortcodes/ — Registro de shortcodes
+
+**Responsabilidad:** Puente entre las páginas de WordPress y el plugin. Cada shortcode verifica auth si aplica y llama `get_template_part()`. La lógica de negocio siempre está en el plugin, nunca en el shortcode.
+
+### Estructura de archivos
+
+```
+vitrinexo-core/shortcodes/
+├── shortcodes-public.php      # Páginas sin autenticación
+├── shortcodes-auth.php        # Páginas autenticadas
+├── shortcodes-flow.php        # Flujos de verificación y onboarding
+└── shortcodes-fragments.php   # Fragmentos pequeños (empty_state)
+```
+
+### Anatomía por tipo
+
+**Público** — solo carga el template:
+```php
+add_shortcode('vx_landing', function() {
+    get_template_part('templates/front-page');
+});
+```
+
+**Autenticado** — verifica sesión y carga template:
+```php
+add_shortcode('vx_directorio', function() {
+    if (!is_user_logged_in()) return '';
+    // VX_Auth::check_access() en template_redirect ya maneja el resto
+    get_template_part('templates/page-directorio');
+});
+```
+
+**Perfil** — único que procesa atributos:
+```php
+add_shortcode('vx_perfil', function($atts) {
+    if (!is_user_logged_in()) return '';
+    $atts    = shortcode_atts(['user_id' => 0], $atts);
+    $user_id = $atts['user_id'] ? (int)$atts['user_id'] : get_current_user_id();
+    set_query_var('vx_perfil_user_id', $user_id);
+    get_template_part('templates/page-perfil');
+});
+```
+
+**Comunidades** — tres templates separados, un shortcode:
+```php
+add_shortcode('vx_comunidad', function($atts) {
+    if (!is_user_logged_in()) return '';
+    $atts = shortcode_atts(['community' => ''], $atts);
+    switch ($atts['community']) {
+        case 'out2b':  get_template_part('templates/page-comunidad-out2b');  break;
+        case 'woman':  get_template_part('templates/page-comunidad-woman');  break;
+        case 'senior': get_template_part('templates/page-comunidad-senior'); break;
+    }
+});
+```
+
+**Fragmento** — única excepción que devuelve HTML directamente desde el plugin:
+```php
+add_shortcode('vx_empty_state', function($atts) {
+    $atts = shortcode_atts(['type' => '', 'cta_label' => '', 'cta_url' => ''], $atts);
+    // Devuelve HTML directamente — fragmento pequeño y reutilizable
+    ob_start();
+    set_query_var('vx_empty_state_args', $atts);
+    get_template_part('partials/empty-state');
+    return ob_get_clean();
+});
+```
+
+### Regla de oro
+
+Si un shortcode genera HTML directamente → está mal (salvo `vx_empty_state` y fragmentos pequeños).
+Si un template PHP llama `get_user_meta()` directamente → está mal.

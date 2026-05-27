@@ -1,4 +1,4 @@
-# Flujo de registro y verificación — Vitrinexo
+# Flujo de registro, verificación y onboarding — Vitrinexo
 **Implementación en WordPress**
 
 ---
@@ -6,363 +6,270 @@
 ## Resumen del flujo completo
 
 ```
-Usuario llena formulario en login.html (tab Registrarse)
+Usuario llena formulario en /login (tab Registrarse)
+  Campos: nombre, apellido, email, contraseña, país, empresa (nombre)
         ↓
 WordPress crea la cuenta con estado "pendiente"
+El nombre de empresa se guarda temporalmente para:
+  1. Pre-rellenar el paso 3 del onboarding
+  2. Darle contexto al admin para verificación manual
         ↓
 ¿El dominio del email es institucional?
-   ├─ SÍ  ── Flujo A (automático) ──────────────────────────────┐
-   │         → Genera token UUID (expira 24h)                    │
-   │         → Envía email de confirmación con link de activación│
-   │         → Usuario ve confirmar-correo.html                  │
-   │         → Usuario hace clic → valida token → cuenta activa  │
-   │         → Redirige a onboarding.html                        │
-   │                                                             │
-   └─ NO  ── Flujo B (manual) ────────────────────────────────── ┘
-             → Usuario ve verificacion-pendiente.html
-             → Admin revisa y aprueba desde WordPress
-             → Al aprobar: genera token UUID (expira 72h)
-             → Envía email al usuario: "Tu cuenta fue aprobada"
-               → El email incluye el link único de activación
+   ├─ SÍ  ── Flujo A (automático) ─────────────────────────────────┐
+   │         → Genera token UUID (expira 24h)                      │
+   │         → Envía email de confirmación con link de activación  │
+   │         → Usuario ve /confirmar-correo                        │
+   │         → Usuario hace clic → valida token → cuenta activa    │
+   │         → Redirect a /onboarding                             │
+   │                                                               │
+   └─ NO  ── Flujo B (manual) ──────────────────────────────────── ┘
+             → Usuario ve /verificacion-pendiente
+             → Admin ve la cuenta en WP Admin con el nombre de empresa
+               como contexto para verificar que existe
+             → Admin aprueba → genera token UUID (expira 72h)
+             → Envía email: "Tu cuenta fue aprobada" + link activación
              → Usuario hace clic → valida token → cuenta activa
-             → Redirige a onboarding.html
+             → Redirect a /onboarding
         ↓
 Usuario completa onboarding (6 pasos)
         ↓
+Paso 6: pantalla de cierre "Ya estás en la red"
+  CTAs: Ir a mi dashboard / Explorar el directorio
+        ↓
 Dashboard
 ```
+
+> **¿Por qué pedir empresa en el registro si ya se pide en el onboarding?**
+> Dos razones: (1) le da contexto al admin para verificar cuentas manuales sin tener que esperar a que el usuario complete el onboarding, (2) pre-rellena el campo empresa en el paso 3 para reducir fricción.
 
 > **¿Por qué el link de activación también en el flujo manual?**
 > Garantiza que el dueño real del correo es quien activa la cuenta. Sin este paso, un admin podría aprobar una cuenta registrada con el correo de otra persona sin que esa persona lo sepa.
 
 ---
 
-## 1. Detección de dominio institucional
+## 1. Formulario de registro
 
-### Dominios genéricos bloqueados (lista negra)
+### Campos
+
+| Campo | Tipo | Obligatorio |
+|---|---|---|
+| Nombre | text | Sí |
+| Apellido | text | Sí |
+| Email | email | Sí |
+| Contraseña | password | Sí (mín. 8 caracteres) |
+| País | select | Sí |
+| Empresa | text | Sí |
+
+### Qué hace WordPress al recibir el submit
 
 ```php
-$dominios_genericos = [
-  'gmail.com', 'googlemail.com',
-  'yahoo.com', 'yahoo.es', 'yahoo.com.ar', 'yahoo.com.mx',
-  'hotmail.com', 'hotmail.es', 'hotmail.com.ar',
-  'outlook.com', 'outlook.es',
-  'live.com', 'live.cl', 'live.com.ar',
-  'icloud.com', 'me.com', 'mac.com',
-  'protonmail.com', 'proton.me',
-  'aol.com',
-];
+add_action('user_register', function(int $user_id) {
+    $user  = get_userdata($user_id);
+    $email = $user->user_email;
+
+    // Estado inicial — siempre pendiente
+    update_user_meta($user_id, 'vx_estado',            'pendiente');
+    update_user_meta($user_id, 'vx_tipo_verificacion',
+        VX_Verification::is_institutional($email) ? 'automatica' : 'manual'
+    );
+
+    // Guardar nombre de empresa del registro para pre-rellenar onboarding paso 3
+    // y para contexto del admin en verificación manual
+    $empresa_registro = sanitize_text_field($_POST['empresa'] ?? '');
+    if ($empresa_registro) {
+        update_user_meta($user_id, 'vx_empresa_registro', $empresa_registro);
+    }
+
+    if (VX_Verification::is_institutional($email)) {
+        VX_Verification::send_confirmation_email($user_id);
+    } else {
+        VX_Verification::notify_admin_pending($user_id);
+    }
+});
 ```
 
-Cualquier dominio que **no esté** en esta lista se considera institucional y activa el flujo automático.
+### User meta adicional
 
-### Función de detección
-
-```php
-function vx_es_correo_institucional( string $email ): bool {
-  $dominios_genericos = [ /* lista de arriba */ ];
-  $dominio = strtolower( substr( strrchr( $email, '@' ), 1 ) );
-  return ! in_array( $dominio, $dominios_genericos, true );
-}
+```
+vx_empresa_registro   → nombre de empresa ingresado en el registro
+                         Se usa para pre-rellenar el onboarding paso 3
+                         No reemplaza a vx_empresa (CPT) que se crea en el paso 3
 ```
 
 ---
 
-## 2. Registro en WordPress
-
-### Hook en el formulario de registro
+## 2. Detección de dominio institucional
 
 ```php
-add_action( 'user_register', function( int $user_id ) {
-  $user  = get_userdata( $user_id );
-  $email = $user->user_email;
-
-  // Estado inicial — siempre pendiente
-  update_user_meta( $user_id, 'vx_estado', 'pendiente' );
-  update_user_meta( $user_id, 'vx_tipo_verificacion',
-    vx_es_correo_institucional( $email ) ? 'automatica' : 'manual'
-  );
-
-  if ( vx_es_correo_institucional( $email ) ) {
-    vx_enviar_email_confirmacion( $user_id );
-  } else {
-    vx_notificar_admin_verificacion_pendiente( $user_id );
-  }
-});
+// En helpers/helper-domains.php
+function vx_es_correo_institucional(string $email): bool {
+    $dominios_genericos = [
+        'gmail.com', 'googlemail.com',
+        'yahoo.com', 'yahoo.es', 'yahoo.com.ar', 'yahoo.com.mx',
+        'hotmail.com', 'hotmail.es', 'hotmail.com.ar',
+        'outlook.com', 'outlook.es',
+        'live.com', 'live.cl', 'live.com.ar',
+        'icloud.com', 'me.com', 'mac.com',
+        'protonmail.com', 'proton.me',
+        'aol.com',
+    ];
+    $dominio = strtolower(substr(strrchr($email, '@'), 1));
+    return !in_array($dominio, $dominios_genericos, true);
+}
 ```
-
-### Meta fields del usuario
-
-| Meta key | Valores posibles | Descripción |
-|---|---|---|
-| `vx_estado` | `pendiente` · `activo` · `rechazado` | Estado de la cuenta |
-| `vx_tipo_verificacion` | `automatica` · `manual` | Tipo de verificación requerida |
-| `vx_token_confirmacion` | UUID v4 | Token del link de activación |
-| `vx_token_expira` | timestamp | Expiración del token (24h) |
-| `vx_onboarding_completo` | `true` · `false` | Si completó los 6 pasos |
-| `vx_senior_solicitado` | `true` · `false` | Si declaró ser Senior en onboarding |
-| `vx_senior_verificado` | `true` · `false` | Si un admin aprobó el badge Senior |
 
 ---
 
 ## 3. Flujo A — Correo institucional (automático)
 
-### 3.1 Email de confirmación
-
-```php
-function vx_enviar_email_confirmacion( int $user_id ): void {
-  $token   = wp_generate_uuid4();
-  $expira  = time() + DAY_IN_SECONDS; // 24 horas
-
-  update_user_meta( $user_id, 'vx_token_confirmacion', $token );
-  update_user_meta( $user_id, 'vx_token_expira', $expira );
-
-  $user = get_userdata( $user_id );
-  $link = add_query_arg([
-    'accion' => 'confirmar',
-    'uid'    => $user_id,
-    'token'  => $token,
-  ], home_url( '/activar-cuenta/' ) );
-
-  wp_mail(
-    $user->user_email,
-    'Confirma tu cuenta en Vitrinexo',
-    vx_template_confirmacion( $user->display_name, $link )
-  );
-}
-```
-
-### 3.2 Página que ve el usuario: `confirmar-correo.html`
-
-- Mensaje: "Revisá tu bandeja — te enviamos un link de activación"
-- Nota: revisar carpeta de spam
-- Botón: **Reenviar correo** (llama a `vx_enviar_email_confirmacion()` de nuevo)
-- El reenvío tiene un cooldown de 60 segundos para evitar spam
-
-### 3.3 Activación del link
-
-```php
-// En la página /activar-cuenta/ de WordPress
-add_action( 'template_redirect', function() {
-  if ( get_query_var('pagename') !== 'activar-cuenta' ) return;
-
-  $uid   = absint( $_GET['uid']   ?? 0 );
-  $token = sanitize_text_field( $_GET['token'] ?? '' );
-
-  $token_guardado = get_user_meta( $uid, 'vx_token_confirmacion', true );
-  $token_expira   = (int) get_user_meta( $uid, 'vx_token_expira', true );
-
-  if ( $token !== $token_guardado || time() > $token_expira ) {
-    // Token inválido o expirado → mostrar error
-    wp_redirect( home_url( '/confirmar-correo/?error=token_invalido' ) );
-    exit;
-  }
-
-  // Activar cuenta
-  update_user_meta( $uid, 'vx_estado', 'activo' );
-  delete_user_meta( $uid, 'vx_token_confirmacion' );
-  delete_user_meta( $uid, 'vx_token_expira' );
-
-  // Login automático + redirect a onboarding
-  wp_set_auth_cookie( $uid );
-  wp_redirect( home_url( '/onboarding/' ) );
-  exit;
-});
-```
+1. `VX_Verification::generate_token($user_id, 24)` — genera UUID v4, expira en 24h
+2. `VX_Mailer::send()` con template `confirmacion` al email del usuario
+3. Usuario ve `/confirmar-correo/` con botón de reenvío (cooldown 30s)
+4. Usuario hace clic en el link → `GET /wp-json/vitrinexo/v1/activar?uid=X&token=Y`
+5. `VX_Verification::validate_token()` — valida y consume el token
+6. `VX_Verification::activate_account()` — `vx_estado → 'activo'`
+7. `VX_Mailer::send()` con template `bienvenida`
+8. Login automático + redirect a `/onboarding/`
 
 ---
 
 ## 4. Flujo B — Correo genérico (manual)
 
-### 4.1 Notificación al admin
-
-```php
-function vx_notificar_admin_verificacion_pendiente( int $user_id ): void {
-  $user = get_userdata( $user_id );
-  wp_mail(
-    get_option('admin_email'),
-    'Nueva cuenta pendiente de verificación — Vitrinexo',
-    "Nuevo usuario: {$user->display_name} ({$user->user_email})\n" .
-    "Revisar en: " . admin_url( "user-edit.php?user_id={$user_id}" )
-  );
-}
-```
-
-### 4.2 Página que ve el usuario: `verificacion-pendiente.html`
-
-- Mensaje: "Tu cuenta está siendo revisada por el equipo de Vitrinexo"
-- Estimado: 24–48 horas hábiles
-- Botón: **Reenviar correo de confirmación** (por si el usuario quiere ser contactado)
-- El usuario **no puede acceder** al directorio ni al dashboard hasta que el admin apruebe
-
-### 4.3 Aprobación por admin en WordPress
-
-El admin ve una columna custom "Estado Vitrinexo" en la lista de usuarios de WP Admin:
-
-```php
-add_filter( 'manage_users_columns', function( $cols ) {
-  $cols['vx_estado'] = 'Estado Vitrinexo';
-  return $cols;
-});
-
-add_action( 'manage_users_custom_column', function( $val, $col, $uid ) {
-  if ( $col !== 'vx_estado' ) return $val;
-  $estado = get_user_meta( $uid, 'vx_estado', true );
-  $badge  = $estado === 'activo' ? '✓ Activo' : '⏳ Pendiente';
-  return $badge;
-}, 10, 3 );
-```
-
-### 4.4 Email de aprobación con link de activación
-
-Cuando el admin aprueba, el sistema **no activa la cuenta directamente** — genera un token y lo envía al usuario para que active él mismo:
-
-```php
-function vx_aprobar_cuenta_manual( int $user_id ): void {
-  // NO cambiar vx_estado a "activo" todavía — el usuario debe confirmar
-  $token  = wp_generate_uuid4();
-  $expira = time() + ( 72 * HOUR_IN_SECONDS ); // 72 horas
-
-  update_user_meta( $user_id, 'vx_token_confirmacion', $token );
-  update_user_meta( $user_id, 'vx_token_expira', $expira );
-
-  $user = get_userdata( $user_id );
-  $link = add_query_arg([
-    'accion' => 'activar',
-    'uid'    => $user_id,
-    'token'  => $token,
-  ], home_url( '/activar-cuenta/' ) );
-
-  wp_mail(
-    $user->user_email,
-    '¡Tu cuenta en Vitrinexo fue aprobada!',
-    vx_template_aprobacion( $user->display_name, $link )
-  );
-}
-```
-
-### 4.5 Estructura del email de aprobación
-
-```
-Asunto: Tu cuenta en Vitrinexo fue aprobada ✓
-
-────────────────────────────────────────
-  [Logo Vitrinexo]
-
-  Hola [Nombre],
-
-  Tu cuenta en Vitrinexo fue revisada y aprobada
-  por el equipo.
-
-  Para activarla y completar tu perfil, haz clic aquí:
-
-  [  Activar mi cuenta  ]
-  → https://vitrinexo.com/activar-cuenta?accion=activar&uid=...&token=...
-
-  Este link expira en 72 horas.
-  Si no te registraste en Vitrinexo, ignora este correo.
-
-────────────────────────────────────────
-```
-
-> **Seguridad:** El token expira en 72h (más holgado que el automático de 24h, porque el proceso manual puede tomar tiempo). Si expira, el admin puede reenviar la aprobación desde WP Admin.
-
-La activación del link usa exactamente la misma lógica del endpoint `/activar-cuenta/` descrito en la sección 3.3 — valida token, actualiza `vx_estado` a `activo`, hace login automático y redirige al onboarding.
+1. `VX_Verification::notify_admin_pending()` — email al admin con nombre, email y **empresa** del usuario
+2. Usuario ve `/verificacion-pendiente/` con botón de reenvío de solicitud
+3. Admin ve la cuenta en WP Admin con columna "Estado Vitrinexo" = "⏳ Pendiente"
+   — el nombre de empresa (`vx_empresa_registro`) aparece como contexto para verificar
+4. Admin hace clic en "Aprobar" → `VX_Verification::approve_manual($user_id)`
+5. Genera token UUID (expira 72h) + envía email `aprobacion` con link de activación
+6. **La cuenta NO se activa aún** — espera que el usuario haga clic en el link
+7. Usuario hace clic → mismo flujo que pasos 4-8 del Flujo A
 
 ---
 
 ## 5. Onboarding — 6 pasos
 
-Una vez la cuenta está activa (`vx_estado = activo`), el usuario es redirigido a `onboarding.html`.
+Una vez activada la cuenta, el guard en `template_redirect` detecta `vx_onboarding_completo = false` y redirige al usuario a `/onboarding/` en cualquier intento de acceder a otra página autenticada.
 
-| Paso | Contenido | Obligatorio |
+### Paso 1 — Bienvenida
+Sin campos. Preview del proceso. Botón "Empezar".
+
+### Paso 2 — Datos personales
+| Campo | Meta key | Obligatorio |
 |---|---|---|
-| 1 | Bienvenida — preview del proceso | — |
-| 2 | Datos personales: foto, nombre, bio, ciudad, país, contacto preferido | Nombre, país |
-| 3 | Empresa: logo, nombre, cargo, web, LinkedIn, descripción | Nombre, cargo |
-| 4 | Ofrece / busca: selector de tags (máx. 5 cada uno) | Al menos 1 de cada uno |
-| 5 | Comunidades: Out2B, Woman, Senior, 4Dinner (todas opcionales) | — |
-| 6 | Confirmación con mini-preview de la tarjeta | — |
+| Foto de perfil | vx_foto (attachment_id) | No |
+| Nombre | vx_nombre | Sí |
+| Apellido | vx_apellido | Sí |
+| Bio profesional | vx_bio | No |
+| Ciudad | vx_ciudad | No |
+| País | vx_pais | Sí |
+| Preferencia de contacto | vx_contacto_preferido | No |
+
+### Paso 3 — Tu empresa
+Crea un CPT `vx_empresa` asociado al usuario.
+
+**Pre-relleno:** el campo "Nombre de empresa" se pre-rellena con `vx_empresa_registro` guardado en el registro. El usuario puede modificarlo.
+
+| Campo | Meta del CPT | Obligatorio |
+|---|---|---|
+| Logo | vx_logo (attachment_id) | No |
+| Nombre de empresa | post_title | Sí |
+| Tu cargo | vx_cargo | Sí |
+| Sitio web | vx_web | No |
+| LinkedIn empresa | vx_linkedin | No |
+| Descripción | vx_descripcion | No |
+
+Al guardar el paso 3, el sistema también genera `vx_perfil_slug` usando `sanitize_title($nombre . ' ' . $apellido)` con sufijo numérico si hay duplicado.
+
+### Paso 4 — Ofreces / Buscas
+| Campo | Meta key | Regla |
+|---|---|---|
+| Tags oferta | vx_offer_tags (array) | Máximo 5 |
+| Tags búsqueda | vx_seek_tags (array) | Máximo 5 |
+| Texto oferta | vx_offer_texto | No obligatorio |
+| Texto búsqueda | vx_seek_texto | No obligatorio |
+
+### Paso 5 — Comunidades (todas opcionales)
+| Campo | Meta key | Verificación |
+|---|---|---|
+| Out2B | vx_comunidad_out2b | Automática (declaración) |
+| Woman | vx_comunidad_woman | Automática (declaración) |
+| Senior | vx_senior_solicitado | Manual por admin |
+
+Si Senior solicitado: `VX_Senior_Verification::request($user_id)` — notifica al admin.
+
+**4Dinner no aparece en el onboarding** — es un beneficio incluido para todos los miembros activos, no una comunidad que se activa.
+
+### Paso 6 — Listo
+Pantalla de cierre. No hay datos que guardar.
+
+- Llama `VX_Onboarding::complete($user_id)` → `vx_onboarding_completo = 'true'`
+- Muestra: "Ya estás en la red. Encuentra tus próximos nexos."
+- CTAs: **Ir a mi dashboard** (`/dashboard/`) y **Explorar el directorio** (`/directorio/`)
 
 ### Guardado progresivo
 
-Cada paso guarda parcialmente vía AJAX para que no se pierda info si el usuario cierra el browser:
+Cada paso guarda vía REST al avanzar **y al retroceder**:
 
-```php
-add_action( 'wp_ajax_vx_guardar_paso_onboarding', function() {
-  check_ajax_referer( 'vx_onboarding', 'nonce' );
-  $user_id = get_current_user_id();
-  $paso    = absint( $_POST['paso'] );
-  $datos   = array_map( 'sanitize_text_field', $_POST['datos'] );
-
-  update_user_meta( $user_id, "vx_onboarding_paso_{$paso}", $datos );
-
-  wp_send_json_success();
-});
+```
+POST /wp-json/vitrinexo/v1/onboarding/paso
+Body: { paso: 3, datos: {...}, partial: false }
 ```
 
-### Completar onboarding
+- `partial: false` (avanzar) → valida campos obligatorios antes de guardar
+- `partial: true` (retroceder) → guarda sin validar, no bloquea la navegación
 
-Al llegar al paso 6 y hacer clic en "Ir a mi dashboard":
-
-```php
-update_user_meta( $user_id, 'vx_onboarding_completo', 'true' );
-```
-
-Si `vx_onboarding_completo` es `false`, WordPress redirige al usuario al onboarding en vez del dashboard.
+Si el usuario cierra el browser, al volver el JS llama `GET /wp-json/vitrinexo/v1/onboarding/estado` y retoma en el último paso completado, repoblando los campos.
 
 ---
 
-## 6. Verificación Senior
+## 6. Guard de acceso
 
-El usuario declara ser Senior en el paso 5 del onboarding. Eso no activa el badge — solo levanta una solicitud:
-
-```php
-update_user_meta( $user_id, 'vx_senior_solicitado', 'true' );
-update_user_meta( $user_id, 'vx_senior_verificado',  'false' );
-```
-
-El admin ve la solicitud en WP Admin y aprueba manualmente cambiando `vx_senior_verificado` a `true`. En ese momento el badge Senior aparece en la tarjeta y el perfil del usuario.
-
----
-
-## 7. Guard de acceso
-
-Para proteger las páginas que requieren cuenta activa:
+Un solo hook en `template_redirect` en `class-vx-auth.php`:
 
 ```php
-add_action( 'template_redirect', function() {
-  $paginas_protegidas = [ 'dashboard', 'directorio', 'perfil', 'editor-perfil', 'mis-favoritos' ];
-  // ...
-  if ( ! is_user_logged_in() ) {
-    wp_redirect( home_url( '/login/' ) ); exit;
-  }
+add_action('template_redirect', function() {
+    // 1. ¿Es admin? → acceso total
+    if (current_user_can('manage_options')) return;
 
-  $estado = get_user_meta( get_current_user_id(), 'vx_estado', true );
+    // 2. ¿No está logueado intentando página protegida?
+    if (!is_user_logged_in() && VX_Auth::is_protected_page()) {
+        wp_redirect(home_url('/login/')); exit;
+    }
 
-  if ( $estado === 'pendiente' ) {
-    $tipo = get_user_meta( get_current_user_id(), 'vx_tipo_verificacion', true );
-    $redir = $tipo === 'automatica' ? '/confirmar-correo/' : '/verificacion-pendiente/';
-    wp_redirect( home_url( $redir ) ); exit;
-  }
+    if (!is_user_logged_in()) return;
 
-  $onboarding_completo = get_user_meta( get_current_user_id(), 'vx_onboarding_completo', true );
-  if ( $onboarding_completo !== 'true' && ! is_page( 'onboarding' ) ) {
-    wp_redirect( home_url( '/onboarding/' ) ); exit;
-  }
+    $user_id = get_current_user_id();
+    $estado  = get_user_meta($user_id, VX_User_Meta::ESTADO, true);
+
+    // 3. ¿Pendiente?
+    if ($estado === 'pendiente') {
+        $tipo = get_user_meta($user_id, VX_User_Meta::TIPO_VERIFICACION, true);
+        $url  = $tipo === 'automatica'
+            ? home_url('/confirmar-correo/')
+            : home_url('/verificacion-pendiente/');
+        if (!is_page(['confirmar-correo', 'verificacion-pendiente'])) {
+            wp_redirect($url); exit;
+        }
+        return;
+    }
+
+    // 4. ¿Onboarding incompleto?
+    $onboarding = get_user_meta($user_id, VX_User_Meta::ONBOARDING_COMPLETO, true);
+    if ($onboarding !== 'true' && !is_page('onboarding')) {
+        wp_redirect(home_url('/onboarding/')); exit;
+    }
 });
 ```
 
 ---
 
-## 8. Stack recomendado
+## 7. Bloqueo de wp-admin para no-admins
 
-| Necesidad | Solución |
-|---|---|
-| Formulario de registro | WP Forms o registro nativo de WP con hooks |
-| Detección de dominio | Función PHP custom en `functions.php` |
-| Email transaccional | FluentSMTP + Postmark o SendGrid |
-| Tokens de activación | `wp_generate_uuid4()` + user meta |
-| Guardado progresivo del onboarding | `wp_ajax_*` + user meta por paso |
-| Guard de acceso | `template_redirect` hook |
-| Panel de admin | Columnas custom en lista de usuarios de WP |
+```php
+add_action('admin_init', function() {
+    if (!current_user_can('manage_options')) {
+        wp_redirect(home_url('/dashboard/')); exit;
+    }
+});
+add_filter('show_admin_bar', fn($show) => current_user_can('manage_options') ? $show : false);
+```
