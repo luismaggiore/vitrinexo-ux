@@ -12,7 +12,7 @@
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
       rel="stylesheet"
     />
-    <link href="src/style.css" rel="stylesheet" />
+    <link href="/src/style.css" rel="stylesheet" />
   </head>
   <body class="page-auth-vx">
     <!-- NAV MÍNIMO -->
@@ -22,7 +22,7 @@
         class="navbar-brand d-flex align-items-center gap-2"
       >
         <img
-          src="src/assets/vitrinexo.svg"
+          src="/src/assets/vitrinexo.svg"
           width="104"
           alt="Vitrinexo"
           class="flex-shrink-0"
@@ -163,7 +163,7 @@
             </div>
           </div>
 
-          <div class="mb-4">
+          <div class="mb-3">
             <label class="form-label-vx">País</label>
             <select class="form-control-vx">
               <option value="">Selecciona tu país</option>
@@ -178,12 +178,26 @@
             </select>
           </div>
 
+          <div class="mb-4">
+            <label class="form-label-vx">Empresa</label>
+            <div class="input-group-vx">
+              <span class="input-icon"><i class="ti ti-building"></i></span>
+              <input type="text" id="reg-empresa" placeholder="Nombre de tu empresa" />
+            </div>
+            <div class="form-hint">Nos ayuda a verificar tu cuenta si usas un correo personal.</div>
+          </div>
+
           <a
-            href="onboarding.html"
+            href="confirmar-correo.html"
             class="btn-vx btn-primary-vx btn-vx-lg w-100 d-block text-center mb-3 text-decoration-none"
+            onclick="const e=document.getElementById('reg-empresa'); if(e) sessionStorage.setItem('vx_reg_empresa', e.value);"
           >
-            Crear cuenta y completar perfil →
+            Crear cuenta →
           </a>
+          <p class="form-hint text-center">
+            Correo institucional: verificación inmediata.<br>
+            Correo personal: revisión por el equipo en 24–48h.
+          </p>
 
           <p class="text-center text-sm-muted">
             Al registrarte aceptas los
